@@ -15,89 +15,45 @@ No page ships until the gate says `GATE: PASS`.
 [![Agents](https://img.shields.io/badge/Agents-75%2B-6b7280?style=for-the-badge)](#compatibility)
 [![GitHub stars](https://img.shields.io/github/stars/rafidone/frontend-design-skills?style=for-the-badge&logo=github&labelColor=000000)](https://github.com/rafidone/frontend-design-skills)
 
-[Quick start](#quick-start) · [Installation](#installation) · [Architecture](#architecture) · [Niche matrix](#niche-matrix) · [Finish gate](#the-finish-gate) · [Examples](#six-reference-builds)
+[Overview](#overview) · [Quick start](#quick-start) · [Architecture](#architecture) · [Niche matrix](#niche-matrix) · [Finish gate](#the-finish-gate) · [Examples](#six-reference-builds)
 
 </div>
 
 ---
 
-## Why this exists
+## Overview
 
-Most AI-generated frontends fail in the same four ways: a generic template layout, an
-uncommitted visual direction, fake or missing assets, and no proof that the result
-actually works in a browser.
+**Frontend Design Skills is a production workflow for coding agents that turns a brief into a real, art-directed website — and refuses to call it finished until a real browser proves it works.**
 
-**Frontend Design Skills is the operating system for one build.** It classifies the
-business, locks an art direction, generates a real visual system, writes honest copy,
-captures real browser evidence at seven viewports, fixes what Chrome proves is wrong,
-and returns a gate report you can defend in a client review.
+Most AI-generated UI fails in the same four ways: generic template layouts, an uncommitted visual direction, fake or missing assets, and no evidence that the result actually works. This skill fixes that with a locked art direction, niche-specific design systems, real local assets, honest copy, and a mandatory `GATE: PASS` finish gate across seven viewports.
 
-It is not a component library, a prompt pack, or a screenshot generator. It is a
-production workflow with hard stops.
-
-```text
-GATE: PASS
-Built: a studio operations site for a six-person design practice
-Direction: service / shell-forest / newsreader-dm / hero split / T0
-Viewports: 1440, 1280, 1024, 820, 768, 390, 320
-Waivers: none
-Open: none
-Assets: 1 local WebP, 66 local SVG icons, 4 diagrams, credits.html
-Assumptions: the brief did not name a city, so Lisbon was used in the demo copy
-```
-
-> **The contract:** a page is not finished because the code compiles. It is finished
-> when the browser gate passes, the screenshots have been read, and every finding is
-> fixed, waived with evidence, or reported.
-
----
+It is not a component library or a prompt pack. It is the operating system for one build: classify the business, assign a direction, scaffold the visual system, inspect the result in Chrome, fix what fails, and ship a report you can defend in a client review.
 
 ## Quick start
 
 ```bash
-# 1. Install the skill from GitHub (Skills CLI)
-npx skills add rafidone/frontend-design-skills --skill frontend-design-skills -a opencode -y
-
-# 2. Ask your agent for the build
-#    "Build a booking page for a six-room boutique hotel in Lisbon."
+npx skills add rafidone/frontend-design-skills --skill frontend-design-skills
 ```
 
-The skill activates for landing pages, marketing sites, SaaS and product pages,
-dashboards, portfolios, storefronts, game and hardware sites, hospitality sites,
-professional-service sites, and any existing UI that looks generic or unfinished.
+That single command detects your coding agent and installs the skill. Then ask for a build:
 
-```bash
-# List everything published by this repository
-npx skills add rafidone/frontend-design-skills --list
+> "Build a booking page for a six-room boutique hotel in Lisbon."
 
-# Install for every detected agent
-npx skills add https://github.com/rafidone/frontend-design-skills \
-  --skill frontend-design-skills -y
+The skill activates for landing pages, marketing sites, SaaS and product pages, dashboards, portfolios, storefronts, game and hardware sites, hospitality and professional-service sites, and any existing UI that looks generic or unfinished.
 
-# Install globally for the current user
-npx skills add rafidone/frontend-design-skills \
-  --skill frontend-design-skills -a opencode -g -y
-```
+<details>
+<summary><strong>More install options (global, agent-specific, plugin marketplace, local checkout)</strong></summary>
 
----
+<br />
 
-## Installation
-
-### Skills CLI
-
-| Scope | Command | Use when |
-| --- | --- | --- |
-| Project | `npx skills add rafidone/frontend-design-skills --skill frontend-design-skills` | The skill belongs in the repository and ships with the team. |
-| Global | `npx skills add rafidone/frontend-design-skills --skill frontend-design-skills -g` | The skill should follow you across projects. |
-| Specific agent | `npx skills add rafidone/frontend-design-skills --skill frontend-design-skills -a opencode -a claude-code` | You use more than one coding agent. |
-| All agents | `npx skills add rafidone/frontend-design-skills --skill frontend-design-skills --agent '*'` | You want it everywhere. |
-| Direct path | `npx skills add https://github.com/rafidone/frontend-design-skills/tree/master/skills/frontend-design-skills` | You want to pin the exact skill directory. |
+| Method | Command |
+| --- | --- |
+| **Global install** | `npx skills add rafidone/frontend-design-skills --skill frontend-design-skills -g` |
+| **Specific agent** | `npx skills add rafidone/frontend-design-skills --skill frontend-design-skills -a opencode` |
+| **All detected agents** | `npx skills add rafidone/frontend-design-skills --skill frontend-design-skills --agent '*'` |
+| **List available skills** | `npx skills add rafidone/frontend-design-skills --list` |
 
 ### Claude Code plugin marketplace
-
-This repository ships both `.claude-plugin/marketplace.json` and
-`.claude-plugin/plugin.json`, so the same SKILL.md can be installed through the
-Claude Code plugin flow:
 
 ```text
 /plugin marketplace add rafidone/frontend-design-skills
@@ -110,25 +66,16 @@ Claude Code plugin flow:
 git clone https://github.com/rafidone/frontend-design-skills.git
 cd frontend-design-skills
 
-# Copy into the current project's .opencode/skills
-./install.sh --project
-
-# Install globally into ~/.config/opencode/skills
-./install.sh --global
-
-# Symlink while developing the skill itself
-./install.sh --link --project /path/to/project
-
-# Remote install through the Skills CLI from this helper
-./install.sh --remote --agent opencode
-
-# Inspect what the remote repository publishes
-./install.sh --list
+./install.sh --project                 # copy into the current project
+./install.sh --global                  # install for the current user
+./install.sh --link --project /path    # symlink while developing
 ```
 
 The local installer copies `skills/frontend-design-skills/` to
-`.opencode/skills/frontend-design-skills/` (or the global skills directory) and then
-runs the environment doctor. In OpenCode, invoke it as `@frontend-design-skills`.
+`.opencode/skills/frontend-design-skills/` and runs the environment doctor.
+In OpenCode, invoke the skill as `@frontend-design-skills`.
+
+</details>
 
 ### Requirements
 
