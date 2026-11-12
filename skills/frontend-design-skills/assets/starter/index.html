@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Morrow is a studio operations practice for design teams that want calmer weeks and better handoffs.">
+  <title>Morrow — Make good work easier to make</title>
+  <script>document.documentElement.classList.add("has-js");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/motion.css">
+  <script src="scripts/motion.js" defer></script>
+  <script src="scripts/system.js" defer></script>
+  <script src="scripts/forms.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-fdm-header>
+    <div class="wrap">
+      <nav class="site-nav" aria-label="Primary" data-fdm-nav>
+        <a class="brand" href="#top" aria-label="Morrow home">
+          <span class="brand__mark" aria-hidden="true">M</span>
+          <span>Morrow<span class="brand__dot">.</span></span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-menu"
+          data-fdm-nav-toggle
+        >
+          <span>Menu</span>
+          <span class="nav-toggle__lines" aria-hidden="true"><span></span><span></span></span>
+        </button>
+
+        <ul class="nav-menu" id="primary-menu" data-fdm-nav-menu>
+          <li><a class="nav-link" href="#method">Method</a></li>
+          <li><a class="nav-link" href="#proof">Proof</a></li>
+          <li><a class="nav-link" href="#pricing">Pricing</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+
+        <a class="button button--primary nav-cta" href="#contact">Start a project <span class="arrow" aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" id="top" data-budget="1" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="hero__body grid">
+          <div class="hero__copy col-7" data-enter>
+            <p class="eyebrow">Studio operations · Lisbon &amp; remote</p>
+            <h1 class="hero-title" id="hero-title">Make good work <em>easier</em> to make.</h1>
+            <p class="lede mt-5">
+              Morrow is a small operations practice for design teams that would rather do fewer, better things. We tune the rhythm, the handoffs and the room around the work.
+            </p>
+            <div class="hero-actions">
+              <a class="button button--primary" href="#contact">Book a studio audit <span class="arrow" aria-hidden="true">→</span></a>
+              <a class="link-arrow" href="#method">Read the method <span class="arrow" aria-hidden="true">↓</span></a>
+            </div>
+            <dl class="hero-meta" data-enter>
+              <div>
+                <dt>Practice</dt>
+                <dd>Design operations</dd>
+              </div>
+              <div>
+                <dt>Team</dt>
+                <dd>Six senior partners</dd>
+              </div>
+              <div>
+                <dt>Availability</dt>
+                <dd>Two May slots</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="hero__aside col-5" data-enter>
+            <div class="hero-note">
+              <p class="mono">Studio note 018</p>
+              <p>Fewer meetings. Clearer decisions. More finished work.</p>
+            </div>
+
+            <div class="week" role="group" aria-labelledby="week-title">
+              <div class="week__head">
+                <p class="week__title" id="week-title">Week 18 — Studio</p>
+                <span class="badge">On track</span>
+              </div>
+              <div class="week__rows">
+                <div class="week__row">
+                  <span class="week__day">Mon 04</span>
+                  <div class="week__bar week__bar--short">Research sprint <span class="week__time">10:00</span></div>
+                </div>
+                <div class="week__row">
+                  <span class="week__day">Tue 05</span>
+                  <div class="week__bar">Client review <span class="week__time">11:30</span></div>
+                </div>
+                <div class="week__row">
+                  <span class="week__day">Wed 06</span>
+                  <div class="week__bar week__bar--accent">Quiet work <span class="week__time">All day</span></div>
+                </div>
+                <div class="week__row">
+                  <span class="week__day">Thu 07</span>
+                  <div class="week__bar week__bar--short week__bar--quiet">Handoff <span class="week__time">15:00</span></div>
+                </div>
+                <div class="week__row">
+                  <span class="week__day">Fri 08</span>
+                  <div class="week__bar week__bar--short">Close the loop <span class="week__time">16:00</span></div>
+                </div>
+              </div>
+              <div class="week__foot">
+                <div class="week__team">
+                  <span class="avatar">LO</span>
+                  <span class="avatar avatar--accent">JM</span>
+                  <span class="avatar">RK</span>
+                </div>
+                <p class="hero-caption">3 projects · 12 people</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ruled" id="method" data-budget="1" data-fdm-section aria-labelledby="method-title">
+      <div class="wrap">
+        <h2 id="method-title">A calmer system for ambitious work.</h2>
+        <div class="section-head">
+          <p class="lede">We do not add process for its own sake. We remove the friction that turns good work into a long week, then leave behind a rhythm your team can keep.</p>
+          <a class="link-arrow section-head__aside" href="#contact">Talk through your studio <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="grid">
+          <div class="col-4">
+            <article class="card" data-lift>
+              <div class="card__top">
+                <span class="badge badge--quiet">01 · Rhythm</span>
+                <span class="card__number" aria-hidden="true">A</span>
+              </div>
+              <h3 class="card__title">A week with edges.</h3>
+              <p class="card__body">Protected making time, fewer status meetings, and a review rhythm everyone can plan around. The calendar becomes a tool instead of a tax.</p>
+            </article>
+          </div>
+          <div class="col-4">
+            <article class="card" data-lift>
+              <div class="card__top">
+                <span class="badge badge--quiet">02 · Handoffs</span>
+                <span class="card__number" aria-hidden="true">B</span>
+              </div>
+              <h3 class="card__title">Nothing lost in between.</h3>
+              <p class="card__body">A short, shared language for briefs, decisions and feedback. Fewer revision loops because the important context arrives with the work.</p>
+            </article>
+          </div>
+          <div class="col-4">
+            <article class="card card--accent" data-lift>
+              <div class="card__top">
+                <span class="badge badge--quiet">03 · Room</span>
+                <span class="card__number" aria-hidden="true">C</span>
+              </div>
+              <h3 class="card__title">Space to do the work.</h3>
+              <p class="card__body">We help you protect capacity, say no with a clear reason, and keep the bar high without keeping the team late.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ruled" id="proof" data-budget="1" data-fdm-section aria-labelledby="proof-title">
+      <div class="wrap">
+        <h2 id="proof-title">Less churn. More finished work.</h2>
+        <p class="lede mt-4">A six-week engagement, measured with the teams who lived through it.</p>
+
+        <div class="proof-wrap">
+          <figure class="quote">
+            <blockquote>“Morrow gave us back the part of the week we had been giving away for years. The work got quieter and, somehow, sharper.”</blockquote>
+            <figcaption><strong>Lena Ortiz</strong> · Design Director, Aster</figcaption>
+          </figure>
+
+          <div class="proof-notes">
+            <p class="eyebrow">What changed</p>
+            <ul class="list list--checks">
+              <li>One review forum replaced four overlapping check-ins.</li>
+              <li>Briefs now carry decisions, constraints and a named owner.</li>
+              <li>Every project closes with a reusable handoff kit.</li>
+            </ul>
+            <ul class="logo-row mt-5">
+              <li>Aster</li>
+              <li>North &amp; Co</li>
+              <li>Kite</li>
+              <li>Field Office</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="stat-grid mt-7">
+          <div class="stat">
+            <span class="stat__value">42%</span>
+            <span class="stat__label">fewer revision rounds across three pilot teams</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">2.4×</span>
+            <span class="stat__label">faster from approved concept to production handoff</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">91%</span>
+            <span class="stat__label">of surveyed makers reported calmer working weeks</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ruled" id="pricing" data-budget="1" data-fdm-section aria-labelledby="pricing-title">
+      <div class="wrap">
+        <h2 id="pricing-title">Start with the room you have.</h2>
+        <div class="section-head">
+          <p class="lede">No long retainer required. Choose the level of support that fits the moment, then change it when the work changes.</p>
+          <p class="hero-caption section-head__aside">Prices in EUR · VAT excluded</p>
+        </div>
+
+        <div class="price-grid">
+          <article class="price-card">
+            <div class="price-card__head">
+              <span class="price-card__label">Audit</span>
+              <span class="badge badge--quiet">One-time</span>
+            </div>
+            <p class="price-card__price">€1,800</p>
+            <p class="price-card__note">A clear read on where the week is leaking.</p>
+            <ul class="list list--checks">
+              <li>Two-day studio observation</li>
+              <li>Workflow and handoff map</li>
+              <li>90-minute findings session</li>
+            </ul>
+            <a class="button button--secondary" href="#contact">Request an audit</a>
+          </article>
+
+          <article class="price-card price-card--featured">
+            <div class="price-card__head">
+              <span class="price-card__label">Studio rhythm</span>
+              <span class="badge badge--accent">Most chosen</span>
+            </div>
+            <p class="price-card__price">€3,600 <small>/ month</small></p>
+            <p class="price-card__note">Ongoing tuning for one design team.</p>
+            <ul class="list list--checks">
+              <li>Weekly operations partner</li>
+              <li>Review and handoff templates</li>
+              <li>Monthly capacity planning</li>
+            </ul>
+            <a class="button button--primary" href="#contact">Check availability</a>
+          </article>
+
+          <article class="price-card">
+            <div class="price-card__head">
+              <span class="price-card__label">Embedded</span>
+              <span class="badge badge--quiet">3 months</span>
+            </div>
+            <p class="price-card__price">€7,200 <small>/ month</small></p>
+            <p class="price-card__note">A partner inside the work, not beside it.</p>
+            <ul class="list list--checks">
+              <li>Two embedded days each week</li>
+              <li>Programme-level planning</li>
+              <li>Team coaching and rituals</li>
+            </ul>
+            <a class="button button--secondary" href="#contact">Start a conversation</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ruled section--compact" id="contact" data-budget="1" data-fdm-section aria-labelledby="contact-title">
+      <div class="wrap">
+        <h2 id="contact-title">Tell us what you are making.</h2>
+        <p class="lede mt-4">A short note is enough. We reply within two working days with a straight answer about fit and timing.</p>
+
+        <div class="contact-grid">
+          <div class="panel">
+            <form
+              class="form"
+              action="mailto:hello@morrow.example"
+              method="post"
+              enctype="text/plain"
+              novalidate
+              data-fdm-form
+              data-fdm-email="hello@morrow.example"
+            >
+              <div class="field-row">
+                <div class="field">
+                  <label class="field__label" for="name">Name</label>
+                  <input class="input" id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+                  <p class="field-error" id="name-error" data-fdm-error-for="name" hidden></p>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="email">Email</label>
+                  <input class="input" id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+                  <p class="field-error" id="email-error" data-fdm-error-for="email" hidden></p>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="project">What are you making? <span class="field__hint">Optional</span></label>
+                <input class="input" id="project" name="project" type="text" placeholder="A new identity, a product launch, a team reset">
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="message">A little context</label>
+                <textarea class="textarea" id="message" name="message" rows="4" required data-minlength="20" aria-describedby="message-hint message-error"></textarea>
+                <p class="field__hint" id="message-hint">A sentence about the team, the deadline and what feels stuck.</p>
+                <p class="field-error" id="message-error" data-fdm-error-for="message" hidden></p>
+              </div>
+
+              <div class="form-actions">
+                <button class="button button--primary" type="submit">Prepare the email <span class="arrow" aria-hidden="true">→</span></button>
+                <p class="form-note">Demo only · no data is sent or stored.</p>
+              </div>
+
+              <p class="form-status" role="status" aria-live="polite" data-fdm-form-status>No data leaves your browser in this demo.</p>
+            </form>
+          </div>
+
+          <aside class="contact-side" aria-labelledby="contact-side-title">
+            <h3 class="visually-hidden" id="contact-side-title">Other ways to reach Morrow</h3>
+
+            <div class="contact-detail">
+              <span class="contact-detail__label">Email</span>
+              <a href="mailto:hello@morrow.example">hello@morrow.example</a>
+              <small class="muted">For new work and speaking.</small>
+            </div>
+
+            <div class="contact-detail">
+              <span class="contact-detail__label">Studio hours</span>
+              <span>Monday–Friday, 09:00–17:00 WET</span>
+              <span
+                class="hours-status"
+                data-fdm-hours
+                data-open-hour="9"
+                data-close-hour="17"
+                data-days="1,2,3,4,5"
+                data-time-zone="Europe/Lisbon"
+              ><span data-fdm-hours-status>Checking local time…</span></span>
+            </div>
+
+            <div class="contact-detail">
+              <span class="contact-detail__label">Based in</span>
+              <span>Rua da Boavista 84, Lisbon</span>
+              <small class="muted">Working with teams across Europe and North America.</small>
+            </div>
+
+            <div class="faq contact-faq">
+              <details>
+                <summary>How quickly can we start? <span class="faq__icon" aria-hidden="true"></span></summary>
+                <p class="faq__body">Most audits begin within three weeks. Longer engagements are planned around your next natural project boundary.</p>
+              </details>
+              <details>
+                <summary>Do you work with in-house teams? <span class="faq__icon" aria-hidden="true"></span></summary>
+                <p class="faq__body">Yes. The best fit is an in-house design or product team with real work in motion and enough authority to change how it runs.</p>
+              </details>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-fdm-section aria-labelledby="footer-title">
+    <div class="wrap">
+      <h2 class="visually-hidden" id="footer-title">Morrow site footer</h2>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="#top" aria-label="Morrow home">
+            <span class="brand__mark" aria-hidden="true">M</span>
+            <span>Morrow<span class="brand__dot">.</span></span>
+          </a>
+          <p>A studio operations practice for people who care how the work gets made.</p>
+          <p><a href="mailto:hello@morrow.example">hello@morrow.example</a></p>
+        </div>
+
+        <nav aria-label="Footer">
+          <p class="footer-heading">Studio</p>
+          <ul class="footer-links">
+            <li><a href="#method">Method</a></li>
+            <li><a href="#proof">Proof</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <p class="footer-heading">Elsewhere</p>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@morrow.example?subject=Studio%20notes">Studio notes</a></li>
+            <li><a href="#top">Back to top <span class="arrow" aria-hidden="true">↑</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-base">
+        <p>© 2026 Morrow Studio. Fictional demo content.</p>
+        <details class="credits">
+          <summary>Credits &amp; notes</summary>
+          <p>Typefaces: Fraunces and DM Sans, linked here as an example. All other artwork, interface details and copy are original to this starter. No remote imagery is used. This page is a demonstration, not a live service.</p>
+        </details>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

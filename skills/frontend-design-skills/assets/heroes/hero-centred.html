@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Morrow studio hero — centred composition.">
+  <title>Morrow — The week is the work</title>
+  <link rel="stylesheet" href="../starter/styles/tokens.css">
+  <link rel="stylesheet" href="../starter/styles/base.css">
+  <link rel="stylesheet" href="../starter/styles/layout.css">
+  <link rel="stylesheet" href="../starter/styles/components.css">
+  <link rel="stylesheet" href="../starter/styles/motion.css">
+  <script src="../starter/scripts/motion.js" defer></script>
+  <style>
+    .centred-hero {
+      justify-content: flex-start;
+      padding-block: calc(var(--header-h) + var(--space-4)) var(--space-3);
+      background: var(--paper);
+    }
+
+    .centred-copy {
+      width: min(100%, 58rem);
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .centred-copy .eyebrow {
+      justify-content: center;
+    }
+
+    .centred-title {
+      max-width: 15ch;
+      margin: var(--space-4) auto 0;
+      font-size: clamp(3.5rem, 8vw, 8rem);
+      line-height: 0.88;
+    }
+
+    .centred-title em {
+      color: var(--accent);
+      font-weight: 400;
+    }
+
+    .centred-copy .lede {
+      max-width: 46ch;
+      margin: var(--space-4) auto 0;
+    }
+
+    .centred-copy .hero-actions {
+      justify-content: center;
+      margin-block-start: var(--space-5);
+    }
+
+    .centred-meta {
+      display: flex;
+      margin-block-start: var(--space-5);
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2) var(--space-5);
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: var(--text-2xs);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .centred-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .centred-meta span::before {
+      width: 0.25rem;
+      height: 0.25rem;
+      border-radius: 50%;
+      background: var(--line-strong);
+      content: "";
+    }
+
+    .panorama {
+      width: 100%;
+      margin: clamp(1.5rem, 4vh, 2.5rem) auto 0;
+      border: var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      overflow: hidden;
+    }
+
+    .panorama__art {
+      position: relative;
+      height: min(21svh, 16rem);
+      min-height: 9rem;
+      overflow: hidden;
+      background: #d7cbb7;
+    }
+
+    .panorama__art svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .panorama__art::after {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgb(25 33 27 / 0.18), transparent 24%, transparent 76%, rgb(25 33 27 / 0.18));
+      content: "";
+      pointer-events: none;
+    }
+
+    .panorama figcaption {
+      display: flex;
+      padding: var(--space-2) var(--space-4);
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      border-block-start: var(--border);
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 640px) {
+      .centred-title {
+        font-size: clamp(3.2rem, 15vw, 5rem);
+      }
+
+      .centred-meta {
+        display: none;
+      }
+
+      .panorama__art {
+        height: 20svh;
+      }
+
+      .panorama figcaption span:first-child {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="demo-header">
+    <div class="wrap">
+      <nav class="demo-nav" aria-label="Primary">
+        <a class="brand" href="../starter/index.html" aria-label="Morrow home">
+          <span class="brand__mark" aria-hidden="true">M</span>
+          <span>Morrow<span class="brand__dot">.</span></span>
+        </a>
+        <div class="demo-links">
+          <a href="../starter/index.html#method">How we work</a>
+          <a class="button button--primary button--small" href="../starter/index.html#contact">Book an audit</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero centred-hero" data-budget="1" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="centred-copy" data-enter>
+          <p class="eyebrow">A calmer studio, by design</p>
+          <h1 class="centred-title" id="hero-title">The week is the <em>work</em>.</h1>
+          <p class="lede">Morrow helps design teams protect their attention, make decisions once, and end the week with something finished.</p>
+          <div class="hero-actions">
+            <a class="button button--primary" href="../starter/index.html#contact">Book a studio audit <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="button button--secondary" href="../starter/index.html#method">See the method</a>
+          </div>
+          <div class="centred-meta">
+            <span>Six-week engagement</span>
+            <span>Remote or in Lisbon</span>
+            <span>Two slots this quarter</span>
+          </div>
+        </div>
+
+        <figure class="panorama" data-enter>
+          <div class="panorama__art">
+            <svg viewBox="0 0 1600 420" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Wide illustration of a calm studio with long desks, plants and tall windows">
+              <rect width="1600" height="420" fill="#d7cbb7"/>
+              <rect y="0" width="1600" height="310" fill="#e8dfcf"/>
+              <path d="M0 310h1600" stroke="#19211b" stroke-width="4"/>
+              <path d="M0 312h1600v108H0Z" fill="#c6b79e"/>
+              <path d="M70 58h260v252H70Z" fill="#f4f1e8"/>
+              <path d="M92 80h216v208H92Z" fill="#a9c1b4"/>
+              <path d="M200 80v208M92 184h216" stroke="#f4f1e8" stroke-width="8"/>
+              <path d="M420 58h260v252H420Z" fill="#f4f1e8"/>
+              <path d="M442 80h216v208H442Z" fill="#9fb3a6"/>
+              <path d="M550 80v208M442 184h216" stroke="#f4f1e8" stroke-width="8"/>
+              <path d="M1190 58h340v252h-340Z" fill="#f4f1e8"/>
+              <path d="M1216 80h288v208h-288Z" fill="#c7b99f"/>
+              <path d="M1360 80v208M1216 184h288" stroke="#f4f1e8" stroke-width="8"/>
+              <path d="M330 310V206h170v104" fill="#1f513f"/>
+              <path d="M348 310v-86h134v86" fill="#2f6b56"/>
+              <path d="M520 310v-78M564 310v-78" stroke="#19211b" stroke-width="5"/>
+              <path d="M760 310v-74h420v74" fill="#19211b"/>
+              <path d="M730 258h480v52H730Z" fill="#f4f1e8"/>
+              <path d="M750 258v-20h92v20M1040 258v-20h92v20" fill="#df5438"/>
+              <path d="M808 278h60M928 278h60M1048 278h44" stroke="#19211b" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="1160" cy="258" r="14" fill="#df5438"/>
+              <path d="M1118 310V194h84v116" fill="#e8dfcf"/>
+              <path d="M1140 310v-82h40v82" fill="#1f513f"/>
+              <path d="M58 310c22-34 54-34 76 0M144 310c22-34 54-34 76 0" fill="none" stroke="#1f513f" stroke-width="6"/>
+              <path d="M1308 310v-58c0-16 13-29 29-29h29" fill="none" stroke="#19211b" stroke-width="4"/>
+              <circle cx="1308" cy="310" r="12" fill="#df5438"/>
+              <path d="M0 388h1600M0 410h1600" stroke="#a38f72" stroke-width="2"/>
+              <rect x="660" y="344" width="440" height="44" fill="#1f513f"/>
+              <path d="M684 366h150M876 366h80" stroke="#e8dfcf" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <figcaption>
+            <span>The studio floor, Tuesday morning</span>
+            <span>Morrow / Lisbon</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

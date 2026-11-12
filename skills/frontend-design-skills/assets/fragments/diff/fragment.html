@@ -1,0 +1,84 @@
+<div class="ui ui-diff" data-fdm-ui="diff">
+  <header class="ui-top">
+    <div>
+      <p class="ui-eyebrow">Pull request #482</p>
+      <h1 class="ui-title">Harden retry backoff for upload jobs</h1>
+      <p class="ui-sub">Replaces the fixed retry delay with capped exponential backoff and jitter.</p>
+    </div>
+    <div class="ui-actions">
+      <button type="button" class="ui-btn" data-request-changes>Request changes</button>
+      <button type="button" class="ui-btn ui-btn-primary" data-accept>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7"/></svg>
+        Accept changes
+      </button>
+    </div>
+  </header>
+
+  <p class="ui-visually-hidden" role="status" data-diff-status></p>
+
+  <div class="df-meta">
+    <div class="df-author">
+      <span class="ui-avatar" aria-hidden="true">AF</span>
+      <div><strong>Amina Farouk</strong><span>opened 2 hours ago · 3 commits</span></div>
+    </div>
+    <div class="df-branch">
+      <span class="df-branch-name">fix/upload-retry</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      <span class="df-branch-name">main</span>
+    </div>
+    <span class="ui-badge ui-badge-accent"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7"/></svg> 3 checks passed</span>
+  </div>
+
+  <article class="df-file" aria-labelledby="df-file-title">
+    <div class="df-file-head">
+      <div class="df-file-name">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3.5h7l5 5v12H6v-17Z"/><path d="M13 3.5v5h5"/></svg>
+        <h2 id="df-file-title">src/jobs/retry.ts</h2>
+        <span class="ui-badge">TypeScript</span>
+      </div>
+      <div class="df-stat" aria-label="18 lines added, 6 lines removed">
+        <span class="df-add-stat">+18</span><span class="df-del-stat">−6</span>
+      </div>
+    </div>
+
+    <div class="df-code" tabindex="0" role="region" aria-label="Code diff for src/jobs/retry.ts">
+      <div class="df-hunk">@@ -18,9 +18,15 @@ export async function retryUpload(job: UploadJob, attempt = 0): Promise&lt;Result&gt; {</div>
+      <ol class="df-lines">
+        <li class="df-ctx"><span class="df-num">18</span><span class="df-sign" aria-hidden="true"></span><code>const bucket = await limiter.take(job.key);</code></li>
+        <li class="df-ctx"><span class="df-num">19</span><span class="df-sign" aria-hidden="true"></span><code>if (bucket.allowed) return upload(job);</code></li>
+        <li class="df-ctx"><span class="df-num">20</span><span class="df-sign" aria-hidden="true"></span><code></code></li>
+        <li class="df-del"><span class="df-num">21</span><span class="df-sign" aria-hidden="true">−</span><code>if (attempt &gt;= 3) {</code><span class="ui-visually-hidden">Removed line:</span></li>
+        <li class="df-del"><span class="df-num">22</span><span class="df-sign" aria-hidden="true">−</span><code>  throw new Error("retry limit reached");</code></li>
+        <li class="df-del"><span class="df-num">23</span><span class="df-sign" aria-hidden="true">−</span><code>}</code></li>
+        <li class="df-del"><span class="df-num">24</span><span class="df-sign" aria-hidden="true">−</span><code>await sleep(750);</code></li>
+        <li class="df-del"><span class="df-num">25</span><span class="df-sign" aria-hidden="true">−</span><code>return retryUpload(job, attempt + 1);</code></li>
+        <li class="df-del"><span class="df-num">26</span><span class="df-sign" aria-hidden="true">−</span><code></code></li>
+        <li class="df-add"><span class="df-num">21</span><span class="df-sign" aria-hidden="true">+</span><code>const ceiling = Math.min(2 ** attempt * 250, 4_000);</code><span class="ui-visually-hidden">Added line:</span></li>
+        <li class="df-add"><span class="df-num">22</span><span class="df-sign" aria-hidden="true">+</span><code>const jitter = Math.round(Math.random() * 120);</code></li>
+        <li class="df-add"><span class="df-num">23</span><span class="df-sign" aria-hidden="true">+</span><code>await sleep(ceiling + jitter);</code></li>
+        <li class="df-add"><span class="df-num">24</span><span class="df-sign" aria-hidden="true">+</span><code></code></li>
+        <li class="df-add"><span class="df-num">25</span><span class="df-sign" aria-hidden="true">+</span><code>if (attempt &gt;= 5) {</code></li>
+        <li class="df-add"><span class="df-num">26</span><span class="df-sign" aria-hidden="true">+</span><code>  throw new RetryLimitError(job.id, attempt);</code></li>
+        <li class="df-add"><span class="df-num">27</span><span class="df-sign" aria-hidden="true">+</span><code>}</code></li>
+        <li class="df-add"><span class="df-num">28</span><span class="df-sign" aria-hidden="true">+</span><code>return retryUpload(job, attempt + 1);</code></li>
+      </ol>
+    </div>
+    <div class="df-file-foot">
+      <span>Viewed 3 of 4 changed files</span>
+      <div class="df-nav">
+        <button type="button" class="ui-btn ui-btn-ghost" aria-label="Previous changed file">Previous</button>
+        <button type="button" class="ui-btn ui-btn-ghost" aria-label="Next changed file">Next file</button>
+      </div>
+    </div>
+  </article>
+
+  <section class="df-comment" aria-labelledby="df-comment-title">
+    <div class="df-comment-head">
+      <span class="ui-avatar ui-avatar-warm" aria-hidden="true">PR</span>
+      <div><h2 id="df-comment-title">Priya Raman</h2><p>Reviewer · 48 minutes ago</p></div>
+      <span class="ui-badge ui-badge-warn">Resolved</span>
+    </div>
+    <p>The cap at four seconds protects the worker pool without hiding a failing upload. Jitter should smooth the retry spike we saw on Tuesday.</p>
+    <p class="df-comment-note">Suggestion: log the final attempt count when <code>RetryLimitError</code> is thrown.</p>
+  </section>
+</div>

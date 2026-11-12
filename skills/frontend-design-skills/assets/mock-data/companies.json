@@ -1,0 +1,242 @@
+{
+  "meta": {
+    "dataset": "companies",
+    "count": 10,
+    "workspace": "Meridian Labs",
+    "updated": "2026-11-10",
+    "currency": "USD",
+    "notice": "Fictional records created for interface demonstrations. Names, companies and figures are invented."
+  },
+  "companies": [
+    {
+      "id": "com_01",
+      "name": "Larkspur Studio",
+      "domain": "larkspurstudio.example",
+      "industry": "Design and brand consultancy",
+      "employees": 46,
+      "hq": {
+        "city": "Portland",
+        "country": "United States"
+      },
+      "founded": 2017,
+      "stage": "agency",
+      "arr": 38400,
+      "health": "healthy",
+      "ownerId": "per_05",
+      "customerSince": "2023-02-01",
+      "tags": [
+        "design",
+        "retainer",
+        "multi-seat"
+      ],
+      "summary": "A brand studio using shared review boards for client identity work."
+    },
+    {
+      "id": "com_02",
+      "name": "Northwind Freight",
+      "domain": "northwindfreight.example",
+      "industry": "Logistics",
+      "employees": 820,
+      "hq": {
+        "city": "Rotterdam",
+        "country": "Netherlands"
+      },
+      "founded": 2009,
+      "stage": "enterprise",
+      "arr": 132000,
+      "health": "watch",
+      "ownerId": "per_11",
+      "customerSince": "2021-06-15",
+      "tags": [
+        "enterprise",
+        "compliance",
+        "api"
+      ],
+      "summary": "Regional freight operator coordinating depot handovers and exception reports."
+    },
+    {
+      "id": "com_03",
+      "name": "Aster Health",
+      "domain": "asterhealth.example",
+      "industry": "Outpatient clinics",
+      "employees": 310,
+      "hq": {
+        "city": "Manchester",
+        "country": "United Kingdom"
+      },
+      "founded": 2014,
+      "stage": "growth",
+      "arr": 57600,
+      "health": "healthy",
+      "ownerId": "per_05",
+      "customerSince": "2022-09-12",
+      "tags": [
+        "healthcare",
+        "sso",
+        "onboarding"
+      ],
+      "summary": "A clinic network standardising intake checklists across twelve sites."
+    },
+    {
+      "id": "com_04",
+      "name": "Cobalt Row",
+      "domain": "cobaltrow.example",
+      "industry": "Financial software",
+      "employees": 155,
+      "hq": {
+        "city": "Toronto",
+        "country": "Canada"
+      },
+      "founded": 2019,
+      "stage": "growth",
+      "arr": 94800,
+      "health": "healthy",
+      "ownerId": "per_11",
+      "customerSince": "2022-04-04",
+      "tags": [
+        "fintech",
+        "security review",
+        "annual"
+      ],
+      "summary": "Reconciliation tooling team with strict audit and retention requirements."
+    },
+    {
+      "id": "com_05",
+      "name": "Fernway Schools",
+      "domain": "fernwayschools.example",
+      "industry": "Education",
+      "employees": 240,
+      "hq": {
+        "city": "Melbourne",
+        "country": "Australia"
+      },
+      "founded": 2011,
+      "stage": "public sector",
+      "arr": 21600,
+      "health": "watch",
+      "ownerId": "per_05",
+      "customerSince": "2023-01-23",
+      "tags": [
+        "education",
+        "procurement",
+        "seasonal"
+      ],
+      "summary": "A cluster of independent schools sharing curriculum planning templates."
+    },
+    {
+      "id": "com_06",
+      "name": "Harborlight Energy",
+      "domain": "harborlightenergy.example",
+      "industry": "Renewable energy",
+      "employees": 610,
+      "hq": {
+        "city": "Copenhagen",
+        "country": "Denmark"
+      },
+      "founded": 2008,
+      "stage": "enterprise",
+      "arr": 168000,
+      "health": "healthy",
+      "ownerId": "per_11",
+      "customerSince": "2020-11-30",
+      "tags": [
+        "enterprise",
+        "field teams",
+        "offline"
+      ],
+      "summary": "Offshore maintenance planners tracking permits and site inspections."
+    },
+    {
+      "id": "com_07",
+      "name": "Juniper & Vale",
+      "domain": "juniperandvale.example",
+      "industry": "Specialty retail",
+      "employees": 92,
+      "hq": {
+        "city": "Austin",
+        "country": "United States"
+      },
+      "founded": 2016,
+      "stage": "small business",
+      "arr": 7200,
+      "health": "at-risk",
+      "ownerId": "per_05",
+      "customerSince": "2023-08-08",
+      "tags": [
+        "retail",
+        "seasonal",
+        "downgrade risk"
+      ],
+      "summary": "A twelve-store retailer trialling inventory checklists before peak season."
+    },
+    {
+      "id": "com_08",
+      "name": "Kestrel Robotics",
+      "domain": "kestrelrobotics.example",
+      "industry": "Industrial automation",
+      "employees": 430,
+      "hq": {
+        "city": "Seoul",
+        "country": "South Korea"
+      },
+      "founded": 2015,
+      "stage": "enterprise",
+      "arr": 112800,
+      "health": "healthy",
+      "ownerId": "per_11",
+      "customerSince": "2021-03-08",
+      "tags": [
+        "manufacturing",
+        "api",
+        "integration"
+      ],
+      "summary": "Assembly line engineers logging calibration runs and incident notes."
+    },
+    {
+      "id": "com_09",
+      "name": "Mosaic Books",
+      "domain": "mosaicbooks.example",
+      "industry": "Publishing",
+      "employees": 68,
+      "hq": {
+        "city": "Lisbon",
+        "country": "Portugal"
+      },
+      "founded": 2012,
+      "stage": "small business",
+      "arr": 14400,
+      "health": "healthy",
+      "ownerId": "per_05",
+      "customerSince": "2023-04-19",
+      "tags": [
+        "publishing",
+        "editorial",
+        "templates"
+      ],
+      "summary": "An independent publisher coordinating editorial calendars and proofs."
+    },
+    {
+      "id": "com_10",
+      "name": "Terrace Foods",
+      "domain": "terracefoods.example",
+      "industry": "Food distribution",
+      "employees": 275,
+      "hq": {
+        "city": "Nairobi",
+        "country": "Kenya"
+      },
+      "founded": 2013,
+      "stage": "growth",
+      "arr": 45600,
+      "health": "watch",
+      "ownerId": "per_11",
+      "customerSince": "2022-07-11",
+      "tags": [
+        "distribution",
+        "mobile",
+        "training"
+      ],
+      "summary": "Cold-chain distributor rolling out mobile stock counts to field agents."
+    }
+  ]
+}

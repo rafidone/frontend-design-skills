@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "note": "Local copies of the library photographs selected for this build. Verify with assets.mjs verify.",
+  "assets": [
+    {
+      "id": "service-clinic",
+      "class": "photo",
+      "title": "Clinic Waiting Room",
+      "path": "assets/photos/service-clinic.webp",
+      "source": "https://live.staticflickr.com/65535/33789221398_63e87748af_b.jpg",
+      "library": "Flickr via Openverse",
+      "author": "Ian Livesey",
+      "license": "Public Domain Mark 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "added": "2026-11-12",
+      "expires": null,
+      "credit_required": false,
+      "alt": "A calm clinic waiting area with pale chairs and a wide window.",
+      "subject": "Clinic waiting room with pale seating and daylight.",
+      "tags": [
+        "service",
+        "service-clinic",
+        "clinic",
+        "interior"
+      ],
+      "notes": "Cropped and re-encoded as WebP.",
+      "width": 1024,
+      "height": 684,
+      "bytes": 188984,
+      "sha256": "4bfb42c017f38c16549ec009d8df0fd23d104dcef8a5c8bcbe6b55a455fcc39e"
+    }
+  ]
+}

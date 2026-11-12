@@ -1,0 +1,88 @@
+<div class="ui ui-invoice" data-fdm-ui="invoice">
+  <header class="ui-top">
+    <div class="inv-brand">
+      <span class="inv-mark" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19V7.5L12 4l7 3.5V19"/><path d="M8.5 19v-5h7v5M8.5 10h7"/></svg>
+      </span>
+      <div><strong>Larkspur Studio</strong><span>Independent product design</span></div>
+    </div>
+    <div class="ui-actions">
+      <button type="button" class="ui-btn" data-print><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 8V4h10v4M7 17H4V9h16v8h-3"/><rect x="7" y="14" width="10" height="7" rx="1"/></svg> Print</button>
+      <button type="button" class="ui-btn ui-btn-primary" data-send>Send invoice</button>
+    </div>
+  </header>
+
+  <p class="ui-visually-hidden" role="status" data-inv-status></p>
+
+  <article class="inv-paper" aria-labelledby="inv-title">
+    <div class="inv-head">
+      <div>
+        <p class="ui-eyebrow">Invoice</p>
+        <h1 class="ui-title" id="inv-title">INV-2041</h1>
+        <p class="inv-status"><span class="ui-badge ui-badge-warm">Due in 7 days</span> <span>Issued Nov 2, 2026</span></p>
+      </div>
+      <div class="inv-dates">
+        <dl><dt>Issue date</dt><dd>Nov 2, 2026</dd></dl>
+        <dl><dt>Due date</dt><dd>Nov 16, 2026</dd></dl>
+        <dl><dt>Terms</dt><dd>Net 14</dd></dl>
+      </div>
+    </div>
+
+    <div class="inv-parties">
+      <section aria-labelledby="inv-from">
+        <h2 id="inv-from">From</h2>
+        <p><strong>Larkspur Studio Ltd.</strong><br>8 Admiralty Walk<br>London SE8 4QT<br>United Kingdom</p>
+        <p class="inv-contact">accounts@larkspur-studio.example</p>
+      </section>
+      <section aria-labelledby="inv-bill">
+        <h2 id="inv-bill">Bill to</h2>
+        <p><strong>Meridian Labs</strong><br>14 Riverside Drive<br>Nairobi 00100<br>Kenya</p>
+        <p class="inv-contact">Attn: Nadia Otieno · Finance</p>
+      </section>
+      <section aria-labelledby="inv-project">
+        <h2 id="inv-project">Project</h2>
+        <p><strong>Workspace design retainer</strong><br>November 2026<br>PO-8842</p>
+        <p class="inv-contact">Project lead: Amina Farouk</p>
+      </section>
+    </div>
+
+    <div class="inv-items">
+      <table>
+        <caption class="ui-visually-hidden">Invoice line items for November 2026</caption>
+        <thead><tr><th scope="col">Description</th><th scope="col">Qty</th><th scope="col">Rate</th><th scope="col">Amount</th></tr></thead>
+        <tbody>
+          <tr>
+            <th scope="row"><strong>Product design retainer</strong><span>November · 1 day per week</span></th>
+            <td>1</td><td>$6,800.00</td><td>$6,800.00</td>
+          </tr>
+          <tr>
+            <th scope="row"><strong>Design system audit</strong><span>Token review, component inventory, written findings</span></th>
+            <td>12 hrs</td><td>$145.00</td><td>$1,740.00</td>
+          </tr>
+          <tr>
+            <th scope="row"><strong>Prototype build</strong><span>Compact card and saved-view flows</span></th>
+            <td>8 hrs</td><td>$160.00</td><td>$1,280.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="inv-totals">
+      <div class="inv-note">
+        <h2>Payment note</h2>
+        <p>Pay by ACH or card using invoice <strong>INV-2041</strong>. Bank details are available on the secure payment page. Please include the invoice number with the transfer.</p>
+        <p class="inv-fine">Late payments accrue 1.5% monthly after the due date. Questions? Reply to accounts@larkspur-studio.example.</p>
+      </div>
+      <dl class="inv-total-list">
+        <div><dt>Subtotal</dt><dd>$9,820.00</dd></div>
+        <div><dt>Tax <span>8.5%</span></dt><dd>$834.70</dd></div>
+        <div class="inv-grand"><dt>Total due</dt><dd>$10,654.70</dd></div>
+      </dl>
+    </div>
+
+    <footer class="inv-foot">
+      <span>Larkspur Studio Ltd. · Company 11840277 · VAT GB 372 1948 06</span>
+      <span>Payment reference: INV-2041</span>
+    </footer>
+  </article>
+</div>

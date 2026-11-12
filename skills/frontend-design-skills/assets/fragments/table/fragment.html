@@ -1,0 +1,112 @@
+<div class="ui ui-table" data-fdm-ui="table">
+  <header class="ui-top">
+    <div>
+      <p class="ui-eyebrow">Finance</p>
+      <h1 class="ui-title">Invoices</h1>
+      <p class="ui-sub">18 invoices this quarter · $48,290.40 collected · 2 need attention.</p>
+    </div>
+    <div class="ui-actions">
+      <button type="button" class="ui-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg> Filter</button>
+      <button type="button" class="ui-btn ui-btn-primary" data-export-invoices><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg> Export</button>
+    </div>
+  </header>
+
+  <p class="ui-visually-hidden" role="status" data-tbl-status></p>
+
+  <section class="tbl-panel" aria-labelledby="tbl-title">
+    <div class="tbl-toolbar">
+      <div>
+        <h2 class="ui-panel-title" id="tbl-title">All invoices</h2>
+        <p class="tbl-kicker">Showing 6 of 18 · Updated Nov 9, 2026</p>
+      </div>
+      <div class="tbl-tools">
+        <div class="ui-search tbl-search">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.4 15.4 4.1 4.1"/></svg>
+          <label class="ui-visually-hidden" for="tbl-filter">Filter invoices</label>
+          <input id="tbl-filter" type="search" placeholder="Filter invoices…" data-table-filter>
+        </div>
+        <label class="ui-visually-hidden" for="tbl-status">Filter by status</label>
+        <select id="tbl-status" class="tbl-select" data-status-filter>
+          <option value="all">All statuses</option>
+          <option value="Paid">Paid</option>
+          <option value="Pending">Pending</option>
+          <option value="Overdue">Overdue</option>
+          <option value="Draft">Draft</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="tbl-scroll">
+      <table class="tbl-table">
+        <caption class="ui-visually-hidden">Invoices with client, status, issue date, due date and amount in US dollars</caption>
+        <thead>
+          <tr>
+            <th scope="col" aria-sort="none"><button type="button" class="tbl-sort" data-sort="invoice">Invoice <span aria-hidden="true">↕</span></button></th>
+            <th scope="col" aria-sort="none"><button type="button" class="tbl-sort" data-sort="client">Client <span aria-hidden="true">↕</span></button></th>
+            <th scope="col" aria-sort="none"><button type="button" class="tbl-sort" data-sort="status">Status <span aria-hidden="true">↕</span></button></th>
+            <th scope="col" aria-sort="none"><button type="button" class="tbl-sort" data-sort="issued">Issued <span aria-hidden="true">↕</span></button></th>
+            <th scope="col" aria-sort="none"><button type="button" class="tbl-sort" data-sort="due">Due <span aria-hidden="true">↕</span></button></th>
+            <th scope="col" class="tbl-num" aria-sort="none"><button type="button" class="tbl-sort" data-sort="amount">Amount (USD) <span aria-hidden="true">↕</span></button></th>
+            <th scope="col"><span class="ui-visually-hidden">Actions</span></th>
+          </tr>
+        </thead>
+        <tbody data-table-body>
+          <tr data-invoice="INV-2041" data-client="Meridian Labs" data-status="Paid" data-issued="2026-11-02" data-due="2026-11-16" data-amount="10654.70">
+            <th scope="row"><a href="#invoice-2041">INV-2041</a></th>
+            <td><span class="tbl-client"><span class="ui-avatar" aria-hidden="true">ML</span> Meridian Labs</span></td>
+            <td><span class="ui-badge ui-badge-accent">Paid</span></td>
+            <td>Nov 2, 2026</td><td>Nov 16, 2026</td><td class="tbl-num">$10,654.70</td>
+            <td><button type="button" class="ui-icon-btn tbl-more" aria-label="Actions for invoice INV-2041">···</button></td>
+          </tr>
+          <tr data-invoice="INV-2038" data-client="Northline Studio" data-status="Pending" data-issued="2026-10-28" data-due="2026-11-11" data-amount="3240.00">
+            <th scope="row"><a href="#invoice-2038">INV-2038</a></th>
+            <td><span class="tbl-client"><span class="ui-avatar ui-avatar-warm" aria-hidden="true">NS</span> Northline Studio</span></td>
+            <td><span class="ui-badge ui-badge-warm">Pending</span></td>
+            <td>Oct 28, 2026</td><td>Nov 11, 2026</td><td class="tbl-num">$3,240.00</td>
+            <td><button type="button" class="ui-icon-btn tbl-more" aria-label="Actions for invoice INV-2038">···</button></td>
+          </tr>
+          <tr data-invoice="INV-2035" data-client="Brightwell Health" data-status="Overdue" data-issued="2026-10-14" data-due="2026-10-28" data-amount="5120.50">
+            <th scope="row"><a href="#invoice-2035">INV-2035</a></th>
+            <td><span class="tbl-client"><span class="ui-avatar" aria-hidden="true">BH</span> Brightwell Health</span></td>
+            <td><span class="ui-badge ui-badge-danger">Overdue</span></td>
+            <td>Oct 14, 2026</td><td>Oct 28, 2026</td><td class="tbl-num">$5,120.50</td>
+            <td><button type="button" class="ui-icon-btn tbl-more" aria-label="Actions for invoice INV-2035">···</button></td>
+          </tr>
+          <tr data-invoice="INV-2031" data-client="Copperline" data-status="Paid" data-issued="2026-10-07" data-due="2026-10-21" data-amount="8940.00">
+            <th scope="row"><a href="#invoice-2031">INV-2031</a></th>
+            <td><span class="tbl-client"><span class="ui-avatar ui-avatar-warm" aria-hidden="true">CL</span> Copperline</span></td>
+            <td><span class="ui-badge ui-badge-accent">Paid</span></td>
+            <td>Oct 7, 2026</td><td>Oct 21, 2026</td><td class="tbl-num">$8,940.00</td>
+            <td><button type="button" class="ui-icon-btn tbl-more" aria-label="Actions for invoice INV-2031">···</button></td>
+          </tr>
+          <tr data-invoice="INV-2028" data-client="Fieldnote Learning" data-status="Draft" data-issued="2026-10-02" data-due="2026-10-16" data-amount="2760.00">
+            <th scope="row"><a href="#invoice-2028">INV-2028</a></th>
+            <td><span class="tbl-client"><span class="ui-avatar" aria-hidden="true">FL</span> Fieldnote Learning</span></td>
+            <td><span class="ui-badge">Draft</span></td>
+            <td>Oct 2, 2026</td><td>Oct 16, 2026</td><td class="tbl-num">$2,760.00</td>
+            <td><button type="button" class="ui-icon-btn tbl-more" aria-label="Actions for invoice INV-2028">···</button></td>
+          </tr>
+          <tr data-invoice="INV-2024" data-client="Harborview Foods" data-status="Paid" data-issued="2026-09-24" data-due="2026-10-08" data-amount="6180.00">
+            <th scope="row"><a href="#invoice-2024">INV-2024</a></th>
+            <td><span class="tbl-client"><span class="ui-avatar ui-avatar-warm" aria-hidden="true">HF</span> Harborview Foods</span></td>
+            <td><span class="ui-badge ui-badge-accent">Paid</span></td>
+            <td>Sep 24, 2026</td><td>Oct 8, 2026</td><td class="tbl-num">$6,180.00</td>
+            <td><button type="button" class="ui-icon-btn tbl-more" aria-label="Actions for invoice INV-2024">···</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="tbl-empty" data-table-empty hidden>No invoices match this filter.</p>
+    <div class="tbl-foot">
+      <span data-table-count>6 invoices</span>
+      <div class="tbl-pages" aria-label="Invoice pages">
+        <button type="button" class="ui-btn tbl-page" disabled>Previous</button>
+        <span class="tbl-page-current" aria-current="page">1</span>
+        <button type="button" class="ui-btn tbl-page">2</button>
+        <button type="button" class="ui-btn tbl-page">3</button>
+        <button type="button" class="ui-btn tbl-page">Next</button>
+      </div>
+    </div>
+  </section>
+</div>

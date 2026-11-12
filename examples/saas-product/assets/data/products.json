@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "dataset": "products",
+    "count": 8,
+    "workspace": "Meridian Labs",
+    "updated": "2026-11-10",
+    "currency": "USD",
+    "notice": "Fictional records created for interface demonstrations. Names, companies and figures are invented."
+  },
+  "products": [
+    {
+      "id": "prd_01",
+      "sku": "MER-WS-TEAM",
+      "name": "Meridian Workspace",
+      "category": "Platform",
+      "summary": "Shared projects, docs and review threads for product teams.",
+      "price": {
+        "amount": 24,
+        "currency": "USD",
+        "unit": "seat",
+        "interval": "month"
+      },
+      "annualDiscount": 0.16,
+      "seatsIncluded": 1,
+      "status": "available",
+      "features": [
+        "Unlimited projects",
+        "Review threads",
+        "Guest access",
+        "Version history"
+      ],
+      "updated": "2026-10-02"
+    },
+    {
+      "id": "prd_02",
+      "sku": "MER-IN-GROWTH",
+      "name": "Meridian Insights",
+      "category": "Analytics",
+      "summary": "Funnels, retention cohorts and source reporting for growth teams.",
+      "price": {
+        "amount": 79,
+        "currency": "USD",
+        "unit": "workspace",
+        "interval": "month"
+      },
+      "annualDiscount": 0.16,
+      "seatsIncluded": 10,
+      "status": "available",
+      "features": [
+        "Cohort explorer",
+        "Saved views",
+        "CSV export",
+        "Weekly digest"
+      ],
+      "updated": "2026-09-18"
+    },
+    {
+      "id": "prd_03",
+      "sku": "MER-AU-RUNS",
+      "name": "Meridian Automations",
+      "category": "Workflow",
+      "summary": "Trigger-based rules that move work between projects and people.",
+      "price": {
+        "amount": 12,
+        "currency": "USD",
+        "unit": "1,000 runs",
+        "interval": "month"
+      },
+      "annualDiscount": 0,
+      "seatsIncluded": 0,
+      "status": "available",
+      "features": [
+        "Visual rule builder",
+        "Run log",
+        "Retry policy",
+        "Webhook actions"
+      ],
+      "updated": "2026-08-29"
+    },
+    {
+      "id": "prd_04",
+      "sku": "MER-VAULT-SEAT",
+      "name": "Meridian Vault",
+      "category": "Security",
+      "summary": "Encrypted storage with retention rules and access reviews.",
+      "price": {
+        "amount": 18,
+        "currency": "USD",
+        "unit": "seat",
+        "interval": "month"
+      },
+      "annualDiscount": 0.2,
+      "seatsIncluded": 1,
+      "status": "available",
+      "features": [
+        "Customer-managed keys",
+        "Legal hold",
+        "Audit trail",
+        "SCIM provisioning"
+      ],
+      "updated": "2026-10-11"
+    },
+    {
+      "id": "prd_05",
+      "sku": "MER-CONNECT",
+      "name": "Meridian Connect",
+      "category": "Integrations",
+      "summary": "Two-way sync with chat, calendar and source control tools.",
+      "price": {
+        "amount": 39,
+        "currency": "USD",
+        "unit": "workspace",
+        "interval": "month"
+      },
+      "annualDiscount": 0.12,
+      "seatsIncluded": 25,
+      "status": "available",
+      "features": [
+        "Calendar sync",
+        "Chat notifications",
+        "Repository links",
+        "Field mapping"
+      ],
+      "updated": "2026-07-22"
+    },
+    {
+      "id": "prd_06",
+      "sku": "MER-API-REQ",
+      "name": "Meridian API",
+      "category": "Developer",
+      "summary": "REST and webhook access with scoped tokens and sandbox keys.",
+      "price": {
+        "amount": 0.4,
+        "currency": "USD",
+        "unit": "1,000 requests",
+        "interval": "usage"
+      },
+      "annualDiscount": 0,
+      "seatsIncluded": 0,
+      "status": "beta",
+      "features": [
+        "Scoped tokens",
+        "Sandbox environment",
+        "Webhook replay",
+        "OpenAPI schema"
+      ],
+      "updated": "2026-11-04"
+    },
+    {
+      "id": "prd_07",
+      "sku": "MER-SVC-ONBOARD",
+      "name": "Onboarding Sprint",
+      "category": "Services",
+      "summary": "Two-week guided setup covering structure, imports and team training.",
+      "price": {
+        "amount": 4800,
+        "currency": "USD",
+        "unit": "engagement",
+        "interval": "one-time"
+      },
+      "annualDiscount": 0,
+      "seatsIncluded": 50,
+      "status": "available",
+      "features": [
+        "Discovery session",
+        "Workspace build",
+        "Two trainings",
+        "30-day follow-up"
+      ],
+      "updated": "2026-06-30"
+    },
+    {
+      "id": "prd_08",
+      "sku": "MER-SVC-AUDIT",
+      "name": "Design Audit",
+      "category": "Services",
+      "summary": "A structured review of an existing product surface with prioritised fixes.",
+      "price": {
+        "amount": 2400,
+        "currency": "USD",
+        "unit": "engagement",
+        "interval": "one-time"
+      },
+      "annualDiscount": 0,
+      "seatsIncluded": 0,
+      "status": "retired",
+      "features": [
+        "Heuristic review",
+        "Accessibility pass",
+        "Annotated report",
+        "Readout call"
+      ],
+      "updated": "2026-03-15"
+    }
+  ]
+}

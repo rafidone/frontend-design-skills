@@ -1,0 +1,21 @@
+{
+  "id": "billing",
+  "name": "Billing overview",
+  "tags": [
+    "billing",
+    "plan",
+    "usage",
+    "invoices"
+  ],
+  "description": "A subscription billing page with the current Scale plan, payment method, usage meters and five invoice history rows.",
+  "data": {
+    "plan": "Scale",
+    "price": "$249/month",
+    "renewal": "2026-12-01",
+    "seats": "18 of 25",
+    "api_calls": "1.24M of 2M",
+    "storage": "48 of 100 GB",
+    "invoices": 5
+  },
+  "a11y": "Usage bars expose progressbar values; the invoice table has a caption and headers; every download action names its invoice; actions announce results in a live region."
+}

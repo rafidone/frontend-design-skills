@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ironwood is a single-player survival game set in a forest that remembers every camp you leave behind. Build, forage and endure four seasons.">
+  <title>Ironwood — A dark fantasy survival game</title>
+  <script>document.documentElement.classList.add("has-js");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo:wght@400;500&amp;family=IBM+Plex+Mono:wght@400&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/motion.css">
+  <script src="scripts/motion.js" defer></script>
+  <script src="scripts/system.js" defer></script>
+  <script src="scripts/forms.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-fdm-header>
+    <div class="wrap">
+      <nav class="site-nav" aria-label="Primary" data-fdm-nav>
+        <a class="brand" href="#top" aria-label="Ironwood home">
+          <span class="brand__mark" aria-hidden="true">I</span>
+          <span>Ironwood<span class="brand__dot">.</span></span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-menu"
+          data-fdm-nav-toggle
+        >
+          <span>Menu</span>
+          <span class="nav-toggle__lines" aria-hidden="true"><span></span><span></span></span>
+        </button>
+
+        <ul class="nav-menu" id="primary-menu" data-fdm-nav-menu>
+          <li><a class="nav-link" href="#method">World</a></li>
+          <li><a class="nav-link" href="#proof">Gameplay</a></li>
+          <li><a class="nav-link" href="#pricing">Editions</a></li>
+          <li><a class="nav-link" href="#contact">Support</a></li>
+        </ul>
+
+        <a class="button button--primary nav-cta" href="#contact">Wishlist on Steam <span class="arrow" aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero hero--media hero--film" id="top" data-budget="1" aria-labelledby="hero-title">
+            <figure class="hero-photo">
+        <img src="assets/photos/gaming-ironwood.webp" srcset="assets/photos/gaming-ironwood-480w.webp 480w, assets/photos/gaming-ironwood-720w.webp 720w, assets/photos/gaming-ironwood.webp 960w" sizes="100vw" width="960" height="640" alt="Fog moving through a stand of dark conifers at first light." data-source="library" data-subject="Dark conifer forest in early morning fog." loading="eager">
+      </figure>
+
+      <div class="wrap">
+        <div class="hero__body grid">
+          <div class="hero__copy col-7" data-enter>
+            <p class="eyebrow">A dark fantasy survival game · Windows &amp; consoles</p>
+            <h1 class="hero-title" id="hero-title">The forest remembers what you <em>leave behind</em>.</h1>
+            <p class="lede mt-5">
+              Ironwood is a single-player survival game about building a camp in a forest that changes with the seasons—and never forgets the last one.
+            </p>
+            <div class="hero-actions">
+              <a class="button button--primary" href="#contact">Wishlist on Steam <span class="arrow" aria-hidden="true">→</span></a>
+              <a class="link-arrow" href="#method">Watch the reveal <span class="arrow" aria-hidden="true">↓</span></a>
+            </div>
+            <dl class="hero-meta" data-enter>
+              <div>
+                <dt>Release</dt>
+                <dd>Spring 2027</dd>
+              </div>
+              <div>
+                <dt>Platform</dt>
+                <dd>PC &amp; consoles</dd>
+              </div>
+              <div>
+                <dt>Mode</dt>
+                <dd>Single-player</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="hero__aside col-5" data-enter>
+            <div class="hero-note">
+              <p class="mono">Field note 07</p>
+              <p>A camp is a promise. The forest keeps it.</p>
+            </div>
+
+            <div class="week" role="group" aria-labelledby="week-title">
+              <div class="week__head">
+                <p class="week__title" id="week-title">Season 1 — Ashfall</p>
+                <span class="badge">In development</span>
+              </div>
+              <div class="week__rows">
+                <div class="week__row">
+                  <span class="week__day">Mon 04</span>
+                  <div class="week__bar week__bar--short">First frost <span class="week__time">10:00</span></div>
+                </div>
+                <div class="week__row">
+                  <span class="week__day">Tue 05</span>
+                  <div class="week__bar">Scout the ridge <span class="week__time">11:30</span></div>
+                </div>
+                <div class="week__row">
+                  <span class="week__day">Wed 06</span>
+                  <div class="week__bar week__bar--accent">Build the shelter <span class="week__time">All day</span></div>
+                </div>
+                <div class="week__row">
+                  <span class="week__day">Thu 07</span>
+                  <div class="week__bar week__bar--short week__bar--quiet">The Long Night <span class="week__time">15:00</span></div>
+                </div>
+                <div class="week__row">
+                  <span class="week__day">Fri 08</span>
+                  <div class="week__bar week__bar--short">Open the gate <span class="week__time">16:00</span></div>
+                </div>
+              </div>
+              <div class="week__foot">
+                <div class="week__team">
+                  <span class="avatar">IR</span>
+                  <span class="avatar avatar--accent">WO</span>
+                  <span class="avatar">OD</span>
+                </div>
+                <p class="hero-caption">One camp · One winter</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ruled" id="method" data-budget="1" data-fdm-section aria-labelledby="method-title">
+      <div class="wrap">
+        <h2 id="method-title">Survive a forest with a memory.</h2>
+        <div class="section-head">
+          <p class="lede">Every camp leaves a mark. Cut too much and the canopy thins; ignore the old roads and something else starts using them. The world keeps score without a quest marker.</p>
+          <a class="link-arrow section-head__aside" href="#contact">Read the field notes <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="grid">
+          <div class="col-4">
+            <article class="card" data-lift>
+              <div class="card__top">
+                <span class="badge badge--quiet">01 · Build</span>
+                <span class="card__number" aria-hidden="true">A</span>
+              </div>
+              <h3 class="card__title">A shelter that shows its history.</h3>
+              <p class="card__body">Walls settle, roofs sag and repairs leave visible scars. A camp you abandon is still a place the forest can find.</p>
+            </article>
+          </div>
+          <div class="col-4">
+            <article class="card" data-lift>
+              <div class="card__top">
+                <span class="badge badge--quiet">02 · Forage</span>
+                <span class="card__number" aria-hidden="true">B</span>
+              </div>
+              <h3 class="card__title">Take only what returns.</h3>
+              <p class="card__body">Berries, bark and game follow the seasons. Overharvest a grove and it may not come back next spring.</p>
+            </article>
+          </div>
+          <div class="col-4">
+            <article class="card card--accent" data-lift>
+              <div class="card__top">
+                <span class="badge badge--quiet">03 · Endure</span>
+                <span class="card__number" aria-hidden="true">C</span>
+              </div>
+              <h3 class="card__title">Winter changes the rules.</h3>
+              <p class="card__body">Cold, hunger and old decisions arrive together. The Long Night rewards preparation, not speed.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ruled" id="proof" data-budget="1" data-fdm-section aria-labelledby="proof-title">
+      <div class="wrap">
+        <h2 id="proof-title">A world that answers back.</h2>
+        <p class="lede mt-4">Hand-built over four years by a team of nine, with no procedural terrain.</p>
+
+        <div class="proof-wrap">
+          <figure class="quote">
+            <blockquote>“We wanted the player to feel the forest noticing them. Not as a monster, as a memory.”</blockquote>
+            <figcaption><strong>Elise Voss</strong> · Creative Director, Ironwood</figcaption>
+          </figure>
+
+          <div class="proof-notes">
+            <p class="eyebrow">What changed</p>
+            <ul class="list list--checks">
+              <li>An 18 km² hand-built forest with no loading screens.</li>
+              <li>Four seasons that alter routes, resources and sound.</li>
+              <li>One persistent camp that follows the save.</li>
+            </ul>
+            <ul class="logo-row mt-5">
+              <li>Ironwood</li>
+              <li>Hollow Pine</li>
+              <li>Northlight</li>
+              <li>Field &amp; Flame</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="stat-grid mt-7">
+          <div class="stat">
+            <span class="stat__value">18 km²</span>
+            <span class="stat__label">hand-built forest</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">4</span>
+            <span class="stat__label">seasons that change the map</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">1</span>
+            <span class="stat__label">camp that persists</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ruled" id="pricing" data-budget="1" data-fdm-section aria-labelledby="pricing-title">
+      <div class="wrap">
+        <h2 id="pricing-title">Choose your way in.</h2>
+        <div class="section-head">
+          <p class="lede">Every edition includes the full game. The extras are for people who want to keep the forest on the shelf after the credits.</p>
+          <p class="hero-caption section-head__aside">Prices in EUR · digital editions</p>
+        </div>
+
+        <div class="price-grid">
+          <article class="price-card">
+            <div class="price-card__head">
+              <span class="price-card__label">Standard</span>
+              <span class="badge badge--quiet">Digital</span>
+            </div>
+            <p class="price-card__price">€34.99</p>
+            <p class="price-card__note">The game and the first winter.</p>
+            <ul class="list list--checks">
+              <li>Full game</li><li>Digital soundtrack</li><li>Wallpaper set</li>
+            </ul>
+            <a class="button button--secondary" href="#contact">Wishlist on Steam</a>
+          </article>
+
+          <article class="price-card price-card--featured">
+            <div class="price-card__head">
+              <span class="price-card__label">Deluxe</span>
+              <span class="badge badge--accent">Most chosen</span>
+            </div>
+            <p class="price-card__price">€54.99</p>
+            <p class="price-card__note">The game, the art and the field notes.</p>
+            <ul class="list list--checks">
+              <li>Full game</li><li>Art book</li><li>Developer commentary</li>
+            </ul>
+            <a class="button button--primary" href="#contact">Wishlist on Steam</a>
+          </article>
+
+          <article class="price-card">
+            <div class="price-card__head">
+              <span class="price-card__label">Collector</span>
+              <span class="badge badge--quiet">Limited</span>
+            </div>
+            <p class="price-card__price">€89.99</p>
+            <p class="price-card__note">A physical field journal and map.</p>
+            <ul class="list list--checks">
+              <li>Full game</li><li>Cloth map</li><li>Numbered journal</li>
+            </ul>
+            <a class="button button--secondary" href="#contact">Join the waitlist</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ruled section--compact" id="contact" data-budget="1" data-fdm-section aria-labelledby="contact-title">
+      <div class="wrap">
+        <h2 id="contact-title">Join the field notes.</h2>
+        <p class="lede mt-4">Development notes, playtest invitations and the occasional photograph from the forest. No more than one letter a month.</p>
+
+        <div class="contact-grid">
+          <div class="panel">
+            <form
+              class="form"
+              action="mailto:hello@ironwood.example"
+              method="post"
+              enctype="text/plain"
+              novalidate
+              data-fdm-form
+              data-fdm-email="hello@ironwood.example"
+            >
+              <div class="field-row">
+                <div class="field">
+                  <label class="field__label" for="name">Name</label>
+                  <input class="input" id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+                  <p class="field-error" id="name-error" data-fdm-error-for="name" hidden></p>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="email">Email</label>
+                  <input class="input" id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+                  <p class="field-error" id="email-error" data-fdm-error-for="email" hidden></p>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="project">What are you making? <span class="field__hint">Optional</span></label>
+                <input class="input" id="project" name="project" type="text" placeholder="Playtest, press, or a note about the world">
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="message">A little context</label>
+                <textarea class="textarea" id="message" name="message" rows="4" required data-minlength="20" aria-describedby="message-hint message-error"></textarea>
+                <p class="field__hint" id="message-hint">Tell us what you play on and what you want to know about the forest.</p>
+                <p class="field-error" id="message-error" data-fdm-error-for="message" hidden></p>
+              </div>
+
+              <div class="form-actions">
+                <button class="button button--primary" type="submit">Prepare the email <span class="arrow" aria-hidden="true">→</span></button>
+                <p class="form-note">Demo only · no data is sent or stored.</p>
+              </div>
+
+              <p class="form-status" role="status" aria-live="polite" data-fdm-form-status>No data leaves your browser in this demo.</p>
+            </form>
+          </div>
+
+          <aside class="contact-side" aria-labelledby="contact-side-title">
+            <h3 class="visually-hidden" id="contact-side-title">Other ways to reach Ironwood</h3>
+
+            <div class="contact-detail">
+              <span class="contact-detail__label">Email</span>
+              <a href="mailto:hello@ironwood.example">hello@ironwood.example</a>
+              <small class="muted">For new work and speaking.</small>
+            </div>
+
+            <div class="contact-detail">
+              <span class="contact-detail__label">Studio hours</span>
+              <span>Monday–Friday, 10:00–18:00 CET</span>
+              <span
+                class="hours-status"
+                data-fdm-hours
+                data-open-hour="10"
+                data-close-hour="18"
+                data-days="1,2,3,4,5"
+                data-time-zone="Europe/Berlin"
+              ><span data-fdm-hours-status>Checking local time…</span></span>
+            </div>
+
+            <div class="contact-detail">
+              <span class="contact-detail__label">Based in</span>
+              <span>Berlin, Germany</span>
+              <small class="muted">A small independent studio, founded in 2021.</small>
+            </div>
+
+            <div class="faq contact-faq">
+              <details>
+                <summary>Is Ironwood multiplayer? <span class="faq__icon" aria-hidden="true"></span></summary>
+                <p class="faq__body">No. Ironwood is built around one player, one camp and the quiet that comes from being alone in a place that remembers you.</p>
+              </details>
+              <details>
+                <summary>Will there be a demo? <span class="faq__icon" aria-hidden="true"></span></summary>
+                <p class="faq__body">Yes. A limited playtest opens before launch. Field notes subscribers hear first.</p>
+              </details>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-fdm-section aria-labelledby="footer-title">
+    <div class="wrap">
+      <h2 class="visually-hidden" id="footer-title">Ironwood site footer</h2>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="#top" aria-label="Ironwood home">
+            <span class="brand__mark" aria-hidden="true">I</span>
+            <span>Ironwood<span class="brand__dot">.</span></span>
+          </a>
+          <p>A dark fantasy survival game from an independent studio in Berlin.</p>
+          <p><a href="mailto:hello@ironwood.example">hello@ironwood.example</a></p>
+        </div>
+
+        <nav aria-label="Footer">
+          <p class="footer-heading">Game</p>
+          <ul class="footer-links">
+            <li><a href="#method">World</a></li>
+            <li><a href="#proof">Gameplay</a></li>
+            <li><a href="#pricing">Editions</a></li>
+            <li><a href="#contact">Support</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <p class="footer-heading">Studio</p>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@ironwood.example?subject=Field%20notes">Field notes</a></li>
+            <li><a href="credits.html">Photography credits</a></li>
+            <li><a href="#top">Back to top <span class="arrow" aria-hidden="true">↑</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-base">
+        <p>© 2026 Ironwood Studio. Fictional demo content.</p>
+        <details class="credits">
+          <summary>Credits &amp; notes</summary>
+          <p>Typefaces: Anton, Archivo and IBM Plex Mono, linked here as an example. All other artwork, interface details and copy are original to this starter. No remote imagery is used. This page is a demonstration, not a live service.</p>
+        </details>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

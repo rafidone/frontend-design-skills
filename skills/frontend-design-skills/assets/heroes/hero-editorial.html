@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Morrow studio hero — editorial composition.">
+  <title>Morrow Journal — The quiet advantage</title>
+  <link rel="stylesheet" href="../starter/styles/tokens.css">
+  <link rel="stylesheet" href="../starter/styles/base.css">
+  <link rel="stylesheet" href="../starter/styles/layout.css">
+  <link rel="stylesheet" href="../starter/styles/components.css">
+  <link rel="stylesheet" href="../starter/styles/motion.css">
+  <script src="../starter/scripts/motion.js" defer></script>
+  <style>
+    .editorial-hero {
+      justify-content: flex-start;
+      padding-block-end: var(--space-5);
+      background: var(--paper);
+    }
+
+    .editorial-top {
+      display: flex;
+      padding-block: var(--space-3);
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      border-block-end: var(--border-strong);
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: var(--text-2xs);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .editorial-top strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .editorial-title {
+      margin-block: clamp(1.25rem, 3vh, 2.5rem);
+      font-size: clamp(4.25rem, 13.2vw, 11.5rem);
+      line-height: 0.82;
+      letter-spacing: -0.065em;
+    }
+
+    .editorial-title em {
+      display: block;
+      margin-inline-start: 1.5ch;
+      color: var(--accent);
+      font-weight: 400;
+    }
+
+    .editorial-grid {
+      display: grid;
+      padding-block-start: var(--space-4);
+      grid-template-columns: minmax(0, 0.92fr) minmax(14rem, 0.55fr) minmax(14rem, 0.75fr);
+      gap: clamp(1.5rem, 4vw, 3.5rem);
+      align-items: start;
+      border-block-start: var(--border-strong);
+    }
+
+    .editorial-intro .lede {
+      max-width: 38ch;
+      font-size: var(--text-base);
+    }
+
+    .editorial-intro .hero-actions {
+      margin-block-start: var(--space-4);
+    }
+
+    .editorial-art {
+      margin: 0;
+    }
+
+    .editorial-art svg {
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius-sm);
+    }
+
+    .editorial-art figcaption {
+      display: flex;
+      margin-block-start: var(--space-2);
+      justify-content: space-between;
+      gap: var(--space-2);
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .editorial-index {
+      display: grid;
+      padding: 0;
+      gap: 0;
+      list-style: none;
+    }
+
+    .editorial-index a {
+      display: grid;
+      min-height: 3.1rem;
+      padding-block: var(--space-2);
+      grid-template-columns: 1.6rem minmax(0, 1fr) auto;
+      gap: var(--space-2);
+      align-items: baseline;
+      border-block-end: var(--border);
+      font-size: var(--text-sm);
+      text-decoration: none;
+    }
+
+    .editorial-index a:hover {
+      color: var(--accent-strong);
+    }
+
+    .editorial-index span:first-child {
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: var(--text-2xs);
+    }
+
+    .editorial-index span:last-child {
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: var(--text-2xs);
+    }
+
+    .editorial-index .arrow {
+      margin-inline-start: var(--space-2);
+      color: var(--accent);
+    }
+
+    @media (max-width: 960px) {
+      .editorial-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(13rem, 0.65fr);
+      }
+
+      .editorial-index {
+        grid-column: 1 / -1;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--space-4);
+      }
+
+      .editorial-index a {
+        border-block-start: var(--border);
+        border-block-end: 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .editorial-title {
+        margin-block: var(--space-5);
+        font-size: clamp(3.4rem, 18vw, 5.5rem);
+      }
+
+      .editorial-title em {
+        margin-inline-start: 0;
+      }
+
+      .editorial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .editorial-art {
+        display: none;
+      }
+
+      .editorial-index {
+        grid-column: auto;
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="demo-header">
+    <div class="wrap">
+      <nav class="demo-nav" aria-label="Primary">
+        <a class="brand" href="../starter/index.html" aria-label="Morrow home">
+          <span class="brand__mark" aria-hidden="true">M</span>
+          <span>Morrow<span class="brand__dot">.</span></span>
+        </a>
+        <div class="demo-links">
+          <a href="../starter/index.html#method">The studio</a>
+          <a class="button button--primary button--small" href="../starter/index.html#contact">Work with us</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero editorial-hero" data-budget="1" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="editorial-top" data-enter>
+          <span><strong>Morrow Journal</strong> · Notes on making</span>
+          <span>Issue 04</span>
+          <span>Spring 2026</span>
+        </div>
+
+        <h1 class="editorial-title" id="hero-title" data-enter>Make room for <em>the long view.</em></h1>
+
+        <div class="editorial-grid">
+          <div class="editorial-intro" data-enter>
+            <p class="lede">A field guide for teams who would rather build something lasting than keep proving how busy they are. This issue: the advantage of a slower decision.</p>
+            <div class="hero-actions">
+              <a class="button button--primary" href="../starter/index.html#contact">Read the issue <span class="arrow" aria-hidden="true">→</span></a>
+              <a class="button button--text" href="../starter/index.html#method">Browse the archive</a>
+            </div>
+          </div>
+
+          <figure class="editorial-art" data-enter>
+            <svg viewBox="0 0 440 330" role="img" aria-label="Still life illustration with a green vase, a clay sphere and folded paper on a table">
+              <rect width="440" height="330" fill="#e6dfd1"/>
+              <rect y="232" width="440" height="98" fill="#d3c7b4"/>
+              <path d="M0 232h440" stroke="#19211b" stroke-width="2"/>
+              <path d="M116 232V130c0-37 30-67 67-67h6c37 0 67 30 67 67v102" fill="#1f513f"/>
+              <path d="M143 232V141c0-21 17-38 38-38h17v129" fill="#2f6b56"/>
+              <path d="M209 63c32-40 82-38 104 1-44 11-80 15-104-1Z" fill="#df5438"/>
+              <path d="M209 63c-11 46-47 72-87 67 10-39 40-63 87-67Z" fill="#76937d"/>
+              <path d="M209 63c5 26 2 52-10 76" fill="none" stroke="#19211b" stroke-width="3"/>
+              <circle cx="326" cy="198" r="34" fill="#df5438"/>
+              <path d="M292 198a34 34 0 0 0 68 0" fill="#c7462d"/>
+              <path d="M281 232h124l12 18H269Z" fill="#f4f1e8"/>
+              <path d="M292 232v18M392 232v18" stroke="#19211b" stroke-width="2"/>
+              <path d="M42 244c18-19 48-19 66 0" fill="none" stroke="#19211b" stroke-width="3"/>
+              <path d="M42 244c18 11 48 11 66 0" fill="none" stroke="#19211b" stroke-width="3"/>
+              <path d="M52 254h46" stroke="#19211b" stroke-width="2"/>
+              <path d="M32 86h88M32 98h55" stroke="#b6aa97" stroke-width="2"/>
+            </svg>
+            <figcaption><span>Study for a quiet room</span><span>Ink &amp; paper</span></figcaption>
+          </figure>
+
+          <ol class="editorial-index" data-enter>
+            <li><a href="../starter/index.html#method"><span>01</span><span>The case for one clear review <span class="arrow" aria-hidden="true">↗</span></span><span>8 min</span></a></li>
+            <li><a href="../starter/index.html#proof"><span>02</span><span>What a calm team ships <span class="arrow" aria-hidden="true">↗</span></span><span>6 min</span></a></li>
+            <li><a href="../starter/index.html#pricing"><span>03</span><span>Protecting the making hours <span class="arrow" aria-hidden="true">↗</span></span><span>11 min</span></a></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

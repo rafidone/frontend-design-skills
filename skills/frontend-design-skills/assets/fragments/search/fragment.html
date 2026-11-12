@@ -1,0 +1,140 @@
+<div class="ui ui-search" data-fdm-ui="search">
+  <header class="ui-top">
+    <div>
+      <p class="ui-eyebrow">Meridian Labs</p>
+      <h1 class="ui-title">Search the workspace</h1>
+      <p class="ui-sub">Documents, projects and people across 12 active projects.</p>
+    </div>
+    <span class="sc-scope"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.4 3.5 5.3 3.5 8.5s-1.1 6.1-3.5 8.5c-2.4-2.4-3.5-5.3-3.5-8.5S9.6 5.9 12 3.5Z"/></svg> All workspace</span>
+  </header>
+
+  <form class="sc-form" role="search" data-search-form>
+    <label class="ui-visually-hidden" for="sc-query">Search documents, projects and people</label>
+    <div class="sc-input-wrap">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.4 15.4 4.1 4.1"/></svg>
+      <input id="sc-query" type="search" name="q" value="onboarding" autocomplete="off" data-search-input>
+      <button type="submit" class="ui-btn ui-btn-primary">Search</button>
+    </div>
+  </form>
+
+  <div class="sc-layout">
+    <aside class="sc-filters" aria-labelledby="sc-filter-title">
+      <div class="sc-filter-head">
+        <h2 id="sc-filter-title">Filters</h2>
+        <button type="button" class="sc-clear" data-clear>Clear all</button>
+      </div>
+      <fieldset class="sc-fieldset">
+        <legend>Type</legend>
+        <div class="sc-type-list" role="group" aria-label="Filter by type">
+          <button type="button" class="sc-type" data-category="all" aria-pressed="true">All results <span>6</span></button>
+          <button type="button" class="sc-type" data-category="document" aria-pressed="false">Documents <span>2</span></button>
+          <button type="button" class="sc-type" data-category="project" aria-pressed="false">Projects <span>2</span></button>
+          <button type="button" class="sc-type" data-category="person" aria-pressed="false">People <span>2</span></button>
+        </div>
+      </fieldset>
+      <fieldset class="sc-fieldset">
+        <legend>Updated</legend>
+        <label class="sc-select-label" for="sc-updated">Time range</label>
+        <select id="sc-updated" class="sc-select" data-updated>
+          <option value="any">Any time</option>
+          <option value="week" selected>Past week</option>
+          <option value="month">Past month</option>
+        </select>
+      </fieldset>
+      <fieldset class="sc-fieldset">
+        <legend>Owner</legend>
+        <label class="sc-check"><input type="checkbox" checked> Amina Farouk</label>
+        <label class="sc-check"><input type="checkbox"> Priya Raman</label>
+        <label class="sc-check"><input type="checkbox"> Theo Bennett</label>
+      </fieldset>
+    </aside>
+
+    <section class="sc-results" aria-labelledby="sc-results-title" aria-live="polite">
+      <div class="sc-results-head">
+        <div>
+          <h2 id="sc-results-title" data-search-title>6 results for “onboarding”</h2>
+          <p data-search-summary>Sorted by relevance · updated in the past week</p>
+        </div>
+        <label class="sc-sort-label" for="sc-sort">Sort</label>
+        <select id="sc-sort" class="sc-select sc-sort" data-sort>
+          <option>Relevance</option>
+          <option>Recently updated</option>
+          <option>Title A–Z</option>
+        </select>
+      </div>
+
+      <ol class="sc-list" data-results-list>
+        <li class="sc-result" data-category="document" data-age="week">
+          <span class="sc-icon sc-icon-doc" aria-hidden="true">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h7l5 5v12H6v-17Z"/><path d="M13 3.5v5h5M9 13h6M9 16h4"/></svg>
+          </span>
+          <div class="sc-result-body">
+            <div class="sc-result-top"><a href="#search-checklist">Onboarding checklist v3</a><span class="ui-badge">Document</span></div>
+            <p>Step 2 asks the workspace owner to add a first project before inviting <mark>onboarding</mark> teammates. Includes the guest-access branch added on Nov 8.</p>
+            <p class="sc-result-meta"><span>docs/onboarding-checklist</span><span>·</span><span>Updated Nov 8 by Amina Farouk</span></p>
+          </div>
+        </li>
+        <li class="sc-result" data-category="project" data-age="week">
+          <span class="sc-icon sc-icon-project" aria-hidden="true">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 7.5A2 2 0 0 1 5.5 5.5h4l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2v-10Z"/></svg>
+          </span>
+          <div class="sc-result-body">
+            <div class="sc-result-top"><a href="#search-project">Onboarding checklist timing</a><span class="ui-badge ui-badge-accent">Project</span></div>
+            <p>Seven tasks covering first-run states, invite timing and the finance approval step.</p>
+            <p class="sc-result-meta"><span>projects/onboarding-timing</span><span>·</span><span>Due Nov 13 · 7 open tasks</span></p>
+          </div>
+        </li>
+        <li class="sc-result" data-category="person" data-age="month">
+          <span class="sc-icon sc-icon-person" aria-hidden="true">NO</span>
+          <div class="sc-result-body">
+            <div class="sc-result-top"><a href="#search-person-1">Nadia Otieno</a><span class="ui-badge ui-badge-info">Person</span></div>
+            <p>Finance lead. Owns the <mark>onboarding</mark> approval step for new workspaces in Nairobi.</p>
+            <p class="sc-result-meta"><span>Finance · Nairobi</span><span>·</span><span>Active 2 hours ago</span></p>
+          </div>
+        </li>
+        <li class="sc-result" data-category="document" data-age="month">
+          <span class="sc-icon sc-icon-doc" aria-hidden="true">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h7l5 5v12H6v-17Z"/><path d="M13 3.5v5h5M9 13h6M9 16h4"/></svg>
+          </span>
+          <div class="sc-result-body">
+            <div class="sc-result-top"><a href="#search-email">Guest onboarding email</a><span class="ui-badge">Document</span></div>
+            <p>Template for the guest invite sequence, including the workspace context and comment permissions.</p>
+            <p class="sc-result-meta"><span>docs/guest-onboarding-email</span><span>·</span><span>Updated Oct 30 by Hana Sato</span></p>
+          </div>
+        </li>
+        <li class="sc-result" data-category="project" data-age="month">
+          <span class="sc-icon sc-icon-project" aria-hidden="true">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 7.5A2 2 0 0 1 5.5 5.5h4l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2v-10Z"/></svg>
+          </span>
+          <div class="sc-result-body">
+            <div class="sc-result-top"><a href="#search-research">Onboarding research — October</a><span class="ui-badge ui-badge-accent">Project</span></div>
+            <p>Six interview notes and a synthesis board focused on the first ten minutes.</p>
+            <p class="sc-result-meta"><span>projects/onboarding-research-oct</span><span>·</span><span>Updated Oct 28 · 6 interviews</span></p>
+          </div>
+        </li>
+        <li class="sc-result" data-category="person" data-age="week">
+          <span class="sc-icon sc-icon-person" aria-hidden="true">MS</span>
+          <div class="sc-result-body">
+            <div class="sc-result-top"><a href="#search-person-2">Mateo Silva</a><span class="ui-badge ui-badge-info">Person</span></div>
+            <p>Support lead. Runs <mark>onboarding</mark> calls for new workspaces across Europe and Africa.</p>
+            <p class="sc-result-meta"><span>Customer support · Lisbon</span><span>·</span><span>Active yesterday</span></p>
+          </div>
+        </li>
+      </ol>
+
+      <p class="sc-no-results" data-no-results hidden>No results match these filters. Try a broader date range or clear the type filter.</p>
+      <div class="sc-foot">
+        <span data-result-range>Showing 1–6 of 6 results</span>
+        <div class="sc-pages" aria-label="Search results pages">
+          <button type="button" class="ui-icon-btn" aria-label="Previous page" disabled>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <span class="sc-page-current" aria-label="Page 1 of 1">1</span>
+          <button type="button" class="ui-icon-btn" aria-label="Next page" disabled>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

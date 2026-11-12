@@ -1,0 +1,22 @@
+{
+  "id": "notifications",
+  "name": "Notification inbox",
+  "tags": [
+    "notifications",
+    "inbox",
+    "mentions",
+    "billing"
+  ],
+  "description": "A six-item notification inbox with timestamps, unread markers, mentions, billing events and type filters.",
+  "data": {
+    "unread": 3,
+    "total": 6,
+    "types": [
+      "mention",
+      "billing",
+      "product"
+    ],
+    "latest": "2026-11-09T18:31:00+03:00"
+  },
+  "a11y": "The list is labelled; unread dots supplement visible unread backgrounds; timestamps use time elements; filters use aria-pressed; mark-all updates a live region and the unread count."
+}

@@ -1,0 +1,746 @@
+{
+  "name": "Frontend design skills icon set",
+  "version": 1,
+  "updated": "2026-11-09",
+  "grid": "24x24",
+  "style": {
+    "ui": "Stroke-first icons use currentColor with 1.5 stroke width, round caps and joins. Play and pause are filled because their shapes read better as solid marks.",
+    "brand": "Brand glyphs use currentColor and a single fill. data-brand-color records the owner's common brand colour for optional use."
+  },
+  "counts": {
+    "ui": 50,
+    "brand": 16,
+    "total": 66
+  },
+  "trademarkNotice": "All brand names, logos and trademarks belong to their respective owners. These glyphs are simplified integration representations for interface mockups only; they are not official artwork and do not imply endorsement or affiliation.",
+  "icons": [
+    {
+      "file": "ui/arrow-right.svg",
+      "title": "Arrow right",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "next",
+        "forward",
+        "navigate"
+      ]
+    },
+    {
+      "file": "ui/arrow-up-right.svg",
+      "title": "Arrow up right",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "external",
+        "open",
+        "new"
+      ]
+    },
+    {
+      "file": "ui/check.svg",
+      "title": "Check",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "done",
+        "confirm",
+        "complete"
+      ]
+    },
+    {
+      "file": "ui/chevron-down.svg",
+      "title": "Chevron down",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "expand",
+        "select",
+        "menu"
+      ]
+    },
+    {
+      "file": "ui/close.svg",
+      "title": "Close",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "dismiss",
+        "cancel",
+        "x"
+      ]
+    },
+    {
+      "file": "ui/search.svg",
+      "title": "Search",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "find",
+        "query",
+        "magnifier"
+      ]
+    },
+    {
+      "file": "ui/menu.svg",
+      "title": "Menu",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "navigation",
+        "hamburger",
+        "nav"
+      ]
+    },
+    {
+      "file": "ui/plus.svg",
+      "title": "Plus",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "add",
+        "create",
+        "new"
+      ]
+    },
+    {
+      "file": "ui/minus.svg",
+      "title": "Minus",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "remove",
+        "subtract",
+        "collapse"
+      ]
+    },
+    {
+      "file": "ui/external.svg",
+      "title": "External link",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "open",
+        "link",
+        "outside"
+      ]
+    },
+    {
+      "file": "ui/play.svg",
+      "title": "Play",
+      "category": "ui",
+      "style": "filled",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "start",
+        "media",
+        "audio"
+      ]
+    },
+    {
+      "file": "ui/pause.svg",
+      "title": "Pause",
+      "category": "ui",
+      "style": "filled",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "stop",
+        "media",
+        "audio"
+      ]
+    },
+    {
+      "file": "ui/star.svg",
+      "title": "Star",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "favorite",
+        "rating",
+        "bookmark"
+      ]
+    },
+    {
+      "file": "ui/clock.svg",
+      "title": "Clock",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "time",
+        "recent",
+        "history"
+      ]
+    },
+    {
+      "file": "ui/map-pin.svg",
+      "title": "Map pin",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "location",
+        "place",
+        "marker"
+      ]
+    },
+    {
+      "file": "ui/mail.svg",
+      "title": "Mail",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "email",
+        "message",
+        "inbox"
+      ]
+    },
+    {
+      "file": "ui/phone.svg",
+      "title": "Phone",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "call",
+        "contact",
+        "telephone"
+      ]
+    },
+    {
+      "file": "ui/calendar.svg",
+      "title": "Calendar",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "date",
+        "schedule",
+        "event"
+      ]
+    },
+    {
+      "file": "ui/filter.svg",
+      "title": "Filter",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "refine",
+        "sort",
+        "funnel"
+      ]
+    },
+    {
+      "file": "ui/settings.svg",
+      "title": "Settings",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "preferences",
+        "gear",
+        "config"
+      ]
+    },
+    {
+      "file": "ui/user.svg",
+      "title": "User",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "person",
+        "account",
+        "profile"
+      ]
+    },
+    {
+      "file": "ui/users.svg",
+      "title": "Users",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "team",
+        "people",
+        "group"
+      ]
+    },
+    {
+      "file": "ui/building.svg",
+      "title": "Building",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "company",
+        "office",
+        "org"
+      ]
+    },
+    {
+      "file": "ui/chart.svg",
+      "title": "Chart",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "analytics",
+        "graph",
+        "data"
+      ]
+    },
+    {
+      "file": "ui/code.svg",
+      "title": "Code",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "developer",
+        "source",
+        "programming"
+      ]
+    },
+    {
+      "file": "ui/file.svg",
+      "title": "File",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "document",
+        "page",
+        "doc"
+      ]
+    },
+    {
+      "file": "ui/folder.svg",
+      "title": "Folder",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "directory",
+        "files",
+        "archive"
+      ]
+    },
+    {
+      "file": "ui/lock.svg",
+      "title": "Lock",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "secure",
+        "private",
+        "permission"
+      ]
+    },
+    {
+      "file": "ui/globe.svg",
+      "title": "Globe",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "world",
+        "language",
+        "web"
+      ]
+    },
+    {
+      "file": "ui/spark.svg",
+      "title": "Spark",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "ai",
+        "magic",
+        "highlight"
+      ]
+    },
+    {
+      "file": "ui/upload.svg",
+      "title": "Upload",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "send",
+        "import",
+        "publish"
+      ]
+    },
+    {
+      "file": "ui/download.svg",
+      "title": "Download",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "save",
+        "export",
+        "receive"
+      ]
+    },
+    {
+      "file": "ui/trash.svg",
+      "title": "Trash",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "delete",
+        "remove",
+        "bin"
+      ]
+    },
+    {
+      "file": "ui/edit.svg",
+      "title": "Edit",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "pencil",
+        "write",
+        "change"
+      ]
+    },
+    {
+      "file": "ui/copy.svg",
+      "title": "Copy",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "duplicate",
+        "clipboard",
+        "clone"
+      ]
+    },
+    {
+      "file": "ui/link.svg",
+      "title": "Link",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "chain",
+        "url",
+        "connect"
+      ]
+    },
+    {
+      "file": "ui/info.svg",
+      "title": "Information",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "help",
+        "about",
+        "details"
+      ]
+    },
+    {
+      "file": "ui/warning.svg",
+      "title": "Warning",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "caution",
+        "alert",
+        "attention"
+      ]
+    },
+    {
+      "file": "ui/success.svg",
+      "title": "Success",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "ok",
+        "passed",
+        "complete"
+      ]
+    },
+    {
+      "file": "ui/error.svg",
+      "title": "Error",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "fail",
+        "problem",
+        "invalid"
+      ]
+    },
+    {
+      "file": "ui/grid.svg",
+      "title": "Grid",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "layout",
+        "tiles",
+        "cards"
+      ]
+    },
+    {
+      "file": "ui/list.svg",
+      "title": "List",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "rows",
+        "items",
+        "table"
+      ]
+    },
+    {
+      "file": "ui/sun.svg",
+      "title": "Sun",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "light",
+        "theme",
+        "day"
+      ]
+    },
+    {
+      "file": "ui/moon.svg",
+      "title": "Moon",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "dark",
+        "theme",
+        "night"
+      ]
+    },
+    {
+      "file": "ui/cart.svg",
+      "title": "Shopping cart",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "shop",
+        "buy",
+        "commerce"
+      ]
+    },
+    {
+      "file": "ui/card.svg",
+      "title": "Card",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "payment",
+        "credit",
+        "billing"
+      ]
+    },
+    {
+      "file": "ui/shield.svg",
+      "title": "Shield",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "security",
+        "protection",
+        "safe"
+      ]
+    },
+    {
+      "file": "ui/zap.svg",
+      "title": "Zap",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "fast",
+        "performance",
+        "energy"
+      ]
+    },
+    {
+      "file": "ui/layers.svg",
+      "title": "Layers",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "stack",
+        "levels",
+        "design"
+      ]
+    },
+    {
+      "file": "ui/database.svg",
+      "title": "Database",
+      "category": "ui",
+      "style": "stroke",
+      "strokeWidth": 1.5,
+      "keywords": [
+        "storage",
+        "records",
+        "server"
+      ]
+    },
+    {
+      "file": "brand/github.svg",
+      "title": "GitHub",
+      "category": "brand",
+      "style": "fill",
+      "data-brand-color": "#181717",
+      "note": "Integration representation only. The trademark and logo belong to its owner."
+    },
+    {
+      "file": "brand/gitlab.svg",
+      "title": "GitLab",
+      "category": "brand",
+      "style": "fill",
+      "data-brand-color": "#FC6D26",
+      "note": "Integration representation only. The trademark and logo belong to its owner."
+    },
+    {
+      "file": "brand/figma.svg",
+      "title": "Figma",
+      "category": "brand",
+      "style": "fill",
+      "data-brand-color": "#F24E1E",
+      "note": "Integration representation only. The trademark and logo belong to its owner."
+    },
+    {
+      "file": "brand/slack.svg",
+      "title": "Slack",
+      "category": "brand",
+      "style": "fill",
+      "data-brand-color": "#4A154B",
+      "note": "Integration representation only. The trademark and logo belong to its owner."
+    },
+    {
+      "file": "brand/notion.svg",
+      "title": "Notion",
+      "category": "brand",
+      "style": "fill",
+      "data-brand-color": "#000000",
+      "note": "Integration representation only. The trademark and logo belong to its owner."
+    },
+    {
+      "file": "brand/linear.svg",
+      "title": "Linear",
+      "category": "brand",
+      "style": "fill",
+      "data-brand-color": "#5E6AD2",
+      "note": "Integration representation only. The trademark and logo belong to its owner."
+    },
+    {
+      "file": "brand/stripe.svg",
+      "title": "Stripe",
+      "category": "brand",
+      "style": "fill",
+      "data-brand-color": "#635BFF",
+      "note": "Integration representation only. The trademark and logo belong to its owner."
+    },
+    {
+      "file": "brand/vercel.svg",
+      "title": "Vercel",
+      "category": "brand",
+      "style": "fill",
+      "data-brand-color": "#000000",
+      "note": "Integration representation only. The trademark and logo belong to its owner."
+    },
+    {
+      "file": "brand/docker.svg",
+      "title": "Docker",
+      "category": "brand",
+      "style": "fill",
+      "data-brand-color": "#2496ED",
+      "note": "Integration representation only. The trademark and logo belong to its owner."
+    },
+    {
+      "file": "brand/kubernetes.svg",
+      "title": "Kubernetes",
+      "category": "brand",
+      "style": "fill",
+      "data-brand-color": "#326CE5",
+      "note": "Integration representation only. The trademark and logo belong to its owner."
+    },
+    {
+      "file": "brand/react.svg",
+      "title": "React",
+      "category": "brand",
+      "style": "fill",
+      "data-brand-color": "#61DAFB",
+      "note": "Integration representation only. The trademark and logo belong to its owner."
+    },
+    {
+      "file": "brand/typescript.svg",
+      "title": "TypeScript",
+      "category": "brand",
+      "style": "fill",
+      "data-brand-color": "#3178C6",
+      "note": "Integration representation only. The trademark and logo belong to its owner."
+    },
+    {
+      "file": "brand/nodejs.svg",
+      "title": "Node.js",
+      "category": "brand",
+      "style": "fill",
+      "data-brand-color": "#339933",
+      "note": "Integration representation only. The trademark and logo belong to its owner."
+    },
+    {
+      "file": "brand/postgresql.svg",
+      "title": "PostgreSQL",
+      "category": "brand",
+      "style": "fill",
+      "data-brand-color": "#4169E1",
+      "note": "Integration representation only. The trademark and logo belong to its owner."
+    },
+    {
+      "file": "brand/openai.svg",
+      "title": "OpenAI",
+      "category": "brand",
+      "style": "fill",
+      "data-brand-color": "#412991",
+      "note": "Integration representation only. The trademark and logo belong to its owner."
+    },
+    {
+      "file": "brand/anthropic.svg",
+      "title": "Anthropic",
+      "category": "brand",
+      "style": "fill",
+      "data-brand-color": "#D97757",
+      "note": "Integration representation only. The trademark and logo belong to its owner."
+    }
+  ]
+}

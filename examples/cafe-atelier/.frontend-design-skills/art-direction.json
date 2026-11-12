@@ -1,0 +1,91 @@
+{
+  "skill": "frontend-design-skills",
+  "version": 1,
+  "stack": "html",
+  "niche": "hospitality",
+  "palette": "terracotta-clay",
+  "typePair": "cormorant-karla",
+  "hero": "photo",
+  "heroLayout": "media",
+  "motionTier": "T0",
+  "density": "calm",
+  "composition": "pair",
+  "effects": false,
+  "rationale": "Terracotta and clay: Sun-warmed clay and a rust accent for food, craft and rooms. The palette assumes real photography rather than illustration. Cormorant and Karla: Hotels, restaurants and slow retail where elegance must still feel contemporary. Hero \"photo\" with a calm density, T0 motion tier and a pair composition.",
+  "seed": "cafe-atelier-01",
+  "assignedAt": "2026-11-12T06:48:58.076Z",
+  "paletteData": {
+    "id": "terracotta-clay",
+    "name": "Terracotta and clay",
+    "mode": "light",
+    "tags": [
+      "warm",
+      "earthy",
+      "place"
+    ],
+    "niches": [
+      "hospitality",
+      "commerce",
+      "editorial"
+    ],
+    "bg": "#fbf5f0",
+    "surface": "#f1e4d9",
+    "ink": "#2b211c",
+    "muted": "#6d5a4f",
+    "accent": "#a34024",
+    "accentInk": "#ffffff",
+    "bandBg": "#31221b",
+    "bandInk": "#faeee5",
+    "contrast": {
+      "body": "13.1:1",
+      "muted": "5.2:1",
+      "accent": "6.4:1"
+    },
+    "note": "Sun-warmed clay and a rust accent for food, craft and rooms. The palette assumes real photography rather than illustration.",
+    "avoid": "No pink, no coral gradients, no drop shadows on photographs."
+  },
+  "typePairData": {
+    "id": "cormorant-karla",
+    "name": "Cormorant and Karla",
+    "display": {
+      "family": "Cormorant Garamond",
+      "weights": [
+        400,
+        600
+      ],
+      "tracking": "-0.02em",
+      "lineHeight": "0.98",
+      "scale": {
+        "h1": 94,
+        "h2": 56,
+        "h3": 28
+      }
+    },
+    "text": {
+      "family": "Karla",
+      "weights": [
+        400,
+        500
+      ]
+    },
+    "mono": null,
+    "googleFonts": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Karla:wght@400;500&display=swap",
+    "niches": [
+      "hospitality",
+      "editorial",
+      "commerce"
+    ],
+    "tags": [
+      "high-contrast",
+      "elegant",
+      "warm"
+    ],
+    "suits": "Hotels, restaurants and slow retail where elegance must still feel contemporary.",
+    "avoid": "Do not use it for technical copy or set it in all caps below 20px.",
+    "fallback": {
+      "display": "Garamond, Georgia, serif",
+      "text": "ui-sans-serif, system-ui, sans-serif",
+      "mono": null
+    }
+  }
+}

@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: ['main', 'master']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Node 22 / Chrome
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Set up Chrome
+        id: chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
+      - name: Clean-room name rule
+        run: npm run lint:name
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Doctor
+        run: npm run doctor
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
+
+      - name: Browser end-to-end test
+        run: npm run test:e2e
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
+
+      - name: Verify the reference example
+        run: npm run verify -- examples/saas-product --quick --kind software --no-shots --state /tmp/fdm-ci
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}

@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "note": "Local copies of the library photographs selected for this build. Verify with assets.mjs verify.",
+  "assets": [
+    {
+      "id": "hardware-circuit",
+      "class": "photo",
+      "title": "Circuit Board Macro",
+      "path": "assets/photos/hardware-circuit.webp",
+      "source": "https://live.staticflickr.com/3333/3630412850_ff1461f064_b.jpg",
+      "library": "Flickr via Openverse",
+      "author": "pasukaru76",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "added": "2026-11-12",
+      "expires": null,
+      "credit_required": false,
+      "alt": "A close view of a circuit board with copper traces and a processor.",
+      "subject": "Macro detail of copper traces on a green circuit board.",
+      "tags": [
+        "hardware",
+        "hardware-macro",
+        "ai",
+        "circuit",
+        "macro"
+      ],
+      "notes": "Cropped and re-encoded as WebP.",
+      "width": 1023,
+      "height": 682,
+      "bytes": 37946,
+      "sha256": "19cebac631722436c2e9cced58ad0ac340fda376e53be234945eda1e2038d5a4"
+    }
+  ]
+}

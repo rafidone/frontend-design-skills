@@ -1,0 +1,96 @@
+{
+  "skill": "frontend-design-skills",
+  "version": 1,
+  "stack": "html",
+  "niche": "software",
+  "palette": "navy-signal",
+  "typePair": "schibsted-source",
+  "hero": "split",
+  "heroLayout": "split",
+  "motionTier": "T1",
+  "density": "medium",
+  "composition": "product-ui-first",
+  "effects": false,
+  "rationale": "Navy and signal: Navy-black with a soft signal blue. A calm dark mode for software marketing that still reads as technical. Schibsted and Source Sans: B2B software and professional services that need a clean, slightly editorial grotesque. Hero \"split\" with a medium density, T1 motion tier and a product-ui-first composition.",
+  "seed": "saas-northline-01",
+  "assignedAt": "2026-11-12T06:48:56.414Z",
+  "paletteData": {
+    "id": "navy-signal",
+    "name": "Navy and signal",
+    "mode": "dark",
+    "tags": [
+      "dark",
+      "technical",
+      "calm"
+    ],
+    "niches": [
+      "software",
+      "devtool",
+      "ai"
+    ],
+    "bg": "#0e1621",
+    "surface": "#172232",
+    "ink": "#edf2f7",
+    "muted": "#9dabb9",
+    "accent": "#7fb3ff",
+    "accentInk": "#071120",
+    "bandBg": "#19283a",
+    "bandInk": "#edf2f7",
+    "contrast": {
+      "body": "15.6:1",
+      "muted": "7.1:1",
+      "accent": "8.2:1"
+    },
+    "note": "Navy-black with a soft signal blue. A calm dark mode for software marketing that still reads as technical.",
+    "avoid": "No purple-blue gradient hero, no glass panels."
+  },
+  "typePairData": {
+    "id": "schibsted-source",
+    "name": "Schibsted and Source Sans",
+    "display": {
+      "family": "Schibsted Grotesk",
+      "weights": [
+        400,
+        600
+      ],
+      "tracking": "-0.035em",
+      "lineHeight": "1.0",
+      "scale": {
+        "h1": 74,
+        "h2": 46,
+        "h3": 25
+      }
+    },
+    "text": {
+      "family": "Source Sans 3",
+      "weights": [
+        400,
+        500
+      ]
+    },
+    "mono": {
+      "family": "IBM Plex Mono",
+      "weights": [
+        400
+      ]
+    },
+    "googleFonts": "https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600&family=Source+Sans+3:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap",
+    "niches": [
+      "software",
+      "service",
+      "devtool"
+    ],
+    "tags": [
+      "grotesque",
+      "editorial",
+      "clean"
+    ],
+    "suits": "B2B software and professional services that need a clean, slightly editorial grotesque.",
+    "avoid": "Do not use it for a playful consumer brand.",
+    "fallback": {
+      "display": "ui-sans-serif, system-ui, sans-serif",
+      "text": "ui-sans-serif, system-ui, sans-serif",
+      "mono": "ui-monospace, monospace"
+    }
+  }
+}

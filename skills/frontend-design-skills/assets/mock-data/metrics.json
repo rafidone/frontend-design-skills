@@ -1,0 +1,167 @@
+{
+  "meta": {
+    "dataset": "metrics",
+    "workspace": "Meridian Labs",
+    "surface": "Acquisition overview",
+    "range": {
+      "start": "2026-11-03",
+      "end": "2026-11-09",
+      "label": "Nov 3–9, 2026",
+      "days": 7
+    },
+    "timezone": "UTC",
+    "updated": "2026-11-10T08:15:00Z",
+    "currency": "USD",
+    "notice": "Fictional records created for interface demonstrations. Names, companies and figures are invented."
+  },
+  "summary": [
+    {
+      "key": "sessions",
+      "label": "Sessions",
+      "value": 20200,
+      "unit": "sessions",
+      "change": 12.4,
+      "changeUnit": "percent",
+      "direction": "up"
+    },
+    {
+      "key": "activation_rate",
+      "label": "Activation rate",
+      "value": 34.8,
+      "unit": "percent",
+      "change": 2.1,
+      "changeUnit": "points",
+      "direction": "up"
+    },
+    {
+      "key": "trial_starts",
+      "label": "Trial starts",
+      "value": 642,
+      "unit": "starts",
+      "change": -3.6,
+      "changeUnit": "percent",
+      "direction": "down"
+    },
+    {
+      "key": "net_revenue_retention",
+      "label": "Net revenue retention",
+      "value": 108.2,
+      "unit": "percent",
+      "change": 1.4,
+      "changeUnit": "points",
+      "direction": "up"
+    }
+  ],
+  "series": {
+    "metric": "sessions",
+    "unit": "sessions",
+    "granularity": "day",
+    "target": 3200,
+    "total": 20200,
+    "previousTotal": 17972,
+    "points": [
+      {
+        "date": "2026-11-03",
+        "label": "Mon 3",
+        "value": 2100,
+        "previous": 1900
+      },
+      {
+        "date": "2026-11-04",
+        "label": "Tue 4",
+        "value": 2600,
+        "previous": 2400
+      },
+      {
+        "date": "2026-11-05",
+        "label": "Wed 5",
+        "value": 2350,
+        "previous": 2200
+      },
+      {
+        "date": "2026-11-06",
+        "label": "Thu 6",
+        "value": 3100,
+        "previous": 2680
+      },
+      {
+        "date": "2026-11-07",
+        "label": "Fri 7",
+        "value": 3400,
+        "previous": 3050
+      },
+      {
+        "date": "2026-11-08",
+        "label": "Sat 8",
+        "value": 2900,
+        "previous": 2650
+      },
+      {
+        "date": "2026-11-09",
+        "label": "Sun 9",
+        "value": 3750,
+        "previous": 3092
+      }
+    ]
+  },
+  "acquisition": [
+    {
+      "channel": "Organic search",
+      "sessions": 8484,
+      "share": 42.0,
+      "change": 8.2
+    },
+    {
+      "channel": "Direct",
+      "sessions": 4848,
+      "share": 24.0,
+      "change": 1.1
+    },
+    {
+      "channel": "Partner referrals",
+      "sessions": 3636,
+      "share": 18.0,
+      "change": 14.7
+    },
+    {
+      "channel": "Paid social",
+      "sessions": 3232,
+      "share": 16.0,
+      "change": -2.4
+    }
+  ],
+  "funnel": [
+    {
+      "stage": "Workspace created",
+      "key": "workspace_created",
+      "people": 5180,
+      "conversion": 100.0,
+      "change": 0.0
+    },
+    {
+      "stage": "First project added",
+      "key": "first_project",
+      "people": 3204,
+      "conversion": 61.9,
+      "change": 3.4
+    },
+    {
+      "stage": "Team invited",
+      "key": "team_invited",
+      "people": 1802,
+      "conversion": 34.8,
+      "change": 2.1
+    },
+    {
+      "stage": "Paid plan started",
+      "key": "paid_plan",
+      "people": 642,
+      "conversion": 12.4,
+      "change": -0.8
+    }
+  ],
+  "notes": [
+    "Paid social declined for a second week after the September campaign ended.",
+    "Partner referrals grew fastest, led by design and publishing accounts."
+  ]
+}

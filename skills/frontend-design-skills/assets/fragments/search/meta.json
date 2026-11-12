@@ -1,0 +1,22 @@
+{
+  "id": "search",
+  "name": "Search results",
+  "tags": [
+    "search",
+    "results",
+    "filters",
+    "workspace"
+  ],
+  "description": "A workspace search for onboarding with type and date filters, six mixed results, highlights and result counts.",
+  "data": {
+    "query": "onboarding",
+    "result_count": 6,
+    "categories": [
+      "document",
+      "project",
+      "person"
+    ],
+    "date_filter": "Past week"
+  },
+  "a11y": "The form has a search landmark and labelled field; filters use aria-pressed; counts and empty states are announced; result links are descriptive and mark elements provide visible highlight."
+}

@@ -1,0 +1,94 @@
+{
+  "skill": "frontend-design-skills",
+  "version": 1,
+  "stack": "html",
+  "niche": "gaming",
+  "palette": "deep-forest",
+  "typePair": "anton-archivo",
+  "hero": "film",
+  "heroLayout": "media",
+  "motionTier": "T2",
+  "density": "dense",
+  "composition": "bleed",
+  "effects": true,
+  "rationale": "Deep forest: Forest black with a living green accent. For worlds, outdoor hardware and environmental software. Anton and Archivo: Game key art, esports and hardware launches where the headline must read as a poster. Hero \"film\" with a dense density, T2 motion tier and a bleed composition.",
+  "seed": "gaming-ironwood-01",
+  "assignedAt": "2026-11-12T06:48:57.054Z",
+  "paletteData": {
+    "id": "deep-forest",
+    "name": "Deep forest",
+    "mode": "dark",
+    "tags": [
+      "dark",
+      "natural",
+      "game"
+    ],
+    "niches": [
+      "gaming",
+      "hardware",
+      "ai"
+    ],
+    "bg": "#0f1712",
+    "surface": "#182219",
+    "ink": "#edf3ee",
+    "muted": "#98a89b",
+    "accent": "#70c08a",
+    "accentInk": "#0c1a11",
+    "bandBg": "#1c2a20",
+    "bandInk": "#edf3ee",
+    "contrast": {
+      "body": "15.1:1",
+      "muted": "6.5:1",
+      "accent": "7.8:1"
+    },
+    "note": "Forest black with a living green accent. For worlds, outdoor hardware and environmental software.",
+    "avoid": "No moss textures, no glowing mushrooms, no fantasy crests."
+  },
+  "typePairData": {
+    "id": "anton-archivo",
+    "name": "Anton and Archivo",
+    "display": {
+      "family": "Anton",
+      "weights": [
+        400
+      ],
+      "tracking": "-0.01em",
+      "lineHeight": "0.9",
+      "scale": {
+        "h1": 112,
+        "h2": 64,
+        "h3": 30
+      }
+    },
+    "text": {
+      "family": "Archivo",
+      "weights": [
+        400,
+        500
+      ]
+    },
+    "mono": {
+      "family": "IBM Plex Mono",
+      "weights": [
+        400
+      ]
+    },
+    "googleFonts": "https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap",
+    "niches": [
+      "gaming",
+      "hardware"
+    ],
+    "tags": [
+      "condensed",
+      "cinematic",
+      "loud"
+    ],
+    "suits": "Game key art, esports and hardware launches where the headline must read as a poster.",
+    "avoid": "Do not use Anton for body copy, forms or long navigation labels.",
+    "fallback": {
+      "display": "Impact, 'Arial Narrow', sans-serif",
+      "text": "ui-sans-serif, system-ui, sans-serif",
+      "mono": "ui-monospace, monospace"
+    }
+  }
+}

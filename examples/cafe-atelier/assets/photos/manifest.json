@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "note": "Local copies of the library photographs selected for this build. Verify with assets.mjs verify.",
+  "assets": [
+    {
+      "id": "cafe-atelier",
+      "class": "photo",
+      "title": "Coffee Cafe",
+      "path": "assets/photos/cafe-atelier.webp",
+      "source": "https://cdn.stocksnap.io/img-thumbs/960w/8C35014CE3.jpg",
+      "library": "StockSnap via Openverse",
+      "author": "Jeff Sheldon",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "added": "2026-11-12",
+      "expires": null,
+      "credit_required": false,
+      "alt": "A quiet cafe table with a cup, a notebook and warm wood seating.",
+      "subject": "Cafe table with a cup and notebook in soft daylight.",
+      "tags": [
+        "hospitality",
+        "cafe-atelier",
+        "interior",
+        "table"
+      ],
+      "notes": "Cropped to 4:3 and re-encoded as WebP; no retouching.",
+      "width": 960,
+      "height": 720,
+      "bytes": 82760,
+      "sha256": "377103bd6d1b48cba9e5a5b201751bce6ebd3efe8693909e5f147114946bdc3a"
+    }
+  ]
+}

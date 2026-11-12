@@ -1,0 +1,361 @@
+{
+  "meta": {
+    "dataset": "people",
+    "count": 14,
+    "workspace": "Meridian Labs",
+    "updated": "2026-11-10",
+    "notice": "Fictional records created for interface demonstrations. Names, companies and figures are invented."
+  },
+  "people": [
+    {
+      "id": "per_01",
+      "name": "Priya Raman",
+      "initials": "PR",
+      "pronouns": "she/her",
+      "title": "Head of Product",
+      "team": "Product",
+      "email": "priya.raman@meridianlabs.example",
+      "phone": "+1 555 0142",
+      "location": {
+        "city": "Lisbon",
+        "country": "Portugal",
+        "timezone": "Europe/Lisbon"
+      },
+      "startedOn": "2022-03-14",
+      "status": "active",
+      "managerId": null,
+      "color": "#0e6b58",
+      "focus": "Onboarding and activation",
+      "tags": [
+        "leadership",
+        "research",
+        "roadmap"
+      ]
+    },
+    {
+      "id": "per_02",
+      "name": "Tomás Ferreira",
+      "initials": "TF",
+      "pronouns": "he/him",
+      "title": "Staff Engineer",
+      "team": "Platform",
+      "email": "tomas.ferreira@meridianlabs.example",
+      "phone": "+351 21 555 0188",
+      "location": {
+        "city": "Lisbon",
+        "country": "Portugal",
+        "timezone": "Europe/Lisbon"
+      },
+      "startedOn": "2021-08-02",
+      "status": "active",
+      "managerId": "per_10",
+      "color": "#2c5f8a",
+      "focus": "Search indexing and query latency",
+      "tags": [
+        "backend",
+        "search",
+        "mentor"
+      ]
+    },
+    {
+      "id": "per_03",
+      "name": "Ada Okonkwo",
+      "initials": "AO",
+      "pronouns": "she/her",
+      "title": "Design Lead",
+      "team": "Design",
+      "email": "ada.okonkwo@meridianlabs.example",
+      "phone": "+1 555 0117",
+      "location": {
+        "city": "Toronto",
+        "country": "Canada",
+        "timezone": "America/Toronto"
+      },
+      "startedOn": "2022-01-10",
+      "status": "active",
+      "managerId": "per_01",
+      "color": "#8a4f2c",
+      "focus": "Design system and accessibility",
+      "tags": [
+        "design systems",
+        "a11y",
+        "critique"
+      ]
+    },
+    {
+      "id": "per_04",
+      "name": "Jonas Lindqvist",
+      "initials": "JL",
+      "pronouns": "he/him",
+      "title": "Data Analyst",
+      "team": "Insights",
+      "email": "jonas.lindqvist@meridianlabs.example",
+      "phone": "+46 8 555 0163",
+      "location": {
+        "city": "Copenhagen",
+        "country": "Denmark",
+        "timezone": "Europe/Copenhagen"
+      },
+      "startedOn": "2023-05-22",
+      "status": "away",
+      "managerId": "per_01",
+      "color": "#5c4b8a",
+      "focus": "Acquisition and retention reporting",
+      "tags": [
+        "sql",
+        "dashboards",
+        "experiments"
+      ]
+    },
+    {
+      "id": "per_05",
+      "name": "Mei-Ling Chen",
+      "initials": "MC",
+      "pronouns": "she/her",
+      "title": "Customer Success Lead",
+      "team": "Customer",
+      "email": "mei-ling.chen@meridianlabs.example",
+      "phone": "+65 6555 0124",
+      "location": {
+        "city": "Singapore",
+        "country": "Singapore",
+        "timezone": "Asia/Singapore"
+      },
+      "startedOn": "2022-11-07",
+      "status": "active",
+      "managerId": "per_01",
+      "color": "#a66b1f",
+      "focus": "Enterprise onboarding",
+      "tags": [
+        "accounts",
+        "renewals",
+        "training"
+      ]
+    },
+    {
+      "id": "per_06",
+      "name": "Rafael Moreno",
+      "initials": "RM",
+      "pronouns": "he/him",
+      "title": "Frontend Engineer",
+      "team": "Product",
+      "email": "rafael.moreno@meridianlabs.example",
+      "phone": "+52 55 5555 0191",
+      "location": {
+        "city": "Mexico City",
+        "country": "Mexico",
+        "timezone": "America/Mexico_City"
+      },
+      "startedOn": "2023-02-13",
+      "status": "active",
+      "managerId": "per_02",
+      "color": "#2c6b4f",
+      "focus": "Editor performance and motion",
+      "tags": [
+        "typescript",
+        "css",
+        "animation"
+      ]
+    },
+    {
+      "id": "per_07",
+      "name": "Noor Haddad",
+      "initials": "NH",
+      "pronouns": "they/them",
+      "title": "Research Lead",
+      "team": "Design",
+      "email": "noor.haddad@meridianlabs.example",
+      "phone": "+1 555 0136",
+      "location": {
+        "city": "Berlin",
+        "country": "Germany",
+        "timezone": "Europe/Berlin"
+      },
+      "startedOn": "2022-06-20",
+      "status": "active",
+      "managerId": "per_03",
+      "color": "#7a3f5a",
+      "focus": "Discovery interviews and usability",
+      "tags": [
+        "interviews",
+        "synthesis",
+        "testing"
+      ]
+    },
+    {
+      "id": "per_08",
+      "name": "Elena Petrova",
+      "initials": "EP",
+      "pronouns": "she/her",
+      "title": "Billing Operations",
+      "team": "Finance",
+      "email": "elena.petrova@meridianlabs.example",
+      "phone": "+44 20 5550 0177",
+      "location": {
+        "city": "Amsterdam",
+        "country": "Netherlands",
+        "timezone": "Europe/Amsterdam"
+      },
+      "startedOn": "2023-09-04",
+      "status": "active",
+      "managerId": "per_12",
+      "color": "#8a6d1f",
+      "focus": "Invoicing and revenue reconciliation",
+      "tags": [
+        "billing",
+        "tax",
+        "operations"
+      ]
+    },
+    {
+      "id": "per_09",
+      "name": "Kwame Mensah",
+      "initials": "KM",
+      "pronouns": "he/him",
+      "title": "Platform Engineer",
+      "team": "Platform",
+      "email": "kwame.mensah@meridianlabs.example",
+      "phone": "+254 20 555 0169",
+      "location": {
+        "city": "Nairobi",
+        "country": "Kenya",
+        "timezone": "Africa/Nairobi"
+      },
+      "startedOn": "2021-12-01",
+      "status": "active",
+      "managerId": "per_10",
+      "color": "#3f6b8a",
+      "focus": "Deploy pipeline and observability",
+      "tags": [
+        "infrastructure",
+        "ci",
+        "on-call"
+      ]
+    },
+    {
+      "id": "per_10",
+      "name": "Sofia Marchetti",
+      "initials": "SM",
+      "pronouns": "she/her",
+      "title": "VP Engineering",
+      "team": "Platform",
+      "email": "sofia.marchetti@meridianlabs.example",
+      "phone": "+39 02 5555 0108",
+      "location": {
+        "city": "Berlin",
+        "country": "Germany",
+        "timezone": "Europe/Berlin"
+      },
+      "startedOn": "2020-10-19",
+      "status": "active",
+      "managerId": null,
+      "color": "#5a3f8a",
+      "focus": "Reliability and engineering hiring",
+      "tags": [
+        "leadership",
+        "architecture",
+        "hiring"
+      ]
+    },
+    {
+      "id": "per_11",
+      "name": "Daniel Cho",
+      "initials": "DC",
+      "pronouns": "he/him",
+      "title": "Account Executive",
+      "team": "Revenue",
+      "email": "daniel.cho@meridianlabs.example",
+      "phone": "+82 2 555 0154",
+      "location": {
+        "city": "Seoul",
+        "country": "South Korea",
+        "timezone": "Asia/Seoul"
+      },
+      "startedOn": "2023-03-27",
+      "status": "active",
+      "managerId": "per_14",
+      "color": "#8a3f3f",
+      "focus": "Mid-market accounts",
+      "tags": [
+        "sales",
+        "demos",
+        "pipeline"
+      ]
+    },
+    {
+      "id": "per_12",
+      "name": "Imani Brooks",
+      "initials": "IB",
+      "pronouns": "she/her",
+      "title": "Finance Director",
+      "team": "Finance",
+      "email": "imani.brooks@meridianlabs.example",
+      "phone": "+1 555 0121",
+      "location": {
+        "city": "Austin",
+        "country": "United States",
+        "timezone": "America/Chicago"
+      },
+      "startedOn": "2021-04-05",
+      "status": "active",
+      "managerId": null,
+      "color": "#6b5a2c",
+      "focus": "Forecasting and procurement",
+      "tags": [
+        "finance",
+        "planning",
+        "vendors"
+      ]
+    },
+    {
+      "id": "per_13",
+      "name": "Hana Suzuki",
+      "initials": "HS",
+      "pronouns": "she/her",
+      "title": "QA Engineer",
+      "team": "Product",
+      "email": "hana.suzuki@meridianlabs.example",
+      "phone": "+81 3 5555 0182",
+      "location": {
+        "city": "Melbourne",
+        "country": "Australia",
+        "timezone": "Australia/Melbourne"
+      },
+      "startedOn": "2023-07-17",
+      "status": "invited",
+      "managerId": "per_02",
+      "color": "#2c7a7a",
+      "focus": "Release regression suites",
+      "tags": [
+        "testing",
+        "automation",
+        "release"
+      ]
+    },
+    {
+      "id": "per_14",
+      "name": "Viktor Aalto",
+      "initials": "VA",
+      "pronouns": "he/him",
+      "title": "Security Engineer",
+      "team": "Platform",
+      "email": "viktor.aalto@meridianlabs.example",
+      "phone": "+358 9 555 0146",
+      "location": {
+        "city": "Helsinki",
+        "country": "Finland",
+        "timezone": "Europe/Helsinki"
+      },
+      "startedOn": "2022-09-12",
+      "status": "active",
+      "managerId": "per_10",
+      "color": "#4a5c3f",
+      "focus": "Access reviews and threat modelling",
+      "tags": [
+        "security",
+        "compliance",
+        "incident response"
+      ]
+    }
+  ]
+}

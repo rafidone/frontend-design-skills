@@ -1,0 +1,25 @@
+{
+  "id": "map",
+  "name": "Location map",
+  "tags": [
+    "map",
+    "locations",
+    "network",
+    "operations"
+  ],
+  "description": "A stylised Nairobi map with six location pins, active, partner and planned statuses, a legend and a linked site directory.",
+  "data": {
+    "city": "Nairobi",
+    "active_sites": 5,
+    "planned_sites": 2,
+    "locations": [
+      "Westlands",
+      "Kilimani",
+      "Eastleigh",
+      "Ngara",
+      "Karen",
+      "Industrial Area"
+    ]
+  },
+  "a11y": "The map is a titled figure and SVG image; every pin is a labelled button; the directory mirrors pin selection with aria-pressed; a live region announces the selected location."
+}

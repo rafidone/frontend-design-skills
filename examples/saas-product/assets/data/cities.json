@@ -1,0 +1,286 @@
+{
+  "meta": {
+    "dataset": "cities",
+    "count": 12,
+    "updated": "2026-11-10",
+    "notice": "Fictional records created for interface demonstrations. Names, companies and figures are invented."
+  },
+  "cities": [
+    {
+      "id": "cit_01",
+      "name": "Lisbon",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "region": "Lisbon",
+      "coordinates": {
+        "lat": 38.7223,
+        "lng": -9.1393
+      },
+      "timezone": "Europe/Lisbon",
+      "airport": {
+        "code": "LIS",
+        "name": "Humberto Delgado"
+      },
+      "metroPopulation": 2870000,
+      "costIndex": 68,
+      "tags": [
+        "coastal",
+        "hq",
+        "design"
+      ]
+    },
+    {
+      "id": "cit_02",
+      "name": "Berlin",
+      "country": "Germany",
+      "countryCode": "DE",
+      "region": "Berlin",
+      "coordinates": {
+        "lat": 52.52,
+        "lng": 13.405
+      },
+      "timezone": "Europe/Berlin",
+      "airport": {
+        "code": "BER",
+        "name": "Berlin Brandenburg"
+      },
+      "metroPopulation": 4470000,
+      "costIndex": 74,
+      "tags": [
+        "engineering",
+        "transit",
+        "museums"
+      ]
+    },
+    {
+      "id": "cit_03",
+      "name": "Toronto",
+      "country": "Canada",
+      "countryCode": "CA",
+      "region": "Ontario",
+      "coordinates": {
+        "lat": 43.6532,
+        "lng": -79.3832
+      },
+      "timezone": "America/Toronto",
+      "airport": {
+        "code": "YYZ",
+        "name": "Lester B. Pearson"
+      },
+      "metroPopulation": 6310000,
+      "costIndex": 86,
+      "tags": [
+        "finance",
+        "lakefront",
+        "diverse"
+      ]
+    },
+    {
+      "id": "cit_04",
+      "name": "Austin",
+      "country": "United States",
+      "countryCode": "US",
+      "region": "Texas",
+      "coordinates": {
+        "lat": 30.2672,
+        "lng": -97.7431
+      },
+      "timezone": "America/Chicago",
+      "airport": {
+        "code": "AUS",
+        "name": "Austin-Bergstrom"
+      },
+      "metroPopulation": 2450000,
+      "costIndex": 92,
+      "tags": [
+        "music",
+        "startups",
+        "heat"
+      ]
+    },
+    {
+      "id": "cit_05",
+      "name": "Nairobi",
+      "country": "Kenya",
+      "countryCode": "KE",
+      "region": "Nairobi County",
+      "coordinates": {
+        "lat": -1.2921,
+        "lng": 36.8219
+      },
+      "timezone": "Africa/Nairobi",
+      "airport": {
+        "code": "NBO",
+        "name": "Jomo Kenyatta"
+      },
+      "metroPopulation": 5150000,
+      "costIndex": 48,
+      "tags": [
+        "fintech",
+        "highland",
+        "logistics"
+      ]
+    },
+    {
+      "id": "cit_06",
+      "name": "Singapore",
+      "country": "Singapore",
+      "countryCode": "SG",
+      "region": "Central",
+      "coordinates": {
+        "lat": 1.3521,
+        "lng": 103.8198
+      },
+      "timezone": "Asia/Singapore",
+      "airport": {
+        "code": "SIN",
+        "name": "Changi"
+      },
+      "metroPopulation": 5920000,
+      "costIndex": 96,
+      "tags": [
+        "port",
+        "tropical",
+        "finance"
+      ]
+    },
+    {
+      "id": "cit_07",
+      "name": "Melbourne",
+      "country": "Australia",
+      "countryCode": "AU",
+      "region": "Victoria",
+      "coordinates": {
+        "lat": -37.8136,
+        "lng": 144.9631
+      },
+      "timezone": "Australia/Melbourne",
+      "airport": {
+        "code": "MEL",
+        "name": "Tullamarine"
+      },
+      "metroPopulation": 5180000,
+      "costIndex": 84,
+      "tags": [
+        "design",
+        "coffee",
+        "temperate"
+      ]
+    },
+    {
+      "id": "cit_08",
+      "name": "Copenhagen",
+      "country": "Denmark",
+      "countryCode": "DK",
+      "region": "Capital Region",
+      "coordinates": {
+        "lat": 55.6761,
+        "lng": 12.5683
+      },
+      "timezone": "Europe/Copenhagen",
+      "airport": {
+        "code": "CPH",
+        "name": "Kastrup"
+      },
+      "metroPopulation": 1380000,
+      "costIndex": 94,
+      "tags": [
+        "cycling",
+        "harbour",
+        "energy"
+      ]
+    },
+    {
+      "id": "cit_09",
+      "name": "Mexico City",
+      "country": "Mexico",
+      "countryCode": "MX",
+      "region": "Mexico City",
+      "coordinates": {
+        "lat": 19.4326,
+        "lng": -99.1332
+      },
+      "timezone": "America/Mexico_City",
+      "airport": {
+        "code": "MEX",
+        "name": "Benito Juárez"
+      },
+      "metroPopulation": 21800000,
+      "costIndex": 55,
+      "tags": [
+        "highland",
+        "culture",
+        "food"
+      ]
+    },
+    {
+      "id": "cit_10",
+      "name": "Seoul",
+      "country": "South Korea",
+      "countryCode": "KR",
+      "region": "Seoul Capital Area",
+      "coordinates": {
+        "lat": 37.5665,
+        "lng": 126.978
+      },
+      "timezone": "Asia/Seoul",
+      "airport": {
+        "code": "ICN",
+        "name": "Incheon"
+      },
+      "metroPopulation": 25500000,
+      "costIndex": 82,
+      "tags": [
+        "manufacturing",
+        "transit",
+        "nightlife"
+      ]
+    },
+    {
+      "id": "cit_11",
+      "name": "Bengaluru",
+      "country": "India",
+      "countryCode": "IN",
+      "region": "Karnataka",
+      "coordinates": {
+        "lat": 12.9716,
+        "lng": 77.5946
+      },
+      "timezone": "Asia/Kolkata",
+      "airport": {
+        "code": "BLR",
+        "name": "Kempegowda"
+      },
+      "metroPopulation": 13100000,
+      "costIndex": 42,
+      "tags": [
+        "software",
+        "monsoon",
+        "gardens"
+      ]
+    },
+    {
+      "id": "cit_12",
+      "name": "Amsterdam",
+      "country": "Netherlands",
+      "countryCode": "NL",
+      "region": "North Holland",
+      "coordinates": {
+        "lat": 52.3676,
+        "lng": 4.9041
+      },
+      "timezone": "Europe/Amsterdam",
+      "airport": {
+        "code": "AMS",
+        "name": "Schiphol"
+      },
+      "metroPopulation": 2450000,
+      "costIndex": 91,
+      "tags": [
+        "canals",
+        "finance",
+        "cycling"
+      ]
+    }
+  ]
+}

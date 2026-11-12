@@ -1,0 +1,22 @@
+{
+  "id": "media",
+  "name": "Podcast player",
+  "tags": [
+    "media",
+    "player",
+    "audio",
+    "playlist"
+  ],
+  "description": "A podcast episode player with generative artwork, play control, seek bar, captions, speed and an up-next playlist.",
+  "data": {
+    "show": "Signal & Static",
+    "episode": 14,
+    "duration": "18:36",
+    "playlist": [
+      "Designing the first five minutes",
+      "A table that survives 390px",
+      "The quiet art of empty states"
+    ]
+  },
+  "a11y": "The artwork is a titled SVG; play buttons share an explicit label; seek has a label and updates elapsed time; captions use aria-pressed; state changes are announced in a live region."
+}

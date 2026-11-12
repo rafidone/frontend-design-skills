@@ -1,0 +1,108 @@
+<div class="ui ui-billing" data-fdm-ui="billing">
+  <header class="ui-top">
+    <div>
+      <p class="ui-eyebrow">Meridian Labs</p>
+      <h1 class="ui-title">Billing</h1>
+      <p class="ui-sub">Manage your plan, monitor usage and review past invoices. Billing period: Nov 1–30, 2026.</p>
+    </div>
+    <div class="ui-actions">
+      <button type="button" class="ui-btn">Billing settings</button>
+      <button type="button" class="ui-btn ui-btn-primary" data-upgrade>Upgrade plan</button>
+    </div>
+  </header>
+
+  <p class="ui-visually-hidden" role="status" data-bill-status></p>
+
+  <div class="bl-top">
+    <section class="bl-plan" aria-labelledby="bl-plan-title">
+      <div class="bl-plan-top">
+        <span class="ui-badge bl-plan-badge">Current plan</span>
+        <span class="bl-plan-cycle">Monthly</span>
+      </div>
+      <h2 id="bl-plan-title">Scale</h2>
+      <p class="bl-price"><span>$249</span> / month</p>
+      <p class="bl-renew">Renews Dec 1, 2026 · Visa ending 4242</p>
+      <ul class="bl-features">
+        <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7"/></svg> 25 team seats</li>
+        <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7"/></svg> 2M API calls each month</li>
+        <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7"/></svg> 100 GB file storage</li>
+        <li><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4.5 4.5L19 7"/></svg> Audit log and SSO</li>
+      </ul>
+      <div class="bl-plan-actions">
+        <button type="button" class="bl-plan-btn" data-change>Change plan</button>
+        <button type="button" class="bl-plan-btn bl-plan-danger" data-cancel>Cancel subscription</button>
+      </div>
+    </section>
+
+    <section class="ui-panel bl-payment" aria-labelledby="bl-pay-title">
+      <div class="ui-panel-head">
+        <h2 class="ui-panel-title" id="bl-pay-title">Payment method</h2>
+        <span class="ui-badge ui-badge-accent">Primary</span>
+      </div>
+      <div class="ui-panel-body">
+        <div class="bl-card">
+          <span class="bl-card-mark" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M7 15h4"/></svg>
+          </span>
+          <div><strong>Visa ending 4242</strong><span>Expires 08/2028 · Amina Farouk</span></div>
+        </div>
+        <div class="bl-pay-row"><span>Billing email</span><strong>finance@meridianlabs.example</strong></div>
+        <div class="bl-pay-row"><span>Tax ID</span><strong>KE-PIN-0482193</strong></div>
+        <button type="button" class="ui-btn bl-pay-btn" data-payment>Update payment method</button>
+      </div>
+    </section>
+  </div>
+
+  <section class="ui-panel bl-usage" aria-labelledby="bl-usage-title">
+    <div class="ui-panel-head">
+      <div><h2 class="ui-panel-title" id="bl-usage-title">Usage this period</h2><p class="bl-kicker">Resets Dec 1, 2026</p></div>
+      <span class="ui-badge">Nov 1–30</span>
+    </div>
+    <div class="bl-usage-grid">
+      <div class="bl-usage-item">
+        <div class="bl-usage-row"><span>Team seats</span><strong>18 of 25</strong></div>
+        <div class="ui-progress" role="progressbar" aria-label="Team seats used" aria-valuemin="0" aria-valuemax="25" aria-valuenow="18"><span style="width:72%"></span></div>
+        <p>72% used · 7 seats available</p>
+      </div>
+      <div class="bl-usage-item">
+        <div class="bl-usage-row"><span>API calls</span><strong>1.24M of 2M</strong></div>
+        <div class="ui-progress" role="progressbar" aria-label="API calls used" aria-valuemin="0" aria-valuemax="2" aria-valuenow="1.24"><span style="width:62%"></span></div>
+        <p>62% used · 760k remaining</p>
+      </div>
+      <div class="bl-usage-item">
+        <div class="bl-usage-row"><span>File storage</span><strong>48 of 100 GB</strong></div>
+        <div class="ui-progress" role="progressbar" aria-label="File storage used" aria-valuemin="0" aria-valuemax="100" aria-valuenow="48"><span style="width:48%; background:#2c5f8a"></span></div>
+        <p>48% used · 52 GB available</p>
+      </div>
+      <div class="bl-usage-item">
+        <div class="bl-usage-row"><span>Active projects</span><strong>12</strong></div>
+        <div class="ui-progress" role="progressbar" aria-label="Active projects" aria-valuemin="0" aria-valuemax="12" aria-valuenow="12"><span style="width:100%; background:#a66b1f"></span></div>
+        <p>Unlimited on your plan</p>
+      </div>
+    </div>
+    <div class="bl-usage-foot">
+      <p><strong>Need more room?</strong> Add five seats for $40 per month and keep the current billing cycle.</p>
+      <button type="button" class="ui-btn" data-add-seats>Add 5 seats</button>
+    </div>
+  </section>
+
+  <section class="ui-panel bl-history" aria-labelledby="bl-history-title">
+    <div class="ui-panel-head">
+      <div><h2 class="ui-panel-title" id="bl-history-title">Invoice history</h2><p class="bl-kicker">Receipts are available as PDF.</p></div>
+      <a class="bl-history-link" href="#billing-invoices">View all invoices</a>
+    </div>
+    <div class="bl-table-wrap">
+      <table class="bl-table">
+        <caption class="ui-visually-hidden">Invoice history for Meridian Labs</caption>
+        <thead><tr><th scope="col">Invoice</th><th scope="col">Date</th><th scope="col">Plan</th><th scope="col">Amount</th><th scope="col">Status</th><th scope="col"><span class="ui-visually-hidden">Receipt</span></th></tr></thead>
+        <tbody>
+          <tr><th scope="row">INV-2026-011</th><td>Nov 1, 2026</td><td>Scale · monthly</td><td>$249.00</td><td><span class="ui-badge ui-badge-accent">Paid</span></td><td><button type="button" class="bl-download" aria-label="Download invoice INV-2026-011">Download</button></td></tr>
+          <tr><th scope="row">INV-2026-010</th><td>Oct 1, 2026</td><td>Scale · monthly</td><td>$249.00</td><td><span class="ui-badge ui-badge-accent">Paid</span></td><td><button type="button" class="bl-download" aria-label="Download invoice INV-2026-010">Download</button></td></tr>
+          <tr><th scope="row">INV-2026-009</th><td>Sep 1, 2026</td><td>Scale · monthly</td><td>$249.00</td><td><span class="ui-badge ui-badge-accent">Paid</span></td><td><button type="button" class="bl-download" aria-label="Download invoice INV-2026-009">Download</button></td></tr>
+          <tr><th scope="row">INV-2026-008</th><td>Aug 1, 2026</td><td>Scale · monthly</td><td>$249.00</td><td><span class="ui-badge ui-badge-accent">Paid</span></td><td><button type="button" class="bl-download" aria-label="Download invoice INV-2026-008">Download</button></td></tr>
+          <tr><th scope="row">INV-2026-007</th><td>Jul 1, 2026</td><td>Team · monthly</td><td>$199.00</td><td><span class="ui-badge ui-badge-accent">Paid</span></td><td><button type="button" class="bl-download" aria-label="Download invoice INV-2026-007">Download</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>

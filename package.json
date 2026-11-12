@@ -1,0 +1,45 @@
+{
+  "name": "frontend-design-skills",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Production-grade frontend design skill: locked art direction, niche-specific systems, and real-browser finish gates.",
+  "license": "MIT",
+  "author": {
+    "name": "rafidone",
+    "url": "https://github.com/rafidone"
+  },
+  "homepage": "https://github.com/rafidone/frontend-design-skills",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafidone/frontend-design-skills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rafidone/frontend-design-skills/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "doctor": "node skills/frontend-design-skills/scripts/doctor.mjs",
+    "lint:name": "node skills/frontend-design-skills/scripts/lint-name.mjs",
+    "test": "node --test tests/unit/*.test.mjs",
+    "test:e2e": "node tests/e2e/run.mjs",
+    "test:all": "npm run lint:name && npm test && npm run test:e2e",
+    "verify": "node skills/frontend-design-skills/scripts/verify.mjs",
+    "build": "node tests/e2e/run.mjs",
+    "install:remote": "./install.sh --remote"
+  },
+  "keywords": [
+    "opencode",
+    "claude-code",
+    "agent-skill",
+    "agent-skills",
+    "skills-cli",
+    "frontend",
+    "design-system",
+    "art-direction",
+    "playwright",
+    "browser-testing"
+  ]
+}

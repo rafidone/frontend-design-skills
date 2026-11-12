@@ -1,0 +1,106 @@
+<div class="ui ui-settings" data-fdm-ui="settings">
+  <header class="ui-top">
+    <div>
+      <p class="ui-eyebrow">Meridian Labs</p>
+      <h1 class="ui-title">Workspace settings</h1>
+      <p class="ui-sub">Manage how your team works, what you are notified about and how access is protected.</p>
+    </div>
+    <div class="ui-actions">
+      <button type="button" class="ui-btn" data-reset>Discard</button>
+      <button type="button" class="ui-btn ui-btn-primary" data-save>Save changes</button>
+    </div>
+  </header>
+
+  <p class="ui-visually-hidden" role="status" data-set-status>Settings loaded.</p>
+
+  <div class="set-layout">
+    <nav class="set-nav" aria-label="Settings sections">
+      <a href="#set-preferences" aria-current="page">Preferences</a>
+      <a href="#set-notifications">Notifications</a>
+      <a href="#set-security">Security</a>
+      <a href="#set-members">Members</a>
+    </nav>
+
+    <div class="set-main">
+      <section class="ui-panel set-section" id="set-preferences" aria-labelledby="set-pref-title">
+        <div class="ui-panel-head">
+          <div><h2 class="ui-panel-title" id="set-pref-title">Preferences</h2><p class="set-kicker">Defaults for everyone in this workspace.</p></div>
+        </div>
+        <div class="set-rows">
+          <div class="set-row">
+            <div class="set-copy"><span class="set-label" id="set-compact-label">Compact table density</span><p id="set-compact-desc">Fit more rows on screen. Row height drops from 48px to 38px.</p></div>
+            <button type="button" class="set-toggle" role="switch" aria-checked="true" aria-labelledby="set-compact-label" aria-describedby="set-compact-desc" data-toggle><span class="set-knob"></span><span class="ui-visually-hidden">On</span></button>
+          </div>
+          <div class="set-row">
+            <div class="set-copy"><span class="set-label" id="set-motion-label">Reduce motion</span><p id="set-motion-desc">Turn off chart reveals, panel transitions and parallax.</p></div>
+            <button type="button" class="set-toggle" role="switch" aria-checked="false" aria-labelledby="set-motion-label" aria-describedby="set-motion-desc" data-toggle><span class="set-knob"></span><span class="ui-visually-hidden">Off</span></button>
+          </div>
+          <div class="set-row">
+            <div class="set-copy"><span class="set-label" id="set-time-label">Relative timestamps</span><p id="set-time-desc">Show “12 min ago” for recent activity and full dates after 24 hours.</p></div>
+            <button type="button" class="set-toggle" role="switch" aria-checked="true" aria-labelledby="set-time-label" aria-describedby="set-time-desc" data-toggle><span class="set-knob"></span><span class="ui-visually-hidden">On</span></button>
+          </div>
+          <div class="set-row set-row-select">
+            <div class="set-copy"><label class="set-label" for="set-landing">Default landing page</label><p id="set-landing-desc">Where teammates land after signing in.</p></div>
+            <select id="set-landing" class="set-select" aria-describedby="set-landing-desc">
+              <option>Overview</option>
+              <option selected>My work</option>
+              <option>Projects</option>
+              <option>Reports</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="ui-panel set-section" id="set-notifications" aria-labelledby="set-notif-title">
+        <div class="ui-panel-head">
+          <div><h2 class="ui-panel-title" id="set-notif-title">Notifications</h2><p class="set-kicker">Choose what reaches your inbox and desktop.</p></div>
+          <span class="ui-badge ui-badge-accent">3 of 4 on</span>
+        </div>
+        <div class="set-rows">
+          <div class="set-row">
+            <div class="set-copy"><span class="set-label" id="set-mention-label">Mentions and replies</span><p id="set-mention-desc">Notify me when someone mentions me in a comment or task.</p></div>
+            <button type="button" class="set-toggle" role="switch" aria-checked="true" aria-labelledby="set-mention-label" aria-describedby="set-mention-desc" data-toggle><span class="set-knob"></span><span class="ui-visually-hidden">On</span></button>
+          </div>
+          <div class="set-row">
+            <div class="set-copy"><span class="set-label" id="set-digest-label">Weekly digest</span><p id="set-digest-desc">A Monday summary of project activity and upcoming due dates.</p></div>
+            <button type="button" class="set-toggle" role="switch" aria-checked="true" aria-labelledby="set-digest-label" aria-describedby="set-digest-desc" data-toggle><span class="set-knob"></span><span class="ui-visually-hidden">On</span></button>
+          </div>
+          <div class="set-row">
+            <div class="set-copy"><span class="set-label" id="set-billing-label">Billing alerts</span><p id="set-billing-desc">Payment failures, plan changes and invoices above $5,000.</p></div>
+            <button type="button" class="set-toggle" role="switch" aria-checked="true" aria-labelledby="set-billing-label" aria-describedby="set-billing-desc" data-toggle><span class="set-knob"></span><span class="ui-visually-hidden">On</span></button>
+          </div>
+          <div class="set-row">
+            <div class="set-copy"><span class="set-label" id="set-product-label">Product announcements</span><p id="set-product-desc">Monthly notes about new features and deprecations.</p></div>
+            <button type="button" class="set-toggle" role="switch" aria-checked="false" aria-labelledby="set-product-label" aria-describedby="set-product-desc" data-toggle><span class="set-knob"></span><span class="ui-visually-hidden">Off</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="ui-panel set-section" id="set-security" aria-labelledby="set-sec-title">
+        <div class="ui-panel-head">
+          <div><h2 class="ui-panel-title" id="set-sec-title">Security</h2><p class="set-kicker">Controls for workspace access.</p></div>
+          <span class="ui-badge ui-badge-accent"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v5.5c0 4.8-3.2 8.2-8 9.5-4.8-1.3-8-4.7-8-9.5V6l8-3Z"/><path d="m8.5 11.8 2.2 2.2 4.8-4.8"/></svg> Protected</span>
+        </div>
+        <div class="set-rows">
+          <div class="set-row">
+            <div class="set-copy"><span class="set-label" id="set-2fa-label">Two-factor authentication</span><p id="set-2fa-desc">Require a second factor for all workspace administrators.</p></div>
+            <button type="button" class="set-toggle" role="switch" aria-checked="true" aria-labelledby="set-2fa-label" aria-describedby="set-2fa-desc" data-toggle><span class="set-knob"></span><span class="ui-visually-hidden">On</span></button>
+          </div>
+          <div class="set-row">
+            <div class="set-copy"><span class="set-label" id="set-sso-label">Require SSO for guests</span><p id="set-sso-desc">Guests must sign in through Meridian Labs’ identity provider.</p></div>
+            <button type="button" class="set-toggle" role="switch" aria-checked="false" aria-labelledby="set-sso-label" aria-describedby="set-sso-desc" data-toggle><span class="set-knob"></span><span class="ui-visually-hidden">Off</span></button>
+          </div>
+          <div class="set-row set-row-select">
+            <div class="set-copy"><label class="set-label" for="set-session">Session timeout</label><p id="set-session-desc">Inactive sessions are signed out after this period.</p></div>
+            <select id="set-session" class="set-select" aria-describedby="set-session-desc">
+              <option>1 hour</option>
+              <option>4 hours</option>
+              <option selected>8 hours</option>
+              <option>24 hours</option>
+            </select>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

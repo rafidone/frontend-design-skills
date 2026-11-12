@@ -1,0 +1,192 @@
+{
+  "meta": {
+    "dataset": "schedule",
+    "workspace": "Meridian Labs",
+    "week": "2026-11-09/2026-11-13",
+    "timezone": "Europe/Lisbon",
+    "count": 11,
+    "updated": "2026-11-10",
+    "notice": "Fictional records created for interface demonstrations. Names, companies and figures are invented."
+  },
+  "events": [
+    {
+      "id": "evt_01",
+      "title": "Product standup",
+      "type": "meeting",
+      "start": "2026-11-09T09:30:00Z",
+      "end": "2026-11-09T09:55:00Z",
+      "timezone": "Europe/Lisbon",
+      "location": "Remote · Team room",
+      "attendees": [
+        "per_01",
+        "per_03",
+        "per_06",
+        "per_13"
+      ],
+      "recurrence": "weekdays",
+      "description": "Blockers, release notes and the week's single priority."
+    },
+    {
+      "id": "evt_02",
+      "title": "Design critique: onboarding",
+      "type": "workshop",
+      "start": "2026-11-09T11:00:00Z",
+      "end": "2026-11-09T12:00:00Z",
+      "timezone": "Europe/Lisbon",
+      "location": "Remote · Studio A",
+      "attendees": [
+        "per_01",
+        "per_03",
+        "per_06",
+        "per_07"
+      ],
+      "recurrence": null,
+      "description": "Review the three-step workspace setup and empty states."
+    },
+    {
+      "id": "evt_03",
+      "title": "Roadmap workshop: Q1",
+      "type": "workshop",
+      "start": "2026-11-09T14:00:00Z",
+      "end": "2026-11-09T15:30:00Z",
+      "timezone": "Europe/Lisbon",
+      "location": "Remote · Strategy room",
+      "attendees": [
+        "per_01",
+        "per_03",
+        "per_10",
+        "per_12"
+      ],
+      "recurrence": null,
+      "description": "Rank candidate bets against activation and retention goals."
+    },
+    {
+      "id": "evt_04",
+      "title": "Customer research: Larkspur Studio",
+      "type": "meeting",
+      "start": "2026-11-10T10:00:00Z",
+      "end": "2026-11-10T10:45:00Z",
+      "timezone": "Europe/Lisbon",
+      "location": "Video call",
+      "attendees": [
+        "per_05",
+        "per_07"
+      ],
+      "recurrence": null,
+      "description": "Walk through shared review boards and client handoff."
+    },
+    {
+      "id": "evt_05",
+      "title": "Billing migration cutover",
+      "type": "deadline",
+      "start": "2026-11-10T13:00:00Z",
+      "end": "2026-11-10T14:00:00Z",
+      "timezone": "Europe/Lisbon",
+      "location": "Remote · Finance bridge",
+      "attendees": [
+        "per_08",
+        "per_12",
+        "per_09"
+      ],
+      "recurrence": null,
+      "description": "Freeze invoices, reconcile the final batch, then enable the new tax rules."
+    },
+    {
+      "id": "evt_06",
+      "title": "Security tabletop",
+      "type": "workshop",
+      "start": "2026-11-10T16:00:00Z",
+      "end": "2026-11-10T16:45:00Z",
+      "timezone": "Europe/Lisbon",
+      "location": "Remote · Incident room",
+      "attendees": [
+        "per_09",
+        "per_10",
+        "per_14"
+      ],
+      "recurrence": "monthly",
+      "description": "Tabletop exercise: compromised sandbox token and audit review."
+    },
+    {
+      "id": "evt_07",
+      "title": "Focus block: search ranking",
+      "type": "focus",
+      "start": "2026-11-11T09:00:00Z",
+      "end": "2026-11-11T11:00:00Z",
+      "timezone": "Europe/Lisbon",
+      "location": "No meetings",
+      "attendees": [
+        "per_02",
+        "per_06"
+      ],
+      "recurrence": null,
+      "description": "Prototype the recency-and-affinity scoring change behind a flag."
+    },
+    {
+      "id": "evt_08",
+      "title": "Company all-hands",
+      "type": "meeting",
+      "start": "2026-11-11T15:00:00Z",
+      "end": "2026-11-11T15:30:00Z",
+      "timezone": "Europe/Lisbon",
+      "location": "Remote · Main stage",
+      "attendees": [
+        "per_01",
+        "per_10",
+        "per_12",
+        "per_14"
+      ],
+      "recurrence": "biweekly",
+      "description": "Quarter progress, billing launch and open questions."
+    },
+    {
+      "id": "evt_09",
+      "title": "Analytics review",
+      "type": "meeting",
+      "start": "2026-11-12T10:30:00Z",
+      "end": "2026-11-12T11:30:00Z",
+      "timezone": "Europe/Lisbon",
+      "location": "Remote · Insights room",
+      "attendees": [
+        "per_01",
+        "per_04",
+        "per_05"
+      ],
+      "recurrence": "weekly",
+      "description": "Acquisition week over week, activation dip and referral quality."
+    },
+    {
+      "id": "evt_10",
+      "title": "Invoice run: November",
+      "type": "deadline",
+      "start": "2026-11-12T14:00:00Z",
+      "end": "2026-11-12T15:00:00Z",
+      "timezone": "Europe/Lisbon",
+      "location": "Remote · Finance desk",
+      "attendees": [
+        "per_08",
+        "per_12"
+      ],
+      "recurrence": "monthly",
+      "description": "Generate, review and send 128 invoices before 16:00."
+    },
+    {
+      "id": "evt_11",
+      "title": "Demo day and retro",
+      "type": "meeting",
+      "start": "2026-11-13T13:00:00Z",
+      "end": "2026-11-13T14:30:00Z",
+      "timezone": "Europe/Lisbon",
+      "location": "Remote · Main stage",
+      "attendees": [
+        "per_01",
+        "per_02",
+        "per_03",
+        "per_06",
+        "per_13"
+      ],
+      "recurrence": "weekly",
+      "description": "Ship demos, then a 30-minute retro on what to keep."
+    }
+  ]
+}

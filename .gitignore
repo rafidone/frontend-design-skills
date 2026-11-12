@@ -1,0 +1,17 @@
+node_modules/
+.DS_Store
+*.log
+.frontend-design-skills/*
+!.frontend-design-skills/art-direction.json
+!.frontend-design-skills/waivers.json
+coverage/
+dist/
+out/
+screenshots/
+test-results/
+playwright-report/
+.env
+.env.*
+!.env.example
+skills-lock.json
+.agents/

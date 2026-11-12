@@ -1,0 +1,92 @@
+<div class="ui ui-command-palette" data-fdm-ui="command-palette">
+  <section class="cp-panel" role="dialog" aria-modal="false" aria-labelledby="cp-title" aria-describedby="cp-desc">
+    <header class="cp-head">
+      <span class="cp-mark" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7h14M5 12h9M5 17h5"/></svg>
+      </span>
+      <div>
+        <h1 id="cp-title">Command palette</h1>
+        <p id="cp-desc">Jump to a page, run an action or find a teammate.</p>
+      </div>
+      <button type="button" class="ui-icon-btn cp-close" data-cp-close aria-label="Close command palette">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+    </header>
+
+    <div class="cp-search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.4 15.4 4.1 4.1"/></svg>
+      <label class="ui-visually-hidden" for="cp-query">Search commands and people</label>
+      <input id="cp-query" type="search" placeholder="Search pages, actions and people…" autocomplete="off" data-cp-input aria-describedby="cp-help">
+      <kbd aria-hidden="true">Esc</kbd>
+    </div>
+    <p id="cp-help" class="ui-visually-hidden">Results update as you type. Use the up and down arrow keys to move between results, then press Enter to open.</p>
+
+    <div class="cp-results" data-cp-results>
+      <section class="cp-group" data-cp-group aria-labelledby="cp-nav">
+        <h2 id="cp-nav">Navigate</h2>
+        <ul>
+          <li><button type="button" class="cp-item" data-cp-item="Overview">
+            <span class="cp-item-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.2"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.2"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.2"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.2"/></svg></span>
+            <span class="cp-item-text"><strong>Overview</strong><span>Workspace home and activity</span></span><kbd aria-hidden="true">G O</kbd>
+          </button></li>
+          <li><button type="button" class="cp-item" data-cp-item="Projects">
+            <span class="cp-item-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 7.5A2 2 0 0 1 5.5 5.5h4l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2v-10Z"/></svg></span>
+            <span class="cp-item-text"><strong>Projects</strong><span>12 active projects</span></span><kbd aria-hidden="true">G P</kbd>
+          </button></li>
+          <li><button type="button" class="cp-item" data-cp-item="Reports">
+            <span class="cp-item-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19V9M12 19V5M19 19v-7"/></svg></span>
+            <span class="cp-item-text"><strong>Reports</strong><span>Acquisition, retention and usage</span></span><kbd aria-hidden="true">G R</kbd>
+          </button></li>
+          <li><button type="button" class="cp-item" data-cp-item="Billing">
+            <span class="cp-item-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M7 15h4"/></svg></span>
+            <span class="cp-item-text"><strong>Billing</strong><span>Plan, usage and invoices</span></span><kbd aria-hidden="true">G B</kbd>
+          </button></li>
+        </ul>
+      </section>
+
+      <section class="cp-group" data-cp-group aria-labelledby="cp-actions">
+        <h2 id="cp-actions">Actions</h2>
+        <ul>
+          <li><button type="button" class="cp-item" data-cp-item="Create project">
+            <span class="cp-item-icon cp-icon-accent"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+            <span class="cp-item-text"><strong>Create project</strong><span>Start from a blank project or template</span></span><kbd aria-hidden="true">N P</kbd>
+          </button></li>
+          <li><button type="button" class="cp-item" data-cp-item="Invite teammate">
+            <span class="cp-item-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.5 19c.5-3 2.7-4.7 5.5-4.7s5 1.7 5.5 4.7"/><path d="M18 8v6M15 11h6"/></svg></span>
+            <span class="cp-item-text"><strong>Invite teammate</strong><span>Send a workspace invitation</span></span><kbd aria-hidden="true">N I</kbd>
+          </button></li>
+          <li><button type="button" class="cp-item" data-cp-item="Export workspace data">
+            <span class="cp-item-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg></span>
+            <span class="cp-item-text"><strong>Export workspace data</strong><span>Download projects, people and activity as CSV</span></span><kbd aria-hidden="true">⇧ E</kbd>
+          </button></li>
+        </ul>
+      </section>
+
+      <section class="cp-group" data-cp-group aria-labelledby="cp-people">
+        <h2 id="cp-people">People</h2>
+        <ul>
+          <li><button type="button" class="cp-item" data-cp-item="Amina Farouk">
+            <span class="ui-avatar" aria-hidden="true">AF</span>
+            <span class="cp-item-text"><strong>Amina Farouk</strong><span>Product design · Nairobi</span></span><span class="ui-badge">You</span>
+          </button></li>
+          <li><button type="button" class="cp-item" data-cp-item="Theo Bennett">
+            <span class="ui-avatar ui-avatar-warm" aria-hidden="true">TB</span>
+            <span class="cp-item-text"><strong>Theo Bennett</strong><span>Engineering · Lisbon</span></span>
+          </button></li>
+          <li><button type="button" class="cp-item" data-cp-item="Priya Raman">
+            <span class="ui-avatar" aria-hidden="true">PR</span>
+            <span class="cp-item-text"><strong>Priya Raman</strong><span>Security · Bengaluru</span></span>
+          </button></li>
+        </ul>
+      </section>
+    </div>
+
+    <p class="cp-none" data-cp-none hidden>No matches. Try “billing”, “invite” or a teammate’s name.</p>
+
+    <footer class="cp-foot">
+      <div><kbd>↑</kbd><kbd>↓</kbd><span>Navigate</span><kbd>↵</kbd><span>Open</span><kbd>Esc</kbd><span>Close</span></div>
+      <span class="cp-count" data-cp-count>10 results</span>
+    </footer>
+    <p class="ui-visually-hidden" role="status" data-cp-status>Command palette ready.</p>
+  </section>
+</div>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Morrow studio hero — photo-led composition.">
+  <title>Morrow — Good work needs a good room</title>
+  <link rel="stylesheet" href="../starter/styles/tokens.css">
+  <link rel="stylesheet" href="../starter/styles/base.css">
+  <link rel="stylesheet" href="../starter/styles/layout.css">
+  <link rel="stylesheet" href="../starter/styles/components.css">
+  <link rel="stylesheet" href="../starter/styles/motion.css">
+  <script src="../starter/scripts/motion.js" defer></script>
+  <style>
+    .photo-hero {
+      display: grid;
+      min-height: 100svh;
+      padding: 0;
+      grid-template-columns: minmax(0, 1.12fr) minmax(24rem, 0.88fr);
+      background: var(--surface);
+    }
+
+    .photo-figure {
+      position: relative;
+      min-height: 100svh;
+      margin: 0;
+      overflow: hidden;
+      background: #d9cdb9;
+    }
+
+    .photo-figure svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-figure__label {
+      position: absolute;
+      top: calc(var(--header-h) + var(--space-6));
+      left: var(--gutter);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      color: #f4f1e8;
+      font-family: var(--font-mono);
+      font-size: var(--text-2xs);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+
+    .photo-figure__label::before {
+      width: 2.5rem;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    .photo-caption {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      padding: var(--space-3) var(--space-5);
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      background: #f4f1e8;
+      color: #19211b;
+      font-family: var(--font-mono);
+      font-size: var(--text-2xs);
+      letter-spacing: 0.06em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .photo-copy {
+      display: flex;
+      min-width: 0;
+      padding: calc(var(--header-h) + var(--space-6)) clamp(1.25rem, 5vw, 4.5rem) var(--space-6);
+      flex-direction: column;
+      justify-content: center;
+      border-inline-start: var(--border);
+    }
+
+    .photo-title {
+      max-width: 11ch;
+      font-size: clamp(3.1rem, 6.6vw, 7rem);
+      line-height: 0.94;
+    }
+
+    .photo-copy .lede {
+      margin-block-start: var(--space-5);
+      max-width: 38ch;
+    }
+
+    .photo-note {
+      display: flex;
+      margin-block-start: var(--space-7);
+      padding-block-start: var(--space-4);
+      align-items: center;
+      gap: var(--space-3);
+      border-block-start: var(--border);
+      color: var(--muted);
+      font-size: var(--text-xs);
+    }
+
+    @media (max-width: 900px) {
+      .photo-hero {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .photo-copy {
+        min-height: 62svh;
+        padding-block: calc(var(--header-h) + var(--space-6)) var(--space-6);
+        order: 1;
+        border-inline-start: 0;
+        border-block-end: var(--border);
+      }
+
+      .photo-figure {
+        height: 48svh;
+        min-height: 0;
+        order: 2;
+      }
+
+      .photo-title {
+        max-width: 12ch;
+        font-size: clamp(3rem, 10vw, 5rem);
+      }
+
+      .photo-figure__label {
+        display: none;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .photo-title {
+        font-size: clamp(2.9rem, 14vw, 4rem);
+      }
+
+      .photo-note {
+        margin-block-start: var(--space-5);
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="demo-header">
+    <div class="wrap">
+      <nav class="demo-nav" aria-label="Primary">
+        <a class="brand" href="../starter/index.html" aria-label="Morrow home">
+          <span class="brand__mark" aria-hidden="true">M</span>
+          <span>Morrow<span class="brand__dot">.</span></span>
+        </a>
+        <div class="demo-links">
+          <a href="../starter/index.html#proof">Fieldwork</a>
+          <a class="button button--primary button--small" href="../starter/index.html#contact">Enquire</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero photo-hero" data-budget="1" aria-labelledby="hero-title">
+      <figure class="photo-figure">
+        <p class="photo-figure__label">Morrow fieldwork · No. 14</p>
+        <svg viewBox="0 0 760 1100" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Abstract illustration of a quiet courtyard with a pool, archway and afternoon light">
+          <rect width="760" height="1100" fill="#d8cbb5"/>
+          <rect width="760" height="370" fill="#cbbda5"/>
+          <circle cx="596" cy="180" r="112" fill="#f1d9b7"/>
+          <path d="M0 590V280c0-102 83-185 185-185h120c102 0 185 83 185 185v310H0Z" fill="#e8dfcf"/>
+          <path d="M140 590V330c0-76 62-138 138-138h54v398H140Z" fill="#1f513f"/>
+          <path d="M206 590V356c0-50 41-91 91-91h3v325H206Z" fill="#0f2a21"/>
+          <path d="M330 590V218h78v372h-78Z" fill="#f4f1e8"/>
+          <path d="M390 590V268h52v322h-52Z" fill="#c7b79d"/>
+          <path d="M0 592h760v508H0Z" fill="#b9a98f"/>
+          <path d="M0 592h760" stroke="#19211b" stroke-width="10"/>
+          <path d="M0 684h760M0 768h760" stroke="#a38f72" stroke-width="2"/>
+          <path d="M0 892h760v208H0Z" fill="#9fb3a6"/>
+          <path d="M0 944h760M0 1000h760M0 1056h760" stroke="#789486" stroke-width="2"/>
+          <path d="M0 892h760" stroke="#19211b" stroke-width="8"/>
+          <path d="M560 892V612h102v280" fill="#e8dfcf"/>
+          <path d="M582 892V638h58v254" fill="#cbbda5"/>
+          <path d="M310 892h32c0 42 34 76 76 76s76-34 76-76h30" fill="none" stroke="#19211b" stroke-width="6"/>
+          <path d="M538 892c0 44-36 80-80 80s-80-36-80-80" fill="none" stroke="#19211b" stroke-width="6"/>
+          <path d="M90 892v-92c0-19 15-34 34-34h44" fill="none" stroke="#19211b" stroke-width="6"/>
+          <circle cx="90" cy="892" r="16" fill="#df5438"/>
+          <path d="M181 766c28-49 20-112-18-154 57 9 103 57 108 115" fill="none" stroke="#1f513f" stroke-width="10" stroke-linecap="round"/>
+          <path d="M181 766v126" stroke="#1f513f" stroke-width="10" stroke-linecap="round"/>
+          <rect x="38" y="80" width="136" height="54" rx="27" fill="#f4f1e8"/>
+          <circle cx="66" cy="107" r="7" fill="#df5438"/>
+          <path d="M84 108h66" stroke="#19211b" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <figcaption class="photo-caption">
+          <span>The courtyard, 16:40</span>
+          <span>Lisbon · 38.7223° N</span>
+        </figcaption>
+      </figure>
+
+      <div class="photo-copy" data-enter>
+        <p class="eyebrow">Environment matters</p>
+        <h1 class="photo-title" id="hero-title">Good work needs a good <em class="display-accent">room</em>.</h1>
+        <p class="lede">We design the conditions — time, trust and a clear brief — so the team can stop managing the room and start making the thing.</p>
+        <div class="hero-actions">
+          <a class="button button--primary" href="../starter/index.html#contact">Plan a studio visit <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="button button--text" href="../starter/index.html#proof">Read the fieldwork</a>
+        </div>
+        <p class="photo-note"><span class="status-dot" aria-hidden="true"></span> Two studio visits open in June. One conversation is enough to know if we fit.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

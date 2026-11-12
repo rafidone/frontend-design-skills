@@ -1,0 +1,99 @@
+{
+  "skill": "frontend-design-skills",
+  "version": 1,
+  "stack": "html",
+  "niche": "hardware",
+  "palette": "ice-copper",
+  "typePair": "archivo-plex",
+  "hero": "photo",
+  "heroLayout": "media",
+  "motionTier": "T2",
+  "density": "medium",
+  "composition": "trio",
+  "effects": true,
+  "rationale": "Ice and copper: Cold aluminium surfaces with a copper action. Built for hardware where macro photography supplies the warmth. Archivo and Plex: Machined products, sensors and catalogues that need a neutral grotesque with a technical mono for specs. Hero \"photo\" with a medium density, T2 motion tier and a trio composition.",
+  "seed": "hardware-lattice-01",
+  "assignedAt": "2026-11-12T06:48:57.572Z",
+  "paletteData": {
+    "id": "ice-copper",
+    "name": "Ice and copper",
+    "mode": "light",
+    "tags": [
+      "cool",
+      "industrial",
+      "hardware"
+    ],
+    "niches": [
+      "hardware",
+      "commerce",
+      "software"
+    ],
+    "bg": "#f3f6f7",
+    "surface": "#e5ecee",
+    "ink": "#1b262b",
+    "muted": "#52636b",
+    "accent": "#9a4f22",
+    "accentInk": "#ffffff",
+    "bandBg": "#1d252a",
+    "bandInk": "#eef4f6",
+    "contrast": {
+      "body": "13.0:1",
+      "muted": "5.5:1",
+      "accent": "5.9:1"
+    },
+    "note": "Cold aluminium surfaces with a copper action. Built for hardware where macro photography supplies the warmth.",
+    "avoid": "No chrome gradients, no glowing edges, no sci-fi blue."
+  },
+  "typePairData": {
+    "id": "archivo-plex",
+    "name": "Archivo and Plex",
+    "display": {
+      "family": "Archivo",
+      "weights": [
+        400,
+        600,
+        700
+      ],
+      "tracking": "-0.04em",
+      "lineHeight": "0.98",
+      "scale": {
+        "h1": 80,
+        "h2": 48,
+        "h3": 26
+      }
+    },
+    "text": {
+      "family": "IBM Plex Sans",
+      "weights": [
+        400,
+        500
+      ]
+    },
+    "mono": {
+      "family": "IBM Plex Mono",
+      "weights": [
+        400,
+        500
+      ]
+    },
+    "googleFonts": "https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap",
+    "niches": [
+      "hardware",
+      "software",
+      "commerce",
+      "gaming"
+    ],
+    "tags": [
+      "grotesque",
+      "industrial",
+      "precise"
+    ],
+    "suits": "Machined products, sensors and catalogues that need a neutral grotesque with a technical mono for specs.",
+    "avoid": "Do not add a second display face; Archivo at 700 is already loud.",
+    "fallback": {
+      "display": "ui-sans-serif, system-ui, sans-serif",
+      "text": "ui-sans-serif, system-ui, sans-serif",
+      "mono": "ui-monospace, monospace"
+    }
+  }
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Morrow studio hero — typographic word composition.">
+  <title>Morrow — Make room</title>
+  <link rel="stylesheet" href="../starter/styles/tokens.css">
+  <link rel="stylesheet" href="../starter/styles/base.css">
+  <link rel="stylesheet" href="../starter/styles/layout.css">
+  <link rel="stylesheet" href="../starter/styles/components.css">
+  <link rel="stylesheet" href="../starter/styles/motion.css">
+  <script src="../starter/scripts/motion.js" defer></script>
+  <style>
+    .word-hero {
+      justify-content: flex-start;
+      overflow: hidden;
+      padding-block: calc(var(--header-h) + var(--space-4)) var(--space-4);
+      background: var(--paper);
+    }
+
+    .word-top {
+      display: flex;
+      padding-block-end: var(--space-3);
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: var(--space-4);
+      border-block-end: var(--border-strong);
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: var(--text-2xs);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .word-title {
+      margin-block: clamp(0.75rem, 2vh, 1.5rem);
+      font-size: clamp(6.5rem, 25vw, 26rem);
+      font-weight: 500;
+      letter-spacing: -0.085em;
+      line-height: 0.66;
+    }
+
+    .word-title span {
+      display: block;
+    }
+
+    .word-title span:last-child {
+      margin-inline-start: 0.5ch;
+      color: transparent;
+      -webkit-text-stroke: 2px var(--ink);
+      text-stroke: 2px var(--ink);
+    }
+
+    .word-title .word-dot {
+      display: inline-block;
+      color: var(--accent);
+      -webkit-text-stroke: 0;
+      text-stroke: 0;
+    }
+
+    .word-bottom {
+      display: grid;
+      margin-block-start: clamp(1rem, 3vh, 2rem);
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: var(--space-6);
+      align-items: end;
+      border-block-start: var(--border-strong);
+      padding-block-start: var(--space-4);
+    }
+
+    .word-bottom .lede {
+      max-width: 38ch;
+      font-size: var(--text-base);
+    }
+
+    .word-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: var(--space-3) var(--space-5);
+    }
+
+    .word-foot {
+      display: flex;
+      margin-block-start: var(--space-5);
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .word-foot span {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .word-foot span::before {
+      width: 0.4rem;
+      height: 0.4rem;
+      border-radius: 50%;
+      background: var(--accent);
+      content: "";
+    }
+
+    @media (max-width: 760px) {
+      .word-title {
+        font-size: clamp(5.75rem, 27vw, 11rem);
+        letter-spacing: -0.09em;
+      }
+
+      .word-title span:last-child {
+        margin-inline-start: 0;
+        -webkit-text-stroke-width: 1.5px;
+      }
+
+      .word-bottom {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+      }
+
+      .word-actions {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .word-title {
+        font-size: clamp(5rem, 28vw, 8rem);
+      }
+
+      .word-foot {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="demo-header">
+    <div class="wrap">
+      <nav class="demo-nav" aria-label="Primary">
+        <a class="brand" href="../starter/index.html" aria-label="Morrow home">
+          <span class="brand__mark" aria-hidden="true">M</span>
+          <span>Morrow<span class="brand__dot">.</span></span>
+        </a>
+        <div class="demo-links">
+          <a href="../starter/index.html#method">Method</a>
+          <a class="button button--primary button--small" href="../starter/index.html#contact">Say hello</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero word-hero" data-budget="1" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="word-top" data-enter>
+          <span>Morrow · Studio operations</span>
+          <span>Lisbon / 38.72° N</span>
+        </div>
+
+        <h1 class="word-title" id="hero-title" data-enter>
+          <span>Make</span>
+          <span>room<span class="word-dot">.</span></span>
+        </h1>
+
+        <div class="word-bottom">
+          <p class="lede" data-enter>For the work that deserves your full attention. We design the week around the work — not the other way around.</p>
+          <div class="word-actions" data-enter>
+            <a class="button button--primary" href="../starter/index.html#contact">Book a studio audit <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="../starter/index.html#method">The method <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <div class="word-foot" data-enter>
+          <span>Six senior partners</span>
+          <span>Two project slots open</span>
+          <span>Working worldwide</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

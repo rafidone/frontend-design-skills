@@ -1,0 +1,21 @@
+{
+  "id": "invoice",
+  "name": "Invoice",
+  "tags": [
+    "invoice",
+    "finance",
+    "billing",
+    "document"
+  ],
+  "description": "A printable agency invoice with three line items, subtotal, tax, total, payment note and Send invoice action.",
+  "data": {
+    "invoice_number": "INV-2041",
+    "issued": "2026-11-02",
+    "due": "2026-11-16",
+    "currency": "USD",
+    "subtotal": 9820.0,
+    "tax": 834.7,
+    "total": 10654.7
+  },
+  "a11y": "The line-item table has a caption and scoped headers; totals use a definition list; status changes are announced; Print and Send controls have clear text labels."
+}

@@ -1,0 +1,91 @@
+{
+  "skill": "frontend-design-skills",
+  "version": 1,
+  "stack": "html",
+  "niche": "service",
+  "palette": "light-sage",
+  "typePair": "newsreader-dm",
+  "hero": "split",
+  "heroLayout": "split",
+  "motionTier": "T0",
+  "density": "calm",
+  "composition": "trio",
+  "effects": false,
+  "rationale": "Light sage: Sage-tinted neutrals with a dark green accent for care, wellness and advisory work. Quiet enough to let faces and rooms lead. Newsreader and DM Sans: Advisory, legal, clinic and editorial pages that need authority and a human tone. Hero \"split\" with a calm density, T0 motion tier and a trio composition.",
+  "seed": "service-linden-01",
+  "assignedAt": "2026-11-12T06:48:58.609Z",
+  "paletteData": {
+    "id": "light-sage",
+    "name": "Light sage",
+    "mode": "light",
+    "tags": [
+      "natural",
+      "low-saturation",
+      "service"
+    ],
+    "niches": [
+      "service",
+      "hospitality",
+      "editorial"
+    ],
+    "bg": "#eef2ee",
+    "surface": "#e0e7e0",
+    "ink": "#1c2720",
+    "muted": "#566359",
+    "accent": "#315c46",
+    "accentInk": "#ffffff",
+    "bandBg": "#1b2a21",
+    "bandInk": "#ecf2ed",
+    "contrast": {
+      "body": "13.6:1",
+      "muted": "5.2:1",
+      "accent": "7.0:1"
+    },
+    "note": "Sage-tinted neutrals with a dark green accent for care, wellness and advisory work. Quiet enough to let faces and rooms lead.",
+    "avoid": "No pastel mint, no rounded blob backgrounds."
+  },
+  "typePairData": {
+    "id": "newsreader-dm",
+    "name": "Newsreader and DM Sans",
+    "display": {
+      "family": "Newsreader",
+      "weights": [
+        400,
+        500
+      ],
+      "tracking": "-0.015em",
+      "lineHeight": "1.02",
+      "scale": {
+        "h1": 78,
+        "h2": 48,
+        "h3": 26
+      }
+    },
+    "text": {
+      "family": "DM Sans",
+      "weights": [
+        400,
+        500
+      ]
+    },
+    "mono": null,
+    "googleFonts": "https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=DM+Sans:wght@400;500&display=swap",
+    "niches": [
+      "service",
+      "editorial",
+      "hospitality"
+    ],
+    "tags": [
+      "serif-display",
+      "trust",
+      "warm"
+    ],
+    "suits": "Advisory, legal, clinic and editorial pages that need authority and a human tone.",
+    "avoid": "Do not use it for gaming or hardware; it is too quiet for a product reveal.",
+    "fallback": {
+      "display": "Georgia, 'Times New Roman', serif",
+      "text": "ui-sans-serif, system-ui, sans-serif",
+      "mono": null
+    }
+  }
+}

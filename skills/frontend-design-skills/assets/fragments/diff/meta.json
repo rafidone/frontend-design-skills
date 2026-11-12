@@ -1,0 +1,19 @@
+{
+  "id": "diff",
+  "name": "Code diff review",
+  "tags": [
+    "code",
+    "diff",
+    "developer",
+    "review"
+  ],
+  "description": "A pull-request diff panel with added and removed TypeScript lines, check status, reviewer note and Accept changes action.",
+  "data": {
+    "pull_request": 482,
+    "file": "src/jobs/retry.ts",
+    "added_lines": 18,
+    "removed_lines": 6,
+    "action": "Accept changes"
+  },
+  "a11y": "The code region is focusable and labelled; removed and added lines carry hidden text prefixes plus visible symbols; the Accept action updates a live status region and disables itself."
+}

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kestrel is a local-first code review tool that turns a pull request into a short brief: what changed, what it touches and which test proves it.">
+  <title>Kestrel — Review the change, not the diff noise</title>
+  <script>document.documentElement.classList.add("has-js");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&amp;family=IBM+Plex+Sans:wght@400;500&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/motion.css">
+  <script src="scripts/motion.js" defer></script>
+  <script src="scripts/system.js" defer></script>
+  <script src="scripts/forms.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-fdm-header>
+    <div class="wrap">
+      <nav class="site-nav" aria-label="Primary" data-fdm-nav>
+        <a class="brand" href="#top" aria-label="Kestrel home">
+          <span class="brand__mark" aria-hidden="true">K</span>
+          <span>Kestrel<span class="brand__dot">.</span></span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-menu"
+          data-fdm-nav-toggle
+        >
+          <span>Menu</span>
+          <span class="nav-toggle__lines" aria-hidden="true"><span></span><span></span></span>
+        </button>
+
+        <ul class="nav-menu" id="primary-menu" data-fdm-nav-menu>
+          <li><a class="nav-link" href="#method">Why Kestrel</a></li>
+          <li><a class="nav-link" href="#proof">Workflow</a></li>
+          <li><a class="nav-link" href="#pricing">Pricing</a></li>
+          <li><a class="nav-link" href="#contact">Docs</a></li>
+        </ul>
+
+        <a class="button button--primary nav-cta" href="#contact">Install Kestrel <span class="arrow" aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" id="top" data-budget="1" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="hero__body grid">
+          <div class="hero__copy col-7" data-enter>
+            <p class="eyebrow">Local-first code review · macOS &amp; Linux</p>
+            <h1 class="hero-title" id="hero-title">Read the change, not the <em>noise</em>.</h1>
+            <p class="lede mt-5">
+              Kestrel turns a pull request into a short review brief: what changed, what it touches and which test proves it. Runs on your machine and keeps your code there.
+            </p>
+            <div class="hero-actions">
+              <a class="button button--primary" href="#contact">Install with Homebrew <span class="arrow" aria-hidden="true">→</span></a>
+              <a class="link-arrow" href="#method">Read the workflow <span class="arrow" aria-hidden="true">↓</span></a>
+            </div>
+            <dl class="hero-meta" data-enter>
+              <div>
+                <dt>Runs</dt>
+                <dd>Local by default</dd>
+              </div>
+              <div>
+                <dt>Setup</dt>
+                <dd>One command</dd>
+              </div>
+              <div>
+                <dt>License</dt>
+                <dd>Free under 10 devs</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="hero__aside col-5" data-enter>
+            <div class="hero-note">
+              <p class="mono">Release note 0.9</p>
+              <p>Every diff has a reason. Every review has a next step.</p>
+            </div>
+
+            <div class="week" role="group" aria-labelledby="week-title">
+              <div class="week__head">
+                <p class="week__title" id="week-title">Review queue — 4 open</p>
+                <span class="badge">2 ready</span>
+              </div>
+              <div class="week__rows">
+                <div class="week__row">
+                  <span class="week__day">Mon 04</span>
+                  <div class="week__bar week__bar--short">Parser guard <span class="week__time">10:00</span></div>
+                </div>
+                <div class="week__row">
+                  <span class="week__day">Tue 05</span>
+                  <div class="week__bar">CLI flags <span class="week__time">11:30</span></div>
+                </div>
+                <div class="week__row">
+                  <span class="week__day">Wed 06</span>
+                  <div class="week__bar week__bar--accent">Migration <span class="week__time">All day</span></div>
+                </div>
+                <div class="week__row">
+                  <span class="week__day">Thu 07</span>
+                  <div class="week__bar week__bar--short week__bar--quiet">API contract <span class="week__time">15:00</span></div>
+                </div>
+                <div class="week__row">
+                  <span class="week__day">Fri 08</span>
+                  <div class="week__bar week__bar--short">Release notes <span class="week__time">16:00</span></div>
+                </div>
+              </div>
+              <div class="week__foot">
+                <div class="week__team">
+                  <span class="avatar">AL</span>
+                  <span class="avatar avatar--accent">SK</span>
+                  <span class="avatar">MR</span>
+                </div>
+                <p class="hero-caption">4 reviews · 18 minutes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ruled" id="method" data-budget="1" data-fdm-section aria-labelledby="method-title">
+      <div class="wrap">
+        <h2 id="method-title">A review brief, not another diff viewer.</h2>
+        <div class="section-head">
+          <p class="lede">Kestrel reads the shape of a change before you read the lines. It groups files by intent, flags the risky edges and links each group to the test that covers it.</p>
+          <a class="link-arrow section-head__aside" href="#contact">Walk through one review <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="grid">
+          <div class="col-4">
+            <article class="card" data-lift>
+              <div class="card__top">
+                <span class="badge badge--quiet">01 · Intent</span>
+                <span class="card__number" aria-hidden="true">A</span>
+              </div>
+              <h3 class="card__title">Groups that mean something.</h3>
+              <p class="card__body">Files are clustered by the change they make, not the folder they live in. The parser guard and its test sit together.</p>
+            </article>
+          </div>
+          <div class="col-4">
+            <article class="card" data-lift>
+              <div class="card__top">
+                <span class="badge badge--quiet">02 · Risk</span>
+                <span class="card__number" aria-hidden="true">B</span>
+              </div>
+              <h3 class="card__title">The edges come first.</h3>
+              <p class="card__body">Kestrel surfaces migrations, public API changes and missing tests before the formatting noise.</p>
+            </article>
+          </div>
+          <div class="col-4">
+            <article class="card card--accent" data-lift>
+              <div class="card__top">
+                <span class="badge badge--quiet">03 · Proof</span>
+                <span class="card__number" aria-hidden="true">C</span>
+              </div>
+              <h3 class="card__title">A test for the claim.</h3>
+              <p class="card__body">Each group points at the test that proves it, or says plainly that no test exists yet.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ruled" id="proof" data-budget="1" data-fdm-section aria-labelledby="proof-title">
+      <div class="wrap">
+        <h2 id="proof-title">Smaller reviews. Fewer rollbacks.</h2>
+        <p class="lede mt-4">Run inside four engineering teams for one quarter, with no code sent to a server.</p>
+
+        <div class="proof-wrap">
+          <figure class="quote">
+            <blockquote>“The first tool that made me want to read the whole pull request.”</blockquote>
+            <figcaption><strong>Priya Raman</strong> · Staff Engineer, Relay</figcaption>
+          </figure>
+
+          <div class="proof-notes">
+            <p class="eyebrow">What changed</p>
+            <ul class="list list--checks">
+              <li>Review time fell without lowering the bar.</li>
+              <li>Risky migrations are flagged before merge.</li>
+              <li>Every claim links to a test or an explicit gap.</li>
+            </ul>
+            <ul class="logo-row mt-5">
+              <li>Relay</li>
+              <li>Copperline</li>
+              <li>Mono</li>
+              <li>Orbit</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="stat-grid mt-7">
+          <div class="stat">
+            <span class="stat__value">41%</span>
+            <span class="stat__label">shorter median review time</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">3.2×</span>
+            <span class="stat__label">more changes linked to a test</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value">0</span>
+            <span class="stat__label">lines of code leave the machine</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ruled" id="pricing" data-budget="1" data-fdm-section aria-labelledby="pricing-title">
+      <div class="wrap">
+        <h2 id="pricing-title">Free for small teams.</h2>
+        <div class="section-head">
+          <p class="lede">Install it, use it on real reviews and pay only when the team grows. No seat minimum, no annual contract.</p>
+          <p class="hero-caption section-head__aside">Prices in USD · local install</p>
+        </div>
+
+        <div class="price-grid">
+          <article class="price-card">
+            <div class="price-card__head">
+              <span class="price-card__label">Solo</span>
+              <span class="badge badge--quiet">Free</span>
+            </div>
+            <p class="price-card__price">$0</p>
+            <p class="price-card__note">For one developer and open source.</p>
+            <ul class="list list--checks">
+              <li>Unlimited local reviews</li><li>GitHub and GitLab</li><li>Test mapping</li>
+            </ul>
+            <a class="button button--secondary" href="#contact">Install Kestrel</a>
+          </article>
+
+          <article class="price-card price-card--featured">
+            <div class="price-card__head">
+              <span class="price-card__label">Team</span>
+              <span class="badge badge--accent">Most chosen</span>
+            </div>
+            <p class="price-card__price">$12 <small>/ seat / month</small></p>
+            <p class="price-card__note">Shared review memory for a team.</p>
+            <ul class="list list--checks">
+              <li>Review history</li><li>Risk rules</li><li>Org install</li>
+            </ul>
+            <a class="button button--primary" href="#contact">Start a trial</a>
+          </article>
+
+          <article class="price-card">
+            <div class="price-card__head">
+              <span class="price-card__label">Org</span>
+              <span class="badge badge--quiet">Annual</span>
+            </div>
+            <p class="price-card__price">$24 <small>/ seat / month</small></p>
+            <p class="price-card__note">For platform teams and monorepos.</p>
+            <ul class="list list--checks">
+              <li>Monorepo indexing</li><li>Policy packs</li><li>Priority support</li>
+            </ul>
+            <a class="button button--secondary" href="#contact">Talk to us</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ruled section--compact" id="contact" data-budget="1" data-fdm-section aria-labelledby="contact-title">
+      <div class="wrap">
+        <h2 id="contact-title">Send us the review that hurt.</h2>
+        <p class="lede mt-4">Install Kestrel, run it on one real pull request and tell us where the brief got it wrong. We read every note.</p>
+
+        <div class="contact-grid">
+          <div class="panel">
+            <form
+              class="form"
+              action="mailto:hello@kestrel.example"
+              method="post"
+              enctype="text/plain"
+              novalidate
+              data-fdm-form
+              data-fdm-email="hello@kestrel.example"
+            >
+              <div class="field-row">
+                <div class="field">
+                  <label class="field__label" for="name">Name</label>
+                  <input class="input" id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+                  <p class="field-error" id="name-error" data-fdm-error-for="name" hidden></p>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="email">Email</label>
+                  <input class="input" id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+                  <p class="field-error" id="email-error" data-fdm-error-for="email" hidden></p>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="project">What are you making? <span class="field__hint">Optional</span></label>
+                <input class="input" id="project" name="project" type="text" placeholder="A pull request, a repo, a rule">
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="message">A little context</label>
+                <textarea class="textarea" id="message" name="message" rows="4" required data-minlength="20" aria-describedby="message-hint message-error"></textarea>
+                <p class="field__hint" id="message-hint">A sentence about the change, the language and where the review lost its shape.</p>
+                <p class="field-error" id="message-error" data-fdm-error-for="message" hidden></p>
+              </div>
+
+              <div class="form-actions">
+                <button class="button button--primary" type="submit">Prepare the email <span class="arrow" aria-hidden="true">→</span></button>
+                <p class="form-note">Demo only · no data is sent or stored.</p>
+              </div>
+
+              <p class="form-status" role="status" aria-live="polite" data-fdm-form-status>No data leaves your browser in this demo.</p>
+            </form>
+          </div>
+
+          <aside class="contact-side" aria-labelledby="contact-side-title">
+            <h3 class="visually-hidden" id="contact-side-title">Other ways to reach Kestrel</h3>
+
+            <div class="contact-detail">
+              <span class="contact-detail__label">Email</span>
+              <a href="mailto:hello@kestrel.example">hello@kestrel.example</a>
+              <small class="muted">For new work and speaking.</small>
+            </div>
+
+            <div class="contact-detail">
+              <span class="contact-detail__label">Support hours</span>
+              <span>Monday–Friday, 09:00–17:00 GMT</span>
+              <span
+                class="hours-status"
+                data-fdm-hours
+                data-open-hour="9"
+                data-close-hour="17"
+                data-days="1,2,3,4,5"
+                data-time-zone="Europe/London"
+              ><span data-fdm-hours-status>Checking local time…</span></span>
+            </div>
+
+            <div class="contact-detail">
+              <span class="contact-detail__label">Based in</span>
+              <span>Bristol, United Kingdom</span>
+              <small class="muted">Remote-first, with maintainers across Europe.</small>
+            </div>
+
+            <div class="faq contact-faq">
+              <details>
+                <summary>Does Kestrel send my code anywhere? <span class="faq__icon" aria-hidden="true"></span></summary>
+                <p class="faq__body">No. The parser and the index run locally. Network access is only used for update checks, and can be disabled.</p>
+              </details>
+              <details>
+                <summary>Which languages are supported? <span class="faq__icon" aria-hidden="true"></span></summary>
+                <p class="faq__body">TypeScript, JavaScript, Python, Go and Rust today. A language without a parser still gets a file-and-test brief.</p>
+              </details>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-fdm-section aria-labelledby="footer-title">
+    <div class="wrap">
+      <h2 class="visually-hidden" id="footer-title">Kestrel site footer</h2>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="#top" aria-label="Kestrel home">
+            <span class="brand__mark" aria-hidden="true">K</span>
+            <span>Kestrel<span class="brand__dot">.</span></span>
+          </a>
+          <p>Local-first review tooling for people who read the diff.</p>
+          <p><a href="mailto:hello@kestrel.example">hello@kestrel.example</a></p>
+        </div>
+
+        <nav aria-label="Footer">
+          <p class="footer-heading">Product</p>
+          <ul class="footer-links">
+            <li><a href="#method">Why Kestrel</a></li>
+            <li><a href="#proof">Workflow</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Docs</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <p class="footer-heading">Developers</p>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@kestrel.example?subject=Changelog">Changelog</a></li>
+            <li><a href="credits.html">Photography credits</a></li>
+            <li><a href="#top">Back to top <span class="arrow" aria-hidden="true">↑</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-base">
+        <p>© 2026 Kestrel Tools. Fictional demo content.</p>
+        <details class="credits">
+          <summary>Credits &amp; notes</summary>
+          <p>Typefaces: Bricolage Grotesque, IBM Plex Sans and IBM Plex Mono, linked here as an example. All other artwork, interface details and copy are original to this starter. No remote imagery is used. This page is a demonstration, not a live service.</p>
+        </details>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

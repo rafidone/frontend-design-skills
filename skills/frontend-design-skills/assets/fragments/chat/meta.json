@@ -1,0 +1,21 @@
+{
+  "id": "chat",
+  "name": "Assistant chat",
+  "tags": [
+    "chat",
+    "assistant",
+    "conversation",
+    "collaboration"
+  ],
+  "description": "A design-review chat with a real assistant exchange, timestamps, code snippet, reactions and a working composer.",
+  "data": {
+    "thread": "Compact card layout",
+    "participants": [
+      "Assistant",
+      "Amina Farouk"
+    ],
+    "message_count": 3,
+    "snippet": "--card-gap values"
+  },
+  "a11y": "The message list is labelled and live; the composer has a hidden label; Enter sends; reactions use aria-pressed; copy results and send errors are announced through a status region."
+}

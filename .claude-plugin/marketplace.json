@@ -1,0 +1,15 @@
+{
+  "name": "frontend-design-skills",
+  "description": "Art-directed, browser-verified frontend design skills for coding agents.",
+  "owner": {
+    "name": "rafidone",
+    "url": "https://github.com/rafidone"
+  },
+  "plugins": [
+    {
+      "name": "frontend-design-skills",
+      "source": "./",
+      "description": "Build, redesign, and audit production frontends with a locked direction and a mandatory GATE: PASS."
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sequence flow · Frontend design skills</title>
+<style>
+  :root {
+    --paper: #f5f3ed;
+    --surface: #fffdf8;
+    --raised: #ffffff;
+    --soft: #ece9e0;
+    --ink: #18211d;
+    --ink-soft: #3d4a44;
+    --muted: #6b7771;
+    --line: #dedbd1;
+    --line-strong: #c9c5b9;
+    --accent: #0e6b58;
+    --accent-soft: #e2f0eb;
+    --accent-ink: #084639;
+    --warm: #a66b1f;
+    --warm-soft: #fbf0dd;
+    --info: #2c5f8a;
+    --info-soft: #e8f0f7;
+    --danger: #a83c34;
+    --radius: 14px;
+    --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: clamp(18px, 4vw, 48px); background: var(--paper); color: var(--ink); font-family: var(--font); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 980px; margin: 0 auto; }
+  .eyebrow { margin: 0; color: var(--accent); font-size: 11px; font-weight: 750; letter-spacing: 0.12em; text-transform: uppercase; }
+  h1 { margin: 6px 0 0; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.15; letter-spacing: -0.03em; }
+  .lede { max-width: 66ch; margin: 8px 0 0; color: var(--muted); font-size: 13.5px; }
+  .card { margin-top: 20px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: 0 1px 2px rgba(24,33,29,.05), 0 16px 42px rgba(24,33,29,.06); }
+  .card-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding: 14px 18px; border-bottom: 1px solid var(--line); }
+  .card-head h2 { margin: 0; font-size: 14px; }
+  .card-head p { margin: 2px 0 0; color: var(--muted); font-size: 11px; }
+  .badge { padding: 3px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-ink); font-size: 10px; font-weight: 700; }
+  .canvas { width: 100%; height: auto; display: block; }
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; padding: 11px 18px; border-top: 1px solid var(--line); background: #fbfaf6; color: var(--muted); font-size: 10px; }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .key { width: 8px; height: 8px; border-radius: 3px; background: var(--accent); }
+  .key-warm { background: var(--warm); }
+  .key-info { background: var(--info); }
+  .foot { margin: 16px 0 0; color: var(--muted); font-size: 10.5px; }
+  .scroll { overflow-x: auto; }
+  @media (max-width: 560px) { body { padding: 14px; } .card { margin-top: 14px; } }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="eyebrow">Diagram 03</p>
+  <h1>Sequence flow</h1>
+  <p class="lede">The author, agent, browser and reviewer exchange nine messages. Browser evidence is captured before the reviewer sees the surface.</p>
+  <figure class="card" aria-labelledby="figure-title" style="margin-left:0;margin-right:0;">
+    <div class="card-head"><div><h2 id="figure-title">Verification loop</h2><p>Every approval is backed by a screenshot, console result and audit summary.</p></div><span class="badge">9 messages</span></div>
+    
+    <svg class="canvas" viewBox="0 0 900 640" role="img" aria-labelledby="seq-title seq-desc">
+      <title id="seq-title">Sequence flow diagram</title>
+      <desc id="seq-desc">Author, agent, browser and reviewer exchange seven messages from brief to shipped package, including browser evidence and approval.</desc>
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 10 5 0 10Z" fill="#0e6b58"/>
+        </marker>
+        <marker id="arrow-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 10 5 0 10Z" fill="#8a928e"/>
+        </marker>
+        <marker id="arrow-warm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 10 5 0 10Z" fill="#a66b1f"/>
+        </marker>
+      </defs>
+      <rect width="900" height="640" fill="#fbfaf6"/>
+
+      <g font-family="ui-sans-serif, system-ui, sans-serif">
+        <g>
+          <rect x="40" y="38" width="150" height="54" rx="10" fill="#fffdf8" stroke="#dedbd1"/>
+          <circle cx="64" cy="65" r="10" fill="#e2f0eb"/><path d="M60 65h8M64 61v8" stroke="#0e6b58" stroke-width="1.5" stroke-linecap="round"/>
+          <text x="82" y="61" font-size="11.5" font-weight="700" fill="#18211d">Author</text>
+          <text x="82" y="76" font-size="9" fill="#6b7771">Brief owner</text>
+        </g>
+        <g>
+          <rect x="260" y="38" width="150" height="54" rx="10" fill="#e2f0eb" stroke="#bcded3"/>
+          <circle cx="284" cy="65" r="10" fill="#fffdf8"/><path d="M280 65h8M284 61v8" stroke="#0e6b58" stroke-width="1.5" stroke-linecap="round"/>
+          <text x="302" y="61" font-size="11.5" font-weight="700" fill="#084639">Agent</text>
+          <text x="302" y="76" font-size="9" fill="#3d6b60">OpenCode skill</text>
+        </g>
+        <g>
+          <rect x="480" y="38" width="150" height="54" rx="10" fill="#e8f0f7" stroke="#c6dbe9"/>
+          <circle cx="504" cy="65" r="10" fill="#fffdf8"/><path d="M500 65h8M504 61v8" stroke="#2c5f8a" stroke-width="1.5" stroke-linecap="round"/>
+          <text x="522" y="61" font-size="11.5" font-weight="700" fill="#234d72">Browser</text>
+          <text x="522" y="76" font-size="9" fill="#55768f">Chrome / CDP</text>
+        </g>
+        <g>
+          <rect x="700" y="38" width="150" height="54" rx="10" fill="#fbf0dd" stroke="#e7d1a9"/>
+          <circle cx="724" cy="65" r="10" fill="#fffdf8"/><path d="M720 65h8M724 61v8" stroke="#a66b1f" stroke-width="1.5" stroke-linecap="round"/>
+          <text x="742" y="61" font-size="11.5" font-weight="700" fill="#785015">Reviewer</text>
+          <text x="742" y="76" font-size="9" fill="#8c6a31">Finish gate</text>
+        </g>
+
+        <g stroke="#dedbd1" stroke-width="1" stroke-dasharray="4 6">
+          <line x1="115" y1="92" x2="115" y2="600"/>
+          <line x1="335" y1="92" x2="335" y2="600"/>
+          <line x1="555" y1="92" x2="555" y2="600"/>
+          <line x1="775" y1="92" x2="775" y2="600"/>
+        </g>
+
+        <g font-size="10">
+          <text x="34" y="122" fill="#6b7771" font-family="ui-monospace, monospace">01</text>
+          <line x1="115" y1="126" x2="326" y2="126" stroke="#0e6b58" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <rect x="146" y="108" width="150" height="16" rx="4" fill="#fbfaf6"/>
+          <text x="221" y="120" fill="#3d4a44" text-anchor="middle" font-weight="650">Brief + constraints</text>
+
+          <text x="254" y="170" fill="#6b7771" font-family="ui-monospace, monospace">02</text>
+          <path d="M335 174h44v30h-44" fill="none" stroke="#8a928e" stroke-width="1.3" stroke-dasharray="3 3" marker-end="url(#arrow-muted)"/>
+          <rect x="386" y="176" width="136" height="16" rx="4" fill="#fbfaf6"/>
+          <text x="454" y="188" fill="#3d4a44" text-anchor="middle" font-weight="650">Select palette + type</text>
+
+          <text x="390" y="234" fill="#6b7771" font-family="ui-monospace, monospace">03</text>
+          <line x1="335" y1="238" x2="546" y2="238" stroke="#0e6b58" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <rect x="380" y="220" width="122" height="16" rx="4" fill="#fbfaf6"/>
+          <text x="441" y="232" fill="#3d4a44" text-anchor="middle" font-weight="650">Render the page</text>
+
+          <text x="424" y="280" fill="#6b7771" font-family="ui-monospace, monospace">04</text>
+          <line x1="555" y1="284" x2="344" y2="284" stroke="#2c5f8a" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+          <rect x="381" y="266" width="138" height="16" rx="4" fill="#fbfaf6"/>
+          <text x="450" y="278" fill="#234d72" text-anchor="middle" font-weight="650">Screenshot + console</text>
+
+          <text x="254" y="326" fill="#6b7771" font-family="ui-monospace, monospace">05</text>
+          <path d="M335 330h44v30h-44" fill="none" stroke="#8a928e" stroke-width="1.3" stroke-dasharray="3 3" marker-end="url(#arrow-muted)"/>
+          <rect x="386" y="332" width="150" height="16" rx="4" fill="#fbfaf6"/>
+          <text x="461" y="344" fill="#3d4a44" text-anchor="middle" font-weight="650">Run layout + a11y audits</text>
+
+          <text x="530" y="390" fill="#6b7771" font-family="ui-monospace, monospace">06</text>
+          <line x1="335" y1="394" x2="766" y2="394" stroke="#0e6b58" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <rect x="478" y="376" width="150" height="16" rx="4" fill="#fbfaf6"/>
+          <text x="553" y="388" fill="#3d4a44" text-anchor="middle" font-weight="650">Preview + audit evidence</text>
+
+          <text x="530" y="444" fill="#6b7771" font-family="ui-monospace, monospace">07</text>
+          <line x1="775" y1="448" x2="344" y2="448" stroke="#a66b1f" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrow-warm)"/>
+          <rect x="492" y="430" width="142" height="16" rx="4" fill="#fbfaf6"/>
+          <text x="563" y="442" fill="#785015" text-anchor="middle" font-weight="650">Approve or request fix</text>
+
+          <text x="34" y="502" fill="#6b7771" font-family="ui-monospace, monospace">08</text>
+          <line x1="335" y1="506" x2="124" y2="506" stroke="#0e6b58" stroke-width="1.5" marker-end="url(#arrow)"/>
+          <rect x="162" y="488" width="136" height="16" rx="4" fill="#fbfaf6"/>
+          <text x="230" y="500" fill="#3d4a44" text-anchor="middle" font-weight="650">Shipped package</text>
+
+          <text x="335" y="556" fill="#6b7771" font-family="ui-monospace, monospace">09</text>
+          <line x1="335" y1="560" x2="546" y2="560" stroke="#8a928e" stroke-width="1.3" stroke-dasharray="4 4" marker-end="url(#arrow-muted)"/>
+          <rect x="378" y="542" width="126" height="16" rx="4" fill="#fbfaf6"/>
+          <text x="441" y="554" fill="#3d4a44" text-anchor="middle" font-weight="650">Final regression run</text>
+        </g>
+
+        <g fill="#8a928e" font-family="ui-monospace, monospace" font-size="9">
+          <text x="115" y="620" text-anchor="middle">AUTHOR</text>
+          <text x="335" y="620" text-anchor="middle">AGENT</text>
+          <text x="555" y="620" text-anchor="middle">BROWSER</text>
+          <text x="775" y="620" text-anchor="middle">REVIEWER</text>
+        </g>
+      </g>
+    </svg>
+
+    
+    <div class="legend">
+      <span><i class="key"></i> Forward action</span>
+      <span><i class="key key-info"></i> Browser evidence</span>
+      <span><i class="key key-warm"></i> Review decision</span>
+      <span>Dashed lines are returns, self-checks or conditional paths.</span>
+    </div>
+
+  </figure>
+  <p class="foot">The sequence is a titled SVG with a full text description. Actor lifelines and numbered steps are readable without colour.</p>
+</main>
+</body>
+</html>

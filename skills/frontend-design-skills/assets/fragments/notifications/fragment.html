@@ -1,0 +1,96 @@
+<div class="ui ui-notifications" data-fdm-ui="notifications">
+  <header class="ui-top">
+    <div>
+      <p class="ui-eyebrow">Inbox</p>
+      <h1 class="ui-title">Notifications</h1>
+      <p class="ui-sub"><span data-unread-count>3 unread</span> · Mentions, billing and workspace updates for Meridian Labs.</p>
+    </div>
+    <div class="ui-actions">
+      <button type="button" class="ui-btn" data-mark-all>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 4 4L18 6"/><path d="m13 15 2 2 5-6"/></svg>
+        Mark all as read
+      </button>
+      <button type="button" class="ui-icon-btn" aria-label="Notification settings">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1l2-1.5-2-3.4-2.4 1a7 7 0 0 0-1.7-1L14.5 3h-5l-.3 3.1a7 7 0 0 0-1.7 1l-2.4-1-2 3.4 2 1.5a7 7 0 0 0 0 2l-2 1.5 2 3.4 2.4-1a7 7 0 0 0 1.7 1l.3 3.1h5l.3-3.1a7 7 0 0 0 1.7-1l2.4 1 2-3.4-2-1.5c.1-.3.1-.7.1-1Z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <p class="ui-visually-hidden" role="status" data-notif-status></p>
+
+  <div class="nt-bar">
+    <div class="nt-filters" role="group" aria-label="Filter notifications">
+      <button type="button" class="nt-filter" data-type="all" aria-pressed="true">All <span>6</span></button>
+      <button type="button" class="nt-filter" data-type="mention" aria-pressed="false">Mentions <span>2</span></button>
+      <button type="button" class="nt-filter" data-type="billing" aria-pressed="false">Billing <span>2</span></button>
+      <button type="button" class="nt-filter" data-type="product" aria-pressed="false">Product <span>2</span></button>
+    </div>
+    <span class="nt-unread-dot"><i aria-hidden="true"></i> Unread</span>
+  </div>
+
+  <ol class="nt-list" aria-label="Notifications">
+    <li class="nt-item nt-unread" data-notif-type="mention">
+      <span class="nt-icon nt-icon-mention" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/></svg>
+      </span>
+      <div class="nt-body">
+        <p><strong>Priya Raman</strong> mentioned you in <a href="#notif-permissions">Guest role permission matrix</a></p>
+        <p class="nt-quote">“Can you confirm whether viewers should keep export access?”</p>
+        <p class="nt-meta"><time datetime="2026-11-09T18:31:00+03:00">12 min ago</time><span>·</span><span>Security review</span></p>
+      </div>
+      <span class="nt-dot" aria-label="Unread"></span>
+    </li>
+    <li class="nt-item" data-notif-type="billing">
+      <span class="nt-icon nt-icon-billing" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M7 15h4"/></svg>
+      </span>
+      <div class="nt-body">
+        <p><strong>Invoice INV-2041 was paid</strong></p>
+        <p class="nt-quote">Meridian Labs paid $10,654.70 by ACH transfer.</p>
+        <p class="nt-meta"><time datetime="2026-11-09T09:42:00+03:00">Today, 09:42</time><span>·</span><span>Billing</span></p>
+      </div>
+    </li>
+    <li class="nt-item" data-notif-type="product">
+      <span class="nt-icon nt-icon-product" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 13.7 9l5.3 1.8-5.3 1.8L12 18l-1.7-5.4L5 10.8 10.3 9 12 3.5Z"/></svg>
+      </span>
+      <div class="nt-body">
+        <p><strong>New saved-view filters are live</strong></p>
+        <p class="nt-quote">Filter projects by owner, due date and status, then share the view with your team.</p>
+        <p class="nt-meta"><time datetime="2026-11-09T08:15:00+03:00">Today, 08:15</time><span>·</span><span>Product update</span></p>
+      </div>
+    </li>
+    <li class="nt-item nt-unread" data-notif-type="mention">
+      <span class="nt-icon nt-icon-mention" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/></svg>
+      </span>
+      <div class="nt-body">
+        <p><strong>Theo Bennett</strong> replied to your comment on <a href="#notif-export">CSV export for saved views</a></p>
+        <p class="nt-quote">“Streaming export is behind the flag now. The filter summary is included.”</p>
+        <p class="nt-meta"><time datetime="2026-11-08T16:08:00+03:00">Yesterday, 16:08</time><span>·</span><span>Backend</span></p>
+      </div>
+      <span class="nt-dot" aria-label="Unread"></span>
+    </li>
+    <li class="nt-item nt-unread" data-notif-type="billing">
+      <span class="nt-icon nt-icon-billing" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M7 15h4"/></svg>
+      </span>
+      <div class="nt-body">
+        <p><strong>Payment method expiring soon</strong></p>
+        <p class="nt-quote">Visa ending 4242 expires on Dec 9, 2026. Update it before the next renewal.</p>
+        <p class="nt-meta"><time datetime="2026-11-08T11:30:00+03:00">Yesterday, 11:30</time><span>·</span><span>Billing</span></p>
+      </div>
+      <span class="nt-dot" aria-label="Unread"></span>
+    </li>
+    <li class="nt-item" data-notif-type="product">
+      <span class="nt-icon nt-icon-product" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 13.7 9l5.3 1.8-5.3 1.8L12 18l-1.7-5.4L5 10.8 10.3 9 12 3.5Z"/></svg>
+      </span>
+      <div class="nt-body">
+        <p><strong>Compact table density is available</strong></p>
+        <p class="nt-quote">Enable it in Workspace settings to show 38px rows across invoices and projects.</p>
+        <p class="nt-meta"><time datetime="2026-11-07T14:00:00+03:00">Nov 7, 14:00</time><span>·</span><span>Product update</span></p>
+      </div>
+    </li>
+  </ol>
+</div>

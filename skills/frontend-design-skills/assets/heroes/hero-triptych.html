@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Morrow studio hero — triptych composition.">
+  <title>Morrow — Three rooms, one throughline</title>
+  <link rel="stylesheet" href="../starter/styles/tokens.css">
+  <link rel="stylesheet" href="../starter/styles/base.css">
+  <link rel="stylesheet" href="../starter/styles/layout.css">
+  <link rel="stylesheet" href="../starter/styles/components.css">
+  <link rel="stylesheet" href="../starter/styles/motion.css">
+  <script src="../starter/scripts/motion.js" defer></script>
+  <style>
+    .triptych-hero {
+      justify-content: flex-start;
+      padding-block: calc(var(--header-h) + var(--space-4)) var(--space-3);
+      background: var(--paper);
+    }
+
+    .triptych-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(17rem, 0.55fr);
+      gap: var(--space-6);
+      align-items: end;
+      margin-block-end: clamp(1.25rem, 3.5vh, 2.25rem);
+    }
+
+    .triptych-title {
+      max-width: 12ch;
+      font-size: clamp(3.2rem, 6.4vw, 6.5rem);
+      line-height: 0.92;
+    }
+
+    .triptych-aside p {
+      max-width: 34ch;
+      color: var(--muted);
+      font-size: var(--text-sm);
+    }
+
+    .triptych-aside .hero-actions {
+      margin-block-start: var(--space-4);
+    }
+
+    .triptych-panels {
+      display: grid;
+      height: min(48svh, 30rem);
+      min-height: 18rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-3);
+    }
+
+    .panel-figure {
+      display: grid;
+      min-width: 0;
+      margin: 0;
+      grid-template-rows: minmax(0, 1fr) auto;
+      overflow: hidden;
+      border: var(--border);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+    }
+
+    .panel-figure__art {
+      position: relative;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .panel-figure__art svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .panel-figure__index {
+      position: absolute;
+      top: var(--space-3);
+      left: var(--space-3);
+      padding: 0.25rem 0.45rem;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.06em;
+    }
+
+    .panel-figure figcaption {
+      display: grid;
+      padding: var(--space-3) var(--space-4);
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: var(--space-3);
+      align-items: baseline;
+      border-block-start: var(--border);
+    }
+
+    .panel-figure figcaption strong {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    .panel-figure figcaption span {
+      color: var(--muted);
+      font-size: var(--text-xs);
+      line-height: 1.35;
+      text-align: right;
+    }
+
+    @media (max-width: 900px) {
+      .triptych-top {
+        grid-template-columns: 1fr;
+      }
+
+      .triptych-aside {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-4);
+      }
+
+      .triptych-aside .hero-actions {
+        margin-block-start: 0;
+      }
+
+      .triptych-panels {
+        height: min(44svh, 26rem);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .triptych-title {
+        font-size: clamp(2.9rem, 13vw, 4.4rem);
+      }
+
+      .triptych-aside p {
+        display: none;
+      }
+
+      .triptych-panels {
+        height: 34svh;
+        min-height: 13rem;
+        gap: var(--space-2);
+      }
+
+      .panel-figure figcaption {
+        display: block;
+        padding: var(--space-2);
+      }
+
+      .panel-figure figcaption strong {
+        display: block;
+        font-size: var(--text-sm);
+      }
+
+      .panel-figure figcaption span {
+        display: none;
+      }
+
+      .panel-figure__index {
+        top: var(--space-2);
+        left: var(--space-2);
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="demo-header">
+    <div class="wrap">
+      <nav class="demo-nav" aria-label="Primary">
+        <a class="brand" href="../starter/index.html" aria-label="Morrow home">
+          <span class="brand__mark" aria-hidden="true">M</span>
+          <span>Morrow<span class="brand__dot">.</span></span>
+        </a>
+        <div class="demo-links">
+          <a href="../starter/index.html#method">Approach</a>
+          <a class="button button--primary button--small" href="../starter/index.html#contact">Work with Morrow</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero triptych-hero" data-budget="1" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="triptych-top">
+          <div data-enter>
+            <p class="eyebrow">Three rooms · One throughline</p>
+            <h1 class="triptych-title" id="hero-title">From first question to finished thing.</h1>
+          </div>
+          <div class="triptych-aside" data-enter>
+            <p>Every engagement moves through the same three rooms. The furniture changes; the clarity does not.</p>
+            <div class="hero-actions">
+              <a class="button button--primary" href="../starter/index.html#contact">Walk us through yours <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="triptych-panels" data-enter data-enter-group>
+          <figure class="panel-figure">
+            <div class="panel-figure__art">
+              <span class="panel-figure__index">01</span>
+              <svg viewBox="0 0 520 620" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a warm room with a table and an open notebook">
+                <rect width="520" height="620" fill="#df5438"/>
+                <circle cx="394" cy="142" r="88" fill="#f4d1b8"/>
+                <path d="M92 620V332c0-102 82-184 184-184s184 82 184 184v288" fill="#f4f1e8"/>
+                <path d="M146 620V354c0-70 56-126 126-126s126 56 126 126v266" fill="#1f513f"/>
+                <path d="M0 620h520v-80H0Z" fill="#c7462d"/>
+                <path d="M70 540h380" stroke="#19211b" stroke-width="8"/>
+                <path d="M120 540v56M400 540v56" stroke="#19211b" stroke-width="8"/>
+                <path d="M188 540l40-44h70l40 44" fill="#f4f1e8" stroke="#19211b" stroke-width="4"/>
+                <path d="M238 496h46" stroke="#19211b" stroke-width="3"/>
+                <path d="M455 540v-86c0-18-14-32-32-32" fill="none" stroke="#19211b" stroke-width="5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <figcaption><strong>Start</strong><span>Find the real question</span></figcaption>
+          </figure>
+
+          <figure class="panel-figure">
+            <div class="panel-figure__art">
+              <span class="panel-figure__index">02</span>
+              <svg viewBox="0 0 520 620" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of overlapping paper shapes being arranged on a green table">
+                <rect width="520" height="620" fill="#e7dfd0"/>
+                <rect x="54" y="80" width="412" height="460" fill="#f4f1e8" stroke="#19211b" stroke-width="3"/>
+                <rect x="92" y="126" width="168" height="210" fill="#1f513f"/>
+                <rect x="238" y="204" width="152" height="188" fill="#df5438"/>
+                <rect x="118" y="308" width="196" height="166" fill="#c7b99f" stroke="#19211b" stroke-width="2"/>
+                <circle cx="368" cy="168" r="76" fill="none" stroke="#19211b" stroke-width="3"/>
+                <path d="M92 475h336M92 500h240" stroke="#19211b" stroke-width="3"/>
+                <path d="M310 338h104M310 360h80" stroke="#f4f1e8" stroke-width="5" stroke-linecap="round"/>
+                <path d="M126 600h268" stroke="#19211b" stroke-width="8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <figcaption><strong>Shape</strong><span>Make the choices visible</span></figcaption>
+          </figure>
+
+          <figure class="panel-figure">
+            <div class="panel-figure__art">
+              <span class="panel-figure__index">03</span>
+              <svg viewBox="0 0 520 620" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a dark green building with lit windows under a large moon">
+                <rect width="520" height="620" fill="#19211b"/>
+                <circle cx="128" cy="130" r="70" fill="#f4f1e8"/>
+                <circle cx="158" cy="108" r="70" fill="#19211b"/>
+                <path d="M56 620V300h154v320M210 620V206h256v414" fill="#1f513f"/>
+                <path d="M238 266h70v58h-70ZM334 266h70v58h-70ZM238 356h70v58h-70ZM334 356h70v58h-70ZM238 446h70v58h-70ZM334 446h70v58h-70Z" fill="#e7b56e"/>
+                <path d="M84 342h98v74H84ZM84 452h98v74H84Z" fill="#f4d1b8"/>
+                <path d="M0 620h520" stroke="#df5438" stroke-width="8"/>
+                <path d="M430 620V490c0-34 27-61 61-61h29" fill="none" stroke="#f4f1e8" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="204" cy="560" r="14" fill="#df5438"/>
+              </svg>
+            </div>
+            <figcaption><strong>Ship</strong><span>Leave a clean handoff</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

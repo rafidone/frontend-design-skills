@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lane pipeline · Frontend design skills</title>
+<style>
+  :root {
+    --paper: #f5f3ed;
+    --surface: #fffdf8;
+    --raised: #ffffff;
+    --soft: #ece9e0;
+    --ink: #18211d;
+    --ink-soft: #3d4a44;
+    --muted: #6b7771;
+    --line: #dedbd1;
+    --line-strong: #c9c5b9;
+    --accent: #0e6b58;
+    --accent-soft: #e2f0eb;
+    --accent-ink: #084639;
+    --warm: #a66b1f;
+    --warm-soft: #fbf0dd;
+    --info: #2c5f8a;
+    --info-soft: #e8f0f7;
+    --danger: #a83c34;
+    --radius: 14px;
+    --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: clamp(18px, 4vw, 48px); background: var(--paper); color: var(--ink); font-family: var(--font); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 980px; margin: 0 auto; }
+  .eyebrow { margin: 0; color: var(--accent); font-size: 11px; font-weight: 750; letter-spacing: 0.12em; text-transform: uppercase; }
+  h1 { margin: 6px 0 0; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.15; letter-spacing: -0.03em; }
+  .lede { max-width: 66ch; margin: 8px 0 0; color: var(--muted); font-size: 13.5px; }
+  .card { margin-top: 20px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: 0 1px 2px rgba(24,33,29,.05), 0 16px 42px rgba(24,33,29,.06); }
+  .card-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding: 14px 18px; border-bottom: 1px solid var(--line); }
+  .card-head h2 { margin: 0; font-size: 14px; }
+  .card-head p { margin: 2px 0 0; color: var(--muted); font-size: 11px; }
+  .badge { padding: 3px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-ink); font-size: 10px; font-weight: 700; }
+  .canvas { width: 100%; height: auto; display: block; }
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; padding: 11px 18px; border-top: 1px solid var(--line); background: #fbfaf6; color: var(--muted); font-size: 10px; }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .key { width: 8px; height: 8px; border-radius: 3px; background: var(--accent); }
+  .key-warm { background: var(--warm); }
+  .key-info { background: var(--info); }
+  .foot { margin: 16px 0 0; color: var(--muted); font-size: 10.5px; }
+  .scroll { overflow-x: auto; }
+  @media (max-width: 560px) { body { padding: 14px; } .card { margin-top: 14px; } }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="eyebrow">Diagram 02</p>
+  <h1>Lane pipeline</h1>
+  <p class="lede">Three lanes move through five stages. Direction and build can overlap; verification runs alongside both and owns the finish gate.</p>
+  <figure class="card" aria-labelledby="figure-title" style="margin-left:0;margin-right:0;">
+    <div class="card-head"><div><h2 id="figure-title">Five stages, three lanes</h2><p>Roles stay explicit while each stage produces a concrete artifact.</p></div><span class="badge">5 stages</span></div>
+    
+    <div class="scroll">
+      <table class="lanes">
+        <caption>Pipeline with three lanes and five stages: frame, art direct, compose, inspect and ship</caption>
+        <thead>
+          <tr>
+            <td class="corner" aria-hidden="true"></td>
+            <th scope="col"><span class="stage-num">01</span><strong>Frame</strong><span>Clarify the job</span></th>
+            <th scope="col"><span class="stage-num">02</span><strong>Art direct</strong><span>Choose the language</span></th>
+            <th scope="col"><span class="stage-num">03</span><strong>Compose</strong><span>Build the surface</span></th>
+            <th scope="col"><span class="stage-num">04</span><strong>Inspect</strong><span>Verify in browser</span></th>
+            <th scope="col"><span class="stage-num">05</span><strong>Ship</strong><span>Package evidence</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><span class="lane-dot lane-design"></span><strong>Direction</strong><span>Design lead</span></th>
+            <td><div class="lane-card"><strong>Brief + audience</strong><p>Name the primary task and the one metric that defines success.</p><span class="lane-tag">Stop: unclear goal</span></div></td>
+            <td><div class="lane-card"><strong>Palette + type</strong><p>Assign a palette and pairing; record the rationale.</p><span class="lane-tag">Art direction</span></div></td>
+            <td><div class="lane-card lane-muted"><strong>Review composition</strong><p>Check hierarchy, rhythm and responsive intent.</p><span class="lane-tag">Async review</span></div></td>
+            <td><div class="lane-card lane-muted"><strong>Read screenshots</strong><p>Compare 390px, 768px and desktop frames.</p><span class="lane-tag">Evidence</span></div></td>
+            <td><div class="lane-card"><strong>Approve finish</strong><p>Sign the gate with known limitations listed.</p><span class="lane-tag lane-tag-accent">Gate</span></div></td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="lane-dot lane-build"></span><strong>Build</strong><span>Implementation</span></th>
+            <td><div class="lane-card"><strong>Inventory</strong><p>List existing tokens, components and assets to reuse.</p><span class="lane-tag">Repo scan</span></div></td>
+            <td><div class="lane-card"><strong>Set tokens</strong><p>Write colour, spacing and type tokens with fallbacks.</p><span class="lane-tag">CSS</span></div></td>
+            <td><div class="lane-card"><strong>Build + adapt</strong><p>Ship semantic markup and keyboard paths first.</p><span class="lane-tag lane-tag-info">Build</span></div></td>
+            <td><div class="lane-card"><strong>Fix findings</strong><p>Address layout, contrast and motion defects.</p><span class="lane-tag lane-tag-info">Iterate</span></div></td>
+            <td><div class="lane-card"><strong>Package assets</strong><p>Export HTML, CSS, JS and metadata together.</p><span class="lane-tag">Release</span></div></td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="lane-dot lane-verify"></span><strong>Verify</strong><span>Quality gate</span></th>
+            <td><div class="lane-card lane-muted"><strong>Define checks</strong><p>Set the accessibility and performance bar up front.</p><span class="lane-tag">Criteria</span></div></td>
+            <td><div class="lane-card lane-muted"><strong>Check contrast</strong><p>Validate text, controls and focus states.</p><span class="lane-tag">Contrast</span></div></td>
+            <td><div class="lane-card"><strong>Keyboard pass</strong><p>Tab through every action without a pointer.</p><span class="lane-tag lane-tag-accent">Pass</span></div></td>
+            <td><div class="lane-card"><strong>Browser audits</strong><p>Run layout, typography, motion and asset checks.</p><span class="lane-tag lane-tag-accent">Verified</span></div></td>
+            <td><div class="lane-card"><strong>Finish report</strong><p>Attach screenshots, audit results and waivers.</p><span class="lane-tag">Handoff</span></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+<style>
+  .lanes { width: 100%; min-width: 860px; border-collapse: collapse; }
+  .lanes caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .lanes th, .lanes td { padding: 10px; vertical-align: top; border-top: 1px solid var(--line); border-left: 1px solid var(--line); text-align: left; }
+  .lanes thead th { background: #fbfaf6; border-top: 0; }
+  .lanes thead th:first-of-type { border-left: 0; }
+  .lanes .corner { border-left: 0; background: #fbfaf6; }
+  .lanes thead th strong { display: block; margin-top: 4px; font-size: 12px; color: var(--ink); }
+  .lanes thead th > span:last-child { display: block; margin-top: 2px; color: var(--muted); font-size: 9.5px; font-weight: 500; }
+  .stage-num { display: inline-grid; place-items: center; width: 22px; height: 18px; border-radius: 5px; background: var(--accent-soft); color: var(--accent-ink); font-family: var(--mono); font-size: 9px; font-weight: 700; }
+  .lanes tbody th { width: 136px; border-left: 0; background: #fbfaf6; }
+  .lanes tbody th strong { display: block; margin: 5px 0 1px; font-size: 12px; }
+  .lanes tbody th > span:last-child { color: var(--muted); font-size: 9.5px; font-weight: 500; }
+  .lane-dot { display: block; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+  .lane-build { background: var(--info); }
+  .lane-verify { background: var(--warm); }
+  .lane-card { min-height: 108px; padding: 9px; border: 1px solid var(--line); border-radius: 8px; background: var(--raised); }
+  .lane-card strong { display: block; font-size: 10.5px; letter-spacing: -0.01em; }
+  .lane-card p { margin: 4px 0 0; color: var(--muted); font-size: 9.5px; line-height: 1.5; }
+  .lane-tag { display: inline-block; margin-top: 7px; padding: 1px 5px; border-radius: 3px; background: var(--soft); color: var(--muted); font-size: 8px; font-weight: 700; letter-spacing: 0.03em; }
+  .lane-tag-accent { background: var(--accent-soft); color: var(--accent-ink); }
+  .lane-tag-info { background: var(--info-soft); color: var(--info); }
+  .lane-muted { background: #fbfaf6; }
+</style>
+
+    
+    <div class="legend">
+      <span><i class="key"></i> Direction lane</span>
+      <span><i class="key key-info"></i> Build lane</span>
+      <span><i class="key key-warm"></i> Verify lane</span>
+      <span>Each stage exits only when its evidence is attached.</span>
+    </div>
+
+  </figure>
+  <p class="foot">The pipeline is a semantic table with row and column headers. At narrow widths it scrolls horizontally instead of collapsing labels.</p>
+</main>
+</body>
+</html>

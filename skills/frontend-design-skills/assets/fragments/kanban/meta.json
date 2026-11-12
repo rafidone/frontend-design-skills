@@ -1,0 +1,22 @@
+{
+  "id": "kanban",
+  "name": "Kanban board",
+  "tags": [
+    "kanban",
+    "tasks",
+    "sprint",
+    "project"
+  ],
+  "description": "A three-column sprint board with nine realistic tasks, assignees, priorities, due dates and filter controls.",
+  "data": {
+    "sprint": 24,
+    "columns": [
+      "Backlog",
+      "In progress",
+      "Review"
+    ],
+    "task_count": 9,
+    "sprint_end": "2026-11-13"
+  },
+  "a11y": "Each column is a labelled section; filter controls use aria-pressed and update a live region; assignee avatars have accessible names; card text remains readable when columns stack."
+}

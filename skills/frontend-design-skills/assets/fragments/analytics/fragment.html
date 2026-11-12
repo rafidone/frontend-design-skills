@@ -1,0 +1,147 @@
+<div class="ui ui-analytics" data-fdm-ui="analytics">
+  <header class="ui-top">
+    <div>
+      <p class="ui-eyebrow">Product analytics</p>
+      <h1 class="ui-title">Acquisition overview</h1>
+      <p class="ui-sub">Sessions, activation and retention for Meridian Labs, compared with the previous seven days.</p>
+    </div>
+    <div class="ui-actions">
+      <div class="an-range" role="group" aria-label="Date range">
+        <button type="button" class="an-range-btn" data-range="7" aria-pressed="true">7 days</button>
+        <button type="button" class="an-range-btn" data-range="30" aria-pressed="false">30 days</button>
+        <button type="button" class="an-range-btn" data-range="90" aria-pressed="false">90 days</button>
+      </div>
+      <button type="button" class="ui-btn" data-export>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16"/></svg>
+        Export CSV
+      </button>
+    </div>
+  </header>
+
+  <p class="ui-visually-hidden" role="status" data-range-status>Showing the last 7 days.</p>
+
+  <section class="an-kpis" aria-label="Key performance indicators">
+    <dl class="an-kpi">
+      <dt>Sessions</dt>
+      <dd>20,200</dd>
+      <dd class="an-delta an-up"><span aria-hidden="true">▲</span> 12.4% <span>vs prior period</span></dd>
+    </dl>
+    <dl class="an-kpi">
+      <dt>Activation rate</dt>
+      <dd>34.8%</dd>
+      <dd class="an-delta an-up"><span aria-hidden="true">▲</span> 2.1 pts <span>vs prior period</span></dd>
+    </dl>
+    <dl class="an-kpi">
+      <dt>Trial starts</dt>
+      <dd>642</dd>
+      <dd class="an-delta an-down"><span aria-hidden="true">▼</span> 3.6% <span>vs prior period</span></dd>
+    </dl>
+    <dl class="an-kpi">
+      <dt>Net revenue retention</dt>
+      <dd>108.2%</dd>
+      <dd class="an-delta an-up"><span aria-hidden="true">▲</span> 1.4 pts <span>vs prior period</span></dd>
+    </dl>
+  </section>
+
+  <div class="an-grid">
+    <section class="ui-panel an-chart" aria-labelledby="an-chart-title">
+      <div class="ui-panel-head">
+        <div>
+          <h2 class="ui-panel-title" id="an-chart-title">Sessions by day</h2>
+          <p class="an-kicker">Unique visits, Nov 3–9, 2026</p>
+        </div>
+        <div class="an-legend" aria-label="Chart legend">
+          <span><i class="an-swatch an-swatch-line"></i> Sessions</span>
+          <span><i class="an-swatch an-swatch-target"></i> Target</span>
+        </div>
+      </div>
+      <div class="ui-panel-body">
+        <svg class="an-plot" viewBox="0 0 660 236" role="img" aria-labelledby="an-chart-svg-title an-chart-desc">
+          <title id="an-chart-svg-title">Sessions by day for the week of November 3</title>
+          <desc id="an-chart-desc">Sessions rise from 2,100 on Monday to 3,750 on Sunday. The daily target is 3,200 sessions, reached on Friday and Sunday.</desc>
+          <g stroke="#dedbd1" stroke-width="1">
+            <line x1="70" y1="182" x2="630" y2="182"/>
+            <line x1="70" y1="140.5" x2="630" y2="140.5" stroke-dasharray="3 5"/>
+            <line x1="70" y1="99" x2="630" y2="99" stroke-dasharray="3 5"/>
+            <line x1="70" y1="57.5" x2="630" y2="57.5" stroke-dasharray="3 5"/>
+            <line x1="70" y1="16" x2="630" y2="16" stroke-dasharray="3 5"/>
+          </g>
+          <g fill="#6b7771" font-size="11" text-anchor="end" font-family="ui-sans-serif, system-ui, sans-serif">
+            <text x="58" y="186">0</text>
+            <text x="58" y="144.5">1.5k</text>
+            <text x="58" y="103">3k</text>
+            <text x="58" y="61.5">4.5k</text>
+            <text x="58" y="20">6k</text>
+          </g>
+          <text x="70" y="18" font-size="10.5" fill="#6b7771" font-family="ui-sans-serif, system-ui, sans-serif">sessions</text>
+          <line x1="70" y1="94.6" x2="630" y2="94.6" stroke="#a66b1f" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <text x="626" y="88" font-size="10.5" fill="#a66b1f" text-anchor="end" font-family="ui-sans-serif, system-ui, sans-serif">Target 3.2k</text>
+          <path d="M92 126.7 182 113.5 272 120.1 362 100.4 452 92.5 542 105.6 620 83.3 L620 182 L92 182 Z" fill="#0e6b58" opacity="0.08"/>
+          <path d="M92 126.7 182 113.5 272 120.1 362 100.4 452 92.5 542 105.6 620 83.3" fill="none" stroke="#0e6b58" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <g fill="#fffdf8" stroke="#0e6b58" stroke-width="2">
+            <circle cx="92" cy="126.7" r="3.5"/><circle cx="182" cy="113.5" r="3.5"/><circle cx="272" cy="120.1" r="3.5"/>
+            <circle cx="362" cy="100.4" r="3.5"/><circle cx="452" cy="92.5" r="3.5"/><circle cx="542" cy="105.6" r="3.5"/><circle cx="620" cy="83.3" r="3.5"/>
+          </g>
+          <g fill="#6b7771" font-size="11" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif">
+            <text x="92" y="206">Mon 3</text><text x="182" y="206">Tue 4</text><text x="272" y="206">Wed 5</text>
+            <text x="362" y="206">Thu 6</text><text x="452" y="206">Fri 7</text><text x="542" y="206">Sat 8</text><text x="620" y="206">Sun 9</text>
+          </g>
+          <g fill="#3d4a44" font-size="10.5" text-anchor="middle" font-family="ui-sans-serif, system-ui, sans-serif">
+            <text x="92" y="224">2.1k</text><text x="182" y="224">2.6k</text><text x="272" y="224">2.35k</text>
+            <text x="362" y="224">3.1k</text><text x="452" y="224">3.4k</text><text x="542" y="224">2.9k</text><text x="620" y="224">3.75k</text>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <section class="ui-panel an-sources" aria-labelledby="an-sources-title">
+      <div class="ui-panel-head">
+        <h2 class="ui-panel-title" id="an-sources-title">Top acquisition sources</h2>
+        <span class="ui-badge">Sessions</span>
+      </div>
+      <div class="ui-panel-body">
+        <ul class="an-source-list">
+          <li>
+            <div class="an-source-row"><span>Organic search</span><strong>8,484</strong></div>
+            <div class="ui-progress"><span style="width:42%"></span></div>
+            <p class="an-source-note">42% of sessions · +8.2%</p>
+          </li>
+          <li>
+            <div class="an-source-row"><span>Direct</span><strong>4,848</strong></div>
+            <div class="ui-progress"><span style="width:24%"></span></div>
+            <p class="an-source-note">24% of sessions · +1.1%</p>
+          </li>
+          <li>
+            <div class="an-source-row"><span>Partner referrals</span><strong>3,636</strong></div>
+            <div class="ui-progress"><span style="width:18%; background:#2c5f8a"></span></div>
+            <p class="an-source-note">18% of sessions · +14.7%</p>
+          </li>
+          <li>
+            <div class="an-source-row"><span>Paid social</span><strong>3,232</strong></div>
+            <div class="ui-progress"><span style="width:16%; background:#a66b1f"></span></div>
+            <p class="an-source-note">16% of sessions · −2.4%</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <section class="ui-panel an-activity" aria-labelledby="an-activity-title">
+    <div class="ui-panel-head">
+      <h2 class="ui-panel-title" id="an-activity-title">Recent funnel activity</h2>
+      <a href="#analytics-funnel" class="an-link">View full funnel <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="an-table-wrap">
+      <table class="an-table">
+        <caption class="ui-visually-hidden">Funnel conversion by stage for the last seven days</caption>
+        <thead><tr><th scope="col">Stage</th><th scope="col">People</th><th scope="col">Conversion</th><th scope="col">Change</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Workspace created</th><td>5,180</td><td>100%</td><td><span class="ui-badge ui-badge-accent">Baseline</span></td></tr>
+          <tr><th scope="row">First project added</th><td>3,204</td><td>61.9%</td><td><span class="ui-badge ui-badge-accent">+3.4 pts</span></td></tr>
+          <tr><th scope="row">Team invited</th><td>1,802</td><td>34.8%</td><td><span class="ui-badge ui-badge-accent">+2.1 pts</span></td></tr>
+          <tr><th scope="row">Paid plan started</th><td>642</td><td>12.4%</td><td><span class="ui-badge ui-badge-danger">−0.8 pts</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>

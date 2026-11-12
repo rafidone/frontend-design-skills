@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Morrow studio hero — split composition.">
+  <title>Morrow — A studio for the long middle</title>
+  <link rel="stylesheet" href="../starter/styles/tokens.css">
+  <link rel="stylesheet" href="../starter/styles/base.css">
+  <link rel="stylesheet" href="../starter/styles/layout.css">
+  <link rel="stylesheet" href="../starter/styles/components.css">
+  <link rel="stylesheet" href="../starter/styles/motion.css">
+  <script src="../starter/scripts/motion.js" defer></script>
+  <style>
+    .split-hero {
+      overflow: hidden;
+      padding-block-end: var(--space-5);
+      background:
+        linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 100% 6rem,
+        var(--paper);
+    }
+
+    .split-hero::after {
+      position: absolute;
+      inset: 0 0 0 50%;
+      z-index: -1;
+      background: var(--surface);
+      content: "";
+      clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .split-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.06fr) minmax(22rem, 0.72fr);
+      gap: clamp(2rem, 6vw, 6rem);
+      align-items: center;
+    }
+
+    .split-title {
+      max-width: 9.5ch;
+      font-size: clamp(3.5rem, 7.2vw, 7.5rem);
+      line-height: 0.9;
+    }
+
+    .split-copy .lede {
+      margin-block-start: var(--space-5);
+      max-width: 44ch;
+    }
+
+    .split-art {
+      position: relative;
+      width: min(100%, 31rem);
+      margin-inline: auto;
+      padding: var(--space-4);
+      border: var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: 0 30px 70px -46px rgb(25 33 27 / 0.72);
+      transform: rotate(0.8deg);
+    }
+
+    .split-art__frame {
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      background: #ded5c5;
+    }
+
+    .split-art__frame svg {
+      width: 100%;
+      height: auto;
+    }
+
+    .split-art__tag {
+      position: absolute;
+      top: 2.1rem;
+      right: -1.2rem;
+      max-width: 8.5rem;
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-sm);
+      background: var(--accent);
+      color: var(--white);
+      font-family: var(--font-mono);
+      font-size: var(--text-2xs);
+      letter-spacing: 0.04em;
+      line-height: 1.35;
+      text-transform: uppercase;
+      transform: rotate(-3deg);
+    }
+
+    .split-art__caption {
+      display: flex;
+      padding: var(--space-3) var(--space-1) 0;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: var(--text-2xs);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      .split-hero::after {
+        display: none;
+      }
+
+      .split-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .split-art {
+        width: min(100%, 28rem);
+        margin-inline: 0;
+      }
+
+      .split-title {
+        max-width: 11ch;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .split-title {
+        font-size: clamp(3.1rem, 15vw, 4.2rem);
+      }
+
+      .split-art__tag {
+        right: -0.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="demo-header">
+    <div class="wrap">
+      <nav class="demo-nav" aria-label="Primary">
+        <a class="brand" href="../starter/index.html" aria-label="Morrow home">
+          <span class="brand__mark" aria-hidden="true">M</span>
+          <span>Morrow<span class="brand__dot">.</span></span>
+        </a>
+        <div class="demo-links">
+          <a href="../starter/index.html#method">Method</a>
+          <a class="button button--primary button--small" href="../starter/index.html#contact">Start a project</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero split-hero" data-budget="1" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="hero__body split-grid">
+          <div class="split-copy" data-enter>
+            <p class="eyebrow">Studio operations · Since 2019</p>
+            <h1 class="split-title" id="hero-title">A studio for the <em class="display-accent">long middle</em>.</h1>
+            <p class="lede">The beginning is exciting and the end is in sight. We make the months in between feel deliberate, clear and worth showing up for.</p>
+            <div class="hero-actions">
+              <a class="button button--primary" href="../starter/index.html#contact">Book a studio audit <span class="arrow" aria-hidden="true">→</span></a>
+              <a class="link-arrow" href="../starter/index.html#method">See the method <span class="arrow" aria-hidden="true">↗</span></a>
+            </div>
+            <dl class="hero-meta">
+              <div>
+                <dt>Focus</dt>
+                <dd>Team rhythm</dd>
+              </div>
+              <div>
+                <dt>Format</dt>
+                <dd>Six weeks</dd>
+              </div>
+              <div>
+                <dt>Next start</dt>
+                <dd>May 2026</dd>
+              </div>
+            </dl>
+          </div>
+
+          <figure class="split-art" data-enter>
+            <p class="split-art__tag">Field note<br>04 / 12</p>
+            <div class="split-art__frame">
+              <svg viewBox="0 0 600 700" role="img" aria-label="Abstract illustration of a sunlit arch, a table and a single chair">
+                <rect width="600" height="700" fill="#ded5c5"/>
+                <rect x="0" y="0" width="600" height="240" fill="#cfc5b2"/>
+                <circle cx="432" cy="182" r="92" fill="#df5438"/>
+                <path d="M100 520V278c0-88 71-159 159-159s159 71 159 159v242H100Z" fill="#f4f1e8"/>
+                <path d="M169 520V300c0-50 40-90 90-90s90 40 90 90v220H169Z" fill="#1f513f"/>
+                <path d="M0 520h600v180H0Z" fill="#c8bda9"/>
+                <path d="M0 520h600M0 580h600M0 640h600" stroke="#a99e8a" stroke-width="2"/>
+                <path d="M298 610h132" stroke="#19211b" stroke-width="9" stroke-linecap="round"/>
+                <path d="M316 610v54M412 610v54" stroke="#19211b" stroke-width="7" stroke-linecap="round"/>
+                <path d="M440 520v-118c0-24 19-43 43-43h21" fill="none" stroke="#19211b" stroke-width="5" stroke-linecap="round"/>
+                <circle cx="504" cy="357" r="18" fill="#f4f1e8" stroke="#19211b" stroke-width="4"/>
+                <path d="M124 494c-28-17-36-53-19-81 8-14 22-23 37-25" fill="none" stroke="#1f513f" stroke-width="8" stroke-linecap="round"/>
+                <path d="M124 494c30-12 49-44 46-76" fill="none" stroke="#1f513f" stroke-width="8" stroke-linecap="round"/>
+                <path d="M124 494v26" stroke="#1f513f" stroke-width="8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <figcaption class="split-art__caption">
+              <span>Quiet room, Lisbon</span>
+              <span>Plate 04</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

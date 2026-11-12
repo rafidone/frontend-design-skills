@@ -1,0 +1,106 @@
+<div class="ui ui-kanban" data-fdm-ui="kanban">
+  <header class="ui-top">
+    <div>
+      <p class="ui-eyebrow">Product board · Sprint 24</p>
+      <h1 class="ui-title">Billing and workspace polish</h1>
+      <p class="ui-sub">Nine tasks across three columns. Sprint ends Friday, Nov 13.</p>
+    </div>
+    <div class="ui-actions">
+      <button type="button" class="ui-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg> Filter</button>
+      <button type="button" class="ui-btn ui-btn-primary"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg> Add task</button>
+    </div>
+  </header>
+
+  <div class="kb-bar">
+    <div class="kb-filters" role="group" aria-label="Filter board">
+      <button type="button" class="kb-filter" data-filter="all" aria-pressed="true">All tasks <span>9</span></button>
+      <button type="button" class="kb-filter" data-filter="mine" aria-pressed="false">My tasks <span>3</span></button>
+      <button type="button" class="kb-filter" data-filter="week" aria-pressed="false">Due this week <span>5</span></button>
+    </div>
+    <p class="kb-hint" aria-hidden="true">Drag and drop is available in the full app</p>
+  </div>
+  <p class="ui-visually-hidden" role="status" data-kb-status>Showing all tasks.</p>
+
+  <div class="kb-board">
+    <section class="kb-col" aria-labelledby="kb-backlog" data-column="backlog">
+      <header class="kb-col-head">
+        <div><span class="kb-dot kb-dot-backlog" aria-hidden="true"></span><h2 id="kb-backlog">Backlog</h2><span class="kb-count">3</span></div>
+        <button type="button" class="ui-icon-btn" aria-label="Add task to backlog"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+      </header>
+      <div class="kb-list">
+        <article class="kb-card" data-assignee="amina" data-due="week">
+          <div class="kb-card-top"><span class="ui-badge ui-badge-warm">UX</span><button type="button" class="kb-more" aria-label="Actions for Audit empty states in workspace switcher">···</button></div>
+          <h3>Audit empty states in workspace switcher</h3>
+          <p class="kb-desc">Check first-run, no-results and permission-denied states.</p>
+          <div class="kb-meta"><span class="kb-due"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M7.5 3v4M16.5 3v4M3.5 10h17"/></svg> Nov 12</span><span class="ui-avatar" aria-label="Assigned to Amina Farouk">AF</span></div>
+        </article>
+        <article class="kb-card" data-assignee="hana" data-due="later">
+          <div class="kb-card-top"><span class="ui-badge">Content</span><button type="button" class="kb-more" aria-label="Actions for Draft import validation copy">···</button></div>
+          <h3>Draft import validation copy</h3>
+          <p class="kb-desc">Cover duplicate rows, bad dates and a 5 MB limit.</p>
+          <div class="kb-meta"><span class="kb-due">Nov 14</span><span class="ui-avatar ui-avatar-warm" aria-label="Assigned to Hana Sato">HS</span></div>
+        </article>
+        <article class="kb-card" data-assignee="priya" data-due="later">
+          <div class="kb-card-top"><span class="ui-badge ui-badge-danger">Security</span><button type="button" class="kb-more" aria-label="Actions for Research SSO domain capture edge cases">···</button></div>
+          <h3>Research SSO domain capture edge cases</h3>
+          <p class="kb-desc">Map behaviour for shared domains and verified aliases.</p>
+          <div class="kb-meta"><span class="kb-due">Nov 18</span><span class="ui-avatar" aria-label="Assigned to Priya Raman">PR</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="kb-col" aria-labelledby="kb-progress" data-column="progress">
+      <header class="kb-col-head">
+        <div><span class="kb-dot kb-dot-progress" aria-hidden="true"></span><h2 id="kb-progress">In progress</h2><span class="kb-count">3</span></div>
+        <button type="button" class="ui-icon-btn" aria-label="Add task to in progress"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+      </header>
+      <div class="kb-list">
+        <article class="kb-card kb-active" data-assignee="theo" data-due="week">
+          <div class="kb-card-top"><span class="ui-badge ui-badge-info">Backend</span><button type="button" class="kb-more" aria-label="Actions for Ship CSV export for saved views">···</button></div>
+          <h3>Ship CSV export for saved views</h3>
+          <p class="kb-desc">Stream rows and include the active filter summary.</p>
+          <div class="kb-meta"><span class="kb-due kb-due-hot">Nov 10</span><span class="ui-avatar" aria-label="Assigned to Theo Bennett">TB</span></div>
+        </article>
+        <article class="kb-card" data-assignee="amina" data-due="week">
+          <div class="kb-card-top"><span class="ui-badge ui-badge-accent">Frontend</span><button type="button" class="kb-more" aria-label="Actions for Add keyboard shortcuts to table selection">···</button></div>
+          <h3>Add keyboard shortcuts to table selection</h3>
+          <p class="kb-desc">Shift-click ranges, arrow navigation and a clear shortcut.</p>
+          <div class="kb-meta"><span class="kb-due">Nov 11</span><span class="ui-avatar" aria-label="Assigned to Amina Farouk">AF</span></div>
+        </article>
+        <article class="kb-card" data-assignee="lena" data-due="week">
+          <div class="kb-card-top"><span class="ui-badge ui-badge-info">Billing</span><button type="button" class="kb-more" aria-label="Actions for Reduce invoice PDF page breaks">···</button></div>
+          <h3>Reduce invoice PDF page breaks</h3>
+          <p class="kb-desc">Keep totals and the payment note on one page.</p>
+          <div class="kb-meta"><span class="kb-due">Nov 12</span><span class="ui-avatar ui-avatar-warm" aria-label="Assigned to Lena Fischer">LF</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="kb-col" aria-labelledby="kb-review" data-column="review">
+      <header class="kb-col-head">
+        <div><span class="kb-dot kb-dot-review" aria-hidden="true"></span><h2 id="kb-review">Review</h2><span class="kb-count">3</span></div>
+        <button type="button" class="ui-icon-btn" aria-label="Add task to review"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+      </header>
+      <div class="kb-list">
+        <article class="kb-card" data-assignee="amina" data-due="week">
+          <div class="kb-card-top"><span class="ui-badge ui-badge-accent">Growth</span><button type="button" class="kb-more" aria-label="Actions for Refine onboarding checklist timings">···</button></div>
+          <h3>Refine onboarding checklist timings</h3>
+          <p class="kb-desc">Delay the invite step until the first project exists.</p>
+          <div class="kb-meta"><span class="kb-due kb-due-hot">Nov 9</span><span class="ui-avatar" aria-label="Assigned to Amina Farouk">AF</span></div>
+        </article>
+        <article class="kb-card" data-assignee="priya" data-due="week">
+          <div class="kb-card-top"><span class="ui-badge ui-badge-danger">Security</span><button type="button" class="kb-more" aria-label="Actions for Update guest role permission matrix">···</button></div>
+          <h3>Update guest role permission matrix</h3>
+          <p class="kb-desc">Remove export access and confirm comment-only scope.</p>
+          <div class="kb-meta"><span class="kb-due">Nov 10</span><span class="ui-avatar" aria-label="Assigned to Priya Raman">PR</span></div>
+        </article>
+        <article class="kb-card" data-assignee="hana" data-due="later">
+          <div class="kb-card-top"><span class="ui-badge">Platform</span><button type="button" class="kb-more" aria-label="Actions for Fix timezone label in weekly digest">···</button></div>
+          <h3>Fix timezone label in weekly digest</h3>
+          <p class="kb-desc">Use the workspace timezone and show the abbreviation.</p>
+          <div class="kb-meta"><span class="kb-due">Nov 13</span><span class="ui-avatar ui-avatar-warm" aria-label="Assigned to Hana Sato">HS</span></div>
+        </article>
+      </div>
+    </section>
+  </div>
+</div>

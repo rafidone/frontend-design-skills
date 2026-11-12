@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Architecture stack · Frontend design skills</title>
+<style>
+  :root {
+    --paper: #f5f3ed;
+    --surface: #fffdf8;
+    --raised: #ffffff;
+    --soft: #ece9e0;
+    --ink: #18211d;
+    --ink-soft: #3d4a44;
+    --muted: #6b7771;
+    --line: #dedbd1;
+    --line-strong: #c9c5b9;
+    --accent: #0e6b58;
+    --accent-soft: #e2f0eb;
+    --accent-ink: #084639;
+    --warm: #a66b1f;
+    --warm-soft: #fbf0dd;
+    --info: #2c5f8a;
+    --info-soft: #e8f0f7;
+    --danger: #a83c34;
+    --radius: 14px;
+    --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: clamp(18px, 4vw, 48px); background: var(--paper); color: var(--ink); font-family: var(--font); line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 980px; margin: 0 auto; }
+  .eyebrow { margin: 0; color: var(--accent); font-size: 11px; font-weight: 750; letter-spacing: 0.12em; text-transform: uppercase; }
+  h1 { margin: 6px 0 0; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.15; letter-spacing: -0.03em; }
+  .lede { max-width: 66ch; margin: 8px 0 0; color: var(--muted); font-size: 13.5px; }
+  .card { margin-top: 20px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: 0 1px 2px rgba(24,33,29,.05), 0 16px 42px rgba(24,33,29,.06); }
+  .card-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding: 14px 18px; border-bottom: 1px solid var(--line); }
+  .card-head h2 { margin: 0; font-size: 14px; }
+  .card-head p { margin: 2px 0 0; color: var(--muted); font-size: 11px; }
+  .badge { padding: 3px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-ink); font-size: 10px; font-weight: 700; }
+  .canvas { width: 100%; height: auto; display: block; }
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; padding: 11px 18px; border-top: 1px solid var(--line); background: #fbfaf6; color: var(--muted); font-size: 10px; }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .key { width: 8px; height: 8px; border-radius: 3px; background: var(--accent); }
+  .key-warm { background: var(--warm); }
+  .key-info { background: var(--info); }
+  .foot { margin: 16px 0 0; color: var(--muted); font-size: 10.5px; }
+  .scroll { overflow-x: auto; }
+  @media (max-width: 560px) { body { padding: 14px; } .card { margin-top: 14px; } }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <p class="eyebrow">Diagram 04</p>
+  <h1>Architecture stack</h1>
+  <p class="lede">Four layers keep presentation, material, verification and runtime concerns separate while exchanging explicit contracts and evidence.</p>
+  <figure class="card" aria-labelledby="figure-title" style="margin-left:0;margin-right:0;">
+    <div class="card-head"><div><h2 id="figure-title">Layer contracts</h2><p>The experience layer consumes assets, verification proves the surface, and the platform runs the procedure.</p></div><span class="badge">4 layers</span></div>
+    
+    <svg class="canvas" viewBox="0 0 900 610" role="img" aria-labelledby="stack-title stack-desc">
+      <title id="stack-title">Architecture stack diagram</title>
+      <desc id="stack-desc">Four layers: experience, assets, verification and platform. Contracts flow down and evidence flows up.</desc>
+      <defs>
+        <marker id="stack-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 10 5 0 10Z" fill="#6b7771"/>
+        </marker>
+      </defs>
+      <rect width="900" height="610" fill="#fbfaf6"/>
+
+      <g font-family="ui-sans-serif, system-ui, sans-serif">
+        <text x="664" y="42" font-size="9.5" fill="#6b7771" font-family="ui-monospace, monospace" letter-spacing="0.08em">CONTRACTS DOWN</text>
+        <text x="664" y="592" font-size="9.5" fill="#6b7771" font-family="ui-monospace, monospace" letter-spacing="0.08em">EVIDENCE UP</text>
+        <line x1="636" y1="54" x2="636" y2="546" stroke="#c9c5b9" stroke-width="1.2" marker-end="url(#stack-arrow)"/>
+        <line x1="654" y1="546" x2="654" y2="54" stroke="#c9c5b9" stroke-width="1.2" marker-end="url(#stack-arrow)"/>
+
+        <g>
+          <rect x="34" y="28" width="72" height="118" rx="10" fill="#e2f0eb"/>
+          <text x="70" y="76" font-size="10" font-weight="750" fill="#084639" text-anchor="middle">Experience</text>
+          <text x="70" y="91" font-size="8.5" fill="#3d6b60" text-anchor="middle">Surface</text>
+        </g>
+        <rect x="118" y="28" width="510" height="118" rx="12" fill="#fffdf8" stroke="#dedbd1"/>
+        <text x="138" y="56" font-size="13" font-weight="750" fill="#18211d">Pages, sections and fragments</text>
+        <text x="138" y="73" font-size="10" fill="#6b7771">What the visitor sees and operates</text>
+        <g font-size="9.5">
+          <rect x="138" y="88" width="104" height="30" rx="7" fill="#e2f0eb"/><text x="190" y="107" fill="#084639" text-anchor="middle" font-weight="650">14 UI fragments</text>
+          <rect x="250" y="88" width="104" height="30" rx="7" fill="#e2f0eb"/><text x="302" y="107" fill="#084639" text-anchor="middle" font-weight="650">Sections</text>
+          <rect x="362" y="88" width="104" height="30" rx="7" fill="#e2f0eb"/><text x="414" y="107" fill="#084639" text-anchor="middle" font-weight="650">Tokens</text>
+          <rect x="474" y="88" width="104" height="30" rx="7" fill="#e2f0eb"/><text x="526" y="107" fill="#084639" text-anchor="middle" font-weight="650">States</text>
+        </g>
+
+        <g>
+          <rect x="34" y="166" width="72" height="112" rx="10" fill="#e8f0f7"/>
+          <text x="70" y="212" font-size="10" font-weight="750" fill="#234d72" text-anchor="middle">Assets</text>
+          <text x="70" y="227" font-size="8.5" fill="#55768f" text-anchor="middle">Material</text>
+        </g>
+        <rect x="118" y="166" width="510" height="112" rx="12" fill="#fffdf8" stroke="#dedbd1"/>
+        <text x="138" y="194" font-size="13" font-weight="750" fill="#18211d">Palettes, type, icons and data</text>
+        <text x="138" y="211" font-size="10" fill="#6b7771">Reusable material with recorded provenance</text>
+        <g font-size="9.5">
+          <rect x="138" y="226" width="104" height="30" rx="7" fill="#e8f0f7"/><text x="190" y="245" fill="#234d72" text-anchor="middle" font-weight="650">24 palettes</text>
+          <rect x="250" y="226" width="104" height="30" rx="7" fill="#e8f0f7"/><text x="302" y="245" fill="#234d72" text-anchor="middle" font-weight="650">Type pairs</text>
+          <rect x="362" y="226" width="104" height="30" rx="7" fill="#e8f0f7"/><text x="414" y="245" fill="#234d72" text-anchor="middle" font-weight="650">66 icons</text>
+          <rect x="474" y="226" width="104" height="30" rx="7" fill="#e8f0f7"/><text x="526" y="245" fill="#234d72" text-anchor="middle" font-weight="650">Mock data</text>
+        </g>
+
+        <g>
+          <rect x="34" y="298" width="72" height="112" rx="10" fill="#fbf0dd"/>
+          <text x="70" y="344" font-size="10" font-weight="750" fill="#785015" text-anchor="middle">Verify</text>
+          <text x="70" y="359" font-size="8.5" fill="#8c6a31" text-anchor="middle">Evidence</text>
+        </g>
+        <rect x="118" y="298" width="510" height="112" rx="12" fill="#fffdf8" stroke="#dedbd1"/>
+        <text x="138" y="326" font-size="13" font-weight="750" fill="#18211d">Browser runner and audits</text>
+        <text x="138" y="343" font-size="10" fill="#6b7771">Screenshots, console output and finish gates</text>
+        <g font-size="9.5">
+          <rect x="138" y="358" width="104" height="30" rx="7" fill="#fbf0dd"/><text x="190" y="377" fill="#785015" text-anchor="middle" font-weight="650">Layout</text>
+          <rect x="250" y="358" width="104" height="30" rx="7" fill="#fbf0dd"/><text x="302" y="377" fill="#785015" text-anchor="middle" font-weight="650">Typography</text>
+          <rect x="362" y="358" width="104" height="30" rx="7" fill="#fbf0dd"/><text x="414" y="377" fill="#785015" text-anchor="middle" font-weight="650">Accessibility</text>
+          <rect x="474" y="358" width="104" height="30" rx="7" fill="#fbf0dd"/><text x="526" y="377" fill="#785015" text-anchor="middle" font-weight="650">Performance</text>
+        </g>
+
+        <g>
+          <rect x="34" y="430" width="72" height="112" rx="10" fill="#ece9e0"/>
+          <text x="70" y="476" font-size="10" font-weight="750" fill="#3d4a44" text-anchor="middle">Platform</text>
+          <text x="70" y="491" font-size="8.5" fill="#6b7771" text-anchor="middle">Runtime</text>
+        </g>
+        <rect x="118" y="430" width="510" height="112" rx="12" fill="#fffdf8" stroke="#dedbd1"/>
+        <text x="138" y="458" font-size="13" font-weight="750" fill="#18211d">OpenCode skill and local tooling</text>
+        <text x="138" y="475" font-size="10" fill="#6b7771">Deterministic procedures, scripts and reports</text>
+        <g font-size="9.5">
+          <rect x="138" y="490" width="104" height="30" rx="7" fill="#ece9e0"/><text x="190" y="509" fill="#3d4a44" text-anchor="middle" font-weight="650">Rules</text>
+          <rect x="250" y="490" width="104" height="30" rx="7" fill="#ece9e0"/><text x="302" y="509" fill="#3d4a44" text-anchor="middle" font-weight="650">Scripts</text>
+          <rect x="362" y="490" width="104" height="30" rx="7" fill="#ece9e0"/><text x="414" y="509" fill="#3d4a44" text-anchor="middle" font-weight="650">Run loop</text>
+          <rect x="474" y="490" width="104" height="30" rx="7" fill="#ece9e0"/><text x="526" y="509" fill="#3d4a44" text-anchor="middle" font-weight="650">Reports</text>
+        </g>
+
+        <rect x="706" y="88" width="152" height="76" rx="9" fill="#fffdf8" stroke="#dedbd1"/>
+        <text x="720" y="110" font-size="9.5" font-weight="750" fill="#18211d">Design contract</text>
+        <text x="720" y="126" font-size="9" fill="#6b7771">Palette, type, spacing</text>
+        <text x="720" y="140" font-size="9" fill="#6b7771">and accessibility bar.</text>
+        <text x="720" y="154" font-size="8.5" fill="#0e6b58">Required before build</text>
+
+        <rect x="706" y="344" width="152" height="76" rx="9" fill="#fffdf8" stroke="#dedbd1"/>
+        <text x="720" y="366" font-size="9.5" font-weight="750" fill="#18211d">Finish evidence</text>
+        <text x="720" y="382" font-size="9" fill="#6b7771">Screenshots, audit log</text>
+        <text x="720" y="396" font-size="9" fill="#6b7771">and known limitations.</text>
+        <text x="720" y="410" font-size="8.5" fill="#a66b1f">Required before ship</text>
+      </g>
+    </svg>
+
+    
+    <div class="legend">
+      <span><i class="key"></i> Experience</span>
+      <span><i class="key key-info"></i> Assets</span>
+      <span><i class="key key-warm"></i> Verification</span>
+      <span>Platform services sit underneath and stay independent of any one framework.</span>
+    </div>
+
+  </figure>
+  <p class="foot">The stack is a titled SVG with text descriptions. Layer labels and chips remain legible at small widths through the responsive canvas.</p>
+</main>
+</body>
+</html>

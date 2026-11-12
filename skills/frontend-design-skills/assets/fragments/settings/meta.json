@@ -1,0 +1,22 @@
+{
+  "id": "settings",
+  "name": "Workspace settings",
+  "tags": [
+    "settings",
+    "preferences",
+    "toggles",
+    "security"
+  ],
+  "description": "Workspace preferences with labelled switches for density, motion, notifications and security, plus default selectors.",
+  "data": {
+    "workspace": "Meridian Labs",
+    "sections": [
+      "Preferences",
+      "Notifications",
+      "Security"
+    ],
+    "switch_count": 7,
+    "default_landing": "My work"
+  },
+  "a11y": "Every switch uses role=switch with aria-checked and a programmatic label; changes are announced in a live region; selects have visible labels; the layout stacks cleanly at 390px."
+}

@@ -1,0 +1,20 @@
+{
+  "name": "frontend-design-skills",
+  "version": "1.0.0",
+  "description": "Production-grade frontend design skill: locked art direction, niche-specific systems, and real-browser finish gates.",
+  "author": {
+    "name": "rafidone"
+  },
+  "homepage": "https://github.com/rafidone/frontend-design-skills",
+  "repository": "https://github.com/rafidone/frontend-design-skills",
+  "license": "MIT",
+  "keywords": [
+    "frontend",
+    "design",
+    "agent-skill",
+    "opencode",
+    "claude-code",
+    "art-direction",
+    "browser-testing"
+  ]
+}

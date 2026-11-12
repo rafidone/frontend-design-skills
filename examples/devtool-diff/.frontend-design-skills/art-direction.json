@@ -1,0 +1,98 @@
+{
+  "skill": "frontend-design-skills",
+  "version": 1,
+  "stack": "html",
+  "niche": "devtool",
+  "palette": "coal-signal",
+  "typePair": "bricolage-plex",
+  "hero": "split",
+  "heroLayout": "split",
+  "motionTier": "T1",
+  "density": "medium",
+  "composition": "pair",
+  "effects": false,
+  "rationale": "Coal and signal: A low-glare editor background with one bright signal blue. Made for code, diffs and infrastructure pages. Bricolage and Plex: Research tools, AI products and developer platforms that want a distinctive grotesque without a novelty face. Hero \"split\" with a medium density, T1 motion tier and a pair composition.",
+  "seed": "devtool-kestrel-01",
+  "assignedAt": "2026-11-12T06:48:56.735Z",
+  "paletteData": {
+    "id": "coal-signal",
+    "name": "Coal and signal",
+    "mode": "dark",
+    "tags": [
+      "dark",
+      "technical",
+      "developer"
+    ],
+    "niches": [
+      "devtool",
+      "software",
+      "ai"
+    ],
+    "bg": "#0d1117",
+    "surface": "#161c24",
+    "ink": "#eef2f6",
+    "muted": "#9aa7b4",
+    "accent": "#4da3ff",
+    "accentInk": "#08111c",
+    "bandBg": "#18202a",
+    "bandInk": "#eef2f6",
+    "contrast": {
+      "body": "15.9:1",
+      "muted": "7.2:1",
+      "accent": "7.5:1"
+    },
+    "note": "A low-glare editor background with one bright signal blue. Made for code, diffs and infrastructure pages.",
+    "avoid": "No neon green terminal cosplay, no matrix rain."
+  },
+  "typePairData": {
+    "id": "bricolage-plex",
+    "name": "Bricolage and Plex",
+    "display": {
+      "family": "Bricolage Grotesque",
+      "weights": [
+        400,
+        600,
+        700
+      ],
+      "tracking": "-0.045em",
+      "lineHeight": "0.96",
+      "scale": {
+        "h1": 80,
+        "h2": 50,
+        "h3": 28
+      }
+    },
+    "text": {
+      "family": "IBM Plex Sans",
+      "weights": [
+        400,
+        500
+      ]
+    },
+    "mono": {
+      "family": "IBM Plex Mono",
+      "weights": [
+        400,
+        500
+      ]
+    },
+    "googleFonts": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap",
+    "niches": [
+      "ai",
+      "devtool",
+      "software"
+    ],
+    "tags": [
+      "grotesque",
+      "technical",
+      "distinct"
+    ],
+    "suits": "Research tools, AI products and developer platforms that want a distinctive grotesque without a novelty face.",
+    "avoid": "Do not set long paragraphs in Bricolage; the optical quirks tire at text sizes.",
+    "fallback": {
+      "display": "ui-sans-serif, system-ui, sans-serif",
+      "text": "ui-sans-serif, system-ui, sans-serif",
+      "mono": "ui-monospace, SFMono-Regular, monospace"
+    }
+  }
+}

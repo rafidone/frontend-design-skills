@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Morrow studio hero — film composition.">
+  <title>Morrow — Every good week has a cut</title>
+  <link rel="stylesheet" href="../starter/styles/tokens.css">
+  <link rel="stylesheet" href="../starter/styles/base.css">
+  <link rel="stylesheet" href="../starter/styles/layout.css">
+  <link rel="stylesheet" href="../starter/styles/components.css">
+  <link rel="stylesheet" href="../starter/styles/motion.css">
+  <script src="../starter/scripts/motion.js" defer></script>
+  <style>
+    .film-hero {
+      overflow: hidden;
+      padding-block-end: var(--space-4);
+      background: #101511;
+    }
+
+    .film-hero::before {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(90deg, rgb(255 255 255 / 0.035) 1px, transparent 1px) 0 0 / 12.5% 100%,
+        #101511;
+      content: "";
+    }
+
+    .film-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(17rem, 0.5fr);
+      gap: clamp(2rem, 6vw, 5rem);
+      align-items: end;
+      margin-block-end: clamp(1.25rem, 3.5vh, 2.5rem);
+    }
+
+    .film-title {
+      max-width: 11ch;
+      font-size: clamp(3.4rem, 7.6vw, 8rem);
+      line-height: 0.9;
+    }
+
+    .film-title em {
+      color: var(--accent);
+      font-weight: 400;
+    }
+
+    .film-aside {
+      padding-block-start: var(--space-4);
+      border-block-start: 1px solid #3c483d;
+    }
+
+    .film-aside p {
+      max-width: 32ch;
+      color: #c5cec3;
+      font-size: var(--text-sm);
+    }
+
+    .film-aside .hero-actions {
+      margin-block-start: var(--space-4);
+    }
+
+    .film-frame {
+      position: relative;
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid #3c483d;
+      border-radius: var(--radius-sm);
+      background: #1b241d;
+    }
+
+    .film-frame__strip {
+      display: flex;
+      padding: 0.35rem 0;
+      justify-content: space-around;
+      background: #090d0a;
+    }
+
+    .film-frame__strip span {
+      width: 1.25rem;
+      height: 0.45rem;
+      border-radius: 1px;
+      background: #303a31;
+    }
+
+    .film-frame__art {
+      position: relative;
+      height: clamp(12rem, 31svh, 20rem);
+      overflow: hidden;
+    }
+
+    .film-frame__art svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .film-frame__slate {
+      position: absolute;
+      top: var(--space-3);
+      left: var(--space-3);
+      display: flex;
+      padding: var(--space-1) var(--space-2);
+      align-items: center;
+      gap: var(--space-2);
+      background: #f4f1e8;
+      color: #19211b;
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .film-frame__slate::before {
+      width: 0.4rem;
+      height: 0.4rem;
+      border-radius: 50%;
+      background: #df5438;
+      content: "";
+    }
+
+    .film-frame__caption {
+      display: flex;
+      padding: var(--space-3) var(--space-4);
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      border-block-start: 1px solid #303a31;
+      color: #aeb8ad;
+      font-family: var(--font-mono);
+      font-size: var(--text-2xs);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .film-frame__caption span:last-child {
+      color: #f4f1e8;
+    }
+
+    .film-credits {
+      display: flex;
+      margin-block-start: var(--space-3);
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      color: #849085;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      .film-head {
+        grid-template-columns: 1fr;
+      }
+
+      .film-title {
+        max-width: 12ch;
+      }
+
+      .film-aside {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: var(--space-4);
+        align-items: end;
+      }
+
+      .film-aside .hero-actions {
+        margin-block-start: 0;
+      }
+
+      .film-frame__art {
+        height: clamp(11rem, 27svh, 18rem);
+      }
+    }
+
+    @media (max-width: 620px) {
+      .film-title {
+        font-size: clamp(3rem, 14.5vw, 4.6rem);
+      }
+
+      .film-aside {
+        grid-template-columns: 1fr;
+      }
+
+      .film-frame__caption span:first-child {
+        display: none;
+      }
+
+      .film-credits {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="theme-dark">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="demo-header">
+    <div class="wrap">
+      <nav class="demo-nav" aria-label="Primary">
+        <a class="brand" href="../starter/index.html" aria-label="Morrow home">
+          <span class="brand__mark" aria-hidden="true">M</span>
+          <span>Morrow<span class="brand__dot">.</span></span>
+        </a>
+        <div class="demo-links">
+          <a href="../starter/index.html#proof">Selected work</a>
+          <a class="button button--primary button--small" href="../starter/index.html#contact">Start a film</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero film-hero" data-budget="1" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="film-head">
+          <div data-enter>
+            <p class="eyebrow">Morrow moving image · Reel 02</p>
+            <h1 class="film-title" id="hero-title">Every good week has a <em>cut</em>.</h1>
+          </div>
+
+          <div class="film-aside" data-enter>
+            <p>We make short films about the work behind the work: the decisions, the edits and the quiet turning points that rarely make the case study.</p>
+            <div class="hero-actions">
+              <a class="button button--primary" href="../starter/index.html#proof">See the full case <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </div>
+
+        <figure class="film-frame" data-enter>
+          <div class="film-frame__strip" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="film-frame__art">
+            <span class="film-frame__slate">Field cut · 01:18</span>
+            <svg viewBox="0 0 1600 610" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Cinematic illustration of a long green corridor with an open door and warm evening light">
+              <rect width="1600" height="610" fill="#162019"/>
+              <rect y="430" width="1600" height="180" fill="#0d130f"/>
+              <path d="M0 430h1600" stroke="#435146" stroke-width="3"/>
+              <path d="M0 118h1600" stroke="#2b372d" stroke-width="2"/>
+              <path d="M150 430V142h340v288" fill="#1e2c22"/>
+              <path d="M190 430V182h260v248" fill="#263729"/>
+              <path d="M840 430V92h448v338" fill="#243227"/>
+              <path d="M886 430V138h356v292" fill="#d2b17d"/>
+              <path d="M1222 138h20v292h-20" fill="#f4e2b9"/>
+              <path d="M886 430V138h356v292" fill="url(#doorGlow)" opacity="0.62"/>
+              <defs>
+                <linearGradient id="doorGlow" x1="0" x2="1">
+                  <stop offset="0" stop-color="#f0b56f" stop-opacity="0"/>
+                  <stop offset="1" stop-color="#f0b56f" stop-opacity="0.9"/>
+                </linearGradient>
+              </defs>
+              <path d="M1242 520l228-192 130 192Z" fill="#d18a55" opacity="0.3"/>
+              <path d="M100 430v-80h74v80M1080 430v-126h48v126" fill="#0d130f"/>
+              <circle cx="500" cy="424" r="18" fill="#0d130f"/>
+              <path d="M500 406v-70" stroke="#0d130f" stroke-width="8" stroke-linecap="round"/>
+              <rect x="540" y="338" width="410" height="12" rx="6" fill="#0d130f"/>
+              <rect x="580" y="350" width="8" height="80" fill="#0d130f"/>
+              <rect x="896" y="350" width="8" height="80" fill="#0d130f"/>
+              <path d="M1040 430V206h18v224M1074 430V206h18v224" stroke="#c9a66e" stroke-width="6"/>
+              <path d="M0 564h1600" stroke="#303c31" stroke-width="2"/>
+              <path d="M64 86h120M64 102h76" stroke="#df5438" stroke-width="5"/>
+              <rect x="1380" y="62" width="120" height="36" fill="#d2b17d" opacity="0.2"/>
+            </svg>
+          </div>
+          <div class="film-frame__strip" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <figcaption class="film-frame__caption">
+            <span>Morrow / “The Long Middle” — a studio film</span>
+            <span>Lisbon · 2026</span>
+          </figcaption>
+        </figure>
+
+        <div class="film-credits" aria-hidden="true">
+          <span>Direction &amp; edit · Morrow</span>
+          <span>Sound · North Room</span>
+          <span>Colour · Field Office</span>
+          <span>Runtime · 01:18</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

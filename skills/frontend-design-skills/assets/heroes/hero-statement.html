@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Morrow studio hero — statement composition.">
+  <title>Morrow — We make the useful feel inevitable</title>
+  <link rel="stylesheet" href="../starter/styles/tokens.css">
+  <link rel="stylesheet" href="../starter/styles/base.css">
+  <link rel="stylesheet" href="../starter/styles/layout.css">
+  <link rel="stylesheet" href="../starter/styles/components.css">
+  <link rel="stylesheet" href="../starter/styles/motion.css">
+  <script src="../starter/scripts/motion.js" defer></script>
+  <style>
+    .statement-hero {
+      overflow: hidden;
+      background: var(--paper);
+    }
+
+    .statement-hero::before {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-image: linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 25% 100%;
+      content: "";
+      opacity: 0.55;
+    }
+
+    .statement-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(16rem, 0.5fr);
+      gap: clamp(2rem, 6vw, 5rem);
+      align-items: end;
+    }
+
+    .statement-main {
+      min-width: 0;
+    }
+
+    .statement-title {
+      max-width: 11ch;
+      margin-block-start: var(--space-4);
+      font-size: clamp(3.6rem, 9.2vw, 10.5rem);
+      line-height: 0.84;
+      letter-spacing: -0.06em;
+    }
+
+    .statement-title em {
+      color: var(--brand);
+      font-weight: 400;
+    }
+
+    .statement-actions {
+      display: flex;
+      margin-block-start: clamp(1.5rem, 4vh, 2.5rem);
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-3) var(--space-5);
+    }
+
+    .statement-aside {
+      align-self: end;
+      padding-block-start: var(--space-4);
+      border-block-start: 2px solid var(--ink);
+    }
+
+    .statement-aside p {
+      max-width: 30ch;
+      color: var(--ink-soft);
+      font-size: var(--text-sm);
+    }
+
+    .statement-list {
+      display: grid;
+      margin-block: var(--space-5);
+      padding: 0;
+      gap: var(--space-2);
+      list-style: none;
+    }
+
+    .statement-list li {
+      display: flex;
+      padding-block: var(--space-2);
+      align-items: baseline;
+      justify-content: space-between;
+      gap: var(--space-3);
+      border-block-end: var(--border);
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: var(--text-2xs);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .statement-list span:last-child {
+      color: var(--ink);
+    }
+
+    .statement-stamp {
+      display: grid;
+      width: 8.5rem;
+      height: 8.5rem;
+      place-items: center;
+      border: 1px solid var(--line-strong);
+      border-radius: 50%;
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.12em;
+      line-height: 1.5;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .statement-stamp span {
+      display: block;
+      color: var(--accent);
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      letter-spacing: -0.06em;
+      line-height: 1;
+    }
+
+    @media (max-width: 940px) {
+      .statement-hero::before {
+        background-size: 50% 100%;
+      }
+
+      .statement-grid {
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+
+      .statement-aside {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: var(--space-5);
+        align-items: end;
+      }
+
+      .statement-list {
+        margin-block: var(--space-3) 0;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .statement-title {
+        font-size: clamp(3.2rem, 15.5vw, 5rem);
+      }
+
+      .statement-aside {
+        grid-template-columns: 1fr;
+      }
+
+      .statement-stamp {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="theme-dark">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="demo-header">
+    <div class="wrap">
+      <nav class="demo-nav" aria-label="Primary">
+        <a class="brand" href="../starter/index.html" aria-label="Morrow home">
+          <span class="brand__mark" aria-hidden="true">M</span>
+          <span>Morrow<span class="brand__dot">.</span></span>
+        </a>
+        <div class="demo-links">
+          <a href="../starter/index.html#method">What we do</a>
+          <a class="button button--primary button--small" href="../starter/index.html#contact">Talk to us</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero statement-hero" data-budget="1" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="hero__body statement-grid">
+          <div class="statement-main" data-enter>
+            <p class="eyebrow">Morrow / Studio operations</p>
+            <h1 class="statement-title" id="hero-title">We make the useful feel <em>inevitable</em>.</h1>
+            <div class="statement-actions">
+              <a class="button button--primary" href="../starter/index.html#contact">Start a conversation <span class="arrow" aria-hidden="true">→</span></a>
+              <a class="link-arrow" href="../starter/index.html#proof">See the work <span class="arrow" aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+
+          <aside class="statement-aside" data-enter>
+            <p>No theatre, no forty-slide deck. We look at the real week, find the two or three changes that matter, and stay until they hold.</p>
+            <ul class="statement-list">
+              <li><span>Practice</span><span>Operations</span></li>
+              <li><span>Team</span><span>Six seniors</span></li>
+              <li><span>Next intake</span><span>May 2026</span></li>
+            </ul>
+            <div class="statement-stamp" aria-hidden="true">
+              <div><span>M</span>Calm<br>is a method</div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

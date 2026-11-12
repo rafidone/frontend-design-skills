@@ -1,0 +1,6 @@
+node_modules/
+dist/
+out/
+.next/
+.frontend-design-skills/*
+!.frontend-design-skills/art-direction.json

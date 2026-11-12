@@ -1,0 +1,23 @@
+{
+  "id": "analytics",
+  "name": "Analytics dashboard",
+  "tags": [
+    "dashboard",
+    "charts",
+    "metrics",
+    "saas"
+  ],
+  "description": "A seven-day acquisition dashboard with session trend chart, target line, KPI cards, source breakdown and funnel table.",
+  "data": {
+    "range": "Nov 3–9, 2026",
+    "metrics": [
+      "sessions",
+      "activation_rate",
+      "trial_starts",
+      "net_revenue_retention"
+    ],
+    "chart": "sessions by day, 0–6k sessions, 3.2k target",
+    "workspace": "Meridian Labs"
+  },
+  "a11y": "The chart is an accessible inline SVG with title and description; KPI values use definition lists; table has a caption and row headers; range controls expose aria-pressed and update a live region."
+}

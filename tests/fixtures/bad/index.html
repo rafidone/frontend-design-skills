@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A deliberately broken page used to prove that the frontend-design-skills audits detect real failures and report the correct rule identifiers.">
+  <title>Broken fixture — what the gate should catch</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+    }
+
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: #222222;
+      font: 12px/1.4 Georgia, "Times New Roman", serif;
+    }
+
+    h1 { font-size: 54px; }
+
+    h3 { font-size: 26px; }
+
+    p {
+      width: 100%;
+      max-width: none;
+      color: #aaaaaa;
+    }
+
+    .hero {
+      min-height: 44svh;
+      padding: 24px;
+    }
+
+    .overflow {
+      width: 200vw;
+      height: 40px;
+      background: #1d4ed8;
+    }
+
+    .tiny {
+      display: inline-block;
+      width: 20px;
+      height: 12px;
+      overflow: hidden;
+      background: #1d4ed8;
+      color: #1d4ed8;
+      text-decoration: none;
+    }
+
+    .card {
+      width: 70%;
+      min-height: 180px;
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #dddddd;
+      background: #fafafa;
+      color: #aaaaaa;
+    }
+
+    .visual {
+      width: 320px;
+      height: 200px;
+      margin: 20px;
+      background: #eeeeee;
+    }
+
+    img { display: block; width: 320px; height: 200px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#main">Fieldnote</a>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <h1>Broken page</h1>
+      <h3>This heading skips a level</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. This is placeholder text that should never reach a production interface.</p>
+      <p>We deliver a seamless experience and a next-generation workflow for every team, which is exactly the kind of stock phrase the copy audit is designed to reject.</p>
+      <a class="tiny" href="#main">x</a>
+    </section>
+
+    <div class="overflow"></div>
+
+    <section>
+      <div class="card">
+        <h3>Feature one</h3>
+        <p>An empty rounded box is not a visual. Repeated grey panels are not product proof.</p>
+      </div>
+      <div class="visual" aria-hidden="true">
+        This readable sentence is hidden from assistive technology.
+      </div>
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='200'%3E%3Crect width='320' height='200' fill='%23dddddd'/%3E%3C/svg%3E">
+    </section>
+
+    <section>
+      <form action="#" method="post">
+        <input name="email" type="email" placeholder="Email address">
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

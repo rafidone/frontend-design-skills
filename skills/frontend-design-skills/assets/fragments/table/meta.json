@@ -1,0 +1,30 @@
+{
+  "id": "table",
+  "name": "Invoice table",
+  "tags": [
+    "table",
+    "data",
+    "invoices",
+    "sorting"
+  ],
+  "description": "A finance table with six invoices, status badges, client avatars, text and status filters, sortable columns and pagination.",
+  "data": {
+    "rows": 6,
+    "columns": [
+      "Invoice",
+      "Client",
+      "Status",
+      "Issued",
+      "Due",
+      "Amount (USD)"
+    ],
+    "statuses": [
+      "Paid",
+      "Pending",
+      "Overdue",
+      "Draft"
+    ],
+    "total_shown": 36895.2
+  },
+  "a11y": "The table has a caption; sortable headers use aria-sort and real buttons; filters have labels; row counts and sort changes are announced; horizontal scrolling preserves all columns."
+}

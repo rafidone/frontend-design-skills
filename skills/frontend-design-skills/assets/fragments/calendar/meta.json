@@ -1,0 +1,22 @@
+{
+  "id": "calendar",
+  "name": "Team calendar week",
+  "tags": [
+    "calendar",
+    "scheduling",
+    "week",
+    "team"
+  ],
+  "description": "A seven-day team calendar for Nov 9–15, 2026 with dated columns, timed events, colour-coded calendars and a detail panel.",
+  "data": {
+    "week_start": "2026-11-09",
+    "week_end": "2026-11-15",
+    "event_count": 10,
+    "calendars": [
+      "Design",
+      "Engineering",
+      "Customer"
+    ]
+  },
+  "a11y": "Events are buttons with full context in their accessible names; day columns expose dates; selecting an event updates a live detail region; the grid reflows to two columns at narrow widths."
+}

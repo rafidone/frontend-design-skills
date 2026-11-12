@@ -1,0 +1,21 @@
+{
+  "id": "command-palette",
+  "name": "Command palette",
+  "tags": [
+    "command",
+    "search",
+    "navigation",
+    "keyboard"
+  ],
+  "description": "A searchable command palette with navigate, action and people groups, keyboard hints and live filtering.",
+  "data": {
+    "groups": [
+      "Navigate",
+      "Actions",
+      "People"
+    ],
+    "result_count": 10,
+    "shortcut": "Arrow keys to move, Enter to open, Escape to clear"
+  },
+  "a11y": "The palette is a labelled dialog; the search field has a label and help text; arrow keys move between visible results; filtering and opening announce changes in a live status region."
+}
