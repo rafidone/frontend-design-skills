@@ -7,6 +7,7 @@
 
 * {
   margin: 0;
+  border-radius: 0;
 }
 
 html {
@@ -61,7 +62,7 @@ button {
 a {
   color: inherit;
   text-decoration-thickness: 0.08em;
-  text-underline-offset: 0.18em;
+  text-underline-offset: 0.2em;
 }
 
 a:hover {
@@ -77,28 +78,30 @@ figure {
   margin: 0;
 }
 
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
 h1,
 h2,
 h3,
 h4 {
   font-family: var(--font-display);
   font-weight: 400;
-  line-height: var(--leading-display);
   letter-spacing: var(--tracking-tight);
   text-wrap: balance;
 }
 
 h1 {
   font-size: var(--text-h1);
+  line-height: var(--leading-display);
 }
 
 h2 {
   font-size: var(--text-h2);
-}
-
-h3 {
-  font-size: var(--text-h3);
-  line-height: var(--leading-snug);
+  line-height: var(--leading-title);
 }
 
 p {
@@ -128,7 +131,7 @@ b {
   display: none !important;
 }
 
-/* Skip link: first tab stop, visible on focus. */
+/* First tab stop. */
 .skip-link {
   position: fixed;
   top: var(--space-3);
@@ -138,9 +141,8 @@ b {
   min-height: 44px;
   padding: var(--space-2) var(--space-4);
   align-items: center;
-  border-radius: var(--radius-xs);
   background: var(--ink);
-  color: var(--cream);
+  color: var(--paper);
   font-size: var(--text-sm);
   font-weight: 500;
   text-decoration: none;
@@ -163,7 +165,7 @@ b {
   border: 0 !important;
 }
 
-/* Reduced motion is the default for anyone who asks for it. */
+/* Reduced motion renders the finished state. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -172,8 +174,7 @@ b {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
+    animation: none !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }

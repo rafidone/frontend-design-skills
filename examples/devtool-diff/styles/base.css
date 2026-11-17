@@ -61,12 +61,12 @@ button {
 
 a {
   color: inherit;
-  text-decoration-thickness: 0.08em;
-  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
 a:hover {
-  text-decoration-color: var(--accent);
+  text-decoration-color: var(--ink-soft);
 }
 
 p,
@@ -74,7 +74,8 @@ ul,
 ol,
 dl,
 blockquote,
-figure {
+figure,
+pre {
   margin: 0;
 }
 
@@ -83,27 +84,29 @@ h2,
 h3 {
   font-family: var(--font-display);
   font-weight: 600;
-  letter-spacing: var(--tracking-tight);
-  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-head);
   text-wrap: balance;
 }
 
 h1 {
+  max-width: 16ch;
   font-size: var(--text-h1);
+  line-height: 1.02;
 }
 
 h2 {
+  max-width: 18ch;
   font-size: var(--text-h2);
   line-height: var(--leading-head);
 }
 
 h3 {
   font-size: var(--text-h3);
-  letter-spacing: var(--tracking-head);
-  line-height: var(--leading-head);
+  line-height: 1.22;
 }
 
 p {
+  max-width: 34rem;
   text-wrap: pretty;
 }
 
@@ -117,13 +120,13 @@ small {
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--accent-ink);
+  background: var(--ink);
+  color: var(--invert);
 }
 
 :focus-visible {
   outline: 2px solid var(--focus);
-  outline-offset: 3px;
+  outline-offset: 2px;
   border-radius: 0;
 }
 
@@ -135,7 +138,7 @@ small {
   display: none !important;
 }
 
-/* First tab stop. Sharp, high contrast, off-screen until focused. */
+/* First tab stop: sharp, high contrast, parked off-screen until focused. */
 .skip-link {
   position: fixed;
   top: var(--space-3);
@@ -145,12 +148,14 @@ small {
   min-height: 44px;
   padding: var(--space-3) var(--space-4);
   align-items: center;
-  border: var(--hairline-strong);
+  border: 1px solid var(--ink);
   border-radius: 0;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: var(--text-sm);
-  font-weight: 600;
+  background: var(--ink);
+  color: var(--invert);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.08em;
   text-decoration: none;
   transform: translateY(-180%);
 }

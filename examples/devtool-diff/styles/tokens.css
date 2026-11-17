@@ -1,29 +1,26 @@
-/* Coal and signal — one palette, one scale, one corner radius. */
+/* Zinc terminal: one neutral palette, hairline rules, square corners. */
 :root {
   color-scheme: dark;
 
-  /* Families fixed by the art direction. */
   --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
 
-  /* Type scale: three heading sizes, one body size, one metadata size. */
+  /* Three heading sizes, one reading size, one UI size. */
   --text-ui: 0.6875rem;
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
   --text-lead: 1.0625rem;
-  --text-h3: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
-  --text-h2: clamp(2rem, 1.35rem + 2.1vw, 3rem);
-  --text-h1: clamp(2.75rem, 1.45rem + 4.35vw, 4.75rem);
-  --leading-tight: 0.94;
+  --text-h3: clamp(1.125rem, 1.04rem + 0.35vw, 1.3125rem);
+  --text-h2: clamp(1.875rem, 1.35rem + 1.5vw, 2.625rem);
+  --text-h1: clamp(2.125rem, 1.45rem + 1.75vw, 2.875rem);
   --leading-head: 1.04;
-  --leading-body: 1.6;
-  --tracking-tight: -0.045em;
-  --tracking-head: -0.032em;
-  --tracking-ui: 0.12em;
+  --leading-body: 1.55;
+  --tracking-head: -0.035em;
+  --tracking-ui: 0.14em;
 
-  /* Spacing: a strict 4px rhythm. */
+  /* 4px rhythm. */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -31,48 +28,39 @@
   --space-5: 1.5rem;
   --space-6: 2rem;
   --space-7: 3rem;
-  --space-8: 4rem;
-  --space-9: 6rem;
 
-  /* Surfaces. Ink and muted clear 4.5:1 on every coal surface. */
-  --bg: #0b0f14;
-  --paper: #0d1117;
-  --surface: #131a22;
-  --surface-2: #1a232d;
-  --surface-3: #24303c;
-  --ink: #eef3f7;
-  --ink-soft: #c5d0da;
-  --muted: #9fb0bf;
-  --line: #2a3440;
-  --line-strong: #415061;
-  --accent: #4da3ff;
-  --accent-ink: #08111c;
-  --accent-soft: #12243a;
-  --signal-add: #7fd3a3;
-  --signal-del: #f08d78;
-  --signal-risk: #e6a15c;
-  --focus: #4da3ff;
+  /* Surfaces: zinc/slate only. Ink and muted clear 4.5:1 on every surface. */
+  --bg: #0a0c0f;
+  --surface: #101317;
+  --surface-2: #161a1f;
+  --surface-3: #1c2127;
+  --ink: #e7ebee;
+  --ink-soft: #c2cbd2;
+  --muted: #9aa4ad;
+  --line: #262c33;
+  --line-strong: #3a434c;
+  --invert: #0a0c0f;
 
-  /* Hairlines and depth: flat, sharp, tactile. */
+  /* Neutral stand-ins for the shared token names. */
+  --accent: #e7ebee;
+  --accent-ink: #0a0c0f;
+  --focus: #e7ebee;
+
   --hairline: 1px solid var(--line);
   --hairline-strong: 1px solid var(--line-strong);
-  --radius: 2px;
-  --inset-top: inset 0 1px 0 rgb(255 255 255 / 0.055);
-  --inset-deep: inset 0 0 0 1px rgb(255 255 255 / 0.025);
-  --shadow-panel: 0 18px 44px -30px rgb(0 0 0 / 0.9);
-  --shadow-float: 0 24px 54px -26px rgb(0 0 0 / 0.95);
+  --radius: 1px;
 
   /* Frame. */
-  --container: 1280px;
-  --gutter: clamp(1rem, 4.5vw, 3rem);
-  --header-h: 4.75rem;
-  --section-pad: clamp(3.5rem, 7.5vw, 7rem);
-  --grid-gap: clamp(1.5rem, 3.5vw, 3rem);
+  --container: 1360px;
+  --gutter: clamp(1rem, 4vw, 3rem);
+  --header-h: 3.25rem;
+  --section-pad: clamp(2rem, 3vw, 3rem);
+  --grid-gap: clamp(1.25rem, 3vw, 2.5rem);
 
-  /* Motion: one entrance, no loops. */
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --dur-fast: 120ms;
-  --dur-base: 200ms;
-  --dur-enter: 560ms;
-  --enter-distance: 14px;
+  /* One short entrance, no loops. */
+  --dur-fast: 110ms;
+  --dur-base: 150ms;
+  --dur-enter: 320ms;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --enter-distance: 8px;
 }

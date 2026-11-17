@@ -1,9 +1,9 @@
-/* Motion — one short entrance for the hero, quiet hover states, and a full
-   reduced-motion stop. Nothing scroll-driven, nothing looping. */
-@keyframes fdm-enter {
+/* Motion — one short entrance, quiet hover states, and a complete stop for
+   anyone who asks for less motion. Nothing scroll-driven, nothing looping. */
+@keyframes dossier-enter {
   from {
     opacity: 0;
-    transform: translateY(var(--enter-distance));
+    transform: translateY(var(--enter-shift));
   }
   to {
     opacity: 1;
@@ -17,30 +17,22 @@
   }
 
   html.fdm-motion [data-enter].is-entering {
-    animation: fdm-enter var(--dur-enter) var(--ease-out) both;
+    animation: dossier-enter var(--enter-dur) var(--ease) both;
     animation-delay: var(--enter-delay, 0ms);
   }
-
-  [data-enter-group] > [data-enter]:nth-child(2) { --enter-delay: 70ms; }
-  [data-enter-group] > [data-enter]:nth-child(3) { --enter-delay: 140ms; }
 }
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .button:not(.button--quiet):hover,
-  .nav-toggle:hover {
-    transform: translateY(-1px);
+  .text-link .arrow {
+    transition: transform var(--dur) var(--ease);
   }
 
-  .dossier-photo img {
-    transition: transform 700ms var(--ease-out);
-  }
-
-  .dossier-hero__visual:hover .dossier-photo img {
-    transform: scale(1.015);
+  .text-link:hover .arrow {
+    transform: translateX(3px);
   }
 }
 
-/* Anyone who asks for less motion sees the finished composition immediately. */
+/* The finished composition is always the fallback. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

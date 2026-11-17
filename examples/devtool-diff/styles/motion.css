@@ -1,4 +1,4 @@
-/* Motion: one short entrance and quiet state changes. No loops, no scrolling tricks. */
+/* Motion: one short entrance and quiet state changes. No loops, no scroll tricks. */
 @keyframes fdm-enter {
   from {
     opacity: 0;
@@ -16,35 +16,27 @@
   }
 
   html.fdm-motion [data-enter].is-entering {
-    animation: fdm-enter var(--dur-enter) var(--ease-out) both;
+    animation: fdm-enter var(--dur-enter) var(--ease) both;
     animation-delay: var(--enter-delay, 0ms);
   }
 
   .button:active,
-  .copy-button:active {
+  .copy-button:active,
+  .nav-toggle:active {
     transform: translateY(1px);
     transition-duration: var(--dur-fast);
   }
 
-  .brand__mark,
-  .review-tab,
-  .brief-step__artifact span {
-    transition:
-      border-color var(--dur-base) var(--ease-out),
-      color var(--dur-base) var(--ease-out);
+  .arrow {
+    transition: transform var(--dur-base) var(--ease);
   }
 
-  .link-arrow:hover .arrow,
-  .button:hover .arrow {
+  .button:hover .arrow,
+  .link-arrow:hover .arrow {
     transform: translateX(3px);
-    transition: transform var(--dur-base) var(--ease-out);
   }
-}
 
-/* Parent-level stagger; children inherit a short, readable delay. */
-@media (prefers-reduced-motion: no-preference) {
-  [data-enter-group] > [data-enter]:nth-child(2) { --enter-delay: 80ms; }
-  [data-enter-group] > [data-enter]:nth-child(3) { --enter-delay: 160ms; }
-  [data-enter-group] > [data-enter]:nth-child(4) { --enter-delay: 240ms; }
-  [data-enter-group] > [data-enter]:nth-child(5) { --enter-delay: 320ms; }
+  .command-palette__list li {
+    transition: background-color var(--dur-base) var(--ease), color var(--dur-base) var(--ease);
+  }
 }

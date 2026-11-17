@@ -1,5 +1,5 @@
-/* Motion: one hero entrance and quiet state changes. Reduced motion is final state. */
-@keyframes fdm-enter {
+/* Motion: one entrance for the projection copy; reduced motion is the final frame. */
+@keyframes fdm-credit {
   from {
     opacity: 0;
     transform: translateY(var(--enter-distance));
@@ -17,17 +17,8 @@
   }
 
   html.fdm-motion [data-enter].is-entering {
-    animation: fdm-enter var(--dur-slow) var(--ease-out) both;
+    animation: fdm-credit var(--dur-slow) var(--ease-out) both;
     animation-delay: var(--enter-delay, 0ms);
-  }
-
-  .button:hover {
-    transform: translateY(-2px);
-  }
-
-  .button:active {
-    transform: translateY(0) scale(0.99);
-    transition-duration: var(--dur-fast);
   }
 
   .link-arrow .arrow {
@@ -38,20 +29,32 @@
     transform: translateX(3px);
   }
 
-  .edition-feature {
-    transition:
-      border-color var(--dur-base) var(--ease-out),
-      box-shadow var(--dur-base) var(--ease-out);
+  .button:hover {
+    transform: translateY(-1px);
   }
 
-  .edition-feature:hover {
-    border-color: var(--accent-strong);
-    box-shadow: var(--shadow-lift);
+  .button:active {
+    transform: translateY(0);
+    transition-duration: var(--dur-fast);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html.fdm-motion [data-enter] {
-    opacity: 1;
+  html.fdm-motion [data-enter],
+  [data-enter],
+  [data-reveal],
+  [data-fdm-enter] {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }

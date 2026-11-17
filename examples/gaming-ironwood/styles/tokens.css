@@ -1,4 +1,4 @@
-/* Ironwood design tokens: forest black, lantern amber, one display voice. */
+/* Ironwood: a dark room, paper ink and one disciplined amber stamp. */
 :root {
   color-scheme: dark;
 
@@ -6,22 +6,19 @@
   --font-display: "Anton", Impact, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
   --text-base: 1rem;
   --text-md: 1.0625rem;
   --text-lg: 1.25rem;
 
-  /* Three heading sizes, reused everywhere. */
-  --fs-h1: clamp(3.5rem, 9.2vw, 8.75rem);
-  --fs-h2: clamp(2.25rem, 4.4vw, 4.25rem);
-  --fs-h3: clamp(1.25rem, 1.8vw, 1.75rem);
+  --fs-h1: clamp(5rem, 14vw, 12rem);
+  --fs-h2: clamp(2.375rem, 4.6vw, 4.75rem);
+  --fs-h3: clamp(1.25rem, 1.7vw, 1.75rem);
 
-  --leading-display: 0.88;
-  --leading-tight: 1.02;
-  --leading-body: 1.62;
-  --tracking-display: -0.02em;
-  --tracking-caps: 0.14em;
+  --leading-display: 0.84;
+  --leading-tight: 1.08;
+  --leading-body: 1.6;
+  --tracking-display: -0.035em;
+  --tracking-caps: 0.12em;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -32,44 +29,33 @@
   --space-7: 3rem;
   --space-8: 4rem;
   --space-9: 6rem;
-  --space-10: 8rem;
 
-  --bg: #070c09;
-  --bg-deep: #040705;
-  --surface: #101a13;
-  --surface-2: #17231a;
-  --surface-3: #223026;
+  --bg: #050806;
+  --bg-deep: #020403;
+  --surface: #080d0a;
+  --surface-2: #0c120d;
 
-  --ink: #f3efe3;
-  --ink-soft: #cdd6c9;
-  --muted: #acbaac;
-  --line: #2d3a30;
-  --line-strong: #536354;
+  --ink: #f2efe6;
+  --ink-soft: #d4d5c8;
+  --muted: #a8aea2;
+  --line: #283028;
+  --line-strong: #4d5749;
 
-  --accent: #e6b65c;
-  --accent-strong: #f2cc83;
-  --accent-ink: #0a100b;
-  --accent-soft: #241d0f;
-
-  --danger: #ff9a80;
-  --danger-soft: #2a1512;
-  --success: #8fd6a1;
-  --focus: #e6b65c;
+  --accent: #d8a94f;
+  --accent-ink: #050806;
+  --danger: #d8a94f;
+  --focus: #d8a94f;
 
   --border: 1px solid var(--line);
   --border-strong: 1px solid var(--line-strong);
-  --radius-xs: 2px;
-  --radius-sm: 3px;
-  --radius-md: 5px;
-  --shadow-lift: 0 24px 60px -34px rgb(0 0 0 / 0.9);
 
-  --container: 1320px;
-  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --container: 1360px;
+  --gutter: clamp(1.25rem, 4vw, 4rem);
   --header-h: 4.5rem;
 
   --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
   --dur-fast: 120ms;
   --dur-base: 220ms;
-  --dur-slow: 720ms;
-  --enter-distance: 18px;
+  --dur-slow: 620ms;
+  --enter-distance: 14px;
 }

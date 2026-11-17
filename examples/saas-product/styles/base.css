@@ -1,4 +1,4 @@
-/* Base — reset, reading defaults and accessibility. */
+/* Base — reset, reading defaults and the accessibility floor. */
 
 *,
 *::before,
@@ -55,6 +55,7 @@ textarea {
 
 button {
   border: 0;
+  border-radius: var(--radius);
   background: transparent;
   cursor: pointer;
 }
@@ -62,7 +63,7 @@ button {
 a {
   color: inherit;
   text-decoration-thickness: 0.08em;
-  text-underline-offset: 0.18em;
+  text-underline-offset: 0.2em;
 }
 
 a:hover {
@@ -74,12 +75,13 @@ ul,
 ol,
 dl,
 blockquote,
-figure {
+figure,
+table {
   margin: 0;
 }
 
-ul[role="list"],
-ol[role="list"] {
+ul,
+ol {
   padding: 0;
   list-style: none;
 }
@@ -89,22 +91,24 @@ h2,
 h3 {
   font-family: var(--font-display);
   font-weight: 500;
-  line-height: var(--leading-tight);
-  letter-spacing: var(--tracking-tight);
   text-wrap: balance;
 }
 
 h1 {
-  font-size: var(--step-display);
+  font-size: var(--step-h1);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
 }
 
 h2 {
-  font-size: var(--step-section);
+  font-size: var(--step-h2);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
 }
 
 h3 {
-  font-size: var(--step-subhead);
-  line-height: var(--leading-snug);
+  font-size: var(--step-h3);
+  line-height: 1.2;
   letter-spacing: -0.025em;
 }
 
@@ -129,7 +133,6 @@ small {
 :focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 3px;
-  border-radius: var(--radius);
 }
 
 :focus:not(:focus-visible) {
@@ -140,21 +143,25 @@ small {
   display: none !important;
 }
 
-/* Skip link — the first tab stop, visible only when focused. */
+/* First tab stop. */
 .skip-link {
   position: fixed;
   top: var(--space-3);
   left: var(--space-3);
-  z-index: 1000;
+  z-index: 200;
+  display: inline-flex;
+  min-height: 44px;
   padding: var(--space-3) var(--space-4);
+  align-items: center;
   border: var(--rule-strong);
-  border-radius: var(--radius);
   background: var(--ink);
   color: var(--bg);
-  font-size: var(--text-sm);
-  font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: var(--text-meta);
+  letter-spacing: var(--tracking-mono);
   text-decoration: none;
-  transform: translateY(-180%);
+  text-transform: uppercase;
+  transform: translateY(-200%);
 }
 
 .skip-link:focus-visible {
@@ -173,7 +180,7 @@ small {
   border: 0 !important;
 }
 
-/* Anyone who asks for less motion gets the finished state immediately. */
+/* The finished state is always the safe state. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -185,8 +192,7 @@ small {
     animation: none !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    transition-property: none !important;
+    transition: none !important;
     scroll-behavior: auto !important;
   }
 
@@ -194,6 +200,7 @@ small {
   [data-reveal],
   [data-fdm-enter] {
     opacity: 1 !important;
+    visibility: visible !important;
     transform: none !important;
   }
 }

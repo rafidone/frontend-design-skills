@@ -29,14 +29,12 @@ body {
 
 img,
 svg,
-video,
 canvas {
   display: block;
   max-width: 100%;
 }
 
-img,
-video {
+img {
   height: auto;
 }
 
@@ -64,10 +62,6 @@ a {
   text-underline-offset: 0.2em;
 }
 
-a:hover {
-  color: var(--accent-strong);
-}
-
 p,
 ul,
 ol,
@@ -75,12 +69,6 @@ dl,
 blockquote,
 figure {
   margin: 0;
-}
-
-ul[role="list"],
-ol[role="list"] {
-  padding: 0;
-  list-style: none;
 }
 
 h1,
@@ -110,7 +98,7 @@ h3 {
   font-family: var(--font-sans);
   font-size: var(--fs-h3);
   font-weight: 600;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
   line-height: var(--leading-tight);
 }
 
@@ -134,9 +122,9 @@ small {
 }
 
 :focus-visible {
-  outline: 3px solid var(--focus);
+  outline: 2px solid var(--focus);
   outline-offset: 3px;
-  border-radius: var(--radius-xs);
+  border-radius: 0;
 }
 
 :focus:not(:focus-visible) {
@@ -156,7 +144,7 @@ small {
   min-height: 44px;
   padding: var(--space-2) var(--space-4);
   align-items: center;
-  border: var(--border-strong);
+  border: 1px solid var(--accent);
   background: var(--ink);
   color: var(--bg);
   font-size: var(--text-base);
@@ -182,7 +170,7 @@ small {
   margin: -1px !important;
   overflow: hidden !important;
   clip: rect(0, 0, 0, 0) !important;
-  white-space: nowrap !important;
+  white-space: nowrap;
   border: 0 !important;
 }
 

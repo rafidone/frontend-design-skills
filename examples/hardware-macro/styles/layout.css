@@ -1,4 +1,4 @@
-/* Layout: one measured frame, one gutter, predictable section budgets. */
+/* Layout: one sheet frame, one gutter, and a fixed column grid underneath. */
 html,
 body {
   max-width: 100%;
@@ -6,8 +6,35 @@ body {
 }
 
 body {
+  position: relative;
   overflow-wrap: break-word;
 }
+
+/* Five hairlines, aligned to the same wrap as every section. The grid spans
+   the sheet rather than the viewport, so it reads as ruling, not chrome. */
+.sheet-grid {
+  position: absolute;
+  z-index: 0;
+  inset-block: 0;
+  left: 50%;
+  width: min(calc(100% - (2 * var(--gutter))), var(--container));
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.sheet-grid span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--grid-line);
+}
+
+.sheet-grid span:nth-child(1) { left: 0; }
+.sheet-grid span:nth-child(2) { left: 25%; }
+.sheet-grid span:nth-child(3) { left: 50%; }
+.sheet-grid span:nth-child(4) { left: 75%; }
+.sheet-grid span:nth-child(5) { right: 0; }
 
 .wrap {
   width: min(calc(100% - (2 * var(--gutter))), var(--container));
@@ -26,14 +53,7 @@ body {
   gap: var(--stack-gap, var(--space-4));
 }
 
-.cluster {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-3);
-}
-
-/* The hero owns the first screen: rail, composition, then the spec index. */
+/* ---------- First sheet ---------- */
 .hero {
   position: relative;
   display: flex;
@@ -42,121 +62,73 @@ body {
   isolation: isolate;
 }
 
-.lattice-hero {
-  overflow: hidden;
-  background: var(--paper);
-}
-
-.lattice-hero__inner {
+.hero__wrap {
   position: relative;
   z-index: 1;
   display: flex;
   flex: 1;
-  min-height: 100svh;
   flex-direction: column;
   justify-content: space-between;
   gap: var(--space-5);
-  padding-block: calc(var(--header-h) + var(--space-5)) var(--space-5);
+  padding-block: var(--space-5) var(--space-6);
 }
 
-.lattice-hero__grid {
+.hero__main {
   display: grid;
-  grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: var(--grid-gap);
   align-items: center;
 }
 
-.lattice-hero__copy,
-.lattice-hero__display {
+.hero__copy {
+  grid-column: 9 / 13;
   min-width: 0;
 }
 
-.lattice-hero__display {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
+.hero__media {
+  grid-column: 1 / 8;
+  min-width: 0;
 }
 
-/* Content sections land on one screen at desktop sizes. */
+/* ---------- Following sheets ---------- */
 .section {
-  --h: var(--section-pad);
-  padding-block: var(--h);
-}
-
-.section[data-budget="1"],
-.section[data-budget="2"] {
-  display: grid;
-  align-content: center;
+  position: relative;
+  z-index: 1;
+  padding-block: var(--section-pad);
 }
 
 .section[data-budget="1"] {
+  display: grid;
+  align-content: center;
   min-height: calc(100svh - var(--header-h));
 }
 
-.section[data-budget="2"] {
-  min-height: calc(200svh - var(--header-h));
-}
-
-.method-layout,
-.proof-layout {
+.two-col {
   display: grid;
-  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+  grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
   gap: var(--grid-gap);
-  align-items: center;
+  align-items: start;
 }
 
-.method-copy,
-.proof-copy {
-  min-width: 0;
-}
-
-.editions-head {
+.sheet-head {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   gap: var(--grid-gap);
   align-items: end;
 }
 
-.configuration {
-  display: grid;
-  grid-template-columns: minmax(11rem, 0.23fr) minmax(0, 1fr);
-  gap: var(--grid-gap);
-  align-items: start;
-}
-
-.contact-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
-  gap: calc(var(--grid-gap) * 1.2);
-  align-items: start;
-}
-
-.contact-lead,
-.contact-form {
-  min-width: 0;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(9rem, 0.6fr));
-  gap: var(--grid-gap);
-  align-items: start;
-}
-
-/* Equal gutters and single columns on every small grid. */
+/* Equal gutters, single columns once the sheet narrows. */
 @media (max-width: 900px) {
-  .lattice-hero__grid {
-    grid-template-columns: 1fr;
-    align-items: start;
+  .hero__main,
+  .two-col,
+  .sheet-head {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-6);
   }
 
-  .method-layout,
-  .proof-layout,
-  .contact-layout,
-  .configuration,
-  .editions-head {
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
+  .hero__copy,
+  .hero__media {
+    grid-column: 1 / -1;
   }
 }
 
@@ -165,11 +137,11 @@ body {
     min-height: 0;
   }
 
-  .lattice-hero {
+  .hero {
     min-height: 100svh;
   }
 
-  .lattice-hero__inner {
-    padding-block-end: var(--space-4);
+  .hero__wrap {
+    padding-block-end: var(--space-5);
   }
 }

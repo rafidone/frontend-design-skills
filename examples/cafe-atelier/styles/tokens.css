@@ -1,31 +1,45 @@
-/* Atelier Nine — design tokens.
-   Warm paper and clay, two typefaces, hairline rules, one accent.
-   Every other stylesheet reads from this one source. */
+/* Atelier Nine — one source of values.
+   Paper, ink and a little clay. Two typefaces. Hairlines instead of boxes. */
 :root {
   color-scheme: light;
 
-  /* Type families */
+  /* Families */
   --font-display: "Cormorant Garamond", Garamond, Georgia, serif;
   --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
 
+  /* Palette */
+  --paper: #f7f0e5;
+  --paper-deep: #f1e7d8;
+  --ink: #2a1d16;
+  --ink-soft: #4c3a2e;
+  --muted: #6b5749;
+  --line: #d3c0ab;
+  --line-strong: #a98d76;
+  --clay: #a4472a;
+  --clay-deep: #7f3520;
+  --white: #fffdf8;
+  --danger: #9c3222;
+  --success: #3d644a;
+  --focus: #a4472a;
+
   /* Type scale */
-  --text-2xs: 0.6875rem;
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
-  --text-lg: 1.35rem;
-  --text-lede: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem);
-  --text-h3: clamp(1.5rem, 1.3rem + 0.7vw, 2rem);
-  --text-h2: clamp(2.75rem, 1.9rem + 3vw, 4.5rem);
-  --text-h1: clamp(4rem, 2rem + 7vw, 8.25rem);
+  --text-lede: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --text-h2: clamp(2.55rem, 1.6rem + 3.6vw, 4.6rem);
+  --text-h1: clamp(4.2rem, 10.5vw, 13rem);
+  --text-quote: clamp(1.85rem, 1.15rem + 1.9vw, 3rem);
+  --text-feature: clamp(1.7rem, 1.25rem + 1.3vw, 2.5rem);
 
-  --leading-display: 0.9;
-  --leading-snug: 1.14;
-  --leading-body: 1.62;
-  --tracking-tight: -0.035em;
-  --tracking-caps: 0.18em;
+  /* Rhythm */
+  --leading-display: 0.84;
+  --leading-title: 1.02;
+  --leading-body: 1.65;
+  --tracking-tight: -0.038em;
+  --tracking-caps: 0.19em;
 
-  /* Spacing scale */
+  /* Space */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -34,51 +48,18 @@
   --space-6: 2rem;
   --space-7: 3rem;
   --space-8: 4rem;
-  --space-9: 6rem;
 
-  /* Surfaces and ink */
-  --paper: #f7efe3;
-  --paper-warm: #f1e5d6;
-  --surface: #efdfcd;
-  --surface-deep: #e5d0b9;
-  --ink: #2c1f18;
-  --ink-soft: #514035;
-  --muted: #6d5949;
-  --line: #d8c6b2;
-  --line-strong: #b69a82;
-
-  --clay: #a4472a;
-  --clay-deep: #7d3320;
-  --clay-wash: #f2ded1;
-
-  --night: #2b1d16;
-  --night-soft: #38261d;
-  --cream: #fbf3e7;
-  --cream-soft: #dcc4b0;
-
-  --danger: #9c3222;
-  --danger-soft: #f6e1db;
-  --success: #35634b;
-  --focus: #a4472a;
-  --white: #ffffff;
-
-  /* Lines, corners and depth */
-  --border: 1px solid var(--line);
-  --border-strong: 1px solid var(--line-strong);
-  --radius-xs: 2px;
-  --radius-sm: 3px;
-
-  /* Layout */
-  --container: 1280px;
+  /* Structure */
+  --container: 1320px;
   --gutter: clamp(1.25rem, 5vw, 4rem);
-  --header-h: 4.75rem;
-  --grid-gap: clamp(1.5rem, 4vw, 4rem);
-  --section-pad: clamp(2rem, 4vw, 4rem);
+  --header-h: 4.5rem;
+  --section-pad: clamp(1.5rem, 3vw, 3rem);
+  --column-gap: clamp(1.5rem, 3.6vw, 3.5rem);
 
   /* Motion */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --dur-fast: 140ms;
-  --dur-base: 260ms;
-  --dur-slow: 620ms;
-  --enter-distance: 20px;
+  --dur-fast: 130ms;
+  --dur-base: 240ms;
+  --dur-enter: 560ms;
+  --enter-distance: 18px;
 }

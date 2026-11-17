@@ -1,31 +1,47 @@
-/* Motion: restrained, mechanical, zero spectacle. */
-@keyframes fdm-enter {
-  from { opacity: 0; transform: translate3d(0, 18px, 0); }
-  to { opacity: 1; transform: translate3d(0, 0, 0); }
+/* Motion — a short ink-in for the ledger, no drift, no ambient loops. */
+
+@keyframes fdm-ink-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-[data-enter] { opacity: 1; }
+[data-enter] {
+  opacity: 1;
+}
 
 html.fdm-motion [data-enter] {
   opacity: 0;
-  transform: translate3d(0, 18px, 0);
 }
 
 html.fdm-motion [data-enter].is-entering {
-  animation: fdm-enter 620ms cubic-bezier(.22, 1, .36, 1) both;
+  animation: fdm-ink-in var(--dur-enter) var(--ease) both;
+  animation-delay: var(--enter-delay, 0ms);
 }
-
-html.fdm-motion [data-enter="2"].is-entering { animation-delay: 80ms; }
-html.fdm-motion [data-enter="3"].is-entering { animation-delay: 160ms; }
-html.fdm-motion [data-enter="4"].is-entering { animation-delay: 240ms; }
 
 [data-lift] {
-  transition: transform 260ms cubic-bezier(.22, 1, .36, 1), border-color 260ms ease, background-color 260ms ease;
+  transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }
 
-[data-lift]:hover { transform: translate3d(0, -3px, 0); border-color: rgb(127 227 212 / .5); }
-[data-lift]:active { transform: translate3d(0, 0, 0); }
+[data-lift]:hover {
+  background-color: var(--bg-raised);
+}
 
 @media (max-width: 820px) {
-  html.fdm-motion [data-enter].is-entering { animation-duration: 460ms; }
+  html.fdm-motion [data-enter].is-entering {
+    animation-duration: 240ms;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.fdm-motion [data-enter],
+  html.fdm-motion [data-enter].is-entering {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+
+  [data-lift],
+  [data-lift]:hover {
+    background-color: transparent;
+    transition: none !important;
+  }
 }

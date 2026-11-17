@@ -1,4 +1,4 @@
-/* Base — reset, reading defaults, focus and the reduced-motion contract. */
+/* Base — reset, reading defaults, focus, and the two document utilities. */
 *,
 *::before,
 *::after {
@@ -12,16 +12,17 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  scroll-padding-top: calc(var(--header-h) + var(--space-4));
+  scroll-padding-top: calc(var(--header-h) + var(--s4));
 }
 
 body {
   min-width: 320px;
   min-height: 100vh;
+  overflow-wrap: break-word;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-sans);
-  font-size: var(--text-base);
+  font-size: var(--text-body);
   line-height: var(--leading-body);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -40,13 +41,8 @@ video {
   height: auto;
 }
 
-svg {
-  flex: none;
-}
-
 button,
 input,
-select,
 textarea {
   font: inherit;
   color: inherit;
@@ -65,7 +61,7 @@ a {
 }
 
 a:hover {
-  text-decoration-color: var(--accent);
+  text-decoration-color: var(--ink);
 }
 
 p,
@@ -86,33 +82,25 @@ ol {
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
   font-family: var(--font-display);
   font-weight: 400;
-  line-height: var(--leading-tight);
-  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-head);
+  letter-spacing: var(--tracking-head);
   text-wrap: balance;
 }
 
 h1 {
-  font-size: var(--text-display);
+  font-size: var(--text-h1);
+  line-height: var(--leading-tight);
 }
 
 h2 {
-  font-size: var(--text-3xl);
+  font-size: var(--text-h2);
 }
 
 h3 {
-  font-size: var(--text-xl);
-}
-
-h4 {
-  font-family: var(--font-sans);
-  font-size: var(--text-base);
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  line-height: var(--leading-snug);
+  font-size: var(--text-h3);
 }
 
 p {
@@ -124,14 +112,9 @@ b {
   font-weight: 500;
 }
 
-hr {
-  border: 0;
-  border-top: var(--border);
-}
-
 ::selection {
-  background: var(--accent);
-  color: var(--accent-ink);
+  background: var(--ink);
+  color: var(--paper);
 }
 
 :focus-visible {
@@ -147,19 +130,18 @@ hr {
   display: none !important;
 }
 
-/* First tab stop. It is a real, tappable bar when focused. */
 .skip-link {
   position: fixed;
-  top: var(--space-3);
-  left: var(--space-3);
+  top: var(--s3);
+  left: var(--s3);
   z-index: 1000;
   display: inline-flex;
   min-height: 44px;
-  padding: var(--space-3) var(--space-4);
+  padding: 0 var(--s4);
   align-items: center;
   background: var(--ink);
   color: var(--paper);
-  font-size: var(--text-base);
+  font-size: var(--text-body);
   font-weight: 500;
   text-decoration: none;
   transform: translateY(-200%);
@@ -181,5 +163,5 @@ hr {
   border: 0 !important;
 }
 
-/* Tiny decorative text is always marked data-fdm-ui and styled per component.
-   The marker itself carries no presentation so it never restyles its children. */
+/* data-fdm-ui carries no presentation of its own; components style their
+   own small labels so no stray text inherits a decorative size. */

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Ironwood is a single-player survival game set in a forest that remembers every camp you leave behind. Build, forage and endure four seasons.">
-  <title>Ironwood — A dark fantasy survival game</title>
+  <title>Ironwood — A forest that keeps what you leave</title>
   <script>document.documentElement.classList.add("has-js");</script>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/anton/v27/1Ptgg87LROyAm3Kz-C8.woff2" crossorigin>
@@ -45,7 +45,7 @@
           <li><a class="nav-link" href="#method">World</a></li>
           <li><a class="nav-link" href="#proof">Systems</a></li>
           <li><a class="nav-link" href="#pricing">Editions</a></li>
-          <li><a class="nav-link" href="#contact">Field notes</a></li>
+          <li><a class="nav-link" href="#contact">Notes</a></li>
         </ul>
 
         <a class="button button--primary nav-cta" href="#contact">Join the field notes <span class="arrow" aria-hidden="true">→</span></a>
@@ -54,27 +54,32 @@
   </header>
 
   <main id="main" tabindex="-1">
-    <section class="hero hero--film ironwood-hero" id="top" data-budget="1" aria-labelledby="hero-title">
-      <figure class="hero-photo">
+    <section class="hero hero--film film-hero" id="top" data-budget="1" aria-labelledby="hero-title">
+      <figure class="film-hero__strip">
         <img src="assets/photos/gaming-ironwood.webp" srcset="assets/photos/gaming-ironwood-480w.webp 480w, assets/photos/gaming-ironwood-720w.webp 720w, assets/photos/gaming-ironwood.webp 960w" sizes="100vw" width="960" height="640" alt="Fog moving through a stand of dark conifers at first light." data-source="library" data-subject="Dark conifer forest in early morning fog." loading="eager">
       </figure>
 
-      <canvas class="hero-canvas" width="120" height="120" aria-hidden="true" data-fdm-ui></canvas>
-      <div class="ironwood-hero__marks" data-fdm-ui aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-      <div class="hero-rules" data-fdm-ui aria-hidden="true"><span></span><span></span></div>
+      <p class="film-hero__margin" data-fdm-ui>52° 14′ N · 13° 24′ E · Survey sheet 04</p>
 
-      <div class="wrap ironwood-hero__inner">
-        <div class="ironwood-hero__top" data-enter>
+      <p class="mission-stamp" data-fdm-ui>
+        <span class="mission-stamp__top">Mission 07</span>
+        <span class="mission-stamp__bottom">The quiet return</span>
+      </p>
+
+      <div class="wrap film-hero__inner">
+        <div class="film-hero__top" data-enter>
           <p class="eyebrow" data-fdm-ui>A transmission from Ashfall Basin</p>
-          <p class="mission-badge" data-fdm-ui><span class="mission-badge__pulse"></span> Mission 07 <span class="mission-badge__sep">/</span> The quiet return</p>
+          <p class="film-hero__dispatch" data-fdm-ui>Reel 04 / 12 · Spring 2027</p>
         </div>
 
-        <p class="hero-marginalia" data-fdm-ui>52° 14′ N · 13° 24′ E · Survey sheet 04</p>
+        <h1 class="film-hero__title" id="hero-title" data-enter>
+          <span class="film-hero__title-ink">The forest</span>
+          <span class="film-hero__title-cut">remembers.</span>
+        </h1>
 
-        <div class="ironwood-hero__bottom">
-          <div class="ironwood-hero__copy" data-enter>
+        <div class="film-hero__bottom">
+          <div class="film-hero__copy" data-enter>
             <p class="field-index" data-fdm-ui>Field note 07 / 12</p>
-            <h1 class="hero-title ironwood-title" id="hero-title"><span class="ironwood-title__solid">The forest</span><span class="ironwood-title__outline">remembers.</span></h1>
             <p class="lede">Build one camp across four seasons. Cut too much and the canopy thins. Leave a path and something else will use it.</p>
             <div class="hero-actions">
               <a class="button button--primary" href="#contact">Wishlist on Steam <span class="arrow" aria-hidden="true">→</span></a>
@@ -82,179 +87,189 @@
             </div>
           </div>
 
-          <div class="season-hud" role="group" aria-labelledby="season-title" data-enter data-fdm-ui>
-            <div class="season-hud__head">
+          <div class="season-rail" role="group" aria-labelledby="season-title" data-enter data-fdm-ui>
+            <div class="season-rail__head">
               <p id="season-title">Season cycle</p>
               <span>01 / 04</span>
             </div>
-            <ol class="season-hud__list">
+            <ol class="season-rail__list">
               <li class="is-active"><span>01</span><b>Spring</b><small>Forage</small></li>
               <li><span>02</span><b>Summer</b><small>Build</small></li>
               <li><span>03</span><b>Autumn</b><small>Store</small></li>
               <li><span>04</span><b>Winter</b><small>Endure</small></li>
             </ol>
-            <div class="season-hud__foot">
+            <div class="season-rail__foot">
               <span>Spring 2027</span>
               <span>PC &amp; consoles</span>
               <span>Single-player</span>
             </div>
           </div>
         </div>
-
-        <div class="hero-base" data-fdm-ui>
-          <span>Long night ahead</span>
-          <span>One camp · Four seasons</span>
-          <span>Berlin / 52° N</span>
-        </div>
       </div>
     </section>
 
-    <section class="section ironwood-world" id="method" data-budget="1" data-fdm-section aria-labelledby="method-title">
-      <div class="wrap world-grid">
-        <div class="world-copy">
-          <p class="eyebrow" data-fdm-ui>01 — The world</p>
-          <h2 id="method-title">A forest with a memory, not a map full of markers.</h2>
-          <p class="lede">Eighteen square kilometres, placed by hand. Every camp leaves a mark on the canopy, the paths and the sound of the place you built in.</p>
-          <dl class="world-facts">
-            <div><dt data-fdm-ui>Area</dt><dd>18 km², hand-built</dd></div>
-            <div><dt data-fdm-ui>Loading</dt><dd>None inside the forest</dd></div>
-            <div><dt data-fdm-ui>Save</dt><dd>One persistent camp</dd></div>
-          </dl>
-        </div>
-
-        <div class="terrain-map" role="group" aria-labelledby="terrain-title" data-fdm-ui>
-          <div class="terrain-map__head">
-            <div>
-              <p class="terrain-map__eyebrow">Survey sheet 04</p>
-              <p class="terrain-map__title" id="terrain-title">Ashfall basin</p>
-            </div>
-            <span class="terrain-map__scale">1 : 12 000</span>
+    <section class="section survey" id="method" data-budget="1" data-fdm-section aria-labelledby="method-title">
+      <div class="wrap survey__grid">
+        <div class="survey__plate" role="group" aria-labelledby="terrain-title" data-fdm-ui>
+          <div class="survey__plate-head">
+            <p class="survey__sheet">Survey sheet 04</p>
+            <p class="survey__name" id="terrain-title">Ashfall basin</p>
+            <span class="survey__scale">1 : 12 000</span>
           </div>
-          <div class="terrain-map__canvas">
-            <svg viewBox="0 0 640 380" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
-              <path d="M-30 320 C90 260 110 170 230 150 S390 210 500 130 S640 70 700 40" />
-              <path d="M-30 350 C100 290 130 200 250 180 S410 240 520 160 S660 100 700 70" />
-              <path d="M-30 250 C80 200 120 120 240 100 S400 160 510 80 S650 20 700 0" />
-              <path d="M-30 220 C70 175 110 90 230 70 S390 130 500 50 S640 -10 700 -30" />
-              <path d="M20 380 C120 320 160 260 280 250 S440 300 560 220 S680 170 720 150" />
-              <path d="M40 60 C150 110 180 200 300 220 S470 180 590 260" class="route" />
-              <circle cx="300" cy="220" r="14" class="camp-ring" />
-              <circle cx="300" cy="220" r="4" class="camp-dot" />
-              <circle cx="168" cy="128" r="4" class="marker" />
-              <circle cx="470" cy="204" r="4" class="marker" />
-              <circle cx="536" cy="118" r="4" class="marker" />
+          <div class="survey__field">
+            <svg viewBox="0 0 640 400" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+              <path class="contour" d="M-20 330 C70 312 104 250 186 236 S302 278 382 236 S508 154 668 168" />
+              <path class="contour" d="M-20 356 C80 338 122 280 202 266 S318 304 400 262 S530 184 668 196" />
+              <path class="contour" d="M-20 286 C62 262 112 202 196 188 S306 228 392 184 S520 112 668 126" />
+              <path class="contour" d="M-20 258 C58 232 108 174 194 160 S300 198 386 156 S510 82 668 96" />
+              <path class="contour" d="M-20 228 C54 202 100 146 190 132 S292 168 378 128 S498 56 668 66" />
+              <path class="contour" d="M20 384 C112 356 158 306 252 300 S402 344 490 292 S604 234 688 246" />
+              <path class="contour contour--faint" d="M54 84 C146 122 180 214 292 230 S456 190 592 268" />
+              <path class="contour contour--faint" d="M96 40 C180 88 210 176 314 194 S470 158 620 234" />
+              <path class="route" d="M44 342 C124 302 152 236 246 220 S358 252 436 202 S548 132 610 118" />
+              <path class="tick" d="M112 176 l16 -12 M118 182 l16 -12 M470 268 l14 -10 M476 274 l14 -10 M318 82 l12 14 M324 76 l12 14" />
+              <circle class="camp-ring" cx="300" cy="220" r="17" />
+              <circle class="camp-dot" cx="300" cy="220" r="4" />
+              <circle class="marker" cx="168" cy="134" r="4" />
+              <circle class="marker" cx="470" cy="204" r="4" />
+              <circle class="marker" cx="536" cy="118" r="4" />
             </svg>
             <span class="map-label map-label--camp">Camp 01 <b>standing</b></span>
             <span class="map-label map-label--grove">North grove <b>thinning</b></span>
             <span class="map-label map-label--ridge">Old ridge <b>unclaimed</b></span>
             <span class="map-compass">N ↑</span>
           </div>
-          <div class="terrain-map__foot">
+          <div class="survey__key">
             <span><i class="key-dot"></i> your camp</span>
             <span><i class="key-line"></i> old road</span>
             <span><i class="key-mark"></i> resource</span>
             <span>Autumn, year two</span>
           </div>
         </div>
+
+        <div class="survey__copy">
+          <p class="eyebrow" data-fdm-ui>01 — World survey</p>
+          <h2 id="method-title">A forest with a memory, not a map full of markers.</h2>
+          <p class="lede">Eighteen square kilometres, placed by hand. Every camp leaves a mark on the canopy, the paths and the sound of the place you built in.</p>
+          <dl class="survey__facts">
+            <div><dt data-fdm-ui>Area</dt><dd>18 km², hand-built</dd></div>
+            <div><dt data-fdm-ui>Loading</dt><dd>None inside the forest</dd></div>
+            <div><dt data-fdm-ui>Save</dt><dd>One persistent camp</dd></div>
+          </dl>
+          <a class="link-arrow" href="#proof">Read the systems <span class="arrow" aria-hidden="true">↓</span></a>
+        </div>
       </div>
     </section>
 
-    <section class="section ironwood-systems" id="proof" data-budget="1" data-fdm-section aria-labelledby="proof-title">
+    <section class="section systems" id="proof" data-budget="1" data-fdm-section aria-labelledby="proof-title">
       <div class="wrap">
-        <div class="systems-head">
-          <p class="eyebrow" data-fdm-ui>02 — Gameplay</p>
+        <div class="systems__head">
+          <p class="eyebrow" data-fdm-ui>02 — Rules of the wood</p>
           <h2 id="proof-title">The rules change when the weather does.</h2>
           <p class="lede">Survival comes from reading a place, not from filling a bar. The forest speaks in small signals if you stay long enough to notice.</p>
         </div>
 
-        <div class="systems-ledger">
-          <article class="system-row">
-            <p class="system-row__season" data-fdm-ui>Spring</p>
-            <div class="system-row__copy">
+        <div class="systems__ledger">
+          <article class="ledger-row">
+            <p class="ledger-row__season" data-fdm-ui>Spring</p>
+            <div class="ledger-row__copy">
               <h3>Take only what returns.</h3>
               <p>Berries, bark and game follow the season. Overharvest a grove and it may not come back next spring.</p>
             </div>
-            <div class="system-row__meter" data-fdm-ui><i style="--level: 82%"></i><span>Regrowth 82%</span></div>
+            <div class="ledger-row__note" data-fdm-ui><span>Regrowth</span><b>82%</b></div>
           </article>
-          <article class="system-row">
-            <p class="system-row__season" data-fdm-ui>Autumn</p>
-            <div class="system-row__copy">
+          <article class="ledger-row">
+            <p class="ledger-row__season" data-fdm-ui>Autumn</p>
+            <div class="ledger-row__copy">
               <h3>A shelter that shows its history.</h3>
               <p>Walls settle, roofs sag and repairs leave visible scars. A camp you abandon is still a place the forest can find.</p>
             </div>
-            <div class="system-row__meter" data-fdm-ui><i style="--level: 64%"></i><span>Integrity 64%</span></div>
+            <div class="ledger-row__note" data-fdm-ui><span>Integrity</span><b>64%</b></div>
           </article>
-          <article class="system-row system-row--winter">
-            <p class="system-row__season" data-fdm-ui>Winter</p>
-            <div class="system-row__copy">
+          <article class="ledger-row ledger-row--winter">
+            <p class="ledger-row__season" data-fdm-ui>Winter</p>
+            <div class="ledger-row__copy">
               <h3>The Long Night rewards preparation.</h3>
               <p>Cold, hunger and old decisions arrive together. There is no timer to beat, only the store you laid in during autumn.</p>
             </div>
-            <div class="system-row__meter" data-fdm-ui><i style="--level: 41%"></i><span>Stores 41%</span></div>
+            <div class="ledger-row__note" data-fdm-ui><span>Stores</span><b>41%</b></div>
           </article>
         </div>
 
-        <figure class="ironwood-quote">
+        <figure class="systems__quote">
           <blockquote>“We wanted the player to feel the forest noticing them. Not as a monster, as a memory.”</blockquote>
           <figcaption><strong>Elise Voss</strong> — Creative Director, Ironwood</figcaption>
         </figure>
       </div>
     </section>
 
-    <section class="section ironwood-editions" id="pricing" data-budget="1" data-fdm-section aria-labelledby="pricing-title">
+    <section class="section editions" id="pricing" data-budget="1" data-fdm-section aria-labelledby="pricing-title">
       <div class="wrap">
-        <div class="editions-head">
+        <div class="editions__head">
           <div>
             <p class="eyebrow" data-fdm-ui>03 — Editions</p>
-            <h2 id="pricing-title">Choose your way in.</h2>
+            <h2 id="pricing-title">Three ways into the wood.</h2>
           </div>
           <p class="lede">Every edition includes the full game. The extras are for people who want to keep the forest on the shelf after the credits. Prices in EUR.</p>
         </div>
 
-        <div class="edition-stage">
-          <div class="edition-side">
-            <article class="edition-row">
-              <div class="edition-row__top"><span data-fdm-ui>01</span><h3>Standard</h3><p data-fdm-ui>Digital</p></div>
-              <p class="edition-row__price">€34.99</p>
-              <p class="edition-row__note">The game and the first winter.</p>
-              <ul data-fdm-ui><li>Full game</li><li>Digital soundtrack</li><li>Wallpaper set</li></ul>
-              <a class="link-arrow" href="#contact">Wishlist on Steam <span class="arrow" aria-hidden="true">→</span></a>
-            </article>
-            <article class="edition-row">
-              <div class="edition-row__top"><span data-fdm-ui>03</span><h3>Collector</h3><p data-fdm-ui>Limited</p></div>
-              <p class="edition-row__price">€89.99</p>
-              <p class="edition-row__note">A physical field journal and map.</p>
-              <ul data-fdm-ui><li>Full game</li><li>Cloth map</li><li>Numbered journal</li></ul>
-              <a class="link-arrow" href="#contact">Join the waitlist <span class="arrow" aria-hidden="true">→</span></a>
-            </article>
-          </div>
-
-          <article class="edition-feature">
-            <div class="edition-feature__top">
-              <p class="edition-feature__index" data-fdm-ui>02 / Most chosen</p>
-              <h3>Deluxe</h3>
-              <p>The game, the art and the field notes.</p>
+        <div class="price-list">
+          <article class="price-row">
+            <span class="price-row__no" data-fdm-ui>01</span>
+            <div class="price-row__id">
+              <h3>Standard</h3>
+              <p data-fdm-ui>Digital · immediate</p>
             </div>
-            <p class="edition-feature__price">€54<span>.99</span></p>
-            <ul class="edition-feature__list">
-              <li><span data-fdm-ui>01</span> Full game and all seasons</li>
-              <li><span data-fdm-ui>02</span> 160-page art book</li>
-              <li><span data-fdm-ui>03</span> Developer commentary</li>
-              <li><span data-fdm-ui>04</span> Field journal PDF</li>
+            <ul class="price-row__includes" data-fdm-ui>
+              <li>Full game</li>
+              <li>Digital soundtrack</li>
+              <li>Wallpaper set</li>
             </ul>
-            <a class="button button--primary" href="#contact">Wishlist the Deluxe edition <span class="arrow" aria-hidden="true">→</span></a>
+            <p class="price-row__price">€34.99</p>
+            <a class="link-arrow" href="#contact">Wishlist Standard <span class="arrow" aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="price-row price-row--marked">
+            <span class="price-row__no" data-fdm-ui>02</span>
+            <div class="price-row__id">
+              <h3>Deluxe</h3>
+              <p class="price-row__mark" data-fdm-ui>Most chosen</p>
+            </div>
+            <ul class="price-row__includes" data-fdm-ui>
+              <li>Full game and all seasons</li>
+              <li>160-page art book</li>
+              <li>Developer commentary</li>
+              <li>Field journal PDF</li>
+            </ul>
+            <p class="price-row__price">€54<span>.99</span></p>
+            <a class="button button--primary" href="#contact">Wishlist Deluxe <span class="arrow" aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="price-row">
+            <span class="price-row__no" data-fdm-ui>03</span>
+            <div class="price-row__id">
+              <h3>Collector</h3>
+              <p data-fdm-ui>Limited run</p>
+            </div>
+            <ul class="price-row__includes" data-fdm-ui>
+              <li>Full game</li>
+              <li>Cloth map</li>
+              <li>Numbered journal</li>
+            </ul>
+            <p class="price-row__price">€89.99</p>
+            <a class="link-arrow" href="#contact">Join the waitlist <span class="arrow" aria-hidden="true">→</span></a>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section ironwood-contact" id="contact" data-budget="1" data-fdm-section aria-labelledby="contact-title">
-      <div class="wrap contact-layout">
-        <div class="contact-lead">
+    <section class="section contact" id="contact" data-budget="1" data-fdm-section aria-labelledby="contact-title">
+      <div class="wrap correspondence">
+        <div class="correspondence__lead">
           <p class="eyebrow" data-fdm-ui>04 — Field notes</p>
           <h2 id="contact-title">Stay for the long night.</h2>
           <p class="lede">Development notes, playtest invitations and the occasional photograph from the forest. No more than one letter a month.</p>
-          <div class="contact-facts">
+          <div class="correspondence__details">
             <div class="contact-detail">
               <span class="contact-detail__label" data-fdm-ui>Email</span>
               <a href="mailto:hello@ironwood.example">hello@ironwood.example</a>
@@ -273,7 +288,7 @@
           </div>
         </div>
 
-        <div class="contact-form">
+        <div class="correspondence__letter">
           <div class="contact-faq">
             <details>
               <summary>Is Ironwood multiplayer? <span class="faq__icon" aria-hidden="true" data-fdm-ui></span></summary>

@@ -1,9 +1,10 @@
-/* Motion: one short entrance and quiet state changes. Nothing follows scroll. */
+/* Motion: one quiet entrance on the cover, then still pages. */
 @keyframes fdm-enter {
   from {
     opacity: 0;
     transform: translateY(var(--enter-distance));
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -16,34 +17,21 @@
   }
 
   html.fdm-motion [data-enter].is-entering {
-    animation: fdm-enter var(--dur-slow) var(--ease-out) both;
+    animation: fdm-enter var(--dur-enter) var(--ease-out) both;
     animation-delay: var(--enter-delay, 0ms);
   }
 
-  .button:hover {
-    background-color: var(--clay-deep);
-  }
-
-  .button:active {
-    transform: scale(0.99);
-  }
-
-  .link-arrow .arrow,
-  .button .arrow {
-    transition: transform var(--dur-base) var(--ease-out);
-  }
-
-  .link-arrow:hover .arrow,
-  .button:hover .arrow {
-    transform: translateX(3px);
+  .action:active {
+    transform: translateY(1px);
   }
 }
 
-/* The finished state is always the reduced-motion state. */
+/* The finished state is the reduced-motion state. */
 @media (prefers-reduced-motion: reduce) {
   html.fdm-motion [data-enter],
   [data-enter] {
     opacity: 1 !important;
     transform: none !important;
+    animation: none !important;
   }
 }

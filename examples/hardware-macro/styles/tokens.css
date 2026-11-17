@@ -1,28 +1,27 @@
-/* Design tokens — warm paper, near-black ink, one copper signal. */
+/* Drawing-sheet tokens: warm paper, cool grey, charcoal ink. Copper is kept
+   for a single 1px coordinate tick and nothing else. */
 :root {
   color-scheme: light;
 
-  /* Families: one grotesque display, one text face, one technical mono. */
   --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
-  /* Type scale */
-  --text-2xs: 0.6875rem;
+  /* Scale: one display voice, set low and quiet. */
+  --text-ui: 0.6875rem;
   --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
+  --text-sm: 0.9375rem;
   --text-base: 1.0625rem;
   --text-md: clamp(1.0625rem, 1.02rem + 0.2vw, 1.1875rem);
-  --text-lg: clamp(1.25rem, 1.15rem + 0.35vw, 1.5rem);
-  --text-xl: clamp(1.25rem, 1.16rem + 0.3vw, 1.45rem);
-  --text-2xl: clamp(2.1rem, 1.5rem + 1.6vw, 2.85rem);
-  --text-3xl: clamp(2.3rem, 1.5rem + 2.4vw, 3.55rem);
-  --text-display: clamp(3.2rem, 1.35rem + 5.3vw, 6.25rem);
-  --leading-tight: 0.94;
-  --leading-snug: 1.18;
-  --leading-body: 1.6;
-  --tracking-tight: -0.045em;
-  --tracking-caps: 0.14em;
+  --text-lg: clamp(1.2rem, 1.12rem + 0.25vw, 1.4rem);
+  --text-h3: clamp(1.15rem, 1.08rem + 0.25vw, 1.35rem);
+  --text-h2: clamp(1.85rem, 1.4rem + 1.25vw, 2.6rem);
+  --text-h1: clamp(2.5rem, 1.74rem + 2.35vw, 4.05rem);
+  --leading-tight: 1.02;
+  --leading-snug: 1.22;
+  --leading-body: 1.62;
+  --tracking-tight: -0.035em;
+  --tracking-caps: 0.15em;
 
   /* Spacing */
   --space-1: 0.25rem;
@@ -33,50 +32,36 @@
   --space-6: 2rem;
   --space-7: 3rem;
   --space-8: 4rem;
-  --space-9: 6rem;
 
-  /* Surfaces and ink */
-  --paper: #f5f2ec;
-  --paper-2: #f0ebe2;
-  --surface: #ebe5da;
-  --surface-2: #e3dbcd;
-  --ink: #17191a;
-  --ink-soft: #3f4444;
-  --muted: #535856;
-  --line: #cfc8bb;
-  --line-strong: #a9a093;
-  --copper: #8d4a1c;
-  --copper-deep: #7a3f17;
-  --copper-soft: #e8d8c9;
-  --accent: var(--copper);
-  --accent-strong: var(--copper-deep);
-  --accent-soft: var(--copper-soft);
-  --danger: #982d1c;
-  --danger-soft: #f3ddd7;
+  /* Surfaces */
+  --paper: #f2f0eb;
+  --grey: #e4e4df;
+  --ink: #161819;
+  --ink-soft: #3e4243;
+  --muted: #525758;
+  --line: #c9c9c3;
+  --line-strong: #9b9d98;
+  --grid-line: rgb(22 24 25 / 0.07);
+  --tick: #8a4a1e;
+  --danger: #963324;
   --success: #2c5e45;
-  --focus: var(--copper-deep);
-  --white: #ffffff;
-  --black: #17191a;
+  --focus: #161819;
 
-  /* Machined edges: hairlines and squared corners throughout. */
   --border: 1px solid var(--line);
   --border-strong: 1px solid var(--line-strong);
-  --radius: 0px;
-  --shadow-soft: 0 1px 0 rgb(23 25 26 / 0.04);
-  --shadow-lift: 0 18px 36px -30px rgb(23 25 26 / 0.45);
+  --radius: 0;
 
   /* Frame */
   --container: 1320px;
   --gutter: clamp(1.125rem, 4vw, 3.5rem);
-  --header-h: 4.5rem;
-  --grid-gap: clamp(1.5rem, 4vw, 4rem);
-  --section-pad: clamp(1.5rem, 2.6vw, 2.5rem);
+  --header-h: 4.25rem;
+  --grid-gap: clamp(1.5rem, 3vw, 3.5rem);
+  --section-pad: clamp(1.75rem, 3vw, 3rem);
 
-  /* Motion: quiet, short, one-shot. */
+  /* Motion: a single measured entrance. */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --dur-fast: 120ms;
-  --dur-base: 220ms;
-  --dur-slow: 620ms;
-  --enter-distance: 16px;
+  --dur-base: 200ms;
+  --dur-enter: 460ms;
+  --enter-distance: 12px;
 }

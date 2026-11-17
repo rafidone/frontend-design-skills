@@ -1,4 +1,4 @@
-/* Base: reset, reading defaults, focus and reduced motion. */
+/* Base: reset, reading defaults, focus and reduced-motion fallback. */
 *,
 *::before,
 *::after {
@@ -61,11 +61,11 @@ button {
 a {
   color: inherit;
   text-decoration-thickness: 0.08em;
-  text-underline-offset: 0.2em;
+  text-underline-offset: 0.22em;
 }
 
 a:hover {
-  text-decoration-color: var(--accent);
+  text-decoration-color: var(--ink-soft);
 }
 
 p,
@@ -95,29 +95,28 @@ h4 {
 }
 
 h1 {
-  font-size: var(--text-display);
+  font-size: var(--text-h1);
 }
 
 h2 {
-  font-size: var(--text-3xl);
+  font-size: var(--text-h2);
 }
 
 h3 {
-  font-size: var(--text-xl);
-  letter-spacing: -0.03em;
+  font-size: var(--text-h3);
   line-height: var(--leading-snug);
+  letter-spacing: -0.02em;
 }
 
 h4 {
   font-family: var(--font-sans);
   font-size: var(--text-base);
   font-weight: 500;
-  letter-spacing: -0.01em;
   line-height: var(--leading-snug);
 }
 
 p {
-  max-width: 52ch;
+  max-width: 56ch;
   text-wrap: pretty;
 }
 
@@ -136,8 +135,8 @@ hr {
 }
 
 ::selection {
-  background: var(--copper);
-  color: var(--white);
+  background: var(--ink);
+  color: var(--paper);
 }
 
 :focus-visible {

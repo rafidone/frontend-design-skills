@@ -1,91 +1,63 @@
-/* Linden Clinic — design tokens for a quiet clinical dossier.
-   Ivory paper, sage ink, hairline rules. One accent family, no effects. */
+/* Linden Clinic — a registered dossier in paper, ink and sage.
+   Three colours, hairline rules, square corners, no effects. */
 :root {
   color-scheme: light;
 
-  /* Families: an editorial serif for thought, a restrained sans for facts. */
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Newsreader", Georgia, "Times New Roman", serif;
   --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
 
-  /* Scale: three heading steps, one reading step, one label step. */
-  --text-2xs: 0.6875rem;
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-md: 1.0625rem;
-  --text-lg: 1.1875rem;
-  --text-xl: 1.5rem;
-  --text-2xl: clamp(1.75rem, 1.45rem + 0.8vw, 2.125rem);
-  --text-3xl: clamp(2.25rem, 1.65rem + 1.9vw, 3.25rem);
-  --text-display: clamp(3.25rem, 1.95rem + 4.5vw, 5.75rem);
+  /* Paper and ink. Sage is reserved for secondary rules and strokes. */
+  --paper: #f7f6f0;
+  --ink: #17221b;
+  --ink-soft: #3b4a3f;
+  --sage: #6f7c70;
 
-  --leading-tight: 1.02;
-  --leading-snug: 1.18;
-  --leading-body: 1.58;
-  --tracking-tight: -0.032em;
-  --tracking-caps: 0.16em;
+  --rule: rgb(111 124 112 / 0.46);
+  --rule-soft: rgb(111 124 112 / 0.26);
+  --rule-on-ink: rgb(247 246 240 / 0.34);
+
+  --danger: #8a2f24;
+  --focus: var(--ink);
+
+  /* One deliberate type scale: a display serif, a reading sans, a record mono. */
+  --text-micro: 0.6875rem;
+  --text-label: 0.75rem;
+  --text-small: 0.875rem;
+  --text-body: 1.0625rem;
+  --text-body-lg: 1.125rem;
+  --text-h3: clamp(1.25rem, 1.12rem + 0.5vw, 1.5rem);
+  --text-h2: clamp(2.25rem, 1.75rem + 1.55vw, 3.25rem);
+  --text-h1: clamp(3.5rem, 1.9rem + 5.4vw, 7rem);
+
+  --leading-tight: 0.96;
+  --leading-head: 1.02;
+  --leading-body: 1.55;
+  --tracking-label: 0.18em;
+  --tracking-head: -0.038em;
 
   /* Rhythm */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.5rem;
-  --space-6: 2rem;
-  --space-7: 3rem;
-  --space-8: 4rem;
-  --space-9: 6rem;
+  --s1: 0.25rem;
+  --s2: 0.5rem;
+  --s3: 0.75rem;
+  --s4: 1rem;
+  --s5: 1.5rem;
+  --s6: 2rem;
+  --s7: 3rem;
+  --s8: 4rem;
 
-  /* Surfaces */
-  --paper: #f4f3ec;
-  --paper-2: #ecebe2;
-  --surface: #e7e8de;
-  --surface-2: #dedfd4;
-
-  /* Ink */
-  --ink: #1b2820;
-  --ink-soft: #3b4a3f;
-  --muted: #56645a;
-
-  /* Rules */
-  --line: #d2d5ca;
-  --line-strong: #a9b2a5;
-
-  /* The single accent family */
-  --accent: #2f563f;
-  --accent-strong: #24432f;
-  --accent-ink: #f7f8f2;
-  --danger: #8e3326;
-  --success: #2c6a48;
-  --focus: #2f563f;
-
-  /* Inverted clinical band */
-  --band: #1b2a21;
-  --band-ink: #edf1e8;
-  --band-muted: #b7c5b7;
-  --band-line: rgb(237 241 232 / 0.22);
-  --band-line-strong: rgb(237 241 232 / 0.4);
-
-  --white: #ffffff;
-  --black: #1b2820;
-
-  /* Hairlines, square corners, no ornament. */
-  --border: 1px solid var(--line);
-  --border-strong: 1px solid var(--line-strong);
-  --radius: 0px;
+  --prose: 32rem;
 
   /* Frame */
-  --container: 1280px;
-  --gutter: clamp(1.25rem, 4vw, 3.5rem);
-  --header-h: 4.75rem;
-  --section-h: clamp(2.5rem, 5vw, 4.5rem);
-  --grid-gap: clamp(2rem, 4vw, 4rem);
+  --container: 80rem;
+  --gutter: clamp(1.25rem, 4vw, 4rem);
+  --header-h: 4.5rem;
+  --section-pad: clamp(2.5rem, 5vw, 4.5rem);
+  --grid-gap: clamp(2rem, 4.5vw, 5rem);
 
-  /* Motion: one quiet entrance, nothing ambient. */
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --dur-fast: 160ms;
-  --dur-base: 240ms;
-  --dur-enter: 620ms;
-  --enter-distance: 14px;
+  /* Motion: one short entrance, nothing ambient. */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 180ms;
+  --enter-dur: 540ms;
+  --enter-shift: 12px;
 }

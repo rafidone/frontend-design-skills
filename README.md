@@ -248,62 +248,62 @@ from the live build.
   <tbody>
     <tr>
       <td width="620" valign="top">
-        <a href="examples/saas-product/"><img src="docs/previews/saas-product/first-screen-1440.png" width="620" alt="Northline release console with glass metric cards, a five-day timeline, a green deploy trace and a decision log on a near-black field" /></a>
+        <a href="examples/saas-product/"><img src="docs/previews/saas-product/first-screen-1440.png" width="620" alt="Northline brutalist release room with a vertical issue rail, oversized headline columns and a hairline release ledger of metrics, timeline and decisions" /></a>
       </td>
       <td valign="top">
         <a href="examples/saas-product/"><strong>saas-product</strong></a><br />
-        <em>Software · midnight-mint / schibsted-source</em><br /><br />
-        Control-room dark: hairline grid, razor-sharp glass, a live-looking release console with metrics, timeline bars, deploy trace and decision log. Self-hosted type keeps first paint stable.
+        <em>Software · near-black / schibsted-source</em><br /><br />
+        Brutalist release room: near-black field, tracked mono issue rail, two unequal headline columns and a square release ledger with tabular metrics, hairline timeline, deploy line and decision log. No glass, glow or card grid.
       </td>
     </tr>
     <tr>
       <td width="620" valign="top">
-        <a href="examples/devtool-diff/"><img src="docs/previews/devtool-diff/first-screen-1440.png" width="620" alt="Kestrel review workspace with a syntax-highlighted TypeScript diff, risk brief, test proof and command palette on a coal editor field" /></a>
+        <a href="examples/devtool-diff/"><img src="docs/previews/devtool-diff/first-screen-1440.png" width="620" alt="Kestrel terminal-native IDE workspace with a zinc code split view, line-numbered diff, command palette overlay and install rail" /></a>
       </td>
       <td valign="top">
         <a href="examples/devtool-diff/"><strong>devtool-diff</strong></a><br />
-        <em>Developer tool · coal-signal / bricolage-plex</em><br /><br />
-        Editor-native dark: signal-blue rules, a line-numbered diff, risk annotations, test proof and a ⌘K command palette composed as a real review workspace.
+        <em>Developer tool · zinc-slate / bricolage-plex</em><br /><br />
+        Terminal-native IDE: monochrome zinc and slate, a dominant split diff view with line numbers and risk marks, a sharp ⌘K palette overlay and a narrow install rail. No neon accent or rounded panels.
       </td>
     </tr>
     <tr>
       <td width="620" valign="top">
-        <a href="examples/gaming-ironwood/"><img src="docs/previews/gaming-ironwood/first-screen-1440.png" width="620" alt="Ironwood poster hero with foggy conifer key art, an amber mission badge, filled and outlined title, and a four-season HUD" /></a>
+        <a href="examples/gaming-ironwood/"><img src="docs/previews/gaming-ironwood/first-screen-1440.png" width="620" alt="Ironwood dark-room key art with a widescreen forest strip, oversized cropped title, rotated mission stamp and a minimal season rail" /></a>
       </td>
       <td valign="top">
         <a href="examples/gaming-ironwood/"><strong>gaming-ironwood</strong></a><br />
         <em>Gaming · forest-amber / anton-archivo</em><br /><br />
-        Film-slate intensity: forest key art, hard scrims, an amber mission badge, filled and outlined title lockup, survey marginalia and a four-season instrument HUD.
+        Dark-room key art: a letterbox forest strip, oversized cropped Anton title, raw rotated mission stamp, projection marginalia and a four-season typographic rail. No glow or poster-card template.
       </td>
     </tr>
     <tr>
       <td width="620" valign="top">
-        <a href="examples/hardware-macro/"><img src="docs/previews/hardware-macro/first-screen-1440.png" width="620" alt="Lattice technical file with a macro circuit photograph, registration marks, a machined component index and a 75-percent spec rail on warm paper" /></a>
+        <a href="examples/hardware-macro/"><img src="docs/previews/hardware-macro/first-screen-1440.png" width="620" alt="Lattice specification sheet with a five-line grid, coordinate marker A1, a hard-cropped circuit photograph and a tabular spec matrix on neutral paper" /></a>
       </td>
       <td valign="top">
         <a href="examples/hardware-macro/"><strong>hardware-macro</strong></a><br />
-        <em>Hardware · paper-copper / archivo-plex</em><br /><br />
-        Industrial catalogue: warm paper, copper hairlines, macro board photography, a machined component index, exploded assembly drawing and a 75% specification rail.
+        <em>Hardware · neutral-grid / archivo-plex</em><br /><br />
+        Architectural spec sheet: a measured five-line grid, A1–E5 coordinate rails, hard-cropped macro photography, dimensioned assembly drawing and a formal tabular schedule. Neutral paper and one 1px copper tick.
       </td>
     </tr>
     <tr>
       <td width="620" valign="top">
-        <a href="examples/cafe-atelier/"><img src="docs/previews/cafe-atelier/first-screen-1440.png" width="620" alt="Atelier Nine hero with a warm cafe photograph, an oversized serif headline, an IX folio, a counter ledger and an opening-hours dossier" /></a>
+        <a href="examples/cafe-atelier/"><img src="docs/previews/cafe-atelier/first-screen-1440.png" width="620" alt="Atelier Nine magazine cover with a tall photograph column, oversized serif headline crossing into the image, a running head and editor's notes" /></a>
       </td>
       <td valign="top">
         <a href="examples/cafe-atelier/"><strong>cafe-atelier</strong></a><br />
-        <em>Hospitality · paper-clay / cormorant-karla</em><br /><br />
-        Letterpress warmth: Cormorant display, clay italics, a printed counter slip, a four-column hours dossier and an outlined IX folio over daylight café photography.
+        <em>Hospitality · magazine-paper / cormorant-karla</em><br /><br />
+        Magazine feature: tall photograph column, Cormorant headline crossing the image, vertical rule, editor's notes, page folio and a two-page menu spread with dotted leaders. Rules and whitespace, not cards.
       </td>
     </tr>
     <tr>
       <td width="620" valign="top">
-        <a href="examples/service-clinic/"><img src="docs/previews/service-clinic/first-screen-1440.png" width="620" alt="Linden Clinic dossier hero with a calm waiting-room photograph, a serif headline, an offset frame and a bordered first-visit plan card" /></a>
+        <a href="examples/service-clinic/"><img src="docs/previews/service-clinic/first-screen-1440.png" width="620" alt="Linden Clinic masthead dossier with a registered practice line, oversized Newsreader promise, ruled appointment schedule and hard-framed clinic photograph" /></a>
       </td>
       <td valign="top">
         <a href="examples/service-clinic/"><strong>service-clinic</strong></a><br />
-        <em>Professional service · ivory-sage / newsreader-dm</em><br /><br />
-        Clinical dossier: ivory and sage, Newsreader serif, an offset room photograph, a three-step first-visit card and ruled appointment facts with no decorative noise.
+        <em>Professional service · ivory-ink / newsreader-dm</em><br /><br />
+        Registered clinical dossier: ivory and deep ink, a 108px Newsreader promise, full-width registration rule, ruled appointment schedule and hard-framed photograph. Authority through hierarchy and hairlines.
       </td>
     </tr>
   </tbody>
