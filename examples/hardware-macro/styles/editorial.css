@@ -947,3 +947,188 @@
   }
 
 }
+
+/* ---------- Art direction: technical drawing ---------- */
+.lattice-hero {
+  overflow: hidden;
+}
+
+.lattice-hero::after {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgb(255 255 255 / 0.03) 0 1px,
+      transparent 1px 6rem
+    ),
+    linear-gradient(
+      90deg,
+      rgb(7 12 13 / 0.96) 0%,
+      rgb(7 12 13 / 0.8) 39%,
+      rgb(7 12 13 / 0.18) 100%
+    ),
+    linear-gradient(0deg, rgb(7 12 13 / 0.74) 0%, transparent 43%);
+}
+
+.lattice-hero__marks {
+  position: absolute;
+  z-index: 4;
+  inset: calc(var(--header-h) + 0.75rem) 1.15rem 1.15rem;
+  pointer-events: none;
+}
+
+.lattice-hero__marks i {
+  position: absolute;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-color: rgb(239 154 105 / 0.5);
+  border-style: solid;
+  border-width: 0;
+}
+
+.lattice-hero__marks i:nth-child(1) {
+  top: 0;
+  left: 0;
+  border-top-width: 1px;
+  border-left-width: 1px;
+}
+
+.lattice-hero__marks i:nth-child(2) {
+  top: 0;
+  right: 0;
+  border-top-width: 1px;
+  border-right-width: 1px;
+}
+
+.lattice-hero__marks i:nth-child(3) {
+  bottom: 0;
+  left: 0;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+}
+
+.lattice-hero__marks i:nth-child(4) {
+  right: 0;
+  bottom: 0;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+}
+
+.lattice-hero__inner {
+  position: relative;
+}
+
+.lattice-hero__inner::before {
+  position: absolute;
+  z-index: 0;
+  top: calc(var(--header-h) + 0.5rem);
+  right: calc(var(--gutter) * -1);
+  width: min(34vw, 28rem);
+  height: 62%;
+  content: "";
+  border-inline-start: 1px solid rgb(239 154 105 / 0.45);
+  background: rgb(6 12 13 / 0.62);
+  pointer-events: none;
+}
+
+.lattice-hero__inner::after {
+  position: absolute;
+  z-index: 0;
+  top: calc(var(--header-h) + 2rem);
+  left: 0.5rem;
+  content: "75";
+  color: transparent;
+  font-family: var(--font-display);
+  font-size: clamp(10rem, 22vw, 20rem);
+  font-weight: 600;
+  letter-spacing: -0.09em;
+  line-height: 0.78;
+  pointer-events: none;
+  -webkit-text-stroke: 1px rgb(239 154 105 / 0.15);
+}
+
+.lattice-hero__inner > * {
+  position: relative;
+  z-index: 1;
+}
+
+.lattice-hero__copy {
+  position: relative;
+}
+
+.lattice-hero__spec-tag {
+  position: absolute;
+  top: -1.55rem;
+  left: 0;
+  color: #ef9a69;
+  font-family: var(--font-mono);
+  font-size: 0.59rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.lattice-title {
+  position: relative;
+}
+
+.lattice-title::before {
+  position: absolute;
+  top: -0.7rem;
+  left: 0;
+  width: 4rem;
+  height: 2px;
+  content: "";
+  background: #ef9a69;
+}
+
+.anatomy-card {
+  position: relative;
+  border-color: rgb(239 154 105 / 0.35);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.12),
+    0 28px 68px -44px rgb(0 0 0 / 0.95);
+}
+
+.anatomy-card::before,
+.anatomy-card::after {
+  position: absolute;
+  z-index: 2;
+  content: "";
+  pointer-events: none;
+}
+
+.anatomy-card::before {
+  top: 0;
+  left: 0;
+  width: 32%;
+  height: 2px;
+  background: linear-gradient(90deg, #ef9a69, transparent);
+}
+
+.anatomy-card::after {
+  top: 2.6rem;
+  left: 0;
+  width: 2px;
+  height: 3rem;
+  background: #ef9a69;
+}
+
+@media (max-width: 980px) {
+  .lattice-hero__spec-tag {
+    display: none;
+  }
+
+  .lattice-hero__inner::after {
+    top: 26%;
+    left: -1.5rem;
+    opacity: 0.65;
+  }
+}
+
+@media (max-width: 820px) {
+  .lattice-hero__marks,
+  .lattice-hero__inner::before,
+  .lattice-hero__inner::after,
+  .anatomy-card::after {
+    display: none;
+  }
+}

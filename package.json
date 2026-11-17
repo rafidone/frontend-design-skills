@@ -27,6 +27,8 @@
     "test:e2e": "node tests/e2e/run.mjs",
     "test:all": "npm run lint:name && npm test && npm run test:e2e",
     "verify": "node skills/frontend-design-skills/scripts/verify.mjs",
+    "inspect": "node skills/frontend-design-skills/scripts/inspect.mjs",
+    "capture": "node skills/frontend-design-skills/scripts/capture.mjs",
     "build": "node tests/e2e/run.mjs",
     "install:remote": "./install.sh --remote"
   },

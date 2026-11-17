@@ -241,25 +241,73 @@ node skills/frontend-design-skills/scripts/report.mjs \
 ## Six reference builds
 
 Each example is a standalone static build with its own direction lock, local assets,
-and gate report. Every screenshot below was captured from the actual build at 1440px.
+and gate report. Every preview below is a 1440×900 first screen captured from the
+live build with `npm run capture`.
 
-| Build | Niche | Direction | Preview |
-| --- | --- | --- | --- |
-| [`saas-product`](examples/saas-product/) | Software | `navy-signal` / `schibsted-source` / split | <img src="docs/previews/saas-product/first-screen-1440.png" width="320" alt="SaaS product example" /> |
-| [`devtool-diff`](examples/devtool-diff/) | Developer tool | `coal-signal` / `bricolage-plex` / split | <img src="docs/previews/devtool-diff/first-screen-1440.png" width="320" alt="Developer tool example" /> |
-| [`gaming-ironwood`](examples/gaming-ironwood/) | Gaming | `deep-forest` / `anton-archivo` / film · media | <img src="docs/previews/gaming-ironwood/first-screen-1440.png" width="320" alt="Gaming example" /> |
-| [`hardware-macro`](examples/hardware-macro/) | Hardware | `ice-copper` / `archivo-plex` / photo · media | <img src="docs/previews/hardware-macro/first-screen-1440.png" width="320" alt="Hardware example" /> |
-| [`cafe-atelier`](examples/cafe-atelier/) | Hospitality | `terracotta-clay` / `cormorant-karla` / photo · media | <img src="docs/previews/cafe-atelier/first-screen-1440.png" width="320" alt="Hospitality example" /> |
-| [`service-clinic`](examples/service-clinic/) | Professional service | `light-sage` / `newsreader-dm` / split | <img src="docs/previews/service-clinic/first-screen-1440.png" width="320" alt="Professional service example" /> |
-
-| Build | What it demonstrates |
-| --- | --- |
-| `saas-product` | Product-led split hero, proof metrics, plan comparison, two-column contact block. |
-| `devtool-diff` | Dense review UI, diff fragment, install-first CTA, local-first copy. |
-| `gaming-ironwood` | Cinematic key art, low copy, edition cards, field-notes signup. |
-| `hardware-macro` | Macro product photograph, specification rail, reserve flow. |
-| `cafe-atelier` | Warm editorial type, menu, opening hours, table booking. |
-| `service-clinic` | Calm care pathway, practitioner proof, appointment form. |
+<table>
+  <tbody>
+    <tr>
+      <td width="620" valign="top">
+        <a href="examples/saas-product/"><img src="docs/previews/saas-product/first-screen-1440.png" width="620" alt="Northline release planning hero with an oversized outline release number and a ruled timeline artifact" /></a>
+      </td>
+      <td valign="top">
+        <a href="examples/saas-product/"><strong>saas-product</strong></a><br />
+        <em>Software · navy-signal / schibsted-source</em><br /><br />
+        Release-room poster: broadsheet rules, an oversized 24.4 folio, a lit release timeline and a decision log. Self-hosted fonts keep first paint stable.
+      </td>
+    </tr>
+    <tr>
+      <td width="620" valign="top">
+        <a href="examples/devtool-diff/"><img src="docs/previews/devtool-diff/first-screen-1440.png" width="620" alt="Kestrel code review hero with an outline PR numeral and a terminal-style review brief" /></a>
+      </td>
+      <td valign="top">
+        <a href="examples/devtool-diff/"><strong>devtool-diff</strong></a><br />
+        <em>Developer tool · coal-signal / bricolage-plex</em><br /><br />
+        Local-index docket: terminal grid, outline PR numeral, install command and a review window with a signal-blue beam.
+      </td>
+    </tr>
+    <tr>
+      <td width="620" valign="top">
+        <a href="examples/gaming-ironwood/"><img src="docs/previews/gaming-ironwood/first-screen-1440.png" width="620" alt="Ironwood film-poster hero with a filled and outlined title lockup and a season HUD" /></a>
+      </td>
+      <td valign="top">
+        <a href="examples/gaming-ironwood/"><strong>gaming-ironwood</strong></a><br />
+        <em>Gaming · deep-forest / anton-archivo</em><br /><br />
+        Film-slate lockup: filled and outlined type, projection marks, forest key art and a four-season field HUD.
+      </td>
+    </tr>
+    <tr>
+      <td width="620" valign="top">
+        <a href="examples/hardware-macro/"><img src="docs/previews/hardware-macro/first-screen-1440.png" width="620" alt="Lattice keyboard hero with a technical drawing grid, copper index card and outline 75 numeral" /></a>
+      </td>
+      <td valign="top">
+        <a href="examples/hardware-macro/"><strong>hardware-macro</strong></a><br />
+        <em>Hardware · ice-copper / archivo-plex</em><br /><br />
+        Technical drawing: macro board photograph, registration marks, outline 75% folio and a tactile component index.
+      </td>
+    </tr>
+    <tr>
+      <td width="620" valign="top">
+        <a href="examples/cafe-atelier/"><img src="docs/previews/cafe-atelier/first-screen-1440.png" width="620" alt="Atelier Nine cafe hero with a letterpress serif title, IX seal and a paper counter card" /></a>
+      </td>
+      <td valign="top">
+        <a href="examples/cafe-atelier/"><strong>cafe-atelier</strong></a><br />
+        <em>Hospitality · terracotta-clay / cormorant-karla</em><br /><br />
+        Letterpress counter: serif display type, an IX seal, vertical address marginalia and a perforated paper card.
+      </td>
+    </tr>
+    <tr>
+      <td width="620" valign="top">
+        <a href="examples/service-clinic/"><img src="docs/previews/service-clinic/first-screen-1440.png" width="620" alt="Linden Clinic hero with a pale outline numeral, offset photo frame and a first-visit plan card" /></a>
+      </td>
+      <td valign="top">
+        <a href="examples/service-clinic/"><strong>service-clinic</strong></a><br />
+        <em>Professional service · light-sage / newsreader-dm</em><br /><br />
+        Care dossier: quartered page grid, a pale 50 folio, an offset clinical photo frame and a layered first-visit card.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 Run any example locally:
 
@@ -268,8 +316,8 @@ python3 -m http.server 4173 --directory examples/cafe-atelier
 # open http://127.0.0.1:4173
 
 # Or use the skill's own pipeline
-node skills/frontend-design-skills/scripts/inspect.mjs examples/cafe-atelier --full
-node skills/frontend-design-skills/scripts/verify.mjs examples/cafe-atelier --full --kind hospitality
+npm run inspect -- examples/cafe-atelier --full --niche hospitality
+npm run verify -- examples/cafe-atelier --full --kind hospitality
 ```
 
 The expected warning is the shared six-stylesheet first paint (`PERF-03`). Any other
@@ -313,8 +361,8 @@ All commands are relative to the skill directory unless a target is given.
 ```bash
 node skills/frontend-design-skills/scripts/assets.mjs verify
 node skills/frontend-design-skills/scripts/assets.mjs photos list --query cafe
-node skills/frontend-design-skills/scripts/inspect.mjs examples/cafe-atelier --quick
-node skills/frontend-design-skills/scripts/capture.mjs examples/cafe-atelier --out /tmp/shots
+npm run inspect -- examples/cafe-atelier --quick --niche hospitality
+npm run capture -- examples/cafe-atelier --out /tmp/shots
 ```
 
 ---
