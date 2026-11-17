@@ -1,21 +1,26 @@
-/* Kestrel review session: IDE neutrals, hairline rules, restrained token ink. */
+/* Patch Review Room — tokens.
+   One dark neutral stack, restrained token ink, square edges, no accents. */
 :root {
   color-scheme: dark;
 
-  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+  /* One font request in the document: Geist for chrome, Plex Mono for code. */
+  --font-ui: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
 
+  /* Type scale. Mono runs at 13px / 1.55 with tabular figures; UI labels are
+     11px uppercase at 0.10em; section heads are 30px / 600 / -0.025em. */
+  --text-mono: 0.8125rem;
+  --text-mono-wide: 0.875rem;
   --text-ui: 0.6875rem;
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lead: 1.0625rem;
-  --text-h1: clamp(1.125rem, 1rem + 0.55vw, 1.5rem);
-  --text-h2: clamp(1.75rem, 1.4rem + 1.15vw, 2.5rem);
-  --leading-head: 1.08;
+  --text-body: 1rem;
+  --text-lede: 1.0625rem;
+  --text-h1: 1.125rem;
+  --text-h2: 1.875rem;
+  --leading-mono: 1.55;
   --leading-body: 1.55;
-  --tracking-head: -0.03em;
-  --tracking-ui: 0.12em;
+  --leading-head: 1.12;
+  --tracking-ui: 0.1em;
+  --tracking-head: -0.025em;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -25,41 +30,40 @@
   --space-6: 2rem;
   --space-7: 3rem;
 
-  /* Panels step up in value; ink never sits on a saturated field. */
-  --bg: #0a0c0f;
-  --panel: #101317;
-  --panel-2: #15191e;
-  --panel-3: #1b2026;
+  /* Surfaces step up by value only. Ink never sits on a saturated field. */
+  --canvas: #0a0c0f;
+  --editor: #101317;
+  --raised: #171b20;
   --ink: #e7ebee;
-  --ink-soft: #c2cbd2;
-  --muted: #9aa4ad;
+  --ink-2: #9aa4ad;
+  --comment: #6f7880;
   --line: #ffffff12;
-  --line-strong: #ffffff24;
-
-  /* Low-saturation token ink, used only for code and tiny status marks. */
-  --sage: #9ab89a;
-  --sand: #d2b48c;
-  --steel: #8fa8bd;
-  --paper: #f4f6f7;
+  --line-2: #ffffff24;
   --invert: #0a0c0f;
+
+  /* Token ink: low-saturation, reserved for code and tiny status marks. */
+  --sage: #9fb89b;
+  --sand: #c9b28c;
+  --steel: #8fa9bd;
+  --paper: #d7d2c8;
 
   --accent: var(--paper);
   --accent-ink: var(--invert);
-  --focus: var(--paper);
+  --focus: var(--ink);
 
   --hairline: 1px solid var(--line);
-  --hairline-strong: 1px solid var(--line-strong);
+  --hairline-2: 1px solid var(--line-2);
   --radius: 0;
 
   --container: 1360px;
   --gutter: clamp(1rem, 3.2vw, 2.75rem);
   --header-h: 3.25rem;
-  --section-pad: clamp(1.75rem, 4vh, 3rem);
-  --grid-gap: clamp(1.25rem, 3vw, 2.5rem);
+  --section-pad: clamp(1.5rem, 3.5vh, 2.75rem);
+  --grid-gap: clamp(1rem, 2.4vw, 2rem);
 
-  --dur-fast: 100ms;
+  --dur-fast: 90ms;
   --dur-base: 140ms;
-  --dur-enter: 280ms;
+  --dur-enter: 240ms;
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
-  --enter-distance: 6px;
+  --enter-distance: 5px;
 }

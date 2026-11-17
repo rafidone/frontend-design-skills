@@ -1,4 +1,4 @@
-/* Motion: one short entrance on the spread, then still pages. */
+/* Motion: one short entrance on the record, then still pages. */
 @keyframes fdm-enter {
   from {
     opacity: 0;
@@ -22,7 +22,8 @@
   }
 
   .action:active,
-  .reserve-link:active {
+  .reserve-link:active,
+  .header-cta:active {
     transform: translateY(1px);
   }
 }

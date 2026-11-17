@@ -7,7 +7,7 @@
   <title>Kestrel — local review sessions for pull requests</title>
   <script>document.documentElement.classList.add("has-js");</script>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/tokens.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/layout.css">
@@ -50,14 +50,16 @@
         </ul>
 
         <div class="nav-tools" data-fdm-ui>
-          <span class="keycap">⌘K</span>
-          <a class="button button--solid nav-cta" href="#contact">Install Kestrel</a>
+          <span class="keycap" aria-hidden="true">⌘K</span>
+          <a class="button button--solid nav-cta" href="#contact">Open a review brief</a>
         </div>
       </nav>
     </div>
   </header>
 
   <main id="main" tabindex="-1">
+    <!-- One continuous review surface: tabs, changed files, unified diff,
+         review thread and status bar share a single uninterrupted grid. -->
     <section class="hero" id="top" data-budget="1" aria-labelledby="hero-title">
       <div class="wrap hero__inner" data-enter-group>
         <div class="session" role="group" aria-labelledby="review-title" data-enter>
@@ -65,8 +67,8 @@
             <div class="topbar__identity">
               <span class="brandmark" aria-hidden="true">K</span>
               <div class="topbar__titles">
-                <p class="topbar__eyebrow" data-fdm-ui>REVIEW SESSION / 482</p>
-                <h1 id="hero-title" class="topbar__title">Parser guard rejects unlabelled fences</h1>
+                <p class="topbar__eyebrow" data-fdm-ui>PR #482 · OPEN · REVIEW 02</p>
+                <h1 id="hero-title" class="session__title">Parser guard rejects unlabelled fences</h1>
               </div>
             </div>
             <div class="topbar__meta" data-fdm-ui>
@@ -85,23 +87,34 @@
 
           <div class="review-grid">
             <aside class="filetree" aria-label="Changed files" data-fdm-ui>
-              <p class="pane-label">EXPLORER / CHANGED</p>
+              <p class="pane-label">CHANGED / 3 FILES</p>
+              <div class="tree-head">
+                <span>HEAD</span><span class="tree-head__hash">a91c4e2</span>
+              </div>
               <ul class="tree">
                 <li class="tree__dir"><span aria-hidden="true">▾</span> src/</li>
                 <li class="tree__dir tree__dir--nested"><span aria-hidden="true">▾</span> parser/</li>
-                <li class="tree__file tree__file--active"><span class="tree__mark">M</span><span class="tree__name">guard.ts</span><span class="tree__count">+18 −4</span></li>
-                <li class="tree__file"><span class="tree__mark">M</span><span class="tree__name">index.ts</span><span class="tree__count">+2 −1</span></li>
+                <li class="tree__file tree__file--active">
+                  <span class="tree__line"><span class="tree__mark">M</span><span class="tree__name">guard.ts</span><span class="tree__count">+18 −4</span></span>
+                  <span class="tree__hash">a91c4e2 · reject unlabelled fences</span>
+                </li>
                 <li class="tree__dir tree__dir--nested"><span aria-hidden="true">▾</span> cli/</li>
-                <li class="tree__file"><span class="tree__mark tree__mark--risk">!</span><span class="tree__name">flags.ts</span><span class="tree__count">+7</span></li>
+                <li class="tree__file">
+                  <span class="tree__line"><span class="tree__mark">M</span><span class="tree__name">flags.ts</span><span class="tree__count">+7 −1</span></span>
+                  <span class="tree__hash">6d10f83 · wire caller reason</span>
+                </li>
                 <li class="tree__dir"><span aria-hidden="true">▾</span> test/</li>
-                <li class="tree__file"><span class="tree__mark tree__mark--add">A</span><span class="tree__name">guard.test.ts</span><span class="tree__count">+64</span></li>
+                <li class="tree__file">
+                  <span class="tree__line"><span class="tree__mark tree__mark--add">A</span><span class="tree__name">guard.test.ts</span><span class="tree__count">+64</span></span>
+                  <span class="tree__hash">2b77e19 · cover caller path</span>
+                </li>
               </ul>
               <div class="tree__legend">
                 <p><span class="legend__mark">M</span> modified</p>
                 <p><span class="legend__mark legend__mark--add">A</span> added</p>
                 <p><span class="legend__mark legend__mark--risk">!</span> exposed edge</p>
               </div>
-              <p class="tree__foot">184 FILES INDEXED · 0.4s</p>
+              <p class="tree__foot">184 FILES INDEXED · 0.41s</p>
             </aside>
 
             <div class="diffpane" role="group" aria-label="Unified diff" data-fdm-ui>
@@ -113,40 +126,40 @@
 
               <div class="diff">
                 <div class="diff-line diff-line--hunk">
-                  <span class="diff-line__no">··</span><span class="diff-line__sign">§</span>
-                  <span class="diff-line__code">@@ -42,6 +42,14 @@ parse guard</span>
+                  <span class="diff-line__no">··</span><span class="diff-line__sign">§</span><span class="diff-line__code">@@ -42,6 +42,14 @@ parse guard</span>
                 </div>
                 <div class="diff-line diff-line--context">
-                  <span class="diff-line__no">42</span><span class="diff-line__sign">·</span>
-                  <span class="diff-line__code"><span class="tok-comment">// Reject malformed fences before parsing</span></span>
+                  <span class="diff-line__no">42</span><span class="diff-line__sign">·</span><span class="diff-line__code"><span class="tok-comment">// Reject malformed fences before parsing</span></span>
                 </div>
                 <div class="diff-line diff-line--remove">
-                  <span class="diff-line__no">43</span><span class="diff-line__sign">−</span>
-                  <span class="diff-line__code"><span class="tok-key">if</span> (line.startsWith(<span class="tok-str">"```"</span>)) {</span>
+                  <span class="diff-line__no">43</span><span class="diff-line__sign">−</span><span class="diff-line__code"><span class="tok-key">if</span> (line.startsWith(<span class="tok-str">"```"</span>)) {</span>
                 </div>
                 <div class="diff-line diff-line--add">
-                  <span class="diff-line__no">43</span><span class="diff-line__sign">+</span>
-                  <span class="diff-line__code"><span class="tok-key">if</span> (isFence(line) &amp;&amp; !hasLanguage(line)) {</span>
+                  <span class="diff-line__no">43</span><span class="diff-line__sign">+</span><span class="diff-line__code"><span class="tok-key">if</span> (isFence(line) &amp;&amp; !hasLanguage(line)) {</span>
                 </div>
                 <div class="diff-line diff-line--add">
-                  <span class="diff-line__no">44</span><span class="diff-line__sign">+</span>
-                  <span class="diff-line__code">  <span class="tok-key">return</span> <span class="tok-fn">reject</span>(<span class="tok-str">"fence.missing-language"</span>);</span>
+                  <span class="diff-line__no">44</span><span class="diff-line__sign">+</span><span class="diff-line__code">  <span class="tok-key">return</span> <span class="tok-fn">reject</span>(<span class="tok-str">"fence.missing-language"</span>);</span>
                 </div>
                 <div class="diff-line diff-line--context">
-                  <span class="diff-line__no">45</span><span class="diff-line__sign">·</span>
-                  <span class="diff-line__code">  }</span>
+                  <span class="diff-line__no">45</span><span class="diff-line__sign">·</span><span class="diff-line__code">  }</span>
                 </div>
                 <div class="diff-line diff-line--add">
-                  <span class="diff-line__no">46</span><span class="diff-line__sign">+</span>
-                  <span class="diff-line__code"><span class="tok-key">const</span> guard = <span class="tok-key">new</span> <span class="tok-type">Guard</span>(<span class="tok-str">"parser"</span>);</span>
+                  <span class="diff-line__no">46</span><span class="diff-line__sign">+</span><span class="diff-line__code"><span class="tok-key">const</span> guard = <span class="tok-key">new</span> <span class="tok-type">Guard</span>(<span class="tok-str">"parser"</span>);</span>
                 </div>
                 <div class="diff-line diff-line--context">
-                  <span class="diff-line__no">47</span><span class="diff-line__sign">·</span>
-                  <span class="diff-line__code">  <span class="tok-key">return</span> guard.<span class="tok-fn">run</span>(tokens, <span class="tok-num">2</span>);</span>
+                  <span class="diff-line__no">47</span><span class="diff-line__sign">·</span><span class="diff-line__code">  <span class="tok-key">return</span> guard.<span class="tok-fn">run</span>(tokens, <span class="tok-num">2</span>);</span>
                 </div>
                 <div class="diff-line diff-line--context">
-                  <span class="diff-line__no">48</span><span class="diff-line__sign">·</span>
-                  <span class="diff-line__code">}</span>
+                  <span class="diff-line__no">48</span><span class="diff-line__sign">·</span><span class="diff-line__code">}</span>
+                </div>
+                <div class="diff-line diff-line--context">
+                  <span class="diff-line__no">49</span><span class="diff-line__sign">·</span><span class="diff-line__code"></span>
+                </div>
+                <div class="diff-line diff-line--add">
+                  <span class="diff-line__no">50</span><span class="diff-line__sign">+</span><span class="diff-line__code"><span class="tok-comment">// keep the reason attached to the thrown value</span></span>
+                </div>
+                <div class="diff-line diff-line--add">
+                  <span class="diff-line__no">51</span><span class="diff-line__sign">+</span><span class="diff-line__code"><span class="tok-key">return</span> guard.<span class="tok-fn">explain</span>(reason, <span class="tok-num">1</span>);</span>
                 </div>
               </div>
 
@@ -160,13 +173,23 @@
                 <span>cli/flags.ts</span><span>CALLER · HUNK 02 / 02</span>
               </div>
               <div class="diff diff--mini">
-                <div class="diff-line diff-line--add">
-                  <span class="diff-line__no">18</span><span class="diff-line__sign">+</span>
-                  <span class="diff-line__code">guard.<span class="tok-fn">watch</span>(<span class="tok-str">"--strict"</span>, <span class="tok-num">1</span>);</span>
+                <div class="diff-line diff-line--hunk">
+                  <span class="diff-line__no">··</span><span class="diff-line__sign">§</span><span class="diff-line__code">@@ -16,4 +16,6 @@ watch flags</span>
                 </div>
                 <div class="diff-line diff-line--context">
-                  <span class="diff-line__no">19</span><span class="diff-line__sign">·</span>
-                  <span class="diff-line__code"><span class="tok-comment">// caller now receives the missing-language reason</span></span>
+                  <span class="diff-line__no">16</span><span class="diff-line__sign">·</span><span class="diff-line__code"><span class="tok-key">export function</span> <span class="tok-fn">watch</span>(flags) {</span>
+                </div>
+                <div class="diff-line diff-line--remove">
+                  <span class="diff-line__no">17</span><span class="diff-line__sign">−</span><span class="diff-line__code">  guard.<span class="tok-fn">watch</span>(<span class="tok-str">"--strict"</span>);</span>
+                </div>
+                <div class="diff-line diff-line--add">
+                  <span class="diff-line__no">18</span><span class="diff-line__sign">+</span><span class="diff-line__code">  guard.<span class="tok-fn">watch</span>(<span class="tok-str">"--strict"</span>, <span class="tok-num">1</span>);</span>
+                </div>
+                <div class="diff-line diff-line--add">
+                  <span class="diff-line__no">19</span><span class="diff-line__sign">+</span><span class="diff-line__code">  <span class="tok-comment">// caller now receives the missing-language reason</span></span>
+                </div>
+                <div class="diff-line diff-line--context">
+                  <span class="diff-line__no">20</span><span class="diff-line__sign">·</span><span class="diff-line__code">  <span class="tok-key">return</span> flags;</span>
                 </div>
               </div>
             </div>
@@ -206,6 +229,74 @@
             </aside>
           </div>
 
+          <div class="statusbar" data-fdm-ui>
+            <span class="statusbar__item statusbar__item--branch">⑂ review/482</span>
+            <span class="statusbar__item">CHECKS ✓ 3/3</span>
+            <span class="statusbar__item">LN 46, COL 12</span>
+            <span class="statusbar__item statusbar__item--end">UTF-8 · LF · TS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section method" id="method" data-budget="1" data-fdm-section aria-labelledby="method-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow" data-fdm-ui data-index="01">Command walkthrough</p>
+          <h2 id="method-title">The brief arrives before the diff.</h2>
+          <p class="lede">Three commands turn a pull request into a reading order. Each one leaves a line you can paste into a terminal.</p>
+        </div>
+
+        <ol class="walk">
+          <li class="walk__step" data-fdm-ui>
+            <p class="walk__num">01</p>
+            <div class="walk__copy-block">
+              <p class="walk__title">Index the change by intent.</p>
+              <p class="walk__copy">Kestrel groups files by what they alter, so a guard and its test land in the same entry.</p>
+            </div>
+            <div class="walk__terminal">
+              <div class="walk__terminal-head"><span>~/work/relay</span><span>INDEX</span></div>
+              <pre><span class="tok-comment">$</span> kestrel index --pr 482
+  <span class="tok-type">2 groups</span> · <span class="tok-str">1 risk</span> · <span class="tok-num">0.41s</span></pre>
+            </div>
+          </li>
+          <li class="walk__step" data-fdm-ui>
+            <p class="walk__num">02</p>
+            <div class="walk__copy-block">
+              <p class="walk__title">Put the exposed edges first.</p>
+              <p class="walk__copy">Public APIs, migrations and missing tests move above formatting noise in the brief.</p>
+            </div>
+            <div class="walk__terminal">
+              <div class="walk__terminal-head"><span>~/work/relay</span><span>RANK</span></div>
+              <pre><span class="tok-comment">$</span> kestrel brief --rank risk
+  <span class="tok-str">guard.ts:43</span> → <span class="tok-type">cli/flags.ts:18</span></pre>
+            </div>
+          </li>
+          <li class="walk__step" data-fdm-ui>
+            <p class="walk__num">03</p>
+            <div class="walk__copy-block">
+              <p class="walk__title">Ask which test carries the claim.</p>
+              <p class="walk__copy">Each group points to a test file, or reports the gap plainly. A missing test is never dressed up as coverage.</p>
+            </div>
+            <div class="walk__terminal">
+              <div class="walk__terminal-head"><span>~/work/relay</span><span>PROOF</span></div>
+              <pre><span class="tok-comment">$</span> kestrel proof --group 01
+  <span class="tok-fn">parser_guard.test.ts</span> · <span class="tok-num">14/14</span> PASS</pre>
+            </div>
+          </li>
+        </ol>
+
+        <div class="method-extra">
+          <div class="method-extra__note">
+            <p class="eyebrow" data-fdm-ui>Command palette / specimen</p>
+            <p>The same index is reachable from one key. This is the palette that sits over the review surface — captured here as a square-edged panel, not a floating layer.</p>
+            <div class="method-install" data-fdm-ui>
+              <span class="method-install__prompt" aria-hidden="true">$</span>
+              <code>brew install --cask kestrel</code>
+              <button class="copy-button" type="button" data-fdm-copy="brew install --cask kestrel" aria-label="Copy install command">Copy</button>
+            </div>
+          </div>
+
           <div class="palette" role="group" aria-label="Kestrel command palette" data-fdm-ui>
             <div class="palette__field"><span aria-hidden="true">›</span> review guard <span class="keycap">⌘K</span></div>
             <ul class="palette__rows">
@@ -216,76 +307,7 @@
             </ul>
             <div class="palette__foot">↑↓ MOVE · ↵ RUN · ESC CLOSE</div>
           </div>
-
-          <div class="terminal" data-fdm-ui>
-            <div class="terminal__bar">
-              <span class="terminal__tab terminal__tab--active">TERMINAL</span>
-              <span class="terminal__tab">PROBLEMS <i>1</i></span>
-              <span class="terminal__right">zsh · ~/work/relay</span>
-            </div>
-            <div class="terminal__body">
-              <div class="terminal__command"><span>$</span> kestrel review --pr 482 --rank risk</div>
-              <div class="terminal__out">  indexed 184 files · 3 changed · 1 exposed edge
-  mapped guard.ts → guard.test.ts (14 assertions)
-  [ok] parser_guard.test.ts ............... 0.4s PASS</div>
-              <div class="terminal__result">BRIEF READY · ~/.kestrel/reviews/482.md</div>
-            </div>
-            <div class="terminal__install">
-              <span aria-hidden="true">$</span>
-              <code>brew install --cask kestrel</code>
-              <button class="copy-button" type="button" data-fdm-copy="brew install --cask kestrel" aria-label="Copy install command">Copy</button>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
-
-    <section class="section method" id="method" data-budget="1" data-fdm-section aria-labelledby="method-title">
-      <div class="wrap">
-        <div class="section-head walk-head">
-          <p class="eyebrow" data-fdm-ui data-index="01">Command walkthrough</p>
-          <h2 id="method-title">The brief arrives before the diff.</h2>
-          <p class="lede">Three commands turn a pull request into a reading order. Each one leaves a line you can paste into a terminal.</p>
-        </div>
-
-        <ol class="walk">
-          <li class="walk__step" data-fdm-ui>
-            <p class="walk__num" data-fdm-ui>01</p>
-            <div class="walk__copy-block">
-              <p class="walk__title">Index the change by intent.</p>
-              <p class="walk__copy">Kestrel groups files by what they alter, so a guard and its test land in the same entry.</p>
-            </div>
-            <div class="walk__terminal" data-fdm-ui>
-              <div class="walk__terminal-head"><span>~/work/relay</span><span>INDEX</span></div>
-              <pre><span class="tok-comment">$</span> kestrel index --pr 482
-  <span class="tok-type">2 groups</span> · <span class="tok-str">1 risk</span> · <span class="tok-num">0.4s</span></pre>
-            </div>
-          </li>
-          <li class="walk__step" data-fdm-ui>
-            <p class="walk__num" data-fdm-ui>02</p>
-            <div class="walk__copy-block">
-              <p class="walk__title">Put the exposed edges first.</p>
-              <p class="walk__copy">Public APIs, migrations and missing tests move above formatting noise in the brief.</p>
-            </div>
-            <div class="walk__terminal" data-fdm-ui>
-              <div class="walk__terminal-head"><span>~/work/relay</span><span>RANK</span></div>
-              <pre><span class="tok-comment">$</span> kestrel brief --rank risk
-  <span class="tok-str">guard.ts:43</span> → <span class="tok-type">cli/flags.ts:18</span></pre>
-            </div>
-          </li>
-          <li class="walk__step" data-fdm-ui>
-            <p class="walk__num" data-fdm-ui>03</p>
-            <div class="walk__copy-block">
-              <p class="walk__title">Ask which test carries the claim.</p>
-              <p class="walk__copy">Each group points to a test file, or reports the gap plainly. A missing test is never dressed up as coverage.</p>
-            </div>
-            <div class="walk__terminal" data-fdm-ui>
-              <div class="walk__terminal-head"><span>~/work/relay</span><span>PROOF</span></div>
-              <pre><span class="tok-comment">$</span> kestrel proof --group 01
-  <span class="tok-fn">parser_guard.test.ts</span> · <span class="tok-num">14/14</span> PASS</pre>
-            </div>
-          </li>
-        </ol>
       </div>
     </section>
 
@@ -303,17 +325,17 @@
         </div>
 
         <div class="transcript" data-fdm-ui>
-          <div class="transcript__bar"><span>kestrel --report quarter</span><span>zsh · local</span></div>
-          <pre class="transcript__body">$ kestrel report --since 2026-08-01 --format plain
-  INDEX   /work/relay             184 files    0.4s
-  REVIEW  briefs written          318 PRs      100%
-  MEDIAN  time to first read      -41%         ██████████
-  MAP     changes to test         3.2x         █████████████
-  NETWORK source bytes sent       0            ·
-  TEST    assertions passing      14/14        PASS
+          <div class="transcript__bar"><span>kestrel --report 482</span><span>zsh · local</span></div>
+          <pre class="transcript__body"><span class="tok-comment">$</span> kestrel review --pr 482 --rank risk
+  INDEX   relay/src           <span class="tok-num">184 files</span>      <span class="tok-num">0.41s</span>
+  MAP     guard.ts → guard.test.ts  <span class="tok-str">14 assertions</span>
+  TEST    parser_guard       <span class="tok-num">14/14</span>  <span class="tok-key">PASS</span>   <span class="tok-num">0.38s</span>
+  NETWORK bytes sent         <span class="tok-num">0</span>              <span class="tok-num">0.00s</span>
 
-  [done] report written to ~/.kestrel/quarter.txt</pre>
-          <div class="transcript__foot"><span>COLUMNS: METRIC / VALUE / SIGNAL</span><span>WEEK 01 → 12</span></div>
+<span class="tok-comment">$</span> kestrel brief --open
+  WRITE   ~/.kestrel/reviews/482.md       <span class="tok-num">0.02s</span>
+<span class="tok-key">[exit 0]</span> 2 commands · <span class="tok-num">0.81s</span> · <span class="tok-num">0 bytes</span> sent</pre>
+          <div class="transcript__foot"><span>COLUMNS: COMMAND / RESULT / EXIT / TIME</span><span>NODE 22 · LOCAL</span></div>
         </div>
         <p class="proof-note">Each figure is read from the local index and measured against that team's own baseline before Kestrel was installed.</p>
       </div>
@@ -390,7 +412,7 @@
             <div class="contact-detail">
               <span class="contact-detail__label" data-fdm-ui>EMAIL</span>
               <a href="mailto:hello@kestrel.example">hello@kestrel.example</a>
-              <small class="muted" data-fdm-ui>For new work and speaking.</small>
+              <small class="muted">For new work and speaking.</small>
             </div>
             <div class="contact-detail">
               <span class="contact-detail__label" data-fdm-ui>SUPPORT HOURS</span>
@@ -491,7 +513,7 @@
         <p>© 2026 Kestrel Tools. Fictional demo content.</p>
         <details class="credits">
           <summary>Credits &amp; notes</summary>
-          <p>Typeface: Geist and Geist Mono, linked here as an example. All interface details and copy are original to this starter. No remote imagery is used. This page is a demonstration, not a live service.</p>
+          <p>Typeface: Geist and IBM Plex Mono, linked here as an example. All interface details and copy are original to this starter. No remote imagery is used. This page is a demonstration, not a live service.</p>
         </details>
       </div>
     </div>

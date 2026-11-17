@@ -21,86 +21,78 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" data-fdm-header>
-    <div class="wrap site-header__inner">
-      <nav class="site-nav" aria-label="Primary" data-fdm-nav>
+  <header class="masthead" data-fdm-header>
+    <div class="wrap masthead__inner">
+      <nav class="masthead__nav" aria-label="Primary" data-fdm-nav>
         <a class="brand" href="#top" aria-label="Ironwood home">
-          <span class="brand__mark" aria-hidden="true">I</span>
+          <span class="brand__sigil" aria-hidden="true">I</span>
           <span>Ironwood<span class="brand__dot">.</span></span>
         </a>
 
         <button
-          class="nav-toggle"
+          class="menu-toggle"
           type="button"
           aria-expanded="false"
           aria-controls="primary-menu"
           data-fdm-nav-toggle
         >
           <span>Menu</span>
-          <span class="nav-toggle__lines" aria-hidden="true"><span></span><span></span></span>
+          <span class="menu-toggle__lines" aria-hidden="true"><span></span><span></span></span>
         </button>
 
-        <ul class="nav-menu" id="primary-menu" data-fdm-nav-menu>
-          <li><a class="nav-link" href="#top">Title</a></li>
-          <li><a class="nav-link" href="#method">World</a></li>
-          <li><a class="nav-link" href="#proof">Systems</a></li>
-          <li><a class="nav-link" href="#pricing">Editions</a></li>
-          <li><a class="nav-link" href="#contact">Notes</a></li>
+        <ul class="menu" id="primary-menu" data-fdm-nav-menu>
+          <li><a class="menu__link" href="#top">Title</a></li>
+          <li><a class="menu__link" href="#method">World</a></li>
+          <li><a class="menu__link" href="#proof">Systems</a></li>
+          <li><a class="menu__link" href="#pricing">Editions</a></li>
+          <li><a class="menu__link" href="#contact">Notes</a></li>
         </ul>
 
-        <a class="header-link" href="#contact">Field notes <span aria-hidden="true">↗</span></a>
+        <a class="masthead__note" href="#contact">Field notes <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
 
   <main id="main" tabindex="-1">
-    <section class="hero keyart" id="top" data-budget="1" aria-labelledby="hero-title">
-      <div class="hero__field">
+    <section class="screen" id="top" data-budget="1" aria-labelledby="hero-title">
+      <div class="screen__plate">
         <img src="assets/photos/gaming-ironwood.webp" srcset="assets/photos/gaming-ironwood-480w.webp 480w, assets/photos/gaming-ironwood-720w.webp 720w, assets/photos/gaming-ironwood.webp 960w" sizes="100vw" width="960" height="640" alt="Fog moving through a stand of dark conifers at first light." data-source="library" data-subject="Dark conifer forest in early morning fog." loading="eager">
       </div>
 
-      <p class="press-badge" data-fdm-ui>
+      <p class="press-stamp" data-fdm-ui>
         <span>Press copy</span>
         <span>Reel 04 · Embargo lifted</span>
       </p>
 
-      <div class="hero__rail">
-        <p class="chapter-label" data-fdm-ui>Chapter 04 — The quiet return</p>
+      <div class="screen__panel">
+        <p class="screen__chapter" data-fdm-ui>Chapter 04 — The quiet return</p>
 
-        <div class="hero__type">
-          <h1 class="hero__title" id="hero-title" data-enter>
-            <span class="hero__line">The forest</span>
-            <span class="hero__line">remembers</span>
-            <span class="hero__line">everything.</span>
-          </h1>
+        <h1 class="screen__title" id="hero-title" data-enter>
+          <span>The forest</span>
+          <span>remembers</span>
+          <span>everything.</span>
+        </h1>
+
+        <p class="screen__dispatch">Build one camp across four seasons. Cut too much and the canopy thins. Leave a path and something else will use it.</p>
+
+        <div class="screen__actions" data-enter>
+          <a class="screen__action" href="#contact">Wishlist on Steam <span aria-hidden="true">↗</span></a>
+          <a class="screen__action" href="#method">Enter the world <span aria-hidden="true">↓</span></a>
         </div>
+      </div>
 
-        <p class="hero__dispatch">Build one camp across four seasons. Cut too much and the canopy thins. Leave a path and something else will use it.</p>
-
-        <div class="hero__ctas" data-enter>
-          <a class="square-cta" href="#contact">
-            <span class="square-cta__label">Wishlist<br>on Steam</span>
-            <span class="square-cta__arrow" aria-hidden="true">↗</span>
-          </a>
-          <a class="square-cta" href="#method">
-            <span class="square-cta__label">Enter<br>the world</span>
-            <span class="square-cta__arrow" aria-hidden="true">↓</span>
-          </a>
-        </div>
-
-        <div class="season-index" role="group" aria-labelledby="season-title" data-fdm-ui>
-          <p class="season-index__head" id="season-title">Season cycle</p>
-          <ol class="season-index__list">
-            <li class="is-active"><span>01</span> Spring</li>
-            <li><span>02</span> Summer</li>
-            <li><span>03</span> Autumn</li>
-            <li><span>04</span> Winter</li>
-          </ol>
-        </div>
+      <div class="chapter-index" role="group" aria-labelledby="season-title" data-fdm-ui>
+        <p class="chapter-index__head" id="season-title">Season cycle</p>
+        <ol class="chapter-index__list">
+          <li class="is-active"><span>01</span> Spring</li>
+          <li><span>02</span> Summer</li>
+          <li><span>03</span> Autumn</li>
+          <li><span>04</span> Winter</li>
+        </ol>
       </div>
     </section>
 
-    <section class="section survey" id="method" data-budget="1" data-fdm-section aria-labelledby="method-title">
+    <section class="chapter survey" id="method" data-budget="1" data-fdm-section aria-labelledby="method-title">
       <div class="wrap survey__grid">
         <div class="survey__plate" role="group" aria-labelledby="terrain-title" data-fdm-ui>
           <div class="survey__plate-head">
@@ -141,7 +133,7 @@
           </div>
         </div>
 
-        <div class="survey__copy">
+        <div class="survey__note">
           <p class="eyebrow" data-fdm-ui>01 — World survey</p>
           <h2 id="method-title">A forest with a memory, not a map full of markers.</h2>
           <p class="lede">Eighteen square kilometres, placed by hand. Every camp leaves a mark on the canopy, the paths and the sound of the place you built in.</p>
@@ -155,7 +147,7 @@
       </div>
     </section>
 
-    <section class="section systems" id="proof" data-budget="1" data-fdm-section aria-labelledby="proof-title">
+    <section class="chapter systems" id="proof" data-budget="1" data-fdm-section aria-labelledby="proof-title">
       <div class="wrap">
         <div class="systems__head">
           <p class="eyebrow" data-fdm-ui>02 — Rules of the wood</p>
@@ -163,35 +155,35 @@
           <p class="lede">Survival comes from reading a place, not from filling a bar. The forest speaks in small signals if you stay long enough to notice.</p>
         </div>
 
-        <div class="systems__ledger">
-          <div class="ledger-head" data-fdm-ui>
+        <div class="ledger">
+          <div class="ledger__head" data-fdm-ui>
             <span>Season</span>
             <span>Rule of the wood</span>
             <span>Field signal</span>
           </div>
-          <article class="ledger-row">
-            <p class="ledger-row__season" data-fdm-ui>Spring</p>
-            <div class="ledger-row__copy">
+          <article class="ledger__row">
+            <p class="ledger__season" data-fdm-ui>Spring</p>
+            <div class="ledger__copy">
               <h3>Take only what returns.</h3>
               <p>Berries, bark and game follow the season. Overharvest a grove and it may not come back next spring.</p>
             </div>
-            <div class="ledger-row__note" data-fdm-ui><span>Regrowth</span><b>82%</b></div>
+            <div class="ledger__note" data-fdm-ui><span>Regrowth</span><b>82%</b></div>
           </article>
-          <article class="ledger-row">
-            <p class="ledger-row__season" data-fdm-ui>Autumn</p>
-            <div class="ledger-row__copy">
+          <article class="ledger__row">
+            <p class="ledger__season" data-fdm-ui>Autumn</p>
+            <div class="ledger__copy">
               <h3>A shelter that shows its history.</h3>
               <p>Walls settle, roofs sag and repairs leave visible scars. A camp you abandon is still a place the forest can find.</p>
             </div>
-            <div class="ledger-row__note" data-fdm-ui><span>Integrity</span><b>64%</b></div>
+            <div class="ledger__note" data-fdm-ui><span>Integrity</span><b>64%</b></div>
           </article>
-          <article class="ledger-row ledger-row--winter">
-            <p class="ledger-row__season" data-fdm-ui>Winter</p>
-            <div class="ledger-row__copy">
+          <article class="ledger__row">
+            <p class="ledger__season" data-fdm-ui>Winter</p>
+            <div class="ledger__copy">
               <h3>The Long Night rewards preparation.</h3>
               <p>Cold, hunger and old decisions arrive together. There is no timer to beat, only the store you laid in during autumn.</p>
             </div>
-            <div class="ledger-row__note" data-fdm-ui><span>Stores</span><b>41%</b></div>
+            <div class="ledger__note" data-fdm-ui><span>Stores</span><b>41%</b></div>
           </article>
         </div>
 
@@ -202,7 +194,7 @@
       </div>
     </section>
 
-    <section class="section editions" id="pricing" data-budget="1" data-fdm-section aria-labelledby="pricing-title">
+    <section class="chapter editions" id="pricing" data-budget="1" data-fdm-section aria-labelledby="pricing-title">
       <div class="wrap">
         <div class="editions__head">
           <div>
@@ -212,57 +204,57 @@
           <p class="lede">Every edition includes the full game. The extras are for people who want to keep the forest on the shelf after the credits. Prices in EUR.</p>
         </div>
 
-        <div class="price-list">
-          <article class="price-row">
-            <span class="price-row__no" data-fdm-ui>01</span>
-            <div class="price-row__id">
+        <div class="edition-list">
+          <article class="edition">
+            <span class="edition__no" data-fdm-ui>01</span>
+            <div class="edition__id">
               <h3>Standard</h3>
               <p data-fdm-ui>Digital · immediate</p>
             </div>
-            <ul class="price-row__includes" data-fdm-ui>
+            <ul class="edition__includes" data-fdm-ui>
               <li>Full game</li>
               <li>Digital soundtrack</li>
               <li>Wallpaper set</li>
             </ul>
-            <p class="price-row__price">€34.99</p>
+            <p class="edition__price">€34.99</p>
             <a class="link-arrow" href="#contact">Wishlist Standard <span aria-hidden="true">→</span></a>
           </article>
 
-          <article class="price-row price-row--marked">
-            <span class="price-row__no" data-fdm-ui>02</span>
-            <div class="price-row__id">
+          <article class="edition">
+            <span class="edition__no" data-fdm-ui>02</span>
+            <div class="edition__id">
               <h3>Deluxe</h3>
-              <p class="price-row__mark" data-fdm-ui>Press pick</p>
+              <p class="edition__stamp" data-fdm-ui>Press pick</p>
             </div>
-            <ul class="price-row__includes" data-fdm-ui>
+            <ul class="edition__includes" data-fdm-ui>
               <li>Full game and all seasons</li>
               <li>160-page art book</li>
               <li>Developer commentary</li>
               <li>Field journal PDF</li>
             </ul>
-            <p class="price-row__price">€54<span>.99</span></p>
+            <p class="edition__price">€54<span>.99</span></p>
             <a class="link-arrow" href="#contact">Wishlist Deluxe <span aria-hidden="true">→</span></a>
           </article>
 
-          <article class="price-row">
-            <span class="price-row__no" data-fdm-ui>03</span>
-            <div class="price-row__id">
+          <article class="edition">
+            <span class="edition__no" data-fdm-ui>03</span>
+            <div class="edition__id">
               <h3>Collector</h3>
               <p data-fdm-ui>Limited run</p>
             </div>
-            <ul class="price-row__includes" data-fdm-ui>
+            <ul class="edition__includes" data-fdm-ui>
               <li>Full game</li>
               <li>Cloth map</li>
               <li>Numbered journal</li>
             </ul>
-            <p class="price-row__price">€89.99</p>
+            <p class="edition__price">€89.99</p>
             <a class="link-arrow" href="#contact">Join the waitlist <span aria-hidden="true">→</span></a>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section contact" id="contact" data-budget="1" data-fdm-section aria-labelledby="contact-title">
+    <section class="chapter contact" id="contact" data-budget="1" data-fdm-section aria-labelledby="contact-title">
       <div class="wrap correspondence">
         <div class="correspondence__lead">
           <p class="eyebrow" data-fdm-ui>04 — Field notes</p>
@@ -323,7 +315,7 @@
               <p class="field-error" id="message-error" data-fdm-error-for="message" hidden></p>
             </div>
             <div class="form-actions">
-              <button class="button button--primary" type="submit">Prepare the email <span aria-hidden="true">→</span></button>
+              <button class="button" type="submit">Prepare the email <span aria-hidden="true">→</span></button>
               <p class="form-note">Demo only · no data is sent or stored.</p>
             </div>
             <p class="form-status" role="status" aria-live="polite" data-fdm-form-status>No data leaves your browser in this demo.</p>
@@ -339,7 +331,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a class="brand" href="#top" aria-label="Ironwood home">
-            <span class="brand__mark" aria-hidden="true">I</span>
+            <span class="brand__sigil" aria-hidden="true">I</span>
             <span>Ironwood<span class="brand__dot">.</span></span>
           </a>
           <p>A dark fantasy survival game from an independent studio in Berlin.</p>

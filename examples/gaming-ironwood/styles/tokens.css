@@ -1,62 +1,56 @@
-/* Ironwood / V4 — a near-black screening room, cream paper ink and one aged-amber voltage. */
+/* Ironwood / V5 — Projected Titles.
+   One deep field, one paper ink, one aged-amber voltage. No fills, no glow. */
 :root {
   color-scheme: dark;
 
-  --font-sans: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  /* Three loaded families, one request, no substitutes in the primary stacks. */
   --font-display: "Anton", Impact, sans-serif;
+  --font-sans: "Archivo", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
-  --text-base: 1rem;
-  --text-md: 1.0625rem;
-  --text-lg: 1.25rem;
+  /* 17px reading text, 11–12px instrument metadata. */
+  --fs-body: 1.0625rem;
+  --fs-meta: 0.6875rem;
+  --fs-meta-wide: 0.75rem;
+  --fs-display: clamp(6rem, 9.2vw, 8.25rem);
+  --fs-section: clamp(2.5rem, 3.35vw, 3rem);
+  --fs-subhead: clamp(1.25rem, 1.7vw, 1.5rem);
+  --fs-quote: clamp(1.5rem, 2.1vw, 2rem);
 
-  --fs-h1: clamp(4.25rem, 7vw, 7rem);
-  --fs-h2: clamp(2.25rem, 4.2vw, 4rem);
-  --fs-h3: clamp(1.15rem, 1.5vw, 1.5rem);
+  --lh-display: 0.88;
+  --lh-section: 1;
+  --lh-body: 1.6;
+  --tr-display: 0.01em;
+  --tr-meta: 0.12em;
 
-  --leading-display: 0.84;
-  --leading-tight: 1.12;
-  --leading-body: 1.6;
-  --tracking-display: 0.012em;
-  --tracking-caps: 0.1em;
+  --s1: 0.25rem;
+  --s2: 0.5rem;
+  --s3: 0.75rem;
+  --s4: 1rem;
+  --s5: 1.5rem;
+  --s6: 2rem;
+  --s7: 3rem;
+  --s8: 4rem;
 
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.5rem;
-  --space-6: 2rem;
-  --space-7: 3rem;
-  --space-8: 4rem;
-  --space-9: 6rem;
-
-  --bg: #07090b;
-  --bg-deep: #040506;
-  --surface: #0c0f12;
-  --surface-2: #11151a;
-
-  --ink: #f3efe6;
+  --field: #06080a;
+  --field-2: #0d1113;
+  --ink: #f2eee4;
   --ink-soft: #cbc7bb;
   --muted: #8d8d87;
-  --line: #262a2c;
-  --line-strong: #454a4d;
+  --voltage: #c89b3c;
+  --hairline: rgba(242, 238, 228, 0.18);
 
-  --accent: #d8a94f;
-  --accent-ink: #07090b;
-  --danger: #d8a94f;
-  --focus: #d8a94f;
-
-  --border: 1px solid var(--line);
-  --border-strong: 1px solid var(--line-strong);
+  --rule: 1px solid var(--hairline);
+  --stamp: 1px solid var(--voltage);
   --radius: 0;
 
   --container: 1440px;
   --gutter: clamp(1.25rem, 4vw, 4rem);
-  --header-h: 4.5rem;
+  --header-h: 4.25rem;
+  --crop: clamp(0.75rem, 1.4vw, 1.25rem);
 
-  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
-  --dur-fast: 120ms;
-  --dur-base: 220ms;
-  --dur-slow: 620ms;
-  --enter-distance: 14px;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur: 180ms;
+  --dur-enter: 560ms;
+  --enter-distance: 12px;
 }

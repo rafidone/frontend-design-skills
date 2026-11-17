@@ -1,6 +1,6 @@
-/* Motion — one short entrance, quiet hover states, and a complete stop for
-   anyone who asks for less motion. Nothing scroll-driven, nothing looping. */
-@keyframes annual-enter {
+/* Motion — one short entrance for the letterhead sheet, quiet hover states,
+   and a complete stop for anyone who asks for less motion. */
+@keyframes register-enter {
   from {
     opacity: 0;
     transform: translateY(var(--enter-shift));
@@ -17,17 +17,19 @@
   }
 
   html.fdm-motion [data-enter].is-entering {
-    animation: annual-enter var(--enter-dur) var(--ease) both;
+    animation: register-enter var(--enter-dur) var(--ease) both;
     animation-delay: var(--enter-delay, 0ms);
   }
 }
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .text-link .arrow {
+  .action-link .arrow,
+  .button .arrow {
     transition: transform var(--dur) var(--ease);
   }
 
-  .text-link:hover .arrow {
+  .action-link:hover .arrow,
+  .button:hover .arrow {
     transform: translateX(3px);
   }
 }

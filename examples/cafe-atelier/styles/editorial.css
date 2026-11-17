@@ -1,775 +1,105 @@
-/* Atelier Nine — one printed feature on one paper ground.
-   A landscape photograph, a single hairline, and type set to the page. */
+/* Editorial: the display voice, the drop cap and the quiet margins. */
 
-/* ---------- The quiet spread ---------- */
-.atelier-hero {
-  background: var(--paper);
+.hero__title {
+  margin-top: 18px;
+  font-size: var(--text-h1);
+  font-weight: 500;
+  line-height: var(--leading-h1);
+  letter-spacing: var(--tracking-h1);
 }
 
-.hero__rail {
-  display: grid;
-  gap: 0.6rem;
-  align-content: center;
-}
-
-.hero__rail p {
-  color: var(--muted);
-  font-size: var(--text-xs);
-  letter-spacing: var(--tracking-caps);
-  line-height: 1.5;
-  text-transform: uppercase;
-}
-
-.hero__rail .rail__issue {
+/* A real first-letter drop cap — clay as text, never as a fill. */
+.hero__title::first-letter {
+  float: left;
+  padding-right: 0.07em;
+  padding-top: 0.04em;
   color: var(--clay);
-}
-
-.hero__copy {
-  display: grid;
-  gap: clamp(1rem, 1.8vw, 1.5rem);
-  justify-items: start;
+  font-size: 1.52em;
+  font-weight: 500;
+  line-height: 0.76;
 }
 
 .reserve-link {
   display: inline-flex;
   min-height: 44px;
   align-items: center;
-  gap: var(--space-2);
-  border-block-end: 2px solid var(--clay);
+  gap: 10px;
+  margin-top: var(--space-5);
   color: var(--clay);
-  font-size: var(--text-sm);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.hero__deck {
+  margin-top: var(--space-5);
+  color: var(--secondary);
+}
+
+.folio__no {
+  font-variant-numeric: lining-nums;
+}
+
+.folio__title {
+  font-family: var(--font-display);
+  font-size: var(--text-feature);
   font-weight: 500;
-  letter-spacing: var(--tracking-caps);
-  text-decoration: none;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.booklet__masthead {
+  font-size: var(--text-micro);
+  font-weight: 700;
+  letter-spacing: var(--tracking-micro);
   text-transform: uppercase;
-}
-
-.reserve-link:hover {
-  border-block-end-color: var(--ink);
-  color: var(--ink);
-  text-decoration: none;
-}
-
-.hero__title {
-  max-width: 12ch;
-  color: var(--ink);
-  font-size: var(--text-h1);
-  letter-spacing: var(--tracking-tight);
-  line-height: var(--leading-display);
-}
-
-.hero__title em {
-  color: var(--ink);
-  font-style: italic;
-  font-weight: 400;
-}
-
-.hero__copy .lede {
-  max-width: 34rem;
-}
-
-.editor-note {
-  display: grid;
-  gap: 0.35rem;
-  padding-block-start: var(--space-3);
-  border-block-start: 1px solid var(--rule-strong);
-}
-
-.editor-note__label {
-  color: var(--clay);
-  font-size: var(--text-xs);
-  font-weight: 500;
-  letter-spacing: var(--tracking-caps);
-  text-transform: uppercase;
-}
-
-.editor-note > p:last-child {
-  max-width: 34rem;
-  color: var(--muted);
-  font-size: var(--text-base);
-  line-height: 1.55;
-}
-
-/* The photograph is wide and hard-cropped; one rule divides it from the type. */
-.hero-photo {
-  margin: 0;
-  align-self: center;
-  padding-inline-start: clamp(1.5rem, 2.8vw, 3rem);
-  border-inline-start: 1px solid var(--ink);
-}
-
-.hero-photo img {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  object-position: 50% 45%;
-}
-
-.hero__foot {
-  display: flex;
-  padding-block-start: var(--space-4);
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: var(--space-4);
-  border-block-start: 1px solid var(--ink);
-}
-
-.counter-note > p {
-  color: var(--clay);
-  font-size: var(--text-xs);
-  font-weight: 500;
-  letter-spacing: var(--tracking-caps);
-  text-transform: uppercase;
-}
-
-.counter-note ol {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem var(--space-6);
-  margin-block-start: 0.4rem;
-}
-
-.counter-note li {
-  display: flex;
-  gap: 0.6rem;
-  color: var(--muted);
-  font-size: var(--text-xs);
-  letter-spacing: 0.03em;
-}
-
-.counter-note li span:first-child {
-  color: var(--ink);
-  font-variant-numeric: tabular-nums;
-}
-
-.page-folio {
-  color: var(--clay);
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-/* ---------- Running heads on the following pages ---------- */
-.section-head {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: var(--column-gap);
-  align-items: end;
-  padding-block-end: var(--space-5);
-  border-block-end: 1px solid var(--rule-strong);
-}
-
-.section-head__title {
-  display: grid;
-  gap: var(--space-4);
-  justify-items: start;
-}
-
-.section-head h2 {
-  max-width: 14ch;
-}
-
-.section-head .lede {
-  justify-self: end;
-}
-
-/* ---------- A menu page, not a card ---------- */
-.atelier-menu {
-  border-block-start: 1px solid var(--rule);
-}
-
-.menu-sheet {
-  margin-block-start: var(--space-6);
-  border-block-start: 2px solid var(--ink);
-  border-block-end: 1px solid var(--ink);
-}
-
-.menu-sheet__head {
-  display: flex;
-  padding-block: var(--space-4);
-  align-items: baseline;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.5rem var(--space-4);
-  border-block-end: 1px solid var(--rule);
-  color: var(--muted);
-  font-size: var(--text-xs);
-  letter-spacing: var(--tracking-caps);
-  text-transform: uppercase;
-}
-
-.menu-sheet__masthead {
-  color: var(--ink);
-  font-family: var(--font-display);
-  font-size: 1.75rem;
-  letter-spacing: -0.02em;
-  line-height: 1;
-  text-transform: none;
-}
-
-.menu-sheet__body {
-  display: grid;
-  gap: var(--space-6);
-  padding-block: var(--space-5);
-}
-
-.menu-course + .menu-course {
-  padding-block-start: var(--space-5);
-  border-block-start: 1px solid var(--rule);
-}
-
-.menu-course__label {
-  margin-block-end: var(--space-3);
-  color: var(--ink);
-  font-family: var(--font-display);
-  font-size: 1.875rem;
-  line-height: 1;
-}
-
-.menu-list {
-  display: grid;
-  gap: 0.6rem;
-  max-width: 42rem;
-}
-
-.menu-list li {
-  display: flex;
-  align-items: baseline;
-  gap: 0.4rem;
-  font-size: var(--text-base);
-}
-
-.menu-list li span {
-  color: var(--ink);
-  white-space: nowrap;
-}
-
-.leader {
-  flex: 1;
-  min-width: 1rem;
-  margin-block-end: 0.2rem;
-  border-block-end: 1px dotted var(--rule-strong);
-}
-
-.menu-list li b {
-  color: var(--clay);
-  font-size: 0.9375rem;
-  font-weight: 500;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.04em;
-}
-
-.menu-sheet__foot {
-  display: flex;
-  padding-block: var(--space-3) var(--space-4);
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.5rem var(--space-4);
-  border-block-start: 1px solid var(--rule);
-  color: var(--muted);
-  font-size: var(--text-xs);
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
-/* ---------- The room, in prose ---------- */
-.atelier-story {
-  border-block-start: 1px solid var(--rule);
-}
-
-.story-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: var(--column-gap);
-  align-items: start;
-}
-
-.story-main {
-  display: grid;
-  gap: var(--space-5);
-  padding-inline-end: var(--column-gap);
-  border-inline-end: 1px solid var(--rule);
-}
-
-.story-main h2 {
-  max-width: 14ch;
-}
-
-.story-copy {
-  display: grid;
-  gap: var(--space-4);
-  max-width: 34rem;
-  color: var(--ink);
-  font-size: var(--text-base);
-  line-height: var(--leading-body);
-}
-
-.dropcap::first-letter {
-  float: left;
-  padding-block-start: 0.06em;
-  padding-inline-end: 0.08em;
-  color: var(--clay);
-  font-family: var(--font-display);
-  font-size: 3.4em;
-  line-height: 0.74;
-}
-
-.pull-quote {
-  max-width: 30ch;
-  padding-block-start: var(--space-4);
-  border-block-start: 2px solid var(--clay);
-  color: var(--ink);
-  font-family: var(--font-display);
-  font-size: var(--text-quote);
-  letter-spacing: -0.025em;
-  line-height: 1.14;
 }
 
 .quote-attribution {
-  color: var(--muted);
-  font-size: var(--text-xs);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.story-aside {
-  display: grid;
-  gap: var(--space-5);
-  align-content: start;
+  padding-left: calc(var(--space-5) + 1px);
+  color: var(--secondary);
+  font-size: 12px;
 }
 
 .margin-note {
-  max-width: 34ch;
-  padding-inline-start: var(--space-3);
-  border-inline-start: 1px solid var(--clay);
-  color: var(--muted);
-  font-size: var(--text-base);
-  line-height: 1.55;
+  padding-top: 12px;
+  margin-top: var(--space-5);
+  border-top: 1px solid var(--rule);
+  color: var(--secondary);
+  font-size: 13px;
 }
 
-/* ---------- The room plan ---------- */
-.room-plan {
-  border-block-start: 2px solid var(--ink);
-  border-block-end: 1px solid var(--ink);
+.proof__notes {
+  padding-top: 4px;
 }
 
-.room-plan__head,
-.room-plan__foot {
-  display: flex;
-  padding-block: var(--space-2);
-  align-items: baseline;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.5rem 0.75rem;
-}
-
-.room-plan__head {
-  border-block-end: 1px solid var(--rule);
-}
-
-.room-plan__head p {
-  color: var(--muted);
-  font-size: var(--text-xs);
-  letter-spacing: var(--tracking-caps);
-  text-transform: uppercase;
-}
-
-.room-plan__head p + p {
-  margin-block-start: 0.2rem;
-  color: var(--ink);
-  letter-spacing: 0.04em;
-}
-
-.room-plan__head span {
-  flex: none;
-  color: var(--clay);
-  font-size: var(--text-xs);
-}
-
-.room-plan__canvas {
-  position: relative;
-  aspect-ratio: 520 / 300;
-}
-
-.room-plan__canvas svg {
-  width: 100%;
-  height: 100%;
-}
-
-.room-plan__canvas .wall {
-  fill: none;
-  stroke: var(--rule-strong);
-  stroke-width: 2;
-}
-
-.room-plan__canvas .window {
-  fill: none;
-  stroke: var(--clay);
-  stroke-width: 5;
-}
-
-.room-plan__canvas .counter,
-.room-plan__canvas .bench {
-  fill: rgb(154 74 50 / 0.12);
-  stroke: var(--clay);
-  stroke-width: 1.5;
-}
-
-.room-plan__canvas .table {
-  fill: none;
-  stroke: var(--muted);
-  stroke-width: 1.5;
-}
-
-.plan-label {
-  position: absolute;
-  color: var(--muted);
-  font-size: 0.6875rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.plan-label--window {
-  top: 31%;
-  left: 3%;
-}
-
-.plan-label--counter {
-  top: 16%;
-  left: 44%;
-}
-
-.plan-label--shared {
-  top: 53%;
-  left: 45%;
-}
-
-.room-plan__foot {
-  border-block-start: 1px solid var(--rule);
-  color: var(--muted);
-  font-size: var(--text-xs);
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
-.room-plan__foot span {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-
-.plan-key {
-  display: inline-block;
-  width: 0.7rem;
-  height: 0.35rem;
-  border: 1px solid var(--clay);
-}
-
-.plan-key--table {
-  border-color: var(--muted);
-}
-
-.sketch-note {
-  color: var(--muted);
-  font-size: var(--text-xs);
-  font-style: italic;
-  line-height: 1.5;
-}
-
-/* ---------- Hours as a ledger ---------- */
-.atelier-hours {
-  border-block-start: 1px solid var(--rule);
-}
-
-.hours-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
-  gap: clamp(2rem, 5vw, 5rem);
-  align-items: start;
-  margin-block-start: var(--space-6);
-}
-
-.hours-sheet {
-  border-block-start: 2px solid var(--ink);
-}
-
-.hours-sheet__head,
-.hours-sheet li {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr) minmax(0, 0.8fr);
-  gap: 1rem;
-  align-items: baseline;
-}
-
-.hours-sheet__head {
-  padding-block: var(--space-2);
-  color: var(--muted);
-  font-size: var(--text-xs);
-  letter-spacing: var(--tracking-caps);
-  text-transform: uppercase;
-}
-
-.hours-sheet ol {
-  border-block-start: 1px solid var(--rule);
-}
-
-.hours-sheet li {
-  padding-block: var(--space-3);
-  border-block-end: 1px solid var(--rule);
-}
-
-.hours-sheet li b {
+/* The one long quotation in the house record. */
+.pull-quote {
+  padding-left: var(--space-5);
+  border-left: 1px solid var(--clay);
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 1.1;
-}
-
-.hours-sheet li span {
-  color: var(--muted);
-  font-size: var(--text-xs);
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.04em;
-}
-
-.hours-sheet li.is-today {
-  padding-inline-start: var(--space-3);
-  border-inline-start: 2px solid var(--clay);
-}
-
-.ledger-note {
-  margin-block-start: var(--space-3);
-  color: var(--muted);
-  font-size: var(--text-xs);
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
-.table-note {
-  display: grid;
-  gap: var(--space-3);
-  align-content: start;
-  padding-block-start: var(--space-4);
-  border-block-start: 2px solid var(--clay);
-}
-
-.table-note__label {
-  color: var(--clay);
-  font-size: var(--text-xs);
+  font-size: clamp(24px, 2.35vw, 30px);
   font-weight: 500;
-  letter-spacing: var(--tracking-caps);
-  text-transform: uppercase;
-}
-
-.table-note__title {
-  max-width: 15ch;
-  font-family: var(--font-display);
-  font-size: var(--text-feature);
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-}
-
-.table-note__price {
-  color: var(--ink);
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 2rem + 2vw, 4.4rem);
-  line-height: 0.9;
-}
-
-.table-note__price small {
-  color: var(--muted);
-  font-family: var(--font-sans);
-  font-size: var(--text-xs);
-  letter-spacing: var(--tracking-caps);
-  text-transform: uppercase;
-}
-
-.table-note__body {
-  max-width: 34ch;
-  color: var(--muted);
-  font-size: var(--text-base);
-}
-
-.ruled-list {
-  display: grid;
-  border-block-start: 1px solid var(--rule);
-}
-
-.ruled-list li {
-  padding-block: 0.45rem;
-  border-block-end: 1px solid var(--rule);
-  color: var(--muted);
-  font-size: var(--text-xs);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-/* ---------- Booking as correspondence ---------- */
-.atelier-contact {
-  border-block-start: 1px solid var(--rule);
-}
-
-.contact-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
-  gap: clamp(2.5rem, 6vw, 6rem);
-  align-items: start;
-}
-
-.contact-lead {
-  display: grid;
-  gap: var(--space-4);
-  justify-items: start;
-}
-
-.contact-lead h2 {
-  max-width: 10ch;
-}
-
-.contact-facts {
-  display: grid;
-  gap: var(--space-3);
-  width: 100%;
-  margin-block-start: var(--space-2);
-}
-
-.contact-detail {
-  display: grid;
-  gap: 0.2rem;
-  padding-block-start: var(--space-3);
-  border-block-start: 1px solid var(--rule-strong);
-  font-size: var(--text-base);
-}
-
-.contact-detail__label {
-  color: var(--clay);
-  font-size: var(--text-xs);
-  font-weight: 500;
-  letter-spacing: var(--tracking-caps);
-  text-transform: uppercase;
-}
-
-.contact-detail a {
-  display: inline-flex;
-  width: fit-content;
-  min-height: 44px;
-  align-items: center;
-  color: var(--clay);
-  font-weight: 500;
-}
-
-.contact-detail small {
-  color: var(--muted);
-  font-size: var(--text-xs);
-}
-
-.hours-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+  line-height: 1.28;
+  letter-spacing: -0.015em;
   color: var(--ink);
 }
 
-.hours-status::before {
-  width: 0.4rem;
-  height: 0.4rem;
-  background: var(--rule-strong);
-  content: "";
-}
-
-.hours-status[data-state="open"]::before {
-  background: var(--clay);
-}
-
-.contact-form {
-  padding-inline-start: clamp(1.5rem, 3.5vw, 3.5rem);
-  border-inline-start: 1px solid var(--rule-strong);
-}
-
-.letterhead {
-  margin-block-end: var(--space-4);
-  padding-block-end: var(--space-3);
-  border-block-end: 2px solid var(--ink);
-  color: var(--muted);
-  font-size: var(--text-xs);
-  letter-spacing: var(--tracking-caps);
-  text-transform: uppercase;
-}
-
-.contact-faq {
-  margin-block-start: var(--space-6);
-}
-
-/* ---------- Narrow pages ---------- */
-@media (max-width: 1180px) {
-  .hero__rail {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem var(--space-6);
-    padding-block-end: var(--space-3);
-    border-block-end: 1px solid var(--rule-strong);
-  }
-}
-
-@media (max-width: 820px) {
-  .section-head,
-  .story-layout,
-  .hours-layout,
-  .contact-layout {
-    grid-template-columns: 1fr;
-  }
-
+@media (max-width: 900px) {
   .hero__title {
-    max-width: 14ch;
-    font-size: clamp(3rem, 11vw, 4.75rem);
+    font-size: clamp(58px, 11vw, 88px);
   }
 
-  .hero-photo {
-    padding-inline-start: 0;
-    border-inline-start: 0;
-    border-block-start: 1px solid var(--ink);
+  .hero__portrait img {
+    height: clamp(300px, 52vh, 460px);
   }
 
-  .hero__foot {
-    flex-wrap: wrap;
-    align-items: flex-start;
+  .pull-quote {
+    font-size: clamp(23px, 5vw, 28px);
   }
+}
 
-  .section-head .lede {
-    justify-self: start;
-  }
-
-  .menu-sheet__head,
-  .menu-sheet__foot {
-    flex-direction: column;
-  }
-
-  .story-main {
-    padding-inline-end: 0;
-    padding-block-end: var(--space-5);
-    border-inline-end: 0;
-    border-block-end: 1px solid var(--rule);
-  }
-
-  .hours-sheet__head {
-    display: none;
-  }
-
-  .hours-sheet li {
-    grid-template-columns: 1fr;
-    gap: 0.25rem;
-  }
-
-  .hours-sheet li span {
-    display: block;
-  }
-
-  .contact-form {
-    padding-inline-start: 0;
-    padding-block-start: var(--space-5);
-    border-inline-start: 0;
-    border-block-start: 2px solid var(--ink);
+@media (max-width: 420px) {
+  .hero__title {
+    font-size: clamp(52px, 13vw, 64px);
   }
 }

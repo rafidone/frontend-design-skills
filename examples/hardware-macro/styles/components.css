@@ -1,4 +1,4 @@
-/* Components: quiet navigation, hairline data, underlined fields. */
+/* Components: quiet navigation, ruled data, underlined fields, bare footer. */
 .site-header {
   position: relative;
   z-index: 2;
@@ -10,7 +10,7 @@
   min-height: var(--header-h);
   align-items: center;
   gap: var(--s4);
-  border-block-end: 1px solid var(--hairline-strong);
+  border-block-end: 1px solid var(--hairline);
 }
 
 .brand {
@@ -20,7 +20,7 @@
   align-items: center;
   gap: var(--s3);
   color: var(--ink);
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: var(--fs-h3);
   font-weight: 600;
   letter-spacing: -0.03em;
@@ -60,8 +60,9 @@
   align-items: center;
   color: var(--ink-2);
   font-family: var(--font-mono);
-  font-size: var(--fs-mono);
-  letter-spacing: 0.02em;
+  font-size: var(--fs-spec);
+  font-weight: 400;
+  letter-spacing: var(--tr-spec);
   text-decoration: none;
   transition: color var(--dur) var(--ease);
 }
@@ -80,8 +81,8 @@
   border-inline-start: 1px solid var(--hairline);
   color: var(--ink);
   font-family: var(--font-mono);
-  font-size: var(--fs-mono);
-  letter-spacing: 0.08em;
+  font-size: var(--fs-spec);
+  letter-spacing: var(--tr-spec);
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -101,7 +102,7 @@
   color: var(--ink);
   font-family: var(--font-mono);
   font-size: var(--fs-micro);
-  letter-spacing: 0.1em;
+  letter-spacing: var(--tr-caps);
   text-transform: uppercase;
 }
 
@@ -135,7 +136,7 @@
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    border-block-end: 1px solid var(--hairline-strong);
+    border-block-end: 1px solid var(--hairline);
     background: var(--canvas);
   }
 
@@ -181,6 +182,7 @@
   text-transform: uppercase;
 }
 
+/* The single instrument tick: 1px wide, nowhere else in the system. */
 .kicker--hero::before {
   width: 1px;
   height: 10px;
@@ -197,14 +199,14 @@
   color: var(--ink-2);
   font-family: var(--font-mono);
   font-size: var(--fs-micro);
-  letter-spacing: 0.08em;
+  letter-spacing: var(--tr-caps);
   line-height: 1.35;
   text-transform: uppercase;
 }
 
 .micro b {
   color: var(--ink);
-  font-size: var(--fs-mono);
+  font-size: var(--fs-spec);
   font-variant-numeric: tabular-nums;
   letter-spacing: 0;
   text-transform: none;
@@ -213,7 +215,7 @@
 
 .micro--head {
   padding-block-end: var(--s2);
-  border-block-end: 1px solid var(--hairline-strong);
+  border-block-end: 1px solid var(--hairline);
   color: var(--ink);
 }
 
@@ -244,7 +246,7 @@
   color: var(--ink);
   font-size: var(--fs-body);
   text-decoration: underline;
-  text-decoration-color: var(--hairline-strong);
+  text-decoration-color: var(--hairline);
   text-underline-offset: 0.28em;
   transition: text-decoration-color var(--dur) var(--ease);
 }
@@ -264,7 +266,7 @@
   line-height: 1;
 }
 
-/* ---------- Data tables ---------- */
+/* ---------- Ruled data tables ---------- */
 .table-scroll {
   width: 100%;
   overflow-x: auto;
@@ -291,12 +293,12 @@
 .data-table thead th,
 .schedule__table thead th {
   padding-block: var(--s3);
-  border-block-end: 1px solid var(--hairline-strong);
+  border-block-end: 1px solid var(--ink);
   color: var(--ink-2);
   font-family: var(--font-mono);
   font-size: var(--fs-micro);
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: var(--tr-caps);
   text-transform: uppercase;
 }
 
@@ -310,10 +312,12 @@
   color: var(--ink-2);
 }
 
-.data-table td:nth-child(2) {
+.data-table td:nth-child(2),
+.schedule__price {
   color: var(--ink);
   font-family: var(--font-mono);
-  font-size: var(--fs-mono);
+  font-size: var(--fs-spec);
+  letter-spacing: var(--tr-spec);
   white-space: nowrap;
 }
 
@@ -323,15 +327,8 @@
   white-space: nowrap;
 }
 
-.schedule__price {
-  color: var(--ink);
-  font-family: var(--font-mono);
-  font-size: var(--fs-mono);
-  white-space: nowrap;
-}
-
 .schedule__table .text-link {
-  font-size: var(--fs-mono);
+  font-size: var(--fs-spec);
   white-space: nowrap;
 }
 
@@ -366,7 +363,7 @@
   max-width: 34ch;
   color: var(--ink-2);
   font-family: var(--font-mono);
-  font-size: var(--fs-micro);
+  font-size: var(--fs-spec);
   font-weight: 400;
   line-height: 1.5;
 }
@@ -377,7 +374,7 @@
   min-height: 48px;
   padding: 0.55rem 0;
   border: 0;
-  border-block-end: 1px solid var(--hairline-strong);
+  border-block-end: 1px solid var(--hairline);
   border-radius: 0;
   background: transparent;
   color: var(--ink);
@@ -405,11 +402,11 @@
 
 .field[data-invalid="true"] .input,
 .field[data-invalid="true"] .textarea {
-  border-block-end: 2px solid var(--danger);
+  border-block-end: 2px solid var(--ink);
 }
 
 .field-error {
-  color: var(--danger);
+  color: var(--ink);
   font-size: var(--fs-body);
   font-weight: 500;
   line-height: 1.4;
@@ -425,7 +422,8 @@
 }
 
 .form-status[data-state="error"] {
-  color: var(--danger);
+  color: var(--ink);
+  font-weight: 500;
 }
 
 .form-status[data-state="ready"] {
@@ -464,12 +462,12 @@
   color: var(--ink-2);
   font-family: var(--font-mono);
   font-size: var(--fs-micro);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--tr-caps);
 }
 
 /* ---------- FAQ ---------- */
 .faq {
-  border-block-start: 1px solid var(--hairline-strong);
+  border-block-start: 1px solid var(--hairline);
 }
 
 .faq details {
@@ -484,10 +482,10 @@
   justify-content: space-between;
   gap: var(--s4);
   cursor: pointer;
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: var(--fs-h3);
   font-weight: 500;
-  line-height: var(--lh-snug);
+  line-height: 1.2;
   letter-spacing: -0.025em;
   list-style: none;
 }
@@ -534,8 +532,7 @@
 .site-footer {
   position: relative;
   padding-block: var(--s6) var(--s4);
-  border-block-start: 1px solid var(--hairline-strong);
-  background: var(--stage);
+  background: var(--paper);
 }
 
 .footer__row {
@@ -564,7 +561,7 @@
   align-items: center;
   color: var(--ink-2);
   font-size: var(--fs-body);
-  text-decoration-color: var(--hairline-strong);
+  text-decoration-color: var(--hairline);
 }
 
 .footer__links a:hover {
@@ -584,7 +581,7 @@
   color: var(--ink-2);
   font-family: var(--font-mono);
   font-size: var(--fs-micro);
-  letter-spacing: 0.03em;
+  letter-spacing: var(--tr-spec);
 }
 
 .credits summary {

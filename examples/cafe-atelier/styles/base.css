@@ -12,7 +12,6 @@
 
 html {
   -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
   scroll-padding-top: calc(var(--header-h) + var(--space-4));
 }
 
@@ -22,27 +21,20 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-sans);
-  font-size: var(--text-base);
+  font-size: var(--text-body);
   line-height: var(--leading-body);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
 img,
-svg,
-video,
-canvas {
+svg {
   display: block;
   max-width: 100%;
 }
 
-img,
-video {
+img {
   height: auto;
-}
-
-svg {
-  flex: none;
 }
 
 button,
@@ -51,6 +43,7 @@ select,
 textarea {
   font: inherit;
   color: inherit;
+  border-radius: 0;
 }
 
 button {
@@ -61,12 +54,12 @@ button {
 
 a {
   color: inherit;
-  text-decoration-thickness: 0.08em;
-  text-underline-offset: 0.2em;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
 }
 
 a:hover {
-  text-decoration-color: var(--clay);
+  border-bottom-color: var(--clay);
 }
 
 p,
@@ -85,41 +78,41 @@ ol {
 }
 
 h1,
-h2,
-h3,
-h4 {
+h2 {
   font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: var(--tracking-tight);
+  font-weight: 500;
   text-wrap: balance;
 }
 
 h1 {
   font-size: var(--text-h1);
-  line-height: var(--leading-display);
+  line-height: var(--leading-h1);
+  letter-spacing: var(--tracking-h1);
 }
 
 h2 {
   font-size: var(--text-h2);
-  line-height: var(--leading-title);
+  line-height: var(--leading-h2);
+  letter-spacing: var(--tracking-h2);
 }
 
 p {
+  max-width: var(--measure);
   text-wrap: pretty;
 }
 
 strong,
 b {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 ::selection {
-  background: var(--clay);
+  background: var(--ink);
   color: var(--paper);
 }
 
 :focus-visible {
-  outline: 2px solid var(--focus);
+  outline: 1px solid var(--clay);
   outline-offset: 3px;
 }
 
@@ -131,7 +124,23 @@ b {
   display: none !important;
 }
 
-/* The only element off-screen before it receives focus. */
+/* Shared micro voice: uppercase, tracked, secondary or clay. */
+.micro,
+.eyebrow,
+.field__label,
+.contact-detail__label,
+.footer-heading {
+  font-size: var(--text-micro);
+  line-height: 1.4;
+  letter-spacing: var(--tracking-micro);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.eyebrow {
+  color: var(--clay);
+}
+
 .skip-link {
   position: fixed;
   top: var(--space-3);
@@ -143,14 +152,15 @@ b {
   align-items: center;
   background: var(--ink);
   color: var(--paper);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
   transform: translateY(-200%);
 }
 
 .skip-link:focus-visible {
   transform: translateY(0);
+  color: var(--paper);
+  border-bottom-color: transparent;
 }
 
 .visually-hidden {

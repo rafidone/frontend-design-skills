@@ -1,4 +1,4 @@
-/* Motion: one short entrance; reduced motion is the finished frame. */
+/* Motion: one short credit entrance. Reduced motion is the finished frame. */
 @keyframes fdm-credit {
   from {
     opacity: 0;
@@ -17,16 +17,8 @@
   }
 
   html.fdm-motion [data-enter].is-entering {
-    animation: fdm-credit var(--dur-slow) var(--ease-out) both;
+    animation: fdm-credit var(--dur-enter) var(--ease) both;
     animation-delay: var(--enter-delay, 0ms);
-  }
-
-  .link-arrow .arrow {
-    transition: transform var(--dur-base) var(--ease-out);
-  }
-
-  .link-arrow:hover .arrow {
-    transform: translateX(3px);
   }
 }
 
@@ -39,12 +31,5 @@
     opacity: 1 !important;
     transform: none !important;
     animation: none !important;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition: none !important;
   }
 }

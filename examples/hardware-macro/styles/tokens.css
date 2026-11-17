@@ -1,37 +1,32 @@
-/* Product stage: one neutral canvas, one ink, one hairline. A single copper
-   mark is allowed in the hero kicker and nowhere else. */
+/* Product monograph: one studio canvas, one ink, one hairline, one 1px tick.
+   No surfaces beyond paper, no radii, no shadows, no gradients. */
 :root {
   color-scheme: light;
 
-  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Archivo", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
   /* Surfaces */
-  --canvas: #f5f5f3;
-  --stage: #fbfbf9;
+  --canvas: #f7f7f4;
+  --paper: #ecece8;
   --ink: #17191a;
-  --ink-2: #6b6f70;
-  --hairline: #d8d8d4;
-  --hairline-strong: #b8b9b5;
-  --grid-line: rgb(23 25 26 / 0.055);
-  --tick: #8a5a3c;
-  --danger: #8a3326;
-  --success: #2c5e45;
+  --ink-2: #5f6465;
+  --hairline: #cfcfc9;
+  --tick: #9a6a3a;
   --focus: #17191a;
 
   /* Type scale */
   --fs-body: 1.0625rem;
+  --fs-h1: clamp(5.25rem, 6.4vw, 6rem);
+  --fs-h2: clamp(1.75rem, 1.1rem + 1.9vw, 2.75rem);
+  --fs-h3: 1.25rem;
+  --fs-spec: 0.8125rem;
   --fs-micro: 0.6875rem;
-  --fs-mono: 0.75rem;
-  --fs-h3: clamp(1.25rem, 1.1rem + 0.45vw, 1.5rem);
-  --fs-h2: clamp(2rem, 1.5rem + 1.6vw, 3rem);
-  --fs-h1: clamp(4.5rem, 5.6vw, 5.375rem);
-  --lh-tight: 0.98;
-  --lh-snug: 1.22;
-  --lh-body: 1.6;
+  --lh-display: 1.02;
+  --lh-body: 1.65;
   --tr-tight: -0.04em;
   --tr-caps: 0.14em;
+  --tr-spec: 0.04em;
 
   /* Rhythm */
   --s1: 0.25rem;
@@ -45,13 +40,13 @@
   /* Frame */
   --container: 1320px;
   --gutter: clamp(1.125rem, 4vw, 3.5rem);
-  --gap: clamp(1.5rem, 2.4vw, 2.25rem);
+  --gap: clamp(1.5rem, 2.2vw, 2.25rem);
   --header-h: 4.25rem;
-  --section-pad: clamp(2rem, 3.2vw, 3.25rem);
+  --section-pad: clamp(2rem, 3.4vw, 3.5rem);
 
-  /* Motion: one short entrance and one small arrow shift. */
+  /* Motion: one short entrance and a small arrow shift. */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --dur: 180ms;
-  --dur-enter: 420ms;
+  --dur: 160ms;
+  --dur-enter: 360ms;
   --enter-y: 10px;
 }

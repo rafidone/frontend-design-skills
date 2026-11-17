@@ -1,5 +1,5 @@
-/* Layout — a full-height workspace, one centred measure below it, and
-   sections cut to the same viewport rhythm on desktop. */
+/* Layout — the hero owns the first screen; each section owns the next.
+   One gutter, one centred measure, and a 3/6/3 console inside the hero. */
 
 html,
 body {
@@ -16,37 +16,67 @@ body {
   margin-inline: auto;
 }
 
+/* ---------- Hero: a type band above a full command frame ---------- */
 .hero {
   position: relative;
   display: flex;
   min-height: 100svh;
+  padding-block: calc(var(--header-h) + var(--space-5)) var(--space-6);
   flex-direction: column;
-  padding-block: calc(var(--header-h) + var(--space-3)) var(--space-5);
   isolation: isolate;
 }
 
-.hero > .wrap {
+.hero__inner {
   position: relative;
   z-index: 1;
-  flex: 1;
-}
-
-.workspace {
   display: grid;
-  grid-template-columns: var(--rail-w) minmax(0, 1fr);
-  gap: clamp(1rem, 2vw, 2rem);
-  align-items: stretch;
+  flex: 1;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: clamp(var(--space-5), 3.2vw, var(--space-7));
 }
 
-.workspace__main {
+.hero__band {
+  display: grid;
+  max-width: 68ch;
+  align-content: start;
+  justify-items: start;
+  gap: var(--space-4);
+}
+
+/* 3 / 6 / 3: workspace rail, issue board, selected-issue inspector. */
+.console {
   display: grid;
   min-width: 0;
-  align-content: center;
+  min-height: clamp(24rem, 52vh, 30rem);
+  grid-template-columns: minmax(0, 3fr) minmax(0, 6fr) minmax(0, 3fr);
+  border: var(--rule-strong);
+  background: var(--panel);
 }
 
+.console__rail,
+.console__inspector {
+  min-width: 0;
+  min-height: 0;
+}
+
+.console__rail {
+  border-inline-end: var(--rule-strong);
+}
+
+.console__inspector {
+  border-inline-start: var(--rule-strong);
+}
+
+.console__board {
+  display: flex;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
+}
+
+/* ---------- Sections ---------- */
 .section {
-  --section-inset: var(--section-pad);
-  padding-block: var(--section-inset);
+  padding-block: var(--section-pad);
   border-block-start: var(--rule);
   background: var(--bg);
 }
@@ -56,10 +86,39 @@ body {
   margin-inline: auto;
 }
 
+.method,
+.proof,
+.contact {
+  display: grid;
+  gap: clamp(var(--space-6), 4vw, var(--space-8));
+  align-items: center;
+}
+
+.method {
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+}
+
+.proof {
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+}
+
+.contact {
+  grid-template-columns: minmax(0, 4fr) minmax(0, 6fr);
+  align-items: start;
+}
+
+.price-head {
+  display: grid;
+  margin-block-end: var(--space-6);
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: var(--space-6);
+  align-items: end;
+}
+
 .rule {
   width: 100%;
   border: 0;
-  border-top: var(--rule);
+  border-block-start: var(--rule);
 }
 
 .flow > * + * {
@@ -74,21 +133,42 @@ body {
   }
 }
 
+/* ---------- One column at 820 and below ---------- */
+@media (max-width: 960px) {
+  .method,
+  .proof,
+  .contact,
+  .price-head {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-6);
+  }
+}
+
 @media (max-width: 820px) {
   .hero {
     padding-block: calc(var(--header-h) + var(--space-4)) var(--space-5);
   }
 
-  .workspace {
-    grid-template-columns: 1fr;
-    gap: 0;
+  .hero__inner {
+    gap: var(--space-6);
   }
 
-  .app-rail {
-    display: none;
+  .console {
+    min-height: 0;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .console__rail,
+  .console__inspector {
+    border: 0;
+    border-block-end: var(--rule-strong);
+  }
+
+  .console__inspector {
+    border-block-end: 0;
   }
 
   .section {
-    --section-inset: clamp(2.25rem, 7vw, 3rem);
+    --section-pad: clamp(2.25rem, 7vw, 3rem);
   }
 }

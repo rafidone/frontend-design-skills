@@ -248,62 +248,62 @@ from the live build.
   <tbody>
     <tr>
       <td width="620" valign="top">
-        <a href="examples/saas-product/"><img src="docs/previews/saas-product/first-screen-1440.png" width="620" alt="Northline zinc product workspace with an app rail, command bar, dense issue-tracker list, selected-issue inspector and measured metrics on a near-black field" /></a>
+        <a href="examples/saas-product/"><img src="docs/previews/saas-product/first-screen-1440.png" width="620" alt="Northline release control surface with a narrow headline above a three-column command grid: workspace rail, live issue board and selected-issue inspector on a near-black field" /></a>
       </td>
       <td valign="top">
         <a href="examples/saas-product/"><strong>saas-product</strong></a><br />
-        <em>Software · zinc-geist / geist-mono</em><br /><br />
-        Linear/Vercel-grade product surface: a 36/64 hero split, app rail, `⌘K` command bar, issue rows with status, assignee and ID columns, and a right inspector with activity and metrics. Geist-tight tracking, hairline borders, no glass, glow or cards.
+        <em>Software · geist / geist-mono</em><br /><br />
+        A Linear/Vercel-grade operating console: the h1 sits in a narrow band above a full-width masthead and a 3/6/3 grid — workspace rail, live issue board, and an inspector with a decision trail and two measured metrics. Brightness and density carry emphasis, with no chromatic accent.
       </td>
     </tr>
     <tr>
       <td width="620" valign="top">
-        <a href="examples/devtool-diff/"><img src="docs/previews/devtool-diff/first-screen-1440.png" width="620" alt="Kestrel review session with file tabs, changed-file explorer, syntax-highlighted unified diff, review-thread inspector, command palette and terminal drawer" /></a>
+        <a href="examples/devtool-diff/"><img src="docs/previews/devtool-diff/first-screen-1440.png" width="620" alt="Kestrel patch review room with file tabs, a changed-file tree, a line-numbered unified diff with muted token colors, a two-comment review inspector and a bottom status bar" /></a>
       </td>
       <td valign="top">
         <a href="examples/devtool-diff/"><strong>devtool-diff</strong></a><br />
-        <em>Developer tool · zinc-geist / geist-mono</em><br /><br />
-        A genuine review session: branch breadcrumb, changed-file tree, line-numbered diff with muted token colors, gutter glyphs, a two-comment reviewer rail, square `⌘K` palette and a terminal drawer. Immaculate mono alignment, zero neon.
+        <em>Developer tool · geist / ibm-plex-mono</em><br /><br />
+        A real pull request, not a marketing editor: a tab bar, 2/12 changed-file tree, 7/12 unified diff with muted sage, sand and steel tokens, a 3/12 review-thread rail, and a full-width status bar. The command palette lives in method, never the hero.
       </td>
     </tr>
     <tr>
       <td width="620" valign="top">
-        <a href="examples/gaming-ironwood/"><img src="docs/previews/gaming-ironwood/first-screen-1440.png" width="620" alt="Ironwood asymmetric key-art stage with a hard-cropped forest photograph, solid amber scrim, oversized Anton title, off-axis press badge and four-season index" /></a>
+        <a href="examples/gaming-ironwood/"><img src="docs/previews/gaming-ironwood/first-screen-1440.png" width="620" alt="Ironwood projected title frame with a hard-clipped forest photograph, an oversized Anton title cropped at the lower-left edge on a solid scrim, a rotated amber press stamp and a vertical season index" /></a>
       </td>
       <td valign="top">
         <a href="examples/gaming-ironwood/"><strong>gaming-ironwood</strong></a><br />
-        <em>Gaming · forest-amber / anton-archivo</em><br /><br />
-        Cinematic studio framing: a 68/32 key-art stage, solid scrim panel, 101px Anton lockup overhanging the image, one off-axis rectangular press stamp and a hairline season index. One voltage, no glow or poster cards.
+        <em>Gaming · anton-archivo / ibm-plex-mono</em><br /><br />
+        A cinematic title sequence: the forest key art is clipped to an angular frame, an Anton title is cropped by the viewport on a solid black scrim, one rotated 1px amber press stamp sits upper-right, and a four-season index runs down the right edge. One voltage, no glow or poster cards.
       </td>
     </tr>
     <tr>
       <td width="620" valign="top">
-        <a href="examples/hardware-macro/"><img src="docs/previews/hardware-macro/first-screen-1440.png" width="620" alt="Lattice Apple-style product stage with a hard-cropped circuit photograph, micro-spec leader lines, a single plinth baseline and generous neutral whitespace" /></a>
+        <a href="examples/hardware-macro/"><img src="docs/previews/hardware-macro/first-screen-1440.png" width="620" alt="Lattice product monograph with a four-column type field beside a tall hard-cropped circuit photograph, a four-row ruled specification strip and numbered leader-line callouts" /></a>
       </td>
       <td valign="top">
         <a href="examples/hardware-macro/"><strong>hardware-macro</strong></a><br />
-        <em>Hardware · neutral-stage / archivo-plex</em><br /><br />
-        Apple/teenage engineering restraint: a neutral studio field, hard-cropped macro object on a 1px plinth, four tabular micro-spec callouts, two vertical rules and an 80px Archivo headline. No shadows, cards or coordinate rails.
+        <em>Hardware · archivo / ibm-plex-mono</em><br /><br />
+        Apple restraint crossed with a Swiss instrument catalogue: a 4/8 monograph, a tall hard-cropped macro photograph inside a 1px rule, a four-row spec strip directly beneath it, and numbered leader-line callouts. No plinth, shadow, cards or coordinate rails.
       </td>
     </tr>
     <tr>
       <td width="620" valign="top">
-        <a href="examples/cafe-atelier/"><img src="docs/previews/cafe-atelier/first-screen-1440.png" width="620" alt="Atelier Nine quiet editorial spread with a wide cafe photograph, 99px Playfair headline, metadata rail, clay reservation link and a single vertical hairline" /></a>
+        <a href="examples/cafe-atelier/"><img src="docs/previews/cafe-atelier/first-screen-1440.png" width="620" alt="Atelier Nine house monograph with a vertical metadata rail, an oversized Playfair headline with a clay drop cap, a tall portrait photograph and a thin landscape band lower in the hero" /></a>
       </td>
       <td valign="top">
         <a href="examples/cafe-atelier/"><strong>cafe-atelier</strong></a><br />
-        <em>Hospitality · paper-clay / playfair-karla</em><br /><br />
-        Michelin-grade restraint: a warm paper spread, oversized Playfair headline, a thin metadata rail, high reservation link and a wide hard-cropped photograph. Menu as a typeset page, hours as a ledger, booking as a letter.
+        <em>Hospitality · playfair-display / karla</em><br /><br />
+        One coffee house's own house style: a 2/6/4 masthead with a vertical metadata rail, an oversized Playfair headline with a real clay drop cap, a tall portrait, and a thin landscape band lower in the hero. The menu is a two-page booklet; the tasting ledger and correspondence are ruled.
       </td>
     </tr>
     <tr>
       <td width="620" valign="top">
-        <a href="examples/service-clinic/"><img src="docs/previews/service-clinic/first-screen-1440.png" width="620" alt="Linden Clinic annual-report hero with a near-black masthead strip, 102px Newsreader headline, ruled practice index and a hard-edged clinic photograph" /></a>
+        <a href="examples/service-clinic/"><img src="docs/previews/service-clinic/first-screen-1440.png" width="620" alt="Linden Clinic practice register with a 1px letterhead rule, a large Newsreader headline on paper, a hard-framed waiting-room photograph and a mono caption strip" /></a>
       </td>
       <td valign="top">
         <a href="examples/service-clinic/"><strong>service-clinic</strong></a><br />
-        <em>Professional service · ivory-ink / newsreader-dm</em><br /><br />
-        Executive authority: a near-black masthead strip, asymmetric 12-column hero, 102px Newsreader promise, ruled appointment schedule, practice index and hard-edged photograph. Calm, immaculate, no decoration.
+        <em>Professional service · newsreader-dm / ibm-plex-mono</em><br /><br />
+        A practice's official register: a 1px letterhead rule replaces the dark band, and a 6/empty/5 hero sets a 96–112px Newsreader headline on paper beside a hard-framed photograph with a mono caption. Ruled appointment schedule, practice index and fee schedule follow. No dark masthead, no cards.
       </td>
     </tr>
   </tbody>

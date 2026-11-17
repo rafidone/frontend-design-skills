@@ -17,11 +17,11 @@ html {
 body {
   min-width: 320px;
   min-height: 100vh;
-  background: var(--bg);
+  background: var(--field);
   color: var(--ink);
   font-family: var(--font-sans);
-  font-size: var(--text-base);
-  line-height: var(--leading-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -78,27 +78,28 @@ h3 {
 
 h1 {
   font-family: var(--font-display);
-  font-size: var(--fs-h1);
+  font-size: var(--fs-display);
   font-weight: 400;
-  letter-spacing: var(--tracking-display);
-  line-height: var(--leading-display);
+  letter-spacing: var(--tr-display);
+  line-height: var(--lh-display);
   text-transform: uppercase;
 }
 
 h2 {
-  font-family: var(--font-sans);
-  font-size: var(--fs-h2);
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  line-height: 1.04;
+  font-family: var(--font-display);
+  font-size: var(--fs-section);
+  font-weight: 400;
+  letter-spacing: var(--tr-display);
+  line-height: var(--lh-section);
+  text-transform: uppercase;
 }
 
 h3 {
   font-family: var(--font-sans);
-  font-size: var(--fs-h3);
+  font-size: var(--fs-subhead);
   font-weight: 600;
   letter-spacing: -0.01em;
-  line-height: var(--leading-tight);
+  line-height: 1.2;
 }
 
 p {
@@ -112,18 +113,18 @@ b {
 }
 
 small {
-  font-size: var(--text-base);
+  font-size: var(--fs-body);
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--accent-ink);
+  background: var(--ink);
+  color: var(--field);
 }
 
 :focus-visible {
-  outline: 2px solid var(--focus);
+  outline: 1px solid var(--voltage);
   outline-offset: 3px;
-  border-radius: 0;
+  border-radius: var(--radius);
 }
 
 :focus:not(:focus-visible) {
@@ -136,17 +137,18 @@ small {
 
 .skip-link {
   position: fixed;
-  top: var(--space-3);
-  left: var(--space-3);
+  top: var(--s3);
+  left: var(--s3);
   z-index: 1000;
   display: inline-flex;
+  min-width: 44px;
   min-height: 44px;
-  padding: var(--space-2) var(--space-4);
+  padding: var(--s2) var(--s4);
   align-items: center;
-  border: 1px solid var(--accent);
+  border: var(--stamp);
   background: var(--ink);
-  color: var(--bg);
-  font-size: var(--text-base);
+  color: var(--field);
+  font-size: var(--fs-body);
   font-weight: 600;
   text-decoration: none;
   opacity: 0;
@@ -155,7 +157,7 @@ small {
 }
 
 .skip-link:focus-visible {
-  color: var(--bg);
+  color: var(--field);
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);

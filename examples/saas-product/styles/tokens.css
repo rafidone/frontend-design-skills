@@ -1,28 +1,28 @@
-/* Northline — a zinc workspace: one ground, one ink, hairline rules.
+/* Release Control Surface — one neutral system: canvas, panels, hairlines, ink.
    Geist and Geist Mono are requested once in index.html; no local faces here. */
 
 :root {
   color-scheme: dark;
 
-  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Geist", system-ui, sans-serif;
+  --font-display: "Geist", system-ui, sans-serif;
   --font-mono: "Geist Mono", ui-monospace, monospace;
 
-  /* Instrumentation and prose. Small type is confined to [data-fdm-ui]. */
+  /* Instrumentation is small and confined to [data-fdm-ui]. Prose is 16-17px. */
   --text-mono: 0.6875rem;
   --text-meta: 0.75rem;
   --text-sm: 0.9375rem;
   --text-base: 1.0625rem;
-  --step-lede: clamp(1.0625rem, 1rem + 0.28vw, 1.2rem);
-  --step-h3: clamp(1.125rem, 1.02rem + 0.35vw, 1.375rem);
-  --step-h2: clamp(2rem, 1.4rem + 1.9vw, 3.125rem);
-  --step-h1: clamp(2.5rem, 2rem + 2.8vw, 4rem);
+  --step-lede: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --step-h3: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+  --step-h2: clamp(1.75rem, 1.4rem + 1.1vw, 2rem);
+  --step-h1: clamp(3rem, 2rem + 3.2vw, 4.75rem);
 
   --leading-display: 0.98;
-  --leading-heading: 1.04;
-  --leading-body: 1.55;
+  --leading-heading: 1.06;
+  --leading-body: 1.6;
   --tracking-display: -0.045em;
-  --tracking-heading: -0.035em;
+  --tracking-heading: -0.025em;
   --tracking-mono: 0.1em;
 
   --space-1: 0.25rem;
@@ -34,34 +34,30 @@
   --space-7: 3rem;
   --space-8: 4rem;
 
-  /* Ground, panels and ink. */
-  --bg: #09090b;
-  --panel: #0c0c0f;
-  --panel-2: #111113;
+  /* One ground, two panels. Emphasis is brightness and density, never hue. */
+  --bg: #08090a;
+  --panel: #0d0e10;
+  --panel-2: #131417;
   --ink: #fafafa;
-  --ink-dim: #d4d4d8;
-  --muted: #a1a1aa;
+  --ink-2: #a1a1aa;
+  --ink-3: #71717a;
 
   /* Rules are always one pixel and never luminous. */
-  --line: rgba(255, 255, 255, 0.09);
-  --line-strong: #ffffff1a;
+  --line: rgba(255, 255, 255, 0.1);
+  --line-strong: rgba(255, 255, 255, 0.18);
   --rule: 1px solid var(--line);
   --rule-strong: 1px solid var(--line-strong);
 
-  /* White is the only control accent; the two tints are status semantics. */
+  /* White is the only control and focus accent. */
   --accent: #fafafa;
-  --focus: #fafafa;
-  --status-live: #7dd3a8;
-  --status-wait: #e2b979;
-  --status-done: #a1a1aa;
+  --focus: #ffffff;
 
   --radius: 2px;
 
   --container: 1440px;
   --gutter: clamp(1.125rem, 3.2vw, 3rem);
   --header-h: 3.5rem;
-  --rail-w: 3.5rem;
-  --section-pad: clamp(2.5rem, 4vw, 4rem);
+  --section-pad: clamp(2.75rem, 5vw, 5rem);
 
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   --dur-fast: 100ms;

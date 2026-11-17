@@ -1,4 +1,5 @@
-/* Layout — one measured frame, a twelve-column first screen, clean stacking. */
+/* Layout — one measured frame, a twelve-column letterhead first screen,
+   one-column registers on small screens. No fixed chrome, no overlaps. */
 html,
 body {
   max-width: 100%;
@@ -10,7 +11,12 @@ body {
   margin-inline: auto;
 }
 
-/* The hero owns the first screen; the fixed masthead sits above its ground. */
+/* The letterhead sits above the hero; the hero still owns the first screen. */
+.site-header {
+  position: relative;
+  z-index: 2;
+}
+
 .hero {
   position: relative;
   display: flex;
@@ -24,7 +30,7 @@ body {
 
 .hero-frame {
   display: grid;
-  padding-block: calc(var(--header-h) + var(--s6)) var(--s7);
+  padding-block: var(--s6) var(--s7);
   align-content: center;
 }
 
@@ -32,16 +38,17 @@ body {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: var(--grid-gap);
-  align-items: stretch;
+  align-items: start;
   min-width: 0;
 }
 
+/* Six columns of type, one empty gutter column, five columns of photograph. */
 .hero-copy {
-  grid-column: 1 / span 7;
+  grid-column: 1 / span 6;
   min-width: 0;
 }
 
-.practice-index {
+.hero-photo {
   grid-column: 8 / span 5;
   min-width: 0;
 }
@@ -53,29 +60,33 @@ body {
 .section[data-budget="1"] {
   display: grid;
   align-content: center;
-  min-height: calc(100svh - var(--header-h));
 }
 
 .section > .wrap {
   min-width: 0;
 }
 
+/* The correspondence sheet is a full, calm sheet on desktop. */
+.contact-section {
+  min-height: 92svh;
+}
+
 @media (max-width: 820px) {
   .hero-frame {
-    padding-block: calc(var(--header-h) + var(--s5)) var(--s6);
+    padding-block: var(--s5) var(--s6);
   }
 
   .hero-grid {
     grid-template-columns: 1fr;
-    row-gap: var(--s7);
+    row-gap: var(--s6);
   }
 
   .hero-copy,
-  .practice-index {
+  .hero-photo {
     grid-column: 1;
   }
 
-  .section[data-budget] {
+  .contact-section {
     min-height: 0;
   }
 }

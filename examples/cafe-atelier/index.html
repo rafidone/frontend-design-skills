@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Atelier Nine is a neighbourhood cafe and bakery on Rua da Boavista in Lisbon, open early with bread baked on site and a back table kept for slow mornings.">
-  <title>Atelier Nine — Coffee, bread and a table by the window</title>
+  <meta name="description" content="Atelier Nine is one coffee house on a Lisbon corner. Read the house monograph: its method, its tasting ledger, its short menu, and how to write for the back table.">
+  <title>Atelier Nine — A house monograph</title>
   <script defer>document.documentElement.classList.add("has-js");</script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Karla:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/tokens.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/layout.css">
@@ -34,45 +34,46 @@
 
       <ul class="nav-menu" id="primary-menu" data-fdm-nav-menu>
         <li><a class="nav-link" href="#top">Atelier</a></li>
-        <li><a class="nav-link" href="#method">Menu</a></li>
-        <li><a class="nav-link" href="#proof">Story</a></li>
-        <li><a class="nav-link" href="#pricing">Hours</a></li>
-        <li><a class="nav-link" href="#contact">Visit</a></li>
+        <li><a class="nav-link" href="#method">Method</a></li>
+        <li><a class="nav-link" href="#proof">Ledger</a></li>
+        <li><a class="nav-link" href="#pricing">Menu</a></li>
+        <li><a class="nav-link" href="#contact">Write</a></li>
       </ul>
 
-      <a class="header-cta" href="#contact">Book the back table <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="header-cta" href="#contact">Reserve the back table <span class="arrow" aria-hidden="true">→</span></a>
     </div>
   </header>
 
   <main id="main" tabindex="-1">
-    <section class="hero atelier-hero" id="top" data-budget="1" aria-labelledby="hero-title">
-      <div class="wrap hero__inner">
-        <aside class="hero__rail" data-fdm-ui>
-          <p class="rail__issue">No. 09</p>
-          <p class="rail__place">Lisbon · Rua da Boavista</p>
-          <p class="rail__hours">Tuesday—Sunday · 07:00—16:00</p>
+    <section class="hero" id="top" data-budget="1" aria-labelledby="hero-title">
+      <div class="wrap hero__masthead">
+        <aside class="hero__rail" data-fdm-ui data-enter>
+          <p class="rail__item"><span>Est.</span><b>2014</b></p>
+          <p class="rail__item"><span>Roastery</span><b>Rua da Boavista</b></p>
+          <p class="rail__item"><span>Hours</span><b>Tue—Sun · 07:00—16:00</b></p>
+          <p class="rail__item"><span>Issue</span><b>No. 09</b></p>
         </aside>
 
-        <div class="hero__copy" data-enter>
-          <p class="eyebrow" data-fdm-ui>A cafe, bakery and a window seat</p>
+        <div class="hero__center">
+          <p class="eyebrow" data-fdm-ui>A house monograph · Lisbon</p>
           <a class="reserve-link" href="#contact">Reserve the back table <span class="arrow" aria-hidden="true">→</span></a>
-          <h1 class="hero__title" id="hero-title">Stay for<br><em>the second cup.</em></h1>
-          <div class="editor-note" data-fdm-ui>
-            <p class="editor-note__label">Editor's note</p>
-            <p>One table kept unreserved until someone asks for an hour. The first loaf leaves the oven before seven.</p>
-          </div>
+          <h1 class="hero__title" id="hero-title">Before the city wakes, the oven is already lit.</h1>
+          <p class="hero__deck" data-enter>We are one coffee house on a Lisbon corner, keeping the same hours and the same two ovens. This is our record of the work — how it is done, what is in the cup, and when to come by.</p>
         </div>
 
-        <figure class="hero-photo">
+        <figure class="hero__portrait" data-enter>
           <img src="assets/photos/cafe-atelier.webp" srcset="assets/photos/cafe-atelier-480w.webp 480w, assets/photos/cafe-atelier-720w.webp 720w, assets/photos/cafe-atelier.webp 960w" sizes="100vw" width="960" height="720" alt="A quiet cafe table with a cup, a notebook and warm wood seating." data-source="library" data-subject="Cafe table with a coffee cup and notebook in soft daylight." loading="eager">
         </figure>
+      </div>
 
-        <div class="hero__foot" data-fdm-ui>
+      <div class="wrap hero__lower">
+        <div class="hero__band" role="img" aria-label="A quiet cafe table with a coffee cup and notebook in soft daylight." data-source="library" data-subject="Cafe table with a coffee cup and notebook in soft daylight." data-enter></div>
+        <div class="hero__foot" data-fdm-ui data-enter>
           <div class="counter-note">
             <p id="counter-title">At the counter</p>
             <ol>
               <li><span>07:00</span><span>First espresso</span></li>
-              <li><span>14:00</span><span>Last bake of the day</span></li>
+              <li><span>14:00</span><span>Last loaf of the day</span></li>
             </ol>
           </div>
           <span class="page-folio">— 09 —</span>
@@ -80,150 +81,162 @@
       </div>
     </section>
 
-    <section class="section atelier-menu" id="method" data-budget="1" data-fdm-section aria-labelledby="method-title">
+    <section class="section section--method" id="method" data-budget="1" data-fdm-section aria-labelledby="method-title">
       <div class="wrap">
         <div class="section-head">
           <div class="section-head__title">
-            <p class="eyebrow" data-fdm-ui>01 — The menu</p>
-            <h2 id="method-title">A short menu, made properly.</h2>
+            <p class="eyebrow" data-fdm-ui>01 — Method</p>
+            <h2 id="method-title">The work, in four movements.</h2>
           </div>
-          <p class="lede">Three things matter here: the coffee, the bread and the room. We keep the list small so each one gets the attention it needs.</p>
+          <p class="lede">Nothing here is a concept. Bread is mixed at five, the filter is ground to order, and the room is opened by the same person who closes it.</p>
         </div>
 
-        <div class="menu-sheet" role="group" aria-labelledby="menu-sheet-title">
-          <div class="menu-sheet__head" data-fdm-ui>
-            <p class="menu-sheet__masthead">Atelier Nine</p>
-            <p id="menu-sheet-title">Menu · Week 34</p>
-            <span>Summer, Lisbon</span>
-          </div>
-
-          <div class="menu-sheet__body">
-            <div class="menu-course">
-              <p class="menu-course__label" data-fdm-ui>To drink</p>
-              <ol class="menu-list">
-                <li><span>Espresso</span><i class="leader" aria-hidden="true"></i><b>2.20</b></li>
-                <li><span>Flat white</span><i class="leader" aria-hidden="true"></i><b>3.40</b></li>
-                <li><span>Filter of the day</span><i class="leader" aria-hidden="true"></i><b>3.20</b></li>
-                <li><span>Cortado</span><i class="leader" aria-hidden="true"></i><b>2.80</b></li>
-              </ol>
-            </div>
-
-            <div class="menu-course">
-              <p class="menu-course__label" data-fdm-ui>From the bakery</p>
-              <ol class="menu-list">
-                <li><span>Country loaf</span><i class="leader" aria-hidden="true"></i><b>5.50</b></li>
-                <li><span>Rye &amp; caraway</span><i class="leader" aria-hidden="true"></i><b>6.00</b></li>
-                <li><span>Pastel de nata</span><i class="leader" aria-hidden="true"></i><b>2.40</b></li>
-                <li><span>Almond tart</span><i class="leader" aria-hidden="true"></i><b>4.20</b></li>
-              </ol>
-            </div>
-          </div>
-
-          <div class="menu-sheet__foot" data-fdm-ui>
-            <p>Oat milk, no syrups, no size ladder.</p>
-            <p>Ask at the counter for what is still warm.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section atelier-story" id="proof" data-budget="1" data-fdm-section aria-labelledby="proof-title">
-      <div class="wrap story-layout">
-        <div class="story-main">
-          <p class="eyebrow" data-fdm-ui>02 — The room</p>
-          <h2 id="proof-title">A neighbourhood place, not a concept.</h2>
-          <div class="story-copy">
-            <p class="dropcap">Open since 2019, on the same corner, with the same two ovens. The room was built around a window and a bench long enough for four.</p>
-            <p>Nothing here changes with the season except the fruit in the case. The regulars know which stools catch the morning light; visitors find them by mid-morning.</p>
-            <p>We keep the back table unreserved. If you need an hour with a book and a second cup, it is yours for the asking.</p>
-          </div>
-          <blockquote class="pull-quote">“I come for the bread and stay for the quiet. There is nowhere else I can read for an hour without being moved along.”</blockquote>
-          <p class="quote-attribution" data-fdm-ui>Marta Silva — Regular, Príncipe Real</p>
-        </div>
-
-        <aside class="story-aside" data-fdm-ui>
-          <p class="margin-note">The back table is never booked twice. Ask at the counter when you arrive.</p>
-
-          <div class="room-plan" role="group" aria-labelledby="room-title">
-            <div class="room-plan__head">
-              <div>
-                <p>Floor plan</p>
-                <p id="room-title">Ground floor · 24 seats</p>
+        <div class="folio" data-enter>
+          <p class="folio__label" id="ritual-title" data-fdm-ui>The house method · a working record</p>
+          <div class="folio__list">
+            <div class="folio__row">
+              <span class="folio__no" aria-hidden="true">01</span>
+              <div class="folio__body">
+                <p class="folio__title">Mix before dawn</p>
+                <p>Flour, water, salt and time. The country loaf is shaped by hand and proved slowly, because a rushed dough carries the hurry into the morning.</p>
               </div>
-              <span>Scale 1:50</span>
+              <span class="folio__meta" data-fdm-ui>05:00</span>
             </div>
-            <div class="room-plan__canvas">
-              <svg viewBox="0 0 520 300" role="img" aria-label="Floor plan of the cafe showing the counter, window bench, shared table and small tables.">
-                <rect x="18" y="18" width="484" height="264" class="wall"></rect>
-                <path d="M18 74 H150" class="window"></path>
-                <path d="M18 250 H170" class="window"></path>
-                <rect x="196" y="36" width="128" height="34" class="counter"></rect>
-                <rect x="36" y="96" width="96" height="26" class="bench"></rect>
-                <circle cx="264" cy="152" r="30" class="table"></circle>
-                <circle cx="398" cy="126" r="20" class="table"></circle>
-                <circle cx="398" cy="216" r="20" class="table"></circle>
-                <circle cx="140" cy="206" r="20" class="table"></circle>
-              </svg>
-              <span class="plan-label plan-label--window">Window bench</span>
-              <span class="plan-label plan-label--counter">Counter</span>
-              <span class="plan-label plan-label--shared">Shared table</span>
+            <div class="folio__row">
+              <span class="folio__no" aria-hidden="true">02</span>
+              <div class="folio__body">
+                <p class="folio__title">Grind to order</p>
+                <p>Beans are weighed for each cup, never left sitting in a hopper. The filter changes with the roast and with the weather outside the door.</p>
+              </div>
+              <span class="folio__meta" data-fdm-ui>07:00</span>
             </div>
-            <div class="room-plan__foot">
-              <span><i class="plan-key plan-key--window" aria-hidden="true"></i> Window</span>
-              <span><i class="plan-key plan-key--table" aria-hidden="true"></i> Table</span>
-              <span>Back table kept for an hour</span>
+            <div class="folio__row">
+              <span class="folio__no" aria-hidden="true">03</span>
+              <div class="folio__body">
+                <p class="folio__title">Open the room</p>
+                <p>Windows at seven, the shared table wiped down twice, and the back table left unreserved for whoever asks for an hour with a book.</p>
+              </div>
+              <span class="folio__meta" data-fdm-ui>07:00</span>
+            </div>
+            <div class="folio__row">
+              <span class="folio__no" aria-hidden="true">04</span>
+              <div class="folio__body">
+                <p class="folio__title">Keep the record</p>
+                <p>Every lot is noted on the board and in the ledger below. What we serve is what we can name, and what we cannot name we do not sell.</p>
+              </div>
+              <span class="folio__meta" data-fdm-ui>16:00</span>
             </div>
           </div>
-
-          <p class="sketch-note">Drawn from the corner table, not to scale with the pastéis.</p>
-        </aside>
+        </div>
       </div>
     </section>
 
-    <section class="section atelier-hours" id="pricing" data-budget="1" data-fdm-section aria-labelledby="pricing-title">
+    <section class="section section--proof" id="proof" data-budget="1" data-fdm-section aria-labelledby="proof-title">
       <div class="wrap">
         <div class="section-head">
           <div class="section-head__title">
-            <p class="eyebrow" data-fdm-ui>03 — Hours &amp; table</p>
-            <h2 id="pricing-title">Come by when the bread is warm.</h2>
+            <p class="eyebrow" data-fdm-ui>02 — Proof</p>
+            <h2 id="proof-title">What the cup tells us.</h2>
           </div>
-          <p class="lede">Tables are held for two hours. The back table can be booked for a slow morning; everything else is walk-in. Prices in EUR.</p>
+          <p class="lede">A ledger of what is on the bar this week, kept in the open. Origins, roast days and the notes we would want if we were sitting down to read them.</p>
         </div>
 
-        <div class="hours-layout">
-          <div class="hours-sheet" data-fdm-ui>
-            <div class="hours-sheet__head"><span>Day</span><span>Kitchen</span><span>Counter</span></div>
-            <ol>
-              <li><b>Monday</b><span>Closed</span><span>Baking only</span></li>
-              <li><b>Tuesday—Friday</b><span>07:00—16:00</span><span>Until 16:00</span></li>
-              <li class="is-today"><b>Saturday</b><span>07:00—16:00</span><span>Until 16:00</span></li>
-              <li><b>Sunday</b><span>08:00—15:00</span><span>Until 15:00</span></li>
-            </ol>
-            <p class="ledger-note">The ovens rest on Monday. Dough is mixed at five on the other days.</p>
-          </div>
+        <div class="ledger" data-enter>
+          <table>
+            <caption class="micro" id="beans-title" data-fdm-ui>Tasting ledger · week 34 · Lisbon</caption>
+            <thead>
+              <tr>
+                <th scope="col">Lot</th>
+                <th scope="col">Origin</th>
+                <th scope="col">In the cup</th>
+                <th scope="col">Roasted</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">01</th>
+                <td data-label="Origin">Cerrado Verde</td>
+                <td data-label="In the cup">Red apple, cocoa, a clean finish</td>
+                <td data-label="Roasted">Monday</td>
+              </tr>
+              <tr>
+                <th scope="row">02</th>
+                <td data-label="Origin">Serra do Sol</td>
+                <td data-label="In the cup">Brown sugar, hazelnut, round body</td>
+                <td data-label="Roasted">Tuesday</td>
+              </tr>
+              <tr>
+                <th scope="row">03</th>
+                <td data-label="Origin">Vale Escuro</td>
+                <td data-label="In the cup">Blackcurrant, citrus peel, light tea</td>
+                <td data-label="Roasted">Thursday</td>
+              </tr>
+              <tr>
+                <th scope="row">04</th>
+                <td data-label="Origin">Ribeira Alta</td>
+                <td data-label="In the cup">Dried fig, cedar, a long sweet end</td>
+                <td data-label="Roasted">Friday</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-          <aside class="table-note" data-fdm-ui>
-            <p class="table-note__label">01 / The back table</p>
-            <p class="table-note__title">A morning with nowhere to be.</p>
-            <p class="table-note__price">€12 <small>per person</small></p>
-            <p class="table-note__body">Bread and preserves, two eggs, coffee or tea. Held at the window, away from the door.</p>
-            <ul class="ruled-list">
-              <li>Six seats</li>
-              <li>Book by Friday</li>
-              <li>Walk-in otherwise</li>
-            </ul>
-            <a class="action action--strong" href="#contact">Reserve the table <span class="arrow" aria-hidden="true">→</span></a>
-          </aside>
+        <div class="proof__foot">
+          <blockquote class="pull-quote">“I come for the bread and stay for the quiet. There is nowhere else I can read for an hour without being moved along.”</blockquote>
+          <div class="proof__notes" data-fdm-ui>
+            <p class="quote-attribution">Marta Silva — Regular, Príncipe Real</p>
+            <p class="margin-note" id="room-title">The back table is never booked twice. Ask at the counter when you arrive.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section atelier-contact" id="contact" data-budget="1" data-fdm-section aria-labelledby="contact-title">
+    <section class="section section--pricing" id="pricing" data-budget="1" data-fdm-section aria-labelledby="pricing-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-head__title">
+            <p class="eyebrow" data-fdm-ui>03 — The menu</p>
+            <h2 id="pricing-title">A short card, on two pages.</h2>
+          </div>
+          <p class="lede">Prices in euro. Oat milk instead of dairy, no syrups and no size ladder. Ask at the counter for whatever is still warm.</p>
+        </div>
+
+        <div class="booklet" data-enter>
+          <div class="booklet__page">
+            <p class="booklet__masthead" id="menu-sheet-title" data-fdm-ui>Atelier Nine · Menu · Week 34</p>
+            <p class="booklet__title">To drink</p>
+            <ul class="price-list">
+              <li><span>Espresso</span><i class="leader" aria-hidden="true"></i><b>2.20</b></li>
+              <li><span>Flat white</span><i class="leader" aria-hidden="true"></i><b>3.40</b></li>
+              <li><span>Filter of the day</span><i class="leader" aria-hidden="true"></i><b>3.20</b></li>
+              <li><span>Cortado</span><i class="leader" aria-hidden="true"></i><b>2.80</b></li>
+            </ul>
+          </div>
+          <div class="booklet__page">
+            <p class="booklet__masthead" data-fdm-ui>From the bakery</p>
+            <p class="booklet__title">From the oven</p>
+            <ul class="price-list">
+              <li><span>Country loaf</span><i class="leader" aria-hidden="true"></i><b>5.50</b></li>
+              <li><span>Rye &amp; caraway</span><i class="leader" aria-hidden="true"></i><b>6.00</b></li>
+              <li><span>Pastel de nata</span><i class="leader" aria-hidden="true"></i><b>2.40</b></li>
+              <li><span>Almond tart</span><i class="leader" aria-hidden="true"></i><b>4.20</b></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pricing__foot" data-fdm-ui>
+          <p>Tables are held for two hours. The back table is kept for one slow morning and is never booked twice.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--contact" id="contact" data-budget="1" data-fdm-section aria-labelledby="contact-title">
       <div class="wrap contact-layout">
         <div class="contact-lead">
-          <p class="eyebrow" data-fdm-ui>04 — Visit</p>
-          <h2 id="contact-title">Reserve the back table.</h2>
-          <p class="lede">A short note is enough. Tell us the day, the number of people and whether you need the window or the quiet corner.</p>
+          <p class="eyebrow" data-fdm-ui>04 — Write</p>
+          <h2 id="contact-title">Write to the house.</h2>
+          <p class="lede">A short note is enough. Tell us the day, the number of people and whether you would rather have the window or the quiet corner.</p>
+
           <div class="contact-facts" data-fdm-ui>
             <div class="contact-detail">
               <span class="contact-detail__label">Email</span>
@@ -243,10 +256,10 @@
           </div>
         </div>
 
-        <div class="contact-form">
+        <div class="contact-letter">
           <p class="letterhead" data-fdm-ui>Note to Atelier Nine — Rua da Boavista 84</p>
           <form
-            class="form"
+            class="letter"
             action="mailto:hello@atelier-nine.example"
             method="post"
             enctype="text/plain"
@@ -302,24 +315,24 @@
     <div class="wrap">
       <h2 class="visually-hidden" id="footer-title">Atelier Nine site footer</h2>
       <div class="footer-grid">
-        <div class="footer-brand">
+        <div class="footer-brand" data-fdm-ui>
           <a class="brand" href="#top" aria-label="Atelier Nine home">Atelier Nine<span class="brand__dot">.</span></a>
-          <p>A small cafe and bakery on the corner of Rua da Boavista.</p>
+          <p>A small coffee house on the corner of Rua da Boavista.</p>
           <p><a href="mailto:hello@atelier-nine.example">hello@atelier-nine.example</a></p>
         </div>
 
-        <nav aria-label="Footer">
-          <p class="footer-heading" data-fdm-ui>Cafe</p>
+        <nav aria-label="Footer" data-fdm-ui>
+          <p class="footer-heading">The house</p>
           <ul class="footer-links">
-            <li><a href="#method">Menu</a></li>
-            <li><a href="#proof">Story</a></li>
-            <li><a href="#pricing">Hours</a></li>
-            <li><a href="#contact">Visit</a></li>
+            <li><a href="#method">Method</a></li>
+            <li><a href="#proof">Ledger</a></li>
+            <li><a href="#pricing">Menu</a></li>
+            <li><a href="#contact">Write</a></li>
           </ul>
         </nav>
 
-        <div>
-          <p class="footer-heading" data-fdm-ui>Visit</p>
+        <div data-fdm-ui>
+          <p class="footer-heading">Visit</p>
           <ul class="footer-links">
             <li><a href="mailto:hello@atelier-nine.example?subject=Bakery%20notes">Bakery notes</a></li>
             <li><a href="credits.html">Photography credits</a></li>
