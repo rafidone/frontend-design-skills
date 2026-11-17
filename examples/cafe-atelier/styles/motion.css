@@ -1,4 +1,4 @@
-/* Motion: one quiet entrance on the cover, then still pages. */
+/* Motion: one short entrance on the spread, then still pages. */
 @keyframes fdm-enter {
   from {
     opacity: 0;
@@ -21,17 +21,23 @@
     animation-delay: var(--enter-delay, 0ms);
   }
 
-  .action:active {
+  .action:active,
+  .reserve-link:active {
     transform: translateY(1px);
   }
 }
 
 /* The finished state is the reduced-motion state. */
 @media (prefers-reduced-motion: reduce) {
-  html.fdm-motion [data-enter],
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+
   [data-enter] {
     opacity: 1 !important;
     transform: none !important;
-    animation: none !important;
   }
 }

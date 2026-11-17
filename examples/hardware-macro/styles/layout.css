@@ -1,4 +1,4 @@
-/* Layout: one sheet frame, one gutter, and a fixed column grid underneath. */
+/* Layout: one wrap, a twelve-column stage, and one column on narrow screens. */
 html,
 body {
   max-width: 100%;
@@ -10,56 +10,42 @@ body {
   overflow-wrap: break-word;
 }
 
-/* Five hairlines, aligned to the same wrap as every section. The grid spans
-   the sheet rather than the viewport, so it reads as ruling, not chrome. */
-.sheet-grid {
-  position: absolute;
-  z-index: 0;
-  inset-block: 0;
-  left: 50%;
-  width: min(calc(100% - (2 * var(--gutter))), var(--container));
-  transform: translateX(-50%);
-  pointer-events: none;
-}
-
-.sheet-grid span {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: var(--grid-line);
-}
-
-.sheet-grid span:nth-child(1) { left: 0; }
-.sheet-grid span:nth-child(2) { left: 25%; }
-.sheet-grid span:nth-child(3) { left: 50%; }
-.sheet-grid span:nth-child(4) { left: 75%; }
-.sheet-grid span:nth-child(5) { right: 0; }
-
 .wrap {
   width: min(calc(100% - (2 * var(--gutter))), var(--container));
   margin-inline: auto;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: var(--grid-gap);
-}
-
-.stack {
-  display: flex;
-  flex-direction: column;
-  gap: var(--stack-gap, var(--space-4));
-}
-
-/* ---------- First sheet ---------- */
+/* ---------- Hero / product stage ---------- */
 .hero {
   position: relative;
   display: flex;
   min-height: 100svh;
   flex-direction: column;
   isolation: isolate;
+  background: var(--stage);
+}
+
+/* Two measured rules at a third and two thirds. No sheet frame, no folios. */
+.hero__rules {
+  position: absolute;
+  z-index: 0;
+  inset: 0 var(--gutter);
+  pointer-events: none;
+}
+
+.hero__rules span {
+  position: absolute;
+  inset-block: 0;
+  width: 1px;
+  background: var(--grid-line);
+}
+
+.hero__rules span:first-child {
+  left: 33.333%;
+}
+
+.hero__rules span:last-child {
+  left: 66.666%;
 }
 
 .hero__wrap {
@@ -68,32 +54,40 @@ body {
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: space-between;
-  gap: var(--space-5);
-  padding-block: var(--space-5) var(--space-6);
+  justify-content: center;
+  gap: var(--s5);
+  padding-block: var(--s6) var(--s5);
 }
 
 .hero__main {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: var(--grid-gap);
+  gap: var(--gap);
   align-items: center;
 }
 
-.hero__copy {
-  grid-column: 9 / 13;
-  min-width: 0;
-}
-
-.hero__media {
+.stage {
   grid-column: 1 / 8;
   min-width: 0;
 }
 
-/* ---------- Following sheets ---------- */
+.hero__copy {
+  grid-column: 9 / 14;
+  min-width: 0;
+}
+
+.hero__base {
+  display: flex;
+  flex-wrap: wrap;
+  padding-block-start: var(--s2);
+  justify-content: space-between;
+  gap: var(--s2) var(--s4);
+  border-block-start: 1px solid var(--hairline);
+}
+
+/* ---------- Following sections ---------- */
 .section {
   position: relative;
-  z-index: 1;
   padding-block: var(--section-pad);
 }
 
@@ -103,45 +97,58 @@ body {
   min-height: calc(100svh - var(--header-h));
 }
 
-.two-col {
+.section__head {
   display: grid;
-  grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
-  gap: var(--grid-gap);
-  align-items: start;
+  max-width: 62ch;
+  gap: var(--s4);
+  justify-items: start;
 }
 
-.sheet-head {
-  display: grid;
+.section__head--split {
+  max-width: none;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: var(--grid-gap);
   align-items: end;
 }
 
-/* Equal gutters, single columns once the sheet narrows. */
-@media (max-width: 900px) {
-  .hero__main,
-  .two-col,
-  .sheet-head {
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-6);
-  }
-
-  .hero__copy,
-  .hero__media {
-    grid-column: 1 / -1;
-  }
+.method__body,
+.proof__body,
+.schedule,
+.contact__body {
+  display: grid;
+  margin-block-start: var(--s6);
+  gap: var(--gap);
+  align-items: start;
 }
 
+.method__body {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+}
+
+.proof__body {
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+}
+
+.schedule {
+  grid-template-columns: minmax(0, 0.6fr) minmax(0, 1.4fr);
+}
+
+.contact__body {
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+}
+
+/* Narrow-screen span and order are set here; track collapse lives in the
+   editorial layer so it follows every component definition in the cascade. */
 @media (max-width: 820px) {
+  .stage,
+  .hero__copy {
+    grid-column: 1 / -1;
+  }
+
+  .hero__copy {
+    order: -1;
+  }
+
   .section[data-budget] {
     min-height: 0;
-  }
-
-  .hero {
-    min-height: 100svh;
-  }
-
-  .hero__wrap {
-    padding-block-end: var(--space-5);
   }
 }

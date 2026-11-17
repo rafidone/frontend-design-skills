@@ -1,4 +1,4 @@
-/* Ironwood: a dark room, paper ink and one disciplined amber stamp. */
+/* Ironwood / V4 — a near-black screening room, cream paper ink and one aged-amber voltage. */
 :root {
   color-scheme: dark;
 
@@ -10,15 +10,15 @@
   --text-md: 1.0625rem;
   --text-lg: 1.25rem;
 
-  --fs-h1: clamp(5rem, 14vw, 12rem);
-  --fs-h2: clamp(2.375rem, 4.6vw, 4.75rem);
-  --fs-h3: clamp(1.25rem, 1.7vw, 1.75rem);
+  --fs-h1: clamp(4.25rem, 7vw, 7rem);
+  --fs-h2: clamp(2.25rem, 4.2vw, 4rem);
+  --fs-h3: clamp(1.15rem, 1.5vw, 1.5rem);
 
   --leading-display: 0.84;
-  --leading-tight: 1.08;
+  --leading-tight: 1.12;
   --leading-body: 1.6;
-  --tracking-display: -0.035em;
-  --tracking-caps: 0.12em;
+  --tracking-display: 0.012em;
+  --tracking-caps: 0.1em;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -30,26 +30,27 @@
   --space-8: 4rem;
   --space-9: 6rem;
 
-  --bg: #050806;
-  --bg-deep: #020403;
-  --surface: #080d0a;
-  --surface-2: #0c120d;
+  --bg: #07090b;
+  --bg-deep: #040506;
+  --surface: #0c0f12;
+  --surface-2: #11151a;
 
-  --ink: #f2efe6;
-  --ink-soft: #d4d5c8;
-  --muted: #a8aea2;
-  --line: #283028;
-  --line-strong: #4d5749;
+  --ink: #f3efe6;
+  --ink-soft: #cbc7bb;
+  --muted: #8d8d87;
+  --line: #262a2c;
+  --line-strong: #454a4d;
 
   --accent: #d8a94f;
-  --accent-ink: #050806;
+  --accent-ink: #07090b;
   --danger: #d8a94f;
   --focus: #d8a94f;
 
   --border: 1px solid var(--line);
   --border-strong: 1px solid var(--line-strong);
+  --radius: 0;
 
-  --container: 1360px;
+  --container: 1440px;
   --gutter: clamp(1.25rem, 4vw, 4rem);
   --header-h: 4.5rem;
 

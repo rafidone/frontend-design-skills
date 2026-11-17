@@ -3,12 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Kestrel is a local-first code review tool that turns a pull request into a brief: what changed, what it touches and which test proves it.">
-  <title>Kestrel — local review briefs for pull requests</title>
+  <meta name="description" content="Kestrel is a local-first code review session that ranks a pull request by exposed edges and points every change to the test that covers it.">
+  <title>Kestrel — local review sessions for pull requests</title>
   <script>document.documentElement.classList.add("has-js");</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&amp;family=IBM+Plex+Sans:wght@400;500&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/tokens.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/layout.css">
@@ -28,7 +27,7 @@
         <a class="brand" href="#top" aria-label="Kestrel home">
           <span class="brand__mark" aria-hidden="true">K</span>
           <span class="brand__word">KESTREL</span>
-          <span class="brand__suffix" data-fdm-ui>/ review</span>
+          <span class="brand__suffix" data-fdm-ui>/ review session</span>
         </a>
 
         <button
@@ -43,7 +42,7 @@
         </button>
 
         <ul class="nav-menu" id="primary-menu" data-fdm-nav-menu>
-          <li><a class="nav-link" href="#top">Overview</a></li>
+          <li><a class="nav-link" href="#top">Session</a></li>
           <li><a class="nav-link" href="#method">Method</a></li>
           <li><a class="nav-link" href="#proof">Proof</a></li>
           <li><a class="nav-link" href="#pricing">Licence</a></li>
@@ -61,204 +60,229 @@
   <main id="main" tabindex="-1">
     <section class="hero" id="top" data-budget="1" aria-labelledby="hero-title">
       <div class="wrap hero__inner" data-enter-group>
-        <div class="workspace" role="group" aria-labelledby="review-title" data-enter>
-          <div class="workspace__chrome" data-fdm-ui>
-            <span class="chrome__glyph" aria-hidden="true">≡</span>
-            <span class="chrome__title" id="review-title">kestrel / parser · PR #482</span>
-            <span class="chrome__path">~/work/relay</span>
-            <span class="chrome__state">INDEXED LOCALLY</span>
+        <div class="session" role="group" aria-labelledby="review-title" data-enter>
+          <div class="session__topbar">
+            <div class="topbar__identity">
+              <span class="brandmark" aria-hidden="true">K</span>
+              <div class="topbar__titles">
+                <p class="topbar__eyebrow" data-fdm-ui>REVIEW SESSION / 482</p>
+                <h1 id="hero-title" class="topbar__title">Parser guard rejects unlabelled fences</h1>
+              </div>
+            </div>
+            <div class="topbar__meta" data-fdm-ui>
+              <span class="topbar__crumb" id="review-title">relay / src / parser / guard.ts</span>
+              <span class="topbar__branch">⑂ review/482</span>
+              <span class="topbar__state">LOCAL INDEX · 0 BYTES SENT</span>
+            </div>
           </div>
 
-          <div class="workspace__grid">
-            <aside class="rail" aria-label="Review brief and install">
-              <div class="rail__intro">
-                <p class="docket" data-fdm-ui>REVIEW / 482</p>
-                <h1 id="hero-title">Read the change,<br>not the diff.</h1>
-                <p class="lede">Kestrel builds a brief from a pull request: what it changes, which edges it touches and the test that covers each one. The index stays on your machine.</p>
-              </div>
+          <div class="tabbar" data-fdm-ui>
+            <span class="tab tab--active"><span class="tab__icon">TS</span>guard.ts<span class="tab__mod">M</span></span>
+            <span class="tab"><span class="tab__icon">TS</span>flags.ts<span class="tab__mod">M</span></span>
+            <span class="tab"><span class="tab__icon">TS</span>guard.test.ts<span class="tab__mod tab__mod--add">A</span></span>
+            <span class="tabbar__meta">UNIFIED · 3 FILES · 1 RISK</span>
+          </div>
 
-              <div class="install-line" data-fdm-ui>
-                <span class="install-line__prompt" aria-hidden="true">$</span>
-                <code>brew install --cask kestrel</code>
-                <button class="copy-button" type="button" data-fdm-copy="brew install --cask kestrel" aria-label="Copy install command">Copy</button>
+          <div class="review-grid">
+            <aside class="filetree" aria-label="Changed files" data-fdm-ui>
+              <p class="pane-label">EXPLORER / CHANGED</p>
+              <ul class="tree">
+                <li class="tree__dir"><span aria-hidden="true">▾</span> src/</li>
+                <li class="tree__dir tree__dir--nested"><span aria-hidden="true">▾</span> parser/</li>
+                <li class="tree__file tree__file--active"><span class="tree__mark">M</span><span class="tree__name">guard.ts</span><span class="tree__count">+18 −4</span></li>
+                <li class="tree__file"><span class="tree__mark">M</span><span class="tree__name">index.ts</span><span class="tree__count">+2 −1</span></li>
+                <li class="tree__dir tree__dir--nested"><span aria-hidden="true">▾</span> cli/</li>
+                <li class="tree__file"><span class="tree__mark tree__mark--risk">!</span><span class="tree__name">flags.ts</span><span class="tree__count">+7</span></li>
+                <li class="tree__dir"><span aria-hidden="true">▾</span> test/</li>
+                <li class="tree__file"><span class="tree__mark tree__mark--add">A</span><span class="tree__name">guard.test.ts</span><span class="tree__count">+64</span></li>
+              </ul>
+              <div class="tree__legend">
+                <p><span class="legend__mark">M</span> modified</p>
+                <p><span class="legend__mark legend__mark--add">A</span> added</p>
+                <p><span class="legend__mark legend__mark--risk">!</span> exposed edge</p>
               </div>
-
-              <div class="brief" data-fdm-ui>
-                <div class="brief__head">
-                  <span>REVIEW BRIEF</span>
-                  <span>01 / 03</span>
-                </div>
-                <div class="brief__group">
-                  <span class="brief__index">01</span>
-                  <div>
-                    <p class="brief__name">Parser guard</p>
-                    <p class="brief__meta">intent · validation</p>
-                  </div>
-                </div>
-                <div class="brief__group brief__group--risk">
-                  <span class="brief__index">!</span>
-                  <div>
-                    <p class="brief__name">Public API touched</p>
-                    <p class="brief__meta">risk · 1 caller</p>
-                  </div>
-                </div>
-                <div class="brief__group brief__group--test">
-                  <span class="brief__index">✓</span>
-                  <div>
-                    <p class="brief__name">parser_guard.test.ts</p>
-                    <p class="brief__meta">proof · 14 assertions</p>
-                  </div>
-                </div>
-                <div class="brief__verdict">
-                  <span>NEXT STEP</span>
-                  <span>Check the caller in <code>cli/flags.ts</code>.</span>
-                </div>
-              </div>
+              <p class="tree__foot">184 FILES INDEXED · 0.4s</p>
             </aside>
 
-            <div class="editor" data-fdm-ui>
-              <div class="editor__tabs">
-                <span class="editor__tab editor__tab--active">guard.ts</span>
-                <span class="editor__tab">flags.ts</span>
-                <span class="editor__tab editor__tab--add">+</span>
-                <span class="editor__tabs-meta">SPLIT VIEW · UNIFIED OFF</span>
-              </div>
-
-              <div class="editor__file">
+            <div class="diffpane" role="group" aria-label="Unified diff" data-fdm-ui>
+              <div class="diffpane__head">
                 <span>src/parser/guard.ts</span>
-                <span class="editor__stat">+18 <i>−4</i></span>
+                <span class="diffpane__stat">+18 <i>−4</i></span>
+                <span class="diffpane__mode">HUNK 01 / 02</span>
               </div>
 
               <div class="diff">
+                <div class="diff-line diff-line--hunk">
+                  <span class="diff-line__no">··</span><span class="diff-line__sign">§</span>
+                  <span class="diff-line__code">@@ -42,6 +42,14 @@ parse guard</span>
+                </div>
                 <div class="diff-line diff-line--context">
-                  <span class="diff-line__no">42</span>
-                  <span class="diff-line__sign" aria-hidden="true">·</span>
+                  <span class="diff-line__no">42</span><span class="diff-line__sign">·</span>
                   <span class="diff-line__code"><span class="tok-comment">// Reject malformed fences before parsing</span></span>
                 </div>
                 <div class="diff-line diff-line--remove">
-                  <span class="diff-line__no">43</span>
-                  <span class="diff-line__sign" aria-hidden="true">−</span>
-                  <span class="diff-line__code">if (line.startsWith(<span class="tok-string">"```"</span>)) {</span>
+                  <span class="diff-line__no">43</span><span class="diff-line__sign">−</span>
+                  <span class="diff-line__code"><span class="tok-key">if</span> (line.startsWith(<span class="tok-str">"```"</span>)) {</span>
                 </div>
                 <div class="diff-line diff-line--add">
-                  <span class="diff-line__no">43</span>
-                  <span class="diff-line__sign" aria-hidden="true">+</span>
-                  <span class="diff-line__code"><span class="tok-keyword">if</span> (isFence(line) &amp;&amp; !hasLanguage(line)) {</span>
+                  <span class="diff-line__no">43</span><span class="diff-line__sign">+</span>
+                  <span class="diff-line__code"><span class="tok-key">if</span> (isFence(line) &amp;&amp; !hasLanguage(line)) {</span>
                 </div>
                 <div class="diff-line diff-line--add">
-                  <span class="diff-line__no">44</span>
-                  <span class="diff-line__sign" aria-hidden="true">+</span>
-                  <span class="diff-line__code">  <span class="tok-keyword">return</span> reject(<span class="tok-string">"fence.missing-language"</span>);</span>
+                  <span class="diff-line__no">44</span><span class="diff-line__sign">+</span>
+                  <span class="diff-line__code">  <span class="tok-key">return</span> <span class="tok-fn">reject</span>(<span class="tok-str">"fence.missing-language"</span>);</span>
                 </div>
                 <div class="diff-line diff-line--context">
-                  <span class="diff-line__no">45</span>
-                  <span class="diff-line__sign" aria-hidden="true">·</span>
+                  <span class="diff-line__no">45</span><span class="diff-line__sign">·</span>
                   <span class="diff-line__code">  }</span>
                 </div>
                 <div class="diff-line diff-line--add">
-                  <span class="diff-line__no">46</span>
-                  <span class="diff-line__sign" aria-hidden="true">+</span>
-                  <span class="diff-line__code"><span class="tok-keyword">const</span> guard = <span class="tok-keyword">new</span> <span class="tok-api">Guard</span>(<span class="tok-string">"parser"</span>);</span>
+                  <span class="diff-line__no">46</span><span class="diff-line__sign">+</span>
+                  <span class="diff-line__code"><span class="tok-key">const</span> guard = <span class="tok-key">new</span> <span class="tok-type">Guard</span>(<span class="tok-str">"parser"</span>);</span>
                 </div>
                 <div class="diff-line diff-line--context">
-                  <span class="diff-line__no">47</span>
-                  <span class="diff-line__sign" aria-hidden="true">·</span>
-                  <span class="diff-line__code">  <span class="tok-keyword">return</span> guard.run(tokens);</span>
+                  <span class="diff-line__no">47</span><span class="diff-line__sign">·</span>
+                  <span class="diff-line__code">  <span class="tok-key">return</span> guard.<span class="tok-fn">run</span>(tokens, <span class="tok-num">2</span>);</span>
                 </div>
-                <div class="diff-line diff-line--hunk">
-                  <span class="diff-line__no">··</span>
-                  <span class="diff-line__sign" aria-hidden="true">§</span>
-                  <span class="diff-line__code">@@ src/cli/flags.ts · 1 caller @@</span>
-                </div>
-                <div class="diff-line diff-line--add">
-                  <span class="diff-line__no">18</span>
-                  <span class="diff-line__sign" aria-hidden="true">+</span>
-                  <span class="diff-line__code">guard.<span class="tok-api">watch</span>(<span class="tok-string">"--strict"</span>);</span>
+                <div class="diff-line diff-line--context">
+                  <span class="diff-line__no">48</span><span class="diff-line__sign">·</span>
+                  <span class="diff-line__code">}</span>
                 </div>
               </div>
 
-              <div class="diff-note">
-                <span class="diff-note__flag" aria-hidden="true">!</span>
+              <div class="inline-note">
+                <span class="inline-note__flag">!</span>
                 <span>PUBLIC API — one caller outside this file</span>
-                <span class="diff-note__where">cli/flags.ts:18</span>
+                <span class="inline-note__jump">cli/flags.ts:18 ↗</span>
               </div>
 
-              <div class="proof-strip">
-                <span class="proof-strip__mark">[ok]</span>
-                <span>parser_guard.test.ts</span>
-                <span>14 assertions · 0 failed · 0.4s</span>
-                <span class="proof-strip__result">PASS</span>
+              <div class="diffpane__subhead">
+                <span>cli/flags.ts</span><span>CALLER · HUNK 02 / 02</span>
+              </div>
+              <div class="diff diff--mini">
+                <div class="diff-line diff-line--add">
+                  <span class="diff-line__no">18</span><span class="diff-line__sign">+</span>
+                  <span class="diff-line__code">guard.<span class="tok-fn">watch</span>(<span class="tok-str">"--strict"</span>, <span class="tok-num">1</span>);</span>
+                </div>
+                <div class="diff-line diff-line--context">
+                  <span class="diff-line__no">19</span><span class="diff-line__sign">·</span>
+                  <span class="diff-line__code"><span class="tok-comment">// caller now receives the missing-language reason</span></span>
+                </div>
+              </div>
+            </div>
+
+            <aside class="inspector" aria-label="Review thread" data-fdm-ui>
+              <div class="inspector__head">
+                <span>REVIEW THREAD</span><span>2 OPEN</span>
               </div>
 
-              <div class="editor__status">
-                <span>branch review/482</span>
-                <span>utf-8 · lf · typescript</span>
-                <span>0 bytes uploaded</span>
+              <div class="stat">
+                <p class="stat__title">DIFF STAT</p>
+                <div class="stat__row"><span>files</span><span>3</span></div>
+                <div class="stat__row"><span>additions</span><span>+89</span></div>
+                <div class="stat__row"><span>deletions</span><span>−5</span></div>
+                <div class="stat__row"><span>test mapping</span><span>2 / 2</span></div>
+                <div class="stat__bar" aria-hidden="true"><span></span></div>
               </div>
 
-              <div class="command-palette" role="group" aria-label="Command palette preview">
-                <div class="command-palette__input"><span aria-hidden="true">›</span> review guard <span class="keycap">⌘K</span></div>
-                <ul class="command-palette__list">
-                  <li class="is-active"><span class="cmd-glyph">⌗</span><span>Open review brief</span><span class="cmd-key">⌘1</span></li>
-                  <li><span class="cmd-glyph">!</span><span>Jump to risk: public API</span><span class="cmd-key">⌘2</span></li>
-                  <li><span class="cmd-glyph">✓</span><span>Show test proof</span><span class="cmd-key">⌘3</span></li>
-                  <li><span class="cmd-glyph">↳</span><span>Follow caller in flags.ts</span><span class="cmd-key">⌘4</span></li>
-                </ul>
-                <div class="command-palette__foot">↑↓ move · ↵ run · esc close</div>
+              <ol class="comments">
+                <li class="comment">
+                  <div class="comment__meta"><span class="avatar">PR</span><span>Priya Raman</span><time datetime="2026-11-17T09:42">09:42</time></div>
+                  <p>The caller in flags.ts still passes an empty language. Reject it before the parser reads the fence.</p>
+                  <p class="comment__anchor">guard.ts:43</p>
+                </li>
+                <li class="comment comment--reply">
+                  <div class="comment__meta"><span class="avatar">SO</span><span>Sam Okafor</span><time datetime="2026-11-17T10:06">10:06</time></div>
+                  <p>Added the missing-language guard and linked the assertion that covers the caller path.</p>
+                  <p class="comment__anchor">guard.test.ts:28</p>
+                </li>
+              </ol>
+
+              <div class="inspector__footer">
+                <span>DECISION</span>
+                <p>Request changes · 1 thread unresolved</p>
+                <a class="button button--solid button--small" href="#contact">Send the brief <span class="arrow" aria-hidden="true">→</span></a>
               </div>
+            </aside>
+          </div>
+
+          <div class="palette" role="group" aria-label="Kestrel command palette" data-fdm-ui>
+            <div class="palette__field"><span aria-hidden="true">›</span> review guard <span class="keycap">⌘K</span></div>
+            <ul class="palette__rows">
+              <li class="is-active"><span>01</span><span>Jump to risk: public API</span><span>⌘2</span></li>
+              <li><span>02</span><span>Follow caller in flags.ts</span><span>⌘3</span></li>
+              <li><span>03</span><span>Show test proof</span><span>⌘4</span></li>
+              <li><span>04</span><span>Open review brief</span><span>⌘1</span></li>
+            </ul>
+            <div class="palette__foot">↑↓ MOVE · ↵ RUN · ESC CLOSE</div>
+          </div>
+
+          <div class="terminal" data-fdm-ui>
+            <div class="terminal__bar">
+              <span class="terminal__tab terminal__tab--active">TERMINAL</span>
+              <span class="terminal__tab">PROBLEMS <i>1</i></span>
+              <span class="terminal__right">zsh · ~/work/relay</span>
+            </div>
+            <div class="terminal__body">
+              <div class="terminal__command"><span>$</span> kestrel review --pr 482 --rank risk</div>
+              <div class="terminal__out">  indexed 184 files · 3 changed · 1 exposed edge
+  mapped guard.ts → guard.test.ts (14 assertions)
+  [ok] parser_guard.test.ts ............... 0.4s PASS</div>
+              <div class="terminal__result">BRIEF READY · ~/.kestrel/reviews/482.md</div>
+            </div>
+            <div class="terminal__install">
+              <span aria-hidden="true">$</span>
+              <code>brew install --cask kestrel</code>
+              <button class="copy-button" type="button" data-fdm-copy="brew install --cask kestrel" aria-label="Copy install command">Copy</button>
             </div>
           </div>
         </div>
-
-        <dl class="kestrel-meta" data-fdm-ui>
-          <div><dt>RUNTIME</dt><dd>Local index</dd></div>
-          <div><dt>SETUP</dt><dd>One command</dd></div>
-          <div><dt>PARSERS</dt><dd>TS, JS, Py, Go, Rust</dd></div>
-          <div><dt>LICENCE</dt><dd>Free under 10 devs</dd></div>
-        </dl>
       </div>
     </section>
 
     <section class="section method" id="method" data-budget="1" data-fdm-section aria-labelledby="method-title">
       <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow" data-fdm-ui data-index="02">Command walkthrough</p>
+        <div class="section-head walk-head">
+          <p class="eyebrow" data-fdm-ui data-index="01">Command walkthrough</p>
           <h2 id="method-title">The brief arrives before the diff.</h2>
           <p class="lede">Three commands turn a pull request into a reading order. Each one leaves a line you can paste into a terminal.</p>
         </div>
 
-        <ol class="brief-steps">
-          <li class="brief-step" data-fdm-ui>
-            <span class="brief-step__num">01</span>
-            <div class="brief-step__copy">
-              <h3>Index the change by intent.</h3>
-              <p>Kestrel groups files by what they alter, so a guard and its test land in the same entry.</p>
+        <ol class="walk">
+          <li class="walk__step" data-fdm-ui>
+            <p class="walk__num" data-fdm-ui>01</p>
+            <div class="walk__copy-block">
+              <p class="walk__title">Index the change by intent.</p>
+              <p class="walk__copy">Kestrel groups files by what they alter, so a guard and its test land in the same entry.</p>
             </div>
-            <div class="brief-step__cmd" data-fdm-ui>
-              <code>$ kestrel index --pr 482</code>
-              <span>2 groups · 1 risk</span>
-            </div>
-          </li>
-          <li class="brief-step" data-fdm-ui>
-            <span class="brief-step__num">02</span>
-            <div class="brief-step__copy">
-              <h3>Put the exposed edges first.</h3>
-              <p>Migrations, public API changes and missing tests move above formatting noise in the brief.</p>
-            </div>
-            <div class="brief-step__cmd" data-fdm-ui>
-              <code>$ kestrel brief --rank risk</code>
-              <span>1 edge · caller traced</span>
+            <div class="walk__terminal" data-fdm-ui>
+              <div class="walk__terminal-head"><span>~/work/relay</span><span>INDEX</span></div>
+              <pre><span class="tok-comment">$</span> kestrel index --pr 482
+  <span class="tok-type">2 groups</span> · <span class="tok-str">1 risk</span> · <span class="tok-num">0.4s</span></pre>
             </div>
           </li>
-          <li class="brief-step" data-fdm-ui>
-            <span class="brief-step__num">03</span>
-            <div class="brief-step__copy">
-              <h3>Ask which test carries the claim.</h3>
-              <p>Each group points to a test file, or reports the gap plainly. A missing test is never dressed up as coverage.</p>
+          <li class="walk__step" data-fdm-ui>
+            <p class="walk__num" data-fdm-ui>02</p>
+            <div class="walk__copy-block">
+              <p class="walk__title">Put the exposed edges first.</p>
+              <p class="walk__copy">Public APIs, migrations and missing tests move above formatting noise in the brief.</p>
             </div>
-            <div class="brief-step__cmd" data-fdm-ui>
-              <code>$ kestrel proof --group 01</code>
-              <span>14 assertions · 0.4s</span>
+            <div class="walk__terminal" data-fdm-ui>
+              <div class="walk__terminal-head"><span>~/work/relay</span><span>RANK</span></div>
+              <pre><span class="tok-comment">$</span> kestrel brief --rank risk
+  <span class="tok-str">guard.ts:43</span> → <span class="tok-type">cli/flags.ts:18</span></pre>
+            </div>
+          </li>
+          <li class="walk__step" data-fdm-ui>
+            <p class="walk__num" data-fdm-ui>03</p>
+            <div class="walk__copy-block">
+              <p class="walk__title">Ask which test carries the claim.</p>
+              <p class="walk__copy">Each group points to a test file, or reports the gap plainly. A missing test is never dressed up as coverage.</p>
+            </div>
+            <div class="walk__terminal" data-fdm-ui>
+              <div class="walk__terminal-head"><span>~/work/relay</span><span>PROOF</span></div>
+              <pre><span class="tok-comment">$</span> kestrel proof --group 01
+  <span class="tok-fn">parser_guard.test.ts</span> · <span class="tok-num">14/14</span> PASS</pre>
             </div>
           </li>
         </ol>
@@ -268,30 +292,30 @@
     <section class="section proof" id="proof" data-budget="1" data-fdm-section aria-labelledby="proof-title">
       <div class="wrap proof-grid">
         <div class="proof-copy">
-          <p class="eyebrow" data-fdm-ui data-index="03">Terminal receipt</p>
+          <p class="eyebrow" data-fdm-ui data-index="02">Terminal receipt</p>
           <h2 id="proof-title">The numbers print from a terminal.</h2>
           <p class="lede">Run the report on your own index. The transcript below needs no dashboard, account or network call.</p>
-          <figure class="quote">
-            <blockquote>“I stopped sorting files by folder and started reading the brief.”</blockquote>
-            <figcaption data-fdm-ui><strong>Priya Raman</strong> — Staff Engineer, Relay</figcaption>
-          </figure>
+          <div class="proof-facts" data-fdm-ui>
+            <div><span>SOURCE</span><strong>local index · relay</strong></div>
+            <div><span>WINDOW</span><strong>2026-08-01 → today</strong></div>
+            <div><span>OUTPUT</span><strong>plain text · ~/.kestrel</strong></div>
+          </div>
         </div>
 
         <div class="transcript" data-fdm-ui>
           <div class="transcript__bar"><span>kestrel --report quarter</span><span>zsh · local</span></div>
           <pre class="transcript__body">$ kestrel report --since 2026-08-01 --format plain
-  indexing /work/relay .................. 184 files
-  reviews with a brief .................. 318 PRs
-
-  median review time      -41%   ██████████░░░░░
-  changes mapped to test   3.2x  █████████████░░
-  source bytes uploaded       0  ·
-  assertions passing      14/14  ██████████████
+  INDEX   /work/relay             184 files    0.4s
+  REVIEW  briefs written          318 PRs      100%
+  MEDIAN  time to first read      -41%         ██████████
+  MAP     changes to test         3.2x         █████████████
+  NETWORK source bytes sent       0            ·
+  TEST    assertions passing      14/14        PASS
 
   [done] report written to ~/.kestrel/quarter.txt</pre>
-          <div class="transcript__foot"><span>SAMPLE OF FOUR LOCAL INDEXES</span><span>WEEK 01 → 12</span></div>
+          <div class="transcript__foot"><span>COLUMNS: METRIC / VALUE / SIGNAL</span><span>WEEK 01 → 12</span></div>
         </div>
-        <p class="proof-note">Each team's review time is measured against its own baseline before Kestrel was installed.</p>
+        <p class="proof-note">Each figure is read from the local index and measured against that team's own baseline before Kestrel was installed.</p>
       </div>
     </section>
 
@@ -299,7 +323,7 @@
       <div class="wrap">
         <div class="pricing-head">
           <div>
-            <p class="eyebrow" data-fdm-ui data-index="04">Licence table</p>
+            <p class="eyebrow" data-fdm-ui data-index="03">Licence table</p>
             <h2 id="pricing-title">Pay when the team grows.</h2>
           </div>
           <p class="lede">Install on one machine and stay free under ten developers. No seat minimum, no annual contract. Prices in USD, per month.</p>
@@ -325,7 +349,7 @@
               <td><a class="link-arrow" href="#contact">Install Kestrel <span class="arrow" aria-hidden="true">→</span></a></td>
             </tr>
             <tr class="licence-row--featured">
-              <th scope="row"><span class="licence-row__num" data-fdm-ui>02</span> Team <span class="licence-row__flag" data-fdm-ui>MOST CHOSEN</span></th>
+              <th scope="row"><span class="licence-row__num" data-fdm-ui>02</span> Team</th>
               <td data-fdm-ui>2–10</td>
               <td>Review history · risk rules · org install</td>
               <td class="licence-row__price" data-fdm-ui>$12 <small>/ seat</small></td>
@@ -346,9 +370,15 @@
     <section class="section contact" id="contact" data-budget="1" data-fdm-section aria-labelledby="contact-title">
       <div class="wrap contact-layout">
         <div class="contact-lead">
-          <p class="eyebrow" data-fdm-ui data-index="05">Try it</p>
+          <p class="eyebrow" data-fdm-ui data-index="04">Support ticket</p>
           <h2 id="contact-title">Send us the review that hurt.</h2>
           <p class="lede">Install Kestrel, run it on one real pull request and tell us where the brief got it wrong. We read every note.</p>
+
+          <div class="ticket-meta" data-fdm-ui>
+            <div class="ticket-meta__row"><span>QUEUE</span><strong>REVIEW-BRIEF</strong></div>
+            <div class="ticket-meta__row"><span>RESPONSE</span><strong>1 WORKING DAY</strong></div>
+            <div class="ticket-meta__row"><span>ATTACH</span><strong>PR NUMBER OR REPO</strong></div>
+          </div>
 
           <div class="install-steps" data-fdm-ui>
             <p><span>01</span><code>brew install --cask kestrel</code></p>
@@ -366,11 +396,6 @@
               <span class="contact-detail__label" data-fdm-ui>SUPPORT HOURS</span>
               <span>Monday–Friday, 09:00–17:00 GMT</span>
               <span class="hours-status" data-fdm-hours data-fdm-ui data-open-hour="9" data-close-hour="17" data-days="1,2,3,4,5" data-time-zone="Europe/London"><span data-fdm-hours-status>Checking local time…</span></span>
-            </div>
-            <div class="contact-detail">
-              <span class="contact-detail__label" data-fdm-ui>BASED IN</span>
-              <span>Bristol, United Kingdom</span>
-              <small class="muted" data-fdm-ui>Remote-first, with maintainers across Europe.</small>
             </div>
           </div>
         </div>
@@ -398,8 +423,8 @@
               </div>
             </div>
             <div class="field">
-              <label class="field__label" for="project">What are you making? <span class="field__hint">Optional</span></label>
-              <input class="input" id="project" name="project" type="text" placeholder="A pull request, a repo, a rule">
+              <label class="field__label" for="project">Repository or PR <span class="field__hint">Optional</span></label>
+              <input class="input" id="project" name="project" type="text" placeholder="relay #482, or the repo URL">
             </div>
             <div class="field">
               <label class="field__label" for="message">A little context</label>
@@ -466,7 +491,7 @@
         <p>© 2026 Kestrel Tools. Fictional demo content.</p>
         <details class="credits">
           <summary>Credits &amp; notes</summary>
-          <p>Typefaces: Bricolage Grotesque, IBM Plex Sans and IBM Plex Mono, linked here as an example. All other artwork, interface details and copy are original to this starter. No remote imagery is used. This page is a demonstration, not a live service.</p>
+          <p>Typeface: Geist and Geist Mono, linked here as an example. All interface details and copy are original to this starter. No remote imagery is used. This page is a demonstration, not a live service.</p>
         </details>
       </div>
     </div>

@@ -1,4 +1,4 @@
-/* Motion — a short ink-in for the ledger, no drift, no ambient loops. */
+/* Motion — one short entrance for the tracker, quiet hover states, no loops. */
 
 @keyframes fdm-ink-in {
   from { opacity: 0; }
@@ -19,11 +19,11 @@ html.fdm-motion [data-enter].is-entering {
 }
 
 [data-lift] {
-  transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  transition: background-color var(--dur) var(--ease);
 }
 
 [data-lift]:hover {
-  background-color: var(--bg-raised);
+  background-color: var(--panel);
 }
 
 @media (max-width: 820px) {

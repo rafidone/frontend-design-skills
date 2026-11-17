@@ -248,62 +248,62 @@ from the live build.
   <tbody>
     <tr>
       <td width="620" valign="top">
-        <a href="examples/saas-product/"><img src="docs/previews/saas-product/first-screen-1440.png" width="620" alt="Northline brutalist release room with a vertical issue rail, oversized headline columns and a hairline release ledger of metrics, timeline and decisions" /></a>
+        <a href="examples/saas-product/"><img src="docs/previews/saas-product/first-screen-1440.png" width="620" alt="Northline zinc product workspace with an app rail, command bar, dense issue-tracker list, selected-issue inspector and measured metrics on a near-black field" /></a>
       </td>
       <td valign="top">
         <a href="examples/saas-product/"><strong>saas-product</strong></a><br />
-        <em>Software · near-black / schibsted-source</em><br /><br />
-        Brutalist release room: near-black field, tracked mono issue rail, two unequal headline columns and a square release ledger with tabular metrics, hairline timeline, deploy line and decision log. No glass, glow or card grid.
+        <em>Software · zinc-geist / geist-mono</em><br /><br />
+        Linear/Vercel-grade product surface: a 36/64 hero split, app rail, `⌘K` command bar, issue rows with status, assignee and ID columns, and a right inspector with activity and metrics. Geist-tight tracking, hairline borders, no glass, glow or cards.
       </td>
     </tr>
     <tr>
       <td width="620" valign="top">
-        <a href="examples/devtool-diff/"><img src="docs/previews/devtool-diff/first-screen-1440.png" width="620" alt="Kestrel terminal-native IDE workspace with a zinc code split view, line-numbered diff, command palette overlay and install rail" /></a>
+        <a href="examples/devtool-diff/"><img src="docs/previews/devtool-diff/first-screen-1440.png" width="620" alt="Kestrel review session with file tabs, changed-file explorer, syntax-highlighted unified diff, review-thread inspector, command palette and terminal drawer" /></a>
       </td>
       <td valign="top">
         <a href="examples/devtool-diff/"><strong>devtool-diff</strong></a><br />
-        <em>Developer tool · zinc-slate / bricolage-plex</em><br /><br />
-        Terminal-native IDE: monochrome zinc and slate, a dominant split diff view with line numbers and risk marks, a sharp ⌘K palette overlay and a narrow install rail. No neon accent or rounded panels.
+        <em>Developer tool · zinc-geist / geist-mono</em><br /><br />
+        A genuine review session: branch breadcrumb, changed-file tree, line-numbered diff with muted token colors, gutter glyphs, a two-comment reviewer rail, square `⌘K` palette and a terminal drawer. Immaculate mono alignment, zero neon.
       </td>
     </tr>
     <tr>
       <td width="620" valign="top">
-        <a href="examples/gaming-ironwood/"><img src="docs/previews/gaming-ironwood/first-screen-1440.png" width="620" alt="Ironwood dark-room key art with a widescreen forest strip, oversized cropped title, rotated mission stamp and a minimal season rail" /></a>
+        <a href="examples/gaming-ironwood/"><img src="docs/previews/gaming-ironwood/first-screen-1440.png" width="620" alt="Ironwood asymmetric key-art stage with a hard-cropped forest photograph, solid amber scrim, oversized Anton title, off-axis press badge and four-season index" /></a>
       </td>
       <td valign="top">
         <a href="examples/gaming-ironwood/"><strong>gaming-ironwood</strong></a><br />
         <em>Gaming · forest-amber / anton-archivo</em><br /><br />
-        Dark-room key art: a letterbox forest strip, oversized cropped Anton title, raw rotated mission stamp, projection marginalia and a four-season typographic rail. No glow or poster-card template.
+        Cinematic studio framing: a 68/32 key-art stage, solid scrim panel, 101px Anton lockup overhanging the image, one off-axis rectangular press stamp and a hairline season index. One voltage, no glow or poster cards.
       </td>
     </tr>
     <tr>
       <td width="620" valign="top">
-        <a href="examples/hardware-macro/"><img src="docs/previews/hardware-macro/first-screen-1440.png" width="620" alt="Lattice specification sheet with a five-line grid, coordinate marker A1, a hard-cropped circuit photograph and a tabular spec matrix on neutral paper" /></a>
+        <a href="examples/hardware-macro/"><img src="docs/previews/hardware-macro/first-screen-1440.png" width="620" alt="Lattice Apple-style product stage with a hard-cropped circuit photograph, micro-spec leader lines, a single plinth baseline and generous neutral whitespace" /></a>
       </td>
       <td valign="top">
         <a href="examples/hardware-macro/"><strong>hardware-macro</strong></a><br />
-        <em>Hardware · neutral-grid / archivo-plex</em><br /><br />
-        Architectural spec sheet: a measured five-line grid, A1–E5 coordinate rails, hard-cropped macro photography, dimensioned assembly drawing and a formal tabular schedule. Neutral paper and one 1px copper tick.
+        <em>Hardware · neutral-stage / archivo-plex</em><br /><br />
+        Apple/teenage engineering restraint: a neutral studio field, hard-cropped macro object on a 1px plinth, four tabular micro-spec callouts, two vertical rules and an 80px Archivo headline. No shadows, cards or coordinate rails.
       </td>
     </tr>
     <tr>
       <td width="620" valign="top">
-        <a href="examples/cafe-atelier/"><img src="docs/previews/cafe-atelier/first-screen-1440.png" width="620" alt="Atelier Nine magazine cover with a tall photograph column, oversized serif headline crossing into the image, a running head and editor's notes" /></a>
+        <a href="examples/cafe-atelier/"><img src="docs/previews/cafe-atelier/first-screen-1440.png" width="620" alt="Atelier Nine quiet editorial spread with a wide cafe photograph, 99px Playfair headline, metadata rail, clay reservation link and a single vertical hairline" /></a>
       </td>
       <td valign="top">
         <a href="examples/cafe-atelier/"><strong>cafe-atelier</strong></a><br />
-        <em>Hospitality · magazine-paper / cormorant-karla</em><br /><br />
-        Magazine feature: tall photograph column, Cormorant headline crossing the image, vertical rule, editor's notes, page folio and a two-page menu spread with dotted leaders. Rules and whitespace, not cards.
+        <em>Hospitality · paper-clay / playfair-karla</em><br /><br />
+        Michelin-grade restraint: a warm paper spread, oversized Playfair headline, a thin metadata rail, high reservation link and a wide hard-cropped photograph. Menu as a typeset page, hours as a ledger, booking as a letter.
       </td>
     </tr>
     <tr>
       <td width="620" valign="top">
-        <a href="examples/service-clinic/"><img src="docs/previews/service-clinic/first-screen-1440.png" width="620" alt="Linden Clinic masthead dossier with a registered practice line, oversized Newsreader promise, ruled appointment schedule and hard-framed clinic photograph" /></a>
+        <a href="examples/service-clinic/"><img src="docs/previews/service-clinic/first-screen-1440.png" width="620" alt="Linden Clinic annual-report hero with a near-black masthead strip, 102px Newsreader headline, ruled practice index and a hard-edged clinic photograph" /></a>
       </td>
       <td valign="top">
         <a href="examples/service-clinic/"><strong>service-clinic</strong></a><br />
         <em>Professional service · ivory-ink / newsreader-dm</em><br /><br />
-        Registered clinical dossier: ivory and deep ink, a 108px Newsreader promise, full-width registration rule, ruled appointment schedule and hard-framed photograph. Authority through hierarchy and hairlines.
+        Executive authority: a near-black masthead strip, asymmetric 12-column hero, 102px Newsreader promise, ruled appointment schedule, practice index and hard-edged photograph. Calm, immaculate, no decoration.
       </td>
     </tr>
   </tbody>
@@ -320,8 +320,10 @@ npm run inspect -- examples/cafe-atelier --full --niche hospitality
 npm run verify -- examples/cafe-atelier --full --kind hospitality
 ```
 
-The expected warning is the shared six-stylesheet first paint (`PERF-03`). Any other
-finding is called out in the run report and should be reviewed before shipping.
+The recurring warning is the shared six-stylesheet first paint (`PERF-03`). Gaming also
+records the known `NICHE-01` notice because the checker looks for canvas rather than the
+shipped photographic key art, and clinic may show responsive asset/prose notices. Any
+`FAIL` is called out in the run report and should be reviewed before shipping.
 
 ---
 

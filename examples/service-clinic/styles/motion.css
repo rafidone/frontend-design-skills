@@ -1,6 +1,6 @@
 /* Motion — one short entrance, quiet hover states, and a complete stop for
    anyone who asks for less motion. Nothing scroll-driven, nothing looping. */
-@keyframes dossier-enter {
+@keyframes annual-enter {
   from {
     opacity: 0;
     transform: translateY(var(--enter-shift));
@@ -17,7 +17,7 @@
   }
 
   html.fdm-motion [data-enter].is-entering {
-    animation: dossier-enter var(--enter-dur) var(--ease) both;
+    animation: annual-enter var(--enter-dur) var(--ease) both;
     animation-delay: var(--enter-delay, 0ms);
   }
 }

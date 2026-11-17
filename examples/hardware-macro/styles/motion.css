@@ -1,8 +1,8 @@
-/* Motion: one short one-shot entrance, a small arrow shift, nothing scroll-linked. */
+/* Motion: one short one-shot entrance for the stage and its copy. */
 @keyframes fdm-enter {
   from {
     opacity: 0;
-    transform: translateY(var(--enter-distance));
+    transform: translateY(var(--enter-y));
   }
   to {
     opacity: 1;
@@ -16,12 +16,13 @@
   }
 
   html.fdm-motion [data-enter].is-entering {
-    animation: fdm-enter var(--dur-enter) var(--ease-out) both;
+    animation: fdm-enter var(--dur-enter) var(--ease) both;
     animation-delay: var(--enter-delay, 0ms);
   }
 
-  .button:hover .arrow,
-  .link-arrow:hover .arrow {
+  .text-link:hover .arrow,
+  .nav-order:hover .arrow,
+  .submit-link:hover .arrow {
     transform: translateX(3px);
   }
 }
@@ -39,8 +40,9 @@
     transform: none !important;
   }
 
-  .button:hover .arrow,
-  .link-arrow:hover .arrow {
+  .text-link:hover .arrow,
+  .nav-order:hover .arrow,
+  .submit-link:hover .arrow {
     transform: none !important;
   }
 }

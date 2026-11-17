@@ -1,42 +1,39 @@
-/* Linden Clinic — a registered dossier in paper, ink and sage.
-   Three colours, hairline rules, square corners, no effects. */
+/* Linden Clinic — an annual-report register: ivory, ink, rule and space.
+   Four text tones, one near-black masthead strip, no effects. */
 :root {
   color-scheme: light;
 
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Newsreader", Georgia, "Times New Roman", serif;
-  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --font-mono: "IBM Plex Mono", "DM Sans", ui-monospace, monospace;
 
-  /* Paper and ink. Sage is reserved for secondary rules and strokes. */
-  --paper: #f7f6f0;
+  /* The whole palette. Sage is permitted only as a hairline pigment. */
+  --paper: #f6f5ef;
   --ink: #17221b;
-  --ink-soft: #3b4a3f;
+  --ink-secondary: #4e5a51;
   --sage: #6f7c70;
+  --band: #111a14;
 
-  --rule: rgb(111 124 112 / 0.46);
+  --rule: rgb(111 124 112 / 0.5);
   --rule-soft: rgb(111 124 112 / 0.26);
-  --rule-on-ink: rgb(247 246 240 / 0.34);
-
-  --danger: #8a2f24;
+  --rule-band: rgb(246 245 239 / 0.42);
   --focus: var(--ink);
 
-  /* One deliberate type scale: a display serif, a reading sans, a record mono. */
   --text-micro: 0.6875rem;
   --text-label: 0.75rem;
-  --text-small: 0.875rem;
+  --text-small: 0.9375rem;
   --text-body: 1.0625rem;
-  --text-body-lg: 1.125rem;
-  --text-h3: clamp(1.25rem, 1.12rem + 0.5vw, 1.5rem);
-  --text-h2: clamp(2.25rem, 1.75rem + 1.55vw, 3.25rem);
-  --text-h1: clamp(3.5rem, 1.9rem + 5.4vw, 7rem);
+  --text-body-lg: 1.1875rem;
+  --text-h3: clamp(1.375rem, 1.2rem + 0.6vw, 1.75rem);
+  --text-h2: clamp(2.25rem, 1.6rem + 1.9vw, 3.25rem);
+  --text-h1: clamp(5.75rem, 1.9rem + 5vw, 7.25rem);
 
-  --leading-tight: 0.96;
+  --leading-tight: 0.92;
   --leading-head: 1.02;
   --leading-body: 1.55;
-  --tracking-label: 0.18em;
-  --tracking-head: -0.038em;
+  --tracking-label: 0.14em;
+  --tracking-head: -0.042em;
 
-  /* Rhythm */
   --s1: 0.25rem;
   --s2: 0.5rem;
   --s3: 0.75rem;
@@ -46,18 +43,16 @@
   --s7: 3rem;
   --s8: 4rem;
 
-  --prose: 32rem;
+  --prose: 34rem;
+  --container: 82rem;
 
-  /* Frame */
-  --container: 80rem;
-  --gutter: clamp(1.25rem, 4vw, 4rem);
-  --header-h: 4.5rem;
-  --section-pad: clamp(2.5rem, 5vw, 4.5rem);
-  --grid-gap: clamp(2rem, 4.5vw, 5rem);
+  --gutter: clamp(1.25rem, 3.6vw, 3.5rem);
+  --header-h: 3.5rem;
+  --section-pad: clamp(2.75rem, 4.6vw, 4.5rem);
+  --grid-gap: clamp(1.5rem, 2.6vw, 2.75rem);
 
-  /* Motion: one short entrance, nothing ambient. */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --dur: 180ms;
-  --enter-dur: 540ms;
-  --enter-shift: 12px;
+  --enter-dur: 520ms;
+  --enter-shift: 10px;
 }

@@ -8,7 +8,7 @@
   <script>document.documentElement.classList.add("has-js");</script>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/anton/v27/1Ptgg87LROyAm3Kz-C8.woff2" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo:wght@400;500&amp;family=IBM+Plex+Mono:wght@400&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/tokens.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/layout.css">
@@ -48,62 +48,54 @@
           <li><a class="nav-link" href="#contact">Notes</a></li>
         </ul>
 
-        <a class="button button--primary nav-cta" href="#contact">Join the field notes <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="header-link" href="#contact">Field notes <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
 
   <main id="main" tabindex="-1">
-    <section class="hero hero--film film-hero" id="top" data-budget="1" aria-labelledby="hero-title">
-      <figure class="film-hero__strip">
+    <section class="hero keyart" id="top" data-budget="1" aria-labelledby="hero-title">
+      <div class="hero__field">
         <img src="assets/photos/gaming-ironwood.webp" srcset="assets/photos/gaming-ironwood-480w.webp 480w, assets/photos/gaming-ironwood-720w.webp 720w, assets/photos/gaming-ironwood.webp 960w" sizes="100vw" width="960" height="640" alt="Fog moving through a stand of dark conifers at first light." data-source="library" data-subject="Dark conifer forest in early morning fog." loading="eager">
-      </figure>
+      </div>
 
-      <p class="film-hero__margin" data-fdm-ui>52° 14′ N · 13° 24′ E · Survey sheet 04</p>
-
-      <p class="mission-stamp" data-fdm-ui>
-        <span class="mission-stamp__top">Mission 07</span>
-        <span class="mission-stamp__bottom">The quiet return</span>
+      <p class="press-badge" data-fdm-ui>
+        <span>Press copy</span>
+        <span>Reel 04 · Embargo lifted</span>
       </p>
 
-      <div class="wrap film-hero__inner">
-        <div class="film-hero__top" data-enter>
-          <p class="eyebrow" data-fdm-ui>A transmission from Ashfall Basin</p>
-          <p class="film-hero__dispatch" data-fdm-ui>Reel 04 / 12 · Spring 2027</p>
+      <div class="hero__rail">
+        <p class="chapter-label" data-fdm-ui>Chapter 04 — The quiet return</p>
+
+        <div class="hero__type">
+          <h1 class="hero__title" id="hero-title" data-enter>
+            <span class="hero__line">The forest</span>
+            <span class="hero__line">remembers</span>
+            <span class="hero__line">everything.</span>
+          </h1>
         </div>
 
-        <h1 class="film-hero__title" id="hero-title" data-enter>
-          <span class="film-hero__title-ink">The forest</span>
-          <span class="film-hero__title-cut">remembers.</span>
-        </h1>
+        <p class="hero__dispatch">Build one camp across four seasons. Cut too much and the canopy thins. Leave a path and something else will use it.</p>
 
-        <div class="film-hero__bottom">
-          <div class="film-hero__copy" data-enter>
-            <p class="field-index" data-fdm-ui>Field note 07 / 12</p>
-            <p class="lede">Build one camp across four seasons. Cut too much and the canopy thins. Leave a path and something else will use it.</p>
-            <div class="hero-actions">
-              <a class="button button--primary" href="#contact">Wishlist on Steam <span class="arrow" aria-hidden="true">→</span></a>
-              <a class="link-arrow" href="#method">Enter the world <span class="arrow" aria-hidden="true">↓</span></a>
-            </div>
-          </div>
+        <div class="hero__ctas" data-enter>
+          <a class="square-cta" href="#contact">
+            <span class="square-cta__label">Wishlist<br>on Steam</span>
+            <span class="square-cta__arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="square-cta" href="#method">
+            <span class="square-cta__label">Enter<br>the world</span>
+            <span class="square-cta__arrow" aria-hidden="true">↓</span>
+          </a>
+        </div>
 
-          <div class="season-rail" role="group" aria-labelledby="season-title" data-enter data-fdm-ui>
-            <div class="season-rail__head">
-              <p id="season-title">Season cycle</p>
-              <span>01 / 04</span>
-            </div>
-            <ol class="season-rail__list">
-              <li class="is-active"><span>01</span><b>Spring</b><small>Forage</small></li>
-              <li><span>02</span><b>Summer</b><small>Build</small></li>
-              <li><span>03</span><b>Autumn</b><small>Store</small></li>
-              <li><span>04</span><b>Winter</b><small>Endure</small></li>
-            </ol>
-            <div class="season-rail__foot">
-              <span>Spring 2027</span>
-              <span>PC &amp; consoles</span>
-              <span>Single-player</span>
-            </div>
-          </div>
+        <div class="season-index" role="group" aria-labelledby="season-title" data-fdm-ui>
+          <p class="season-index__head" id="season-title">Season cycle</p>
+          <ol class="season-index__list">
+            <li class="is-active"><span>01</span> Spring</li>
+            <li><span>02</span> Summer</li>
+            <li><span>03</span> Autumn</li>
+            <li><span>04</span> Winter</li>
+          </ol>
         </div>
       </div>
     </section>
@@ -118,14 +110,16 @@
           </div>
           <div class="survey__field">
             <svg viewBox="0 0 640 400" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
-              <path class="contour" d="M-20 330 C70 312 104 250 186 236 S302 278 382 236 S508 154 668 168" />
-              <path class="contour" d="M-20 356 C80 338 122 280 202 266 S318 304 400 262 S530 184 668 196" />
-              <path class="contour" d="M-20 286 C62 262 112 202 196 188 S306 228 392 184 S520 112 668 126" />
-              <path class="contour" d="M-20 258 C58 232 108 174 194 160 S300 198 386 156 S510 82 668 96" />
+              <path class="contour contour--faint" d="M-20 78 C70 104 128 178 236 196 S420 156 560 228 L668 252" />
+              <path class="contour contour--faint" d="M-20 52 C66 82 122 154 230 172 S414 132 554 204 L668 226" />
               <path class="contour" d="M-20 228 C54 202 100 146 190 132 S292 168 378 128 S498 56 668 66" />
-              <path class="contour" d="M20 384 C112 356 158 306 252 300 S402 344 490 292 S604 234 688 246" />
-              <path class="contour contour--faint" d="M54 84 C146 122 180 214 292 230 S456 190 592 268" />
-              <path class="contour contour--faint" d="M96 40 C180 88 210 176 314 194 S470 158 620 234" />
+              <path class="contour" d="M-20 256 C58 230 108 172 194 158 S300 196 386 154 S510 80 668 94" />
+              <path class="contour" d="M-20 286 C62 260 112 200 196 186 S306 226 392 182 S520 110 668 124" />
+              <path class="contour" d="M-20 314 C68 290 118 230 204 216 S314 256 398 212 S526 140 668 154" />
+              <path class="contour" d="M-20 342 C74 320 124 262 212 248 S322 288 404 244 S532 176 668 190" />
+              <path class="contour" d="M-20 370 C80 350 130 294 220 280 S330 320 410 276 S538 210 668 222" />
+              <path class="contour" d="M22 396 C114 366 160 314 254 308 S404 352 492 300 S606 242 688 254" />
+              <path class="contour contour--faint" d="M56 96 C148 132 184 220 296 238 S458 198 594 274" />
               <path class="route" d="M44 342 C124 302 152 236 246 220 S358 252 436 202 S548 132 610 118" />
               <path class="tick" d="M112 176 l16 -12 M118 182 l16 -12 M470 268 l14 -10 M476 274 l14 -10 M318 82 l12 14 M324 76 l12 14" />
               <circle class="camp-ring" cx="300" cy="220" r="17" />
@@ -156,7 +150,7 @@
             <div><dt data-fdm-ui>Loading</dt><dd>None inside the forest</dd></div>
             <div><dt data-fdm-ui>Save</dt><dd>One persistent camp</dd></div>
           </dl>
-          <a class="link-arrow" href="#proof">Read the systems <span class="arrow" aria-hidden="true">↓</span></a>
+          <a class="link-arrow" href="#proof">Read the systems <span aria-hidden="true">↓</span></a>
         </div>
       </div>
     </section>
@@ -170,6 +164,11 @@
         </div>
 
         <div class="systems__ledger">
+          <div class="ledger-head" data-fdm-ui>
+            <span>Season</span>
+            <span>Rule of the wood</span>
+            <span>Field signal</span>
+          </div>
           <article class="ledger-row">
             <p class="ledger-row__season" data-fdm-ui>Spring</p>
             <div class="ledger-row__copy">
@@ -226,14 +225,14 @@
               <li>Wallpaper set</li>
             </ul>
             <p class="price-row__price">€34.99</p>
-            <a class="link-arrow" href="#contact">Wishlist Standard <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="#contact">Wishlist Standard <span aria-hidden="true">→</span></a>
           </article>
 
           <article class="price-row price-row--marked">
             <span class="price-row__no" data-fdm-ui>02</span>
             <div class="price-row__id">
               <h3>Deluxe</h3>
-              <p class="price-row__mark" data-fdm-ui>Most chosen</p>
+              <p class="price-row__mark" data-fdm-ui>Press pick</p>
             </div>
             <ul class="price-row__includes" data-fdm-ui>
               <li>Full game and all seasons</li>
@@ -242,7 +241,7 @@
               <li>Field journal PDF</li>
             </ul>
             <p class="price-row__price">€54<span>.99</span></p>
-            <a class="button button--primary" href="#contact">Wishlist Deluxe <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="#contact">Wishlist Deluxe <span aria-hidden="true">→</span></a>
           </article>
 
           <article class="price-row">
@@ -257,7 +256,7 @@
               <li>Numbered journal</li>
             </ul>
             <p class="price-row__price">€89.99</p>
-            <a class="link-arrow" href="#contact">Join the waitlist <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="link-arrow" href="#contact">Join the waitlist <span aria-hidden="true">→</span></a>
           </article>
         </div>
       </div>
@@ -324,7 +323,7 @@
               <p class="field-error" id="message-error" data-fdm-error-for="message" hidden></p>
             </div>
             <div class="form-actions">
-              <button class="button button--primary" type="submit">Prepare the email <span class="arrow" aria-hidden="true">→</span></button>
+              <button class="button button--primary" type="submit">Prepare the email <span aria-hidden="true">→</span></button>
               <p class="form-note">Demo only · no data is sent or stored.</p>
             </div>
             <p class="form-status" role="status" aria-live="polite" data-fdm-form-status>No data leaves your browser in this demo.</p>
@@ -362,7 +361,7 @@
           <ul class="footer-links">
             <li><a href="mailto:hello@ironwood.example?subject=Field%20notes">Field notes</a></li>
             <li><a href="credits.html">Photography credits</a></li>
-            <li><a href="#top">Back to top <span class="arrow" aria-hidden="true">↑</span></a></li>
+            <li><a href="#top">Back to top <span aria-hidden="true">↑</span></a></li>
           </ul>
         </div>
       </div>

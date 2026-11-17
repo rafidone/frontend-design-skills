@@ -1,4 +1,4 @@
-/* Base: reset, reading defaults and accessibility. */
+/* Base: reset, reading defaults and the shared accessibility floor. */
 *,
 *::before,
 *::after {
@@ -12,7 +12,6 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  scroll-padding-top: calc(var(--header-h) + var(--space-4));
 }
 
 body {
@@ -77,21 +76,21 @@ h3 {
   text-wrap: balance;
 }
 
-h1,
-h2 {
+h1 {
   font-family: var(--font-display);
+  font-size: var(--fs-h1);
   font-weight: 400;
   letter-spacing: var(--tracking-display);
   line-height: var(--leading-display);
   text-transform: uppercase;
 }
 
-h1 {
-  font-size: var(--fs-h1);
-}
-
 h2 {
+  font-family: var(--font-sans);
   font-size: var(--fs-h2);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.04;
 }
 
 h3 {
@@ -175,16 +174,11 @@ small {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
   *,
   *::before,
   *::after {
     animation: none !important;
     transition: none !important;
-    scroll-behavior: auto !important;
   }
 
   [data-enter],

@@ -1,43 +1,39 @@
 /* Atelier Nine — one source of values.
-   Paper, ink and a little clay. Two typefaces. Hairlines instead of boxes. */
+   Warm paper, dark ink, muted grey and a single rust hairline. Two families. */
 :root {
   color-scheme: light;
 
   /* Families */
-  --font-display: "Cormorant Garamond", Garamond, Georgia, serif;
+  --font-display: "Playfair Display", Georgia, serif;
   --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
 
   /* Palette */
-  --paper: #f7f0e5;
-  --paper-deep: #f1e7d8;
-  --ink: #2a1d16;
-  --ink-soft: #4c3a2e;
-  --muted: #6b5749;
-  --line: #d3c0ab;
-  --line-strong: #a98d76;
-  --clay: #a4472a;
-  --clay-deep: #7f3520;
-  --white: #fffdf8;
-  --danger: #9c3222;
-  --success: #3d644a;
-  --focus: #a4472a;
+  --paper: #f4f0e7;
+  --ink: #241c17;
+  --muted: #6f645b;
+  --clay: #9a4a32;
+
+  /* Rules are ink at low strength, never separate colours. */
+  --rule: rgb(36 28 23 / 0.2);
+  --rule-strong: rgb(36 28 23 / 0.52);
+  --focus: var(--clay);
 
   /* Type scale */
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
   --text-lede: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
-  --text-h2: clamp(2.55rem, 1.6rem + 3.6vw, 4.6rem);
-  --text-h1: clamp(4.2rem, 10.5vw, 13rem);
-  --text-quote: clamp(1.85rem, 1.15rem + 1.9vw, 3rem);
-  --text-feature: clamp(1.7rem, 1.25rem + 1.3vw, 2.5rem);
+  --text-h1: clamp(4.75rem, 6.9vw, 6.5rem);
+  --text-h2: clamp(2.5rem, 4vw, 3.75rem);
+  --text-quote: clamp(1.875rem, 1.3rem + 1.6vw, 2.875rem);
+  --text-feature: clamp(1.625rem, 1.3rem + 1vw, 2.25rem);
 
   /* Rhythm */
-  --leading-display: 0.84;
-  --leading-title: 1.02;
+  --leading-display: 0.9;
+  --leading-title: 1.04;
   --leading-body: 1.65;
-  --tracking-tight: -0.038em;
-  --tracking-caps: 0.19em;
+  --tracking-tight: -0.045em;
+  --tracking-caps: 0.18em;
 
   /* Space */
   --space-1: 0.25rem;
@@ -51,15 +47,14 @@
 
   /* Structure */
   --container: 1320px;
-  --gutter: clamp(1.25rem, 5vw, 4rem);
+  --gutter: clamp(1.25rem, 4.5vw, 4.5rem);
   --header-h: 4.5rem;
-  --section-pad: clamp(1.5rem, 3vw, 3rem);
-  --column-gap: clamp(1.5rem, 3.6vw, 3.5rem);
+  --section-pad: clamp(2rem, 3.4vw, 3.5rem);
+  --column-gap: clamp(1.5rem, 3.2vw, 3.5rem);
 
   /* Motion */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --dur-fast: 130ms;
-  --dur-base: 240ms;
-  --dur-enter: 560ms;
-  --enter-distance: 18px;
+  --dur-base: 200ms;
+  --dur-enter: 520ms;
+  --enter-distance: 14px;
 }

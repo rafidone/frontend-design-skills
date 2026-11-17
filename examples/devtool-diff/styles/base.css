@@ -1,4 +1,4 @@
-/* Base: reset, reading defaults and the accessibility floor. */
+/* Base: reset, reading rhythm and the accessibility floor. */
 *,
 *::before,
 *::after {
@@ -82,32 +82,39 @@ pre {
 h1,
 h2,
 h3 {
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-weight: 600;
   letter-spacing: var(--tracking-head);
   text-wrap: balance;
 }
 
 h1 {
-  max-width: 16ch;
+  max-width: 24ch;
   font-size: var(--text-h1);
-  line-height: 1.02;
+  line-height: 1.14;
 }
 
 h2 {
-  max-width: 18ch;
+  max-width: 20ch;
   font-size: var(--text-h2);
   line-height: var(--leading-head);
 }
 
 h3 {
-  font-size: var(--text-h3);
-  line-height: 1.22;
+  font-size: var(--text-lead);
+  line-height: 1.25;
 }
 
 p {
-  max-width: 34rem;
+  max-width: 52ch;
   text-wrap: pretty;
+}
+
+code,
+pre,
+kbd {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
 }
 
 strong,

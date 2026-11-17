@@ -1,5 +1,5 @@
-/* Drawing-sheet tokens: warm paper, cool grey, charcoal ink. Copper is kept
-   for a single 1px coordinate tick and nothing else. */
+/* Product stage: one neutral canvas, one ink, one hairline. A single copper
+   mark is allowed in the hero kicker and nowhere else. */
 :root {
   color-scheme: light;
 
@@ -7,61 +7,51 @@
   --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
-  /* Scale: one display voice, set low and quiet. */
-  --text-ui: 0.6875rem;
-  --text-xs: 0.75rem;
-  --text-sm: 0.9375rem;
-  --text-base: 1.0625rem;
-  --text-md: clamp(1.0625rem, 1.02rem + 0.2vw, 1.1875rem);
-  --text-lg: clamp(1.2rem, 1.12rem + 0.25vw, 1.4rem);
-  --text-h3: clamp(1.15rem, 1.08rem + 0.25vw, 1.35rem);
-  --text-h2: clamp(1.85rem, 1.4rem + 1.25vw, 2.6rem);
-  --text-h1: clamp(2.5rem, 1.74rem + 2.35vw, 4.05rem);
-  --leading-tight: 1.02;
-  --leading-snug: 1.22;
-  --leading-body: 1.62;
-  --tracking-tight: -0.035em;
-  --tracking-caps: 0.15em;
-
-  /* Spacing */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.5rem;
-  --space-6: 2rem;
-  --space-7: 3rem;
-  --space-8: 4rem;
-
   /* Surfaces */
-  --paper: #f2f0eb;
-  --grey: #e4e4df;
-  --ink: #161819;
-  --ink-soft: #3e4243;
-  --muted: #525758;
-  --line: #c9c9c3;
-  --line-strong: #9b9d98;
-  --grid-line: rgb(22 24 25 / 0.07);
-  --tick: #8a4a1e;
-  --danger: #963324;
+  --canvas: #f5f5f3;
+  --stage: #fbfbf9;
+  --ink: #17191a;
+  --ink-2: #6b6f70;
+  --hairline: #d8d8d4;
+  --hairline-strong: #b8b9b5;
+  --grid-line: rgb(23 25 26 / 0.055);
+  --tick: #8a5a3c;
+  --danger: #8a3326;
   --success: #2c5e45;
-  --focus: #161819;
+  --focus: #17191a;
 
-  --border: 1px solid var(--line);
-  --border-strong: 1px solid var(--line-strong);
-  --radius: 0;
+  /* Type scale */
+  --fs-body: 1.0625rem;
+  --fs-micro: 0.6875rem;
+  --fs-mono: 0.75rem;
+  --fs-h3: clamp(1.25rem, 1.1rem + 0.45vw, 1.5rem);
+  --fs-h2: clamp(2rem, 1.5rem + 1.6vw, 3rem);
+  --fs-h1: clamp(4.5rem, 5.6vw, 5.375rem);
+  --lh-tight: 0.98;
+  --lh-snug: 1.22;
+  --lh-body: 1.6;
+  --tr-tight: -0.04em;
+  --tr-caps: 0.14em;
+
+  /* Rhythm */
+  --s1: 0.25rem;
+  --s2: 0.5rem;
+  --s3: 0.75rem;
+  --s4: 1rem;
+  --s5: 1.5rem;
+  --s6: 2rem;
+  --s7: 3rem;
 
   /* Frame */
   --container: 1320px;
   --gutter: clamp(1.125rem, 4vw, 3.5rem);
+  --gap: clamp(1.5rem, 2.4vw, 2.25rem);
   --header-h: 4.25rem;
-  --grid-gap: clamp(1.5rem, 3vw, 3.5rem);
-  --section-pad: clamp(1.75rem, 3vw, 3rem);
+  --section-pad: clamp(2rem, 3.2vw, 3.25rem);
 
-  /* Motion: a single measured entrance. */
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --dur-fast: 120ms;
-  --dur-base: 200ms;
-  --dur-enter: 460ms;
-  --enter-distance: 12px;
+  /* Motion: one short entrance and one small arrow shift. */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 180ms;
+  --dur-enter: 420ms;
+  --enter-y: 10px;
 }

@@ -1,4 +1,4 @@
-/* Base — reset, reading defaults and the accessibility floor. */
+/* Base — reset, reading defaults, focus and the finished reduced-motion state. */
 
 *,
 *::before,
@@ -67,7 +67,7 @@ a {
 }
 
 a:hover {
-  text-decoration-color: var(--accent);
+  text-decoration-color: var(--ink);
 }
 
 p,
@@ -90,7 +90,7 @@ h1,
 h2,
 h3 {
   font-family: var(--font-display);
-  font-weight: 500;
+  font-weight: 600;
   text-wrap: balance;
 }
 
@@ -118,16 +118,17 @@ p {
 
 strong,
 b {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 small {
   font-size: var(--text-sm);
 }
 
-::selection {
-  background: var(--accent);
-  color: var(--accent-ink);
+kbd {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.04em;
 }
 
 :focus-visible {
@@ -139,11 +140,15 @@ small {
   outline: none;
 }
 
+::selection {
+  background: var(--ink);
+  color: var(--bg);
+}
+
 [hidden] {
   display: none !important;
 }
 
-/* First tab stop. */
 .skip-link {
   position: fixed;
   top: var(--space-3);
@@ -166,6 +171,7 @@ small {
 
 .skip-link:focus-visible {
   transform: translateY(0);
+  color: var(--bg);
 }
 
 .visually-hidden {

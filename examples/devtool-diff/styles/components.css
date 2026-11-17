@@ -1,4 +1,4 @@
-/* Components: header, controls, form, disclosures and footer — all 1px rules. */
+/* Components: header, controls, ruled form, disclosures and footer. */
 
 /* ---------- Header ---------- */
 .site-header {
@@ -81,7 +81,7 @@
 
 .nav-link::after {
   position: absolute;
-  inset: auto 0 0.6rem;
+  inset: auto 0 0.55rem;
   height: 1px;
   background: var(--ink);
   content: "";
@@ -110,7 +110,7 @@
   gap: var(--space-2);
   border: var(--hairline-strong);
   border-radius: var(--radius);
-  background: var(--surface-2);
+  background: var(--panel-2);
   color: var(--ink);
   font-family: var(--font-mono);
   font-size: var(--text-ui);
@@ -168,7 +168,7 @@
     gap: var(--space-1);
     border: var(--hairline-strong);
     border-radius: 0;
-    background: var(--surface-2);
+    background: var(--panel-2);
   }
 
   .has-js .site-header[data-fdm-nav-open="true"] .nav-menu {
@@ -281,12 +281,12 @@
 }
 
 .eyebrow[data-index]::before {
-  color: var(--ink);
+  color: var(--steel);
   content: attr(data-index) " / ";
 }
 
 .lede {
-  max-width: 32rem;
+  max-width: 48ch;
   color: var(--ink-soft);
   font-size: var(--text-lead);
   line-height: 1.5;
@@ -296,14 +296,7 @@
   color: var(--muted);
 }
 
-.docket {
-  color: var(--ink);
-  font-family: var(--font-mono);
-  font-size: var(--text-ui);
-  letter-spacing: var(--tracking-ui);
-}
-
-/* ---------- Form ---------- */
+/* ---------- Ruled form ---------- */
 .form {
   display: grid;
   gap: var(--space-4);
@@ -325,7 +318,7 @@
 }
 
 .field__hint {
-  max-width: 40ch;
+  max-width: 42ch;
   color: var(--muted);
   font-size: var(--text-base);
   font-weight: 400;
@@ -340,10 +333,11 @@
 .textarea {
   width: 100%;
   min-height: 48px;
-  padding: 0.65rem 0.75rem;
-  border: var(--hairline-strong);
-  border-radius: var(--radius);
-  background: var(--surface-2);
+  padding: 0.6rem 0;
+  border: 0;
+  border-block-end: 1px solid var(--line-strong);
+  border-radius: 0;
+  background: transparent;
   color: var(--ink);
   font-size: var(--text-base);
   line-height: 1.4;
@@ -359,21 +353,21 @@
 
 .input:hover,
 .textarea:hover {
-  border-color: var(--ink-soft);
+  border-block-end-color: var(--ink-soft);
 }
 
 .input:focus-visible,
 .textarea:focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 2px;
-  border-color: var(--ink);
-  background: var(--surface-3);
+  border-block-end-color: var(--ink);
+  background: var(--panel);
 }
 
 .field[data-invalid="true"] .input,
 .field[data-invalid="true"] .textarea {
-  border-color: var(--ink);
-  background: var(--surface-3);
+  border-block-end-color: var(--ink);
+  background: var(--panel);
 }
 
 .field-error {
@@ -475,7 +469,7 @@
 }
 
 .faq__body {
-  max-width: 40ch;
+  max-width: 48ch;
   padding-block: 0 var(--space-4);
   color: var(--ink-soft);
   font-size: var(--text-base);
@@ -486,7 +480,7 @@
 .site-footer {
   padding-block: var(--space-5) var(--space-4);
   border-block-start: var(--hairline-strong);
-  background: var(--surface);
+  background: var(--panel);
 }
 
 .footer-grid {
@@ -568,7 +562,7 @@
 }
 
 .credits p {
-  max-width: 60ch;
+  max-width: 62ch;
   margin-block-start: var(--space-2);
 }
 

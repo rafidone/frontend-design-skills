@@ -5,10 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Atelier Nine is a neighbourhood cafe and bakery on Rua da Boavista in Lisbon, open early with bread baked on site and a back table kept for slow mornings.">
   <title>Atelier Nine — Coffee, bread and a table by the window</title>
-  <script>document.documentElement.classList.add("has-js");</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&amp;family=Karla:wght@400;500&amp;display=swap" rel="stylesheet">
+  <script defer>document.documentElement.classList.add("has-js");</script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Karla:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/tokens.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/layout.css">
@@ -23,60 +21,53 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" data-fdm-header>
-    <div class="wrap">
-      <nav class="site-nav" aria-label="Primary" data-fdm-nav data-fdm-ui>
-        <a class="brand" href="#top" aria-label="Atelier Nine home">Atelier Nine<span class="brand__dot">.</span></a>
+    <div class="wrap site-nav" aria-label="Primary" data-fdm-nav data-fdm-ui>
+      <a class="brand" href="#top" aria-label="Atelier Nine home">Atelier Nine<span class="brand__dot">.</span></a>
 
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="primary-menu"
-          data-fdm-nav-toggle
-        >Menu<span class="nav-toggle__lines" aria-hidden="true"><span></span><span></span></span></button>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-menu"
+        data-fdm-nav-toggle
+      >Menu<span class="nav-toggle__lines" aria-hidden="true"><span></span><span></span></span></button>
 
-        <ul class="nav-menu" id="primary-menu" data-fdm-nav-menu>
-          <li><a class="nav-link" href="#top">Cover</a></li>
-          <li><a class="nav-link" href="#method">Menu</a></li>
-          <li><a class="nav-link" href="#proof">Story</a></li>
-          <li><a class="nav-link" href="#pricing">Hours</a></li>
-          <li><a class="nav-link" href="#contact">Visit</a></li>
-        </ul>
+      <ul class="nav-menu" id="primary-menu" data-fdm-nav-menu>
+        <li><a class="nav-link" href="#top">Atelier</a></li>
+        <li><a class="nav-link" href="#method">Menu</a></li>
+        <li><a class="nav-link" href="#proof">Story</a></li>
+        <li><a class="nav-link" href="#pricing">Hours</a></li>
+        <li><a class="nav-link" href="#contact">Visit</a></li>
+      </ul>
 
-        <a class="header-cta" href="#contact">Book the back table <span class="arrow" aria-hidden="true">→</span></a>
-      </nav>
+      <a class="header-cta" href="#contact">Book the back table <span class="arrow" aria-hidden="true">→</span></a>
     </div>
   </header>
 
   <main id="main" tabindex="-1">
     <section class="hero atelier-hero" id="top" data-budget="1" aria-labelledby="hero-title">
       <div class="wrap hero__inner">
-        <div class="hero__running" data-fdm-ui>
-          <span>Atelier Nine — Field notes</span>
-          <span>Lisbon · No. 09</span>
-        </div>
+        <aside class="hero__rail" data-fdm-ui>
+          <p class="rail__issue">No. 09</p>
+          <p class="rail__place">Lisbon · Rua da Boavista</p>
+          <p class="rail__hours">Tuesday—Sunday · 07:00—16:00</p>
+        </aside>
 
-        <div class="hero__stage">
-          <figure class="hero-photo">
-            <img src="assets/photos/cafe-atelier.webp" srcset="assets/photos/cafe-atelier-480w.webp 480w, assets/photos/cafe-atelier-720w.webp 720w, assets/photos/cafe-atelier.webp 960w" sizes="100vw" width="960" height="720" alt="A quiet cafe table with a cup, a notebook and warm wood seating." data-source="library" data-subject="Cafe table with a coffee cup and notebook in soft daylight." loading="eager">
-          </figure>
-
-          <div class="hero__copy" data-enter>
-            <p class="eyebrow" data-fdm-ui>A cafe, bakery and a window seat</p>
-            <h1 class="hero__title" id="hero-title">Stay for<br><em>the second cup.</em></h1>
-            <p class="lede">We bake before dawn, pull coffee all morning and keep one table for whoever needs an hour without being moved along.</p>
-            <div class="hero__actions">
-              <a class="action action--strong" href="#contact">Reserve the back table <span class="arrow" aria-hidden="true">→</span></a>
-              <a class="action" href="#method">Read today's menu <span class="arrow" aria-hidden="true">↓</span></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero__foot" data-fdm-ui>
-          <div class="editor-note">
-            <p class="editor-note__label">Editor's notes</p>
+        <div class="hero__copy" data-enter>
+          <p class="eyebrow" data-fdm-ui>A cafe, bakery and a window seat</p>
+          <a class="reserve-link" href="#contact">Reserve the back table <span class="arrow" aria-hidden="true">→</span></a>
+          <h1 class="hero__title" id="hero-title">Stay for<br><em>the second cup.</em></h1>
+          <div class="editor-note" data-fdm-ui>
+            <p class="editor-note__label">Editor's note</p>
             <p>One table kept unreserved until someone asks for an hour. The first loaf leaves the oven before seven.</p>
           </div>
+        </div>
+
+        <figure class="hero-photo">
+          <img src="assets/photos/cafe-atelier.webp" srcset="assets/photos/cafe-atelier-480w.webp 480w, assets/photos/cafe-atelier-720w.webp 720w, assets/photos/cafe-atelier.webp 960w" sizes="100vw" width="960" height="720" alt="A quiet cafe table with a cup, a notebook and warm wood seating." data-source="library" data-subject="Cafe table with a coffee cup and notebook in soft daylight." loading="eager">
+        </figure>
+
+        <div class="hero__foot" data-fdm-ui>
           <div class="counter-note">
             <p id="counter-title">At the counter</p>
             <ol>
@@ -99,37 +90,36 @@
           <p class="lede">Three things matter here: the coffee, the bread and the room. We keep the list small so each one gets the attention it needs.</p>
         </div>
 
-        <div class="menu-spread" role="group" aria-labelledby="menu-sheet-title" data-fdm-ui>
-          <div class="spread__head">
-            <div>
-              <p class="spread__masthead">Atelier Nine</p>
-              <p id="menu-sheet-title">Menu · Week 34</p>
-            </div>
+        <div class="menu-sheet" role="group" aria-labelledby="menu-sheet-title">
+          <div class="menu-sheet__head" data-fdm-ui>
+            <p class="menu-sheet__masthead">Atelier Nine</p>
+            <p id="menu-sheet-title">Menu · Week 34</p>
             <span>Summer, Lisbon</span>
           </div>
 
-          <div class="spread__pages">
-            <div class="menu-page">
-              <p class="menu-page__label">To drink</p>
+          <div class="menu-sheet__body">
+            <div class="menu-course">
+              <p class="menu-course__label" data-fdm-ui>To drink</p>
               <ol class="menu-list">
-                <li><span>Espresso</span><i class="leader"></i><b>2.20</b></li>
-                <li><span>Flat white</span><i class="leader"></i><b>3.40</b></li>
-                <li><span>Filter of the day</span><i class="leader"></i><b>3.20</b></li>
-                <li><span>Cortado</span><i class="leader"></i><b>2.80</b></li>
+                <li><span>Espresso</span><i class="leader" aria-hidden="true"></i><b>2.20</b></li>
+                <li><span>Flat white</span><i class="leader" aria-hidden="true"></i><b>3.40</b></li>
+                <li><span>Filter of the day</span><i class="leader" aria-hidden="true"></i><b>3.20</b></li>
+                <li><span>Cortado</span><i class="leader" aria-hidden="true"></i><b>2.80</b></li>
               </ol>
             </div>
-            <div class="menu-page">
-              <p class="menu-page__label">From the bakery</p>
+
+            <div class="menu-course">
+              <p class="menu-course__label" data-fdm-ui>From the bakery</p>
               <ol class="menu-list">
-                <li><span>Country loaf</span><i class="leader"></i><b>5.50</b></li>
-                <li><span>Rye &amp; caraway</span><i class="leader"></i><b>6.00</b></li>
-                <li><span>Pastel de nata</span><i class="leader"></i><b>2.40</b></li>
-                <li><span>Almond tart</span><i class="leader"></i><b>4.20</b></li>
+                <li><span>Country loaf</span><i class="leader" aria-hidden="true"></i><b>5.50</b></li>
+                <li><span>Rye &amp; caraway</span><i class="leader" aria-hidden="true"></i><b>6.00</b></li>
+                <li><span>Pastel de nata</span><i class="leader" aria-hidden="true"></i><b>2.40</b></li>
+                <li><span>Almond tart</span><i class="leader" aria-hidden="true"></i><b>4.20</b></li>
               </ol>
             </div>
           </div>
 
-          <div class="spread__foot">
+          <div class="menu-sheet__foot" data-fdm-ui>
             <p>Oat milk, no syrups, no size ladder.</p>
             <p>Ask at the counter for what is still warm.</p>
           </div>
@@ -139,16 +129,10 @@
 
     <section class="section atelier-story" id="proof" data-budget="1" data-fdm-section aria-labelledby="proof-title">
       <div class="wrap story-layout">
-        <aside class="story-rail" data-fdm-ui>
-          <span class="rail__number">02</span>
-          <span class="rail__label">The room · Lisbon</span>
-          <p class="margin-note">The back table is never booked twice. Ask at the counter when you arrive.</p>
-        </aside>
-
         <div class="story-main">
           <p class="eyebrow" data-fdm-ui>02 — The room</p>
           <h2 id="proof-title">A neighbourhood place, not a concept.</h2>
-          <div class="article-columns">
+          <div class="story-copy">
             <p class="dropcap">Open since 2019, on the same corner, with the same two ovens. The room was built around a window and a bench long enough for four.</p>
             <p>Nothing here changes with the season except the fruit in the case. The regulars know which stools catch the morning light; visitors find them by mid-morning.</p>
             <p>We keep the back table unreserved. If you need an hour with a book and a second cup, it is yours for the asking.</p>
@@ -157,8 +141,10 @@
           <p class="quote-attribution" data-fdm-ui>Marta Silva — Regular, Príncipe Real</p>
         </div>
 
-        <div class="story-sketch">
-          <div class="room-plan" role="group" aria-labelledby="room-title" data-fdm-ui>
+        <aside class="story-aside" data-fdm-ui>
+          <p class="margin-note">The back table is never booked twice. Ask at the counter when you arrive.</p>
+
+          <div class="room-plan" role="group" aria-labelledby="room-title">
             <div class="room-plan__head">
               <div>
                 <p>Floor plan</p>
@@ -183,13 +169,14 @@
               <span class="plan-label plan-label--shared">Shared table</span>
             </div>
             <div class="room-plan__foot">
-              <span><i class="plan-key plan-key--window"></i> Window</span>
-              <span><i class="plan-key plan-key--table"></i> Table</span>
+              <span><i class="plan-key plan-key--window" aria-hidden="true"></i> Window</span>
+              <span><i class="plan-key plan-key--table" aria-hidden="true"></i> Table</span>
               <span>Back table kept for an hour</span>
             </div>
           </div>
-          <p class="sketch-note" data-fdm-ui>Drawn from the corner table, not to scale with the pastéis.</p>
-        </div>
+
+          <p class="sketch-note">Drawn from the corner table, not to scale with the pastéis.</p>
+        </aside>
       </div>
     </section>
 
@@ -346,7 +333,7 @@
         <p>Folio 09 / 09</p>
         <details class="credits">
           <summary>Credits &amp; notes</summary>
-          <p>Typefaces: Cormorant Garamond and Karla. The photograph is a library image credited on the photography page. All other artwork, interface details and copy are original to this starter. This page is a demonstration, not a live service.</p>
+          <p>Typefaces: Playfair Display and Karla. The photograph is a library image credited on the photography page. All other artwork, interface details and copy are original to this starter. This page is a demonstration, not a live service.</p>
         </details>
       </div>
     </div>

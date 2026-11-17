@@ -8,7 +8,7 @@
   <script>document.documentElement.classList.add("has-js");</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&amp;family=DM+Sans:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&amp;family=DM+Sans:wght@400;500&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/tokens.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/layout.css">
@@ -23,12 +23,10 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" data-fdm-header>
-    <div class="wrap">
+    <div class="wrap masthead-strip">
       <nav class="site-nav" aria-label="Primary" data-fdm-nav>
-        <a class="brand" href="#top" aria-label="Linden Clinic home">
-          <span class="brand__mark" aria-hidden="true">LC</span>
-          <span>Linden Clinic</span>
-        </a>
+        <a class="brand" href="#top" aria-label="Linden Clinic home">Linden Clinic</a>
+        <p class="masthead-strip__record" data-fdm-ui>Registered practice 04127 · Bristol</p>
 
         <button
           class="nav-toggle"
@@ -48,24 +46,17 @@
           <li><a class="nav-link" href="#pricing">Fees</a></li>
           <li><a class="nav-link" href="#contact">Book</a></li>
         </ul>
-
-        <a class="button button--primary nav-cta" href="#contact">Book an appointment <span class="arrow" aria-hidden="true">→</span></a>
       </nav>
     </div>
   </header>
 
   <main id="main" tabindex="-1">
-    <section class="hero dossier-hero" id="top" data-budget="1" aria-labelledby="hero-title">
-      <div class="wrap dossier-hero__inner">
-        <div class="masthead" data-fdm-ui>
-          <p><strong>Linden Clinic</strong> · Physiotherapy</p>
-          <p>Registered practice 04127 · Bristol · Est. 2016</p>
-        </div>
-
+    <section class="hero annual-hero" id="top" data-budget="1" aria-labelledby="hero-title">
+      <div class="wrap hero-frame">
         <div class="hero-grid">
           <div class="hero-copy" data-enter>
-            <p class="section-index" data-fdm-ui>Case file 01 / 04 · Introduction</p>
-            <h1 class="hero-title" id="hero-title">A clear plan for the <em>long way back.</em></h1>
+            <p class="hero-kicker" data-fdm-ui>Physiotherapy · Bristol · Established 2016</p>
+            <h1 class="hero-title" id="hero-title">Recovery, with the week accounted for.</h1>
 
             <div class="schedule" role="group" aria-labelledby="plan-title">
               <p class="schedule__title" id="plan-title" data-fdm-ui>First appointment · by arrangement</p>
@@ -76,117 +67,115 @@
               </dl>
             </div>
 
-            <p class="lede">Linden Clinic is a small practice for people recovering from injury, surgery, or a body that has stopped keeping up. We treat the injury and the weeks around it.</p>
+            <p class="hero-promise">Linden Clinic is a small practice for people recovering from injury, surgery, or a body that has stopped keeping up. We treat the injury and the weeks around it.</p>
 
             <div class="hero-actions">
               <a class="button button--primary" href="#contact">Request a first visit <span class="arrow" aria-hidden="true">→</span></a>
-              <a class="text-link" href="#method">Read the approach <span class="arrow" aria-hidden="true">↓</span></a>
+              <a class="text-link" href="#method">See the care pathway <span class="arrow" aria-hidden="true">↓</span></a>
             </div>
           </div>
 
-          <div class="hero-visual" data-enter>
-            <figure class="dossier-photo">
+          <aside class="practice-index" aria-labelledby="index-title" data-enter>
+            <p class="practice-index__title" id="index-title" data-fdm-ui>Practice index</p>
+            <ol class="index-list">
+              <li><span class="index-list__num" data-fdm-ui>01</span><span class="index-list__item">Assessment</span><span class="index-list__meta" data-fdm-ui>50 minutes</span></li>
+              <li><span class="index-list__num" data-fdm-ui>02</span><span class="index-list__item">Treatment</span><span class="index-list__meta" data-fdm-ui>Two or three exercises</span></li>
+              <li><span class="index-list__num" data-fdm-ui>03</span><span class="index-list__item">Written plan</span><span class="index-list__meta" data-fdm-ui>Same day</span></li>
+              <li><span class="index-list__num" data-fdm-ui>04</span><span class="index-list__item">Review</span><span class="index-list__meta" data-fdm-ui>Week six</span></li>
+            </ol>
+            <figure class="practice-photo">
               <img src="assets/photos/service-clinic.webp" width="1024" height="684" alt="A calm clinic waiting area with pale chairs and a wide window." data-source="library" data-subject="Clinic waiting room with pale seating and daylight." loading="eager">
             </figure>
-            <p class="dossier-photo__label" data-fdm-ui>Room 02 · North Parade</p>
-          </div>
+          </aside>
         </div>
       </div>
     </section>
 
-    <section class="section dossier-method" id="method" data-budget="1" data-fdm-section aria-labelledby="method-title">
-      <div class="wrap method-layout">
-        <div class="section-intro">
-          <p class="section-index" data-fdm-ui>01 — The approach</p>
-          <h2 id="method-title">A plan built for the week you actually have.</h2>
-          <p class="lede">Most recovery happens between appointments. We use the first session to understand the load you carry, then write a plan around the work, the school run and the sleep you actually get.</p>
-          <a class="text-link" href="#contact">Request a first assessment <span class="arrow" aria-hidden="true">→</span></a>
+    <section class="section method-section" id="method" data-budget="1" data-fdm-section aria-labelledby="method-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-index" data-fdm-ui>01 — Method</p>
+          <h2 id="method-title">The work is sequenced, not improvised.</h2>
+          <p class="section-lede">The first visit sets a baseline. Each later visit changes the plan in writing, and the sixth week measures what actually changed.</p>
         </div>
 
         <ol class="pathway">
           <li>
-            <span class="pathway__num" data-fdm-ui>01</span>
-            <div class="pathway__body">
+            <div class="pathway__row">
+              <span class="pathway__num" data-fdm-ui>01</span>
               <h3>Read the history.</h3>
-              <p>A full history and a physical assessment. We name what is irritated, what is strong and what needs time.</p>
+              <p>A full history and physical assessment. We name what is irritated, what is strong and what needs time.</p>
+              <span class="pathway__meta" data-fdm-ui>Week one</span>
             </div>
-            <span class="pathway__tag" data-fdm-ui>history · baseline</span>
           </li>
           <li>
-            <span class="pathway__num" data-fdm-ui>02</span>
-            <div class="pathway__body">
+            <div class="pathway__row">
+              <span class="pathway__num" data-fdm-ui>02</span>
               <h3>Treat, then load.</h3>
               <p>Manual therapy where it helps, exercise where it lasts. You leave with two or three things to do, not twenty.</p>
+              <span class="pathway__meta" data-fdm-ui>Weeks one to three</span>
             </div>
-            <span class="pathway__tag" data-fdm-ui>two or three exercises</span>
           </li>
           <li>
-            <span class="pathway__num" data-fdm-ui>03</span>
-            <div class="pathway__body">
+            <div class="pathway__row">
+              <span class="pathway__num" data-fdm-ui>03</span>
               <h3>Write it down.</h3>
               <p>Your plan is written in the room, in language you can repeat at home. It changes when your week changes.</p>
+              <span class="pathway__meta" data-fdm-ui>Same day</span>
             </div>
-            <span class="pathway__tag" data-fdm-ui>written plan</span>
           </li>
           <li>
-            <span class="pathway__num" data-fdm-ui>04</span>
-            <div class="pathway__body">
+            <div class="pathway__row">
+              <span class="pathway__num" data-fdm-ui>04</span>
               <h3>Measure, then leave.</h3>
               <p>At six weeks we measure what changed, adjust the plan and discharge when you can manage without us.</p>
+              <span class="pathway__meta" data-fdm-ui>Week six</span>
             </div>
-            <span class="pathway__tag" data-fdm-ui>week six</span>
           </li>
         </ol>
       </div>
     </section>
 
-    <section class="section dossier-team" id="proof" data-budget="1" data-fdm-section aria-labelledby="proof-title">
-      <div class="wrap team-layout">
-        <div class="team-copy">
-          <p class="section-index" data-fdm-ui>02 — The clinicians</p>
+    <section class="section clinicians-section" id="proof" data-budget="1" data-fdm-section aria-labelledby="proof-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-index" data-fdm-ui>02 — Clinicians</p>
           <h2 id="proof-title">Three clinicians, one way of working.</h2>
-          <p class="lede">A small practice, deliberately. Every appointment is fifty minutes with one clinician and no double booking.</p>
-          <figure class="linden-quote">
-            <blockquote>“I trusted the plan because it was explained, written down and changed when my week changed.”</blockquote>
-            <figcaption><strong>Hannah Price</strong> <span data-fdm-ui>—</span> Teacher, Bristol</figcaption>
-          </figure>
+          <p class="section-lede">A small practice, deliberately. Every appointment is fifty minutes with one clinician and no double booking.</p>
         </div>
 
-        <div class="register">
+        <div class="register" role="group" aria-label="Clinician register">
           <div class="register__head" data-fdm-ui><span>Clinic rota</span><span>Week 46</span></div>
-          <div class="register__cols" data-fdm-ui><span>Clinician</span><span>Discipline</span><span>Days</span></div>
+          <div class="register__cols" data-fdm-ui><span>Clinician</span><span>Discipline</span><span>Days</span><span>Focus</span></div>
           <article class="register__row">
             <span class="register__name">Leah Shenton</span>
             <span class="register__role">Assessment and return to sport</span>
-            <span class="register__days" data-fdm-ui>Mon, Wed · running</span>
+            <span class="register__days" data-fdm-ui>Mon, Wed</span>
+            <span class="register__focus" data-fdm-ui>Running</span>
           </article>
           <article class="register__row">
             <span class="register__name">Marcus Kay</span>
             <span class="register__role">Post-operative rehabilitation</span>
-            <span class="register__days" data-fdm-ui>Tue, Thu · surgical</span>
+            <span class="register__days" data-fdm-ui>Tue, Thu</span>
+            <span class="register__focus" data-fdm-ui>Surgical</span>
           </article>
           <article class="register__row">
             <span class="register__name">Tara Joffe</span>
             <span class="register__role">Persistent pain and movement</span>
-            <span class="register__days" data-fdm-ui>Fri · long-term plans</span>
+            <span class="register__days" data-fdm-ui>Fri</span>
+            <span class="register__focus" data-fdm-ui>Long-term plans</span>
           </article>
-          <div class="register__foot" data-fdm-ui>
-            <span>42 visits this week</span>
-            <span>50 minutes each</span>
-            <span>No double bookings</span>
-          </div>
+          <div class="register__foot" data-fdm-ui><span>50 minutes each</span><span>No double bookings</span><span>Written plan same day</span></div>
         </div>
       </div>
     </section>
 
-    <section class="section dossier-fees" id="pricing" data-budget="1" data-fdm-section aria-labelledby="pricing-title">
+    <section class="section fees-section" id="pricing" data-budget="1" data-fdm-section aria-labelledby="pricing-title">
       <div class="wrap">
-        <div class="fees-head">
-          <div>
-            <p class="section-index" data-fdm-ui>03 — Fees</p>
-            <h2 id="pricing-title">Fees, in plain language.</h2>
-          </div>
-          <p class="lede">No membership and no referral needed for self-paying patients. If we are not the right service, we will say so and point you somewhere better. Prices in GBP.</p>
+        <div class="section-head">
+          <p class="section-index" data-fdm-ui>03 — Fees</p>
+          <h2 id="pricing-title">Fees, in plain language.</h2>
+          <p class="section-lede">No membership and no referral for self-paying patients. If we are not the right service, we will say so and point you somewhere better. Prices in GBP.</p>
         </div>
 
         <table class="fee-table">
@@ -223,80 +212,85 @@
       </div>
     </section>
 
-    <section class="section dossier-contact" id="contact" data-budget="1" data-fdm-section aria-labelledby="contact-title">
-      <div class="wrap contact-layout">
-        <div class="contact-lead">
+    <section class="section contact-section" id="contact" data-budget="1" data-fdm-section aria-labelledby="contact-title">
+      <div class="wrap">
+        <div class="section-head">
           <p class="section-index" data-fdm-ui>04 — Correspondence</p>
           <h2 id="contact-title">Write to us about what hurts.</h2>
-          <p class="lede">Tell us what is bothering you and what you need to get back to. We reply within one working day with the next available appointment.</p>
-          <div class="contact-facts">
-            <div class="contact-detail">
-              <span class="contact-detail__label" data-fdm-ui>Email</span>
-              <a href="mailto:hello@linden-clinic.example">hello@linden-clinic.example</a>
-              <span class="contact-detail__note" data-fdm-ui>For appointments and clinical questions.</span>
-            </div>
-            <div class="contact-detail">
-              <span class="contact-detail__label" data-fdm-ui>Opening hours</span>
-              <span class="contact-detail__value">Monday–Friday, 08:00–18:00 GMT</span>
-              <span class="hours-status" data-fdm-ui data-fdm-hours data-open-hour="8" data-close-hour="18" data-days="1,2,3,4,5" data-time-zone="Europe/London"><span data-fdm-hours-status>Checking local time…</span></span>
-            </div>
-            <div class="contact-detail">
-              <span class="contact-detail__label" data-fdm-ui>Find us</span>
-              <span class="contact-detail__value">14 North Parade, Bristol</span>
-              <span class="contact-detail__note" data-fdm-ui>Ground-floor access, with a bus stop two minutes away.</span>
-            </div>
-          </div>
+          <p class="section-lede">Tell us what is bothering you and what you need to get back to. We reply within one working day.</p>
         </div>
 
-        <div class="contact-form">
-          <p class="form-title" data-fdm-ui>Enquiry · form 01</p>
-          <form
-            class="form"
-            action="mailto:hello@linden-clinic.example"
-            method="post"
-            enctype="text/plain"
-            novalidate
-            data-fdm-form
-            data-fdm-email="hello@linden-clinic.example"
-          >
-            <div class="field-row">
-              <div class="field">
-                <label class="field__label" for="name">Name</label>
-                <input class="input" id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
-                <p class="field-error" id="name-error" data-fdm-error-for="name" hidden></p>
+        <div class="contact-layout">
+          <div class="contact-lead">
+            <div class="contact-facts">
+              <div class="contact-detail">
+                <span class="contact-detail__label" data-fdm-ui>Email</span>
+                <a href="mailto:hello@linden-clinic.example">hello@linden-clinic.example</a>
+                <span class="contact-detail__note" data-fdm-ui>For appointments and clinical questions.</span>
               </div>
-              <div class="field">
-                <label class="field__label" for="email">Email</label>
-                <input class="input" id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
-                <p class="field-error" id="email-error" data-fdm-error-for="email" hidden></p>
+              <div class="contact-detail">
+                <span class="contact-detail__label" data-fdm-ui>Opening hours</span>
+                <span class="contact-detail__value">Monday–Friday, 08:00–18:00 GMT</span>
+                <span class="hours-status" data-fdm-ui data-fdm-hours data-open-hour="8" data-close-hour="18" data-days="1,2,3,4,5" data-time-zone="Europe/London"><span data-fdm-hours-status>Checking local time…</span></span>
+              </div>
+              <div class="contact-detail">
+                <span class="contact-detail__label" data-fdm-ui>Find us</span>
+                <span class="contact-detail__value">14 North Parade, Bristol</span>
+                <span class="contact-detail__note" data-fdm-ui>Ground-floor access, with a bus stop two minutes away.</span>
               </div>
             </div>
-            <div class="field">
-              <label class="field__label" for="project">What would you like help with? <span class="field__hint" data-fdm-ui>Optional</span></label>
-              <input class="input" id="project" name="project" type="text" placeholder="A back, a knee, a return to running">
-            </div>
-            <div class="field">
-              <label class="field__label" for="message">A little context</label>
-              <textarea class="textarea" id="message" name="message" rows="4" required data-minlength="20" aria-describedby="message-hint message-error"></textarea>
-              <p class="field__guide" id="message-hint">A sentence about the pain, how long it has been there and what you want to get back to.</p>
-              <p class="field-error" id="message-error" data-fdm-error-for="message" hidden></p>
-            </div>
-            <div class="form-actions">
-              <button class="button button--primary" type="submit">Prepare the email <span class="arrow" aria-hidden="true">→</span></button>
-              <p class="form-note" data-fdm-ui>Demo only · no data is sent or stored.</p>
-            </div>
-            <p class="form-status" role="status" aria-live="polite" data-fdm-form-status>No data leaves your browser in this demo.</p>
-          </form>
+          </div>
 
-          <div class="contact-faq">
-            <details class="faq-item">
-              <summary>Do I need a referral? <span class="faq__icon" aria-hidden="true"></span></summary>
-              <p class="faq__body">No. You can book directly as a self-paying patient. If your insurer requires a referral, we can work with your GP.</p>
-            </details>
-            <details class="faq-item">
-              <summary>What should I bring? <span class="faq__icon" aria-hidden="true"></span></summary>
-              <p class="faq__body">Comfortable clothing you can move in, any scan reports and a note of what makes the pain better or worse.</p>
-            </details>
+          <div class="contact-form">
+            <p class="form-title" data-fdm-ui>Enquiry · form 01</p>
+            <form
+              class="form"
+              action="mailto:hello@linden-clinic.example"
+              method="post"
+              enctype="text/plain"
+              novalidate
+              data-fdm-form
+              data-fdm-email="hello@linden-clinic.example"
+            >
+              <div class="field-row">
+                <div class="field">
+                  <label class="field__label" for="name">Name</label>
+                  <input class="input" id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+                  <p class="field-error" id="name-error" data-fdm-error-for="name" hidden></p>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="email">Email</label>
+                  <input class="input" id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+                  <p class="field-error" id="email-error" data-fdm-error-for="email" hidden></p>
+                </div>
+              </div>
+              <div class="field">
+                <label class="field__label" for="project">What would you like help with? <span class="field__hint" data-fdm-ui>Optional</span></label>
+                <input class="input" id="project" name="project" type="text" placeholder="A back, a knee, a return to running">
+              </div>
+              <div class="field">
+                <label class="field__label" for="message">A little context</label>
+                <textarea class="textarea" id="message" name="message" rows="4" required data-minlength="20" aria-describedby="message-hint message-error"></textarea>
+                <p class="field__guide" id="message-hint">A sentence about the pain, how long it has been there and what you want to get back to.</p>
+                <p class="field-error" id="message-error" data-fdm-error-for="message" hidden></p>
+              </div>
+              <div class="form-actions">
+                <button class="button button--primary" type="submit">Prepare the email <span class="arrow" aria-hidden="true">→</span></button>
+                <p class="form-note" data-fdm-ui>Demo only · no data is sent or stored.</p>
+              </div>
+              <p class="form-status" role="status" aria-live="polite" data-fdm-form-status>No data leaves your browser in this demo.</p>
+            </form>
+
+            <div class="contact-faq">
+              <details class="faq-item">
+                <summary>Do I need a referral? <span class="faq__icon" aria-hidden="true"></span></summary>
+                <p class="faq__body">No. You can book directly as a self-paying patient. If your insurer requires a referral, we can work with your GP.</p>
+              </details>
+              <details class="faq-item">
+                <summary>What should I bring? <span class="faq__icon" aria-hidden="true"></span></summary>
+                <p class="faq__body">Comfortable clothing you can move in, any scan reports and a note of what makes the pain better or worse.</p>
+              </details>
+            </div>
           </div>
         </div>
       </div>
@@ -308,10 +302,7 @@
       <h2 class="visually-hidden" id="footer-title">Linden Clinic site footer</h2>
       <div class="footer-grid">
         <div class="footer-brand">
-          <a class="brand" href="#top" aria-label="Linden Clinic home">
-            <span class="brand__mark" aria-hidden="true">LC</span>
-            <span>Linden Clinic</span>
-          </a>
+          <a class="brand" href="#top" aria-label="Linden Clinic home">Linden Clinic</a>
           <p>A small physiotherapy practice for the weeks around the injury.</p>
           <p><a href="mailto:hello@linden-clinic.example">hello@linden-clinic.example</a></p>
         </div>
@@ -336,11 +327,11 @@
         </div>
       </div>
 
-      <div class="footer-base" data-fdm-ui>
-        <p>© 2026 Linden Clinic. Fictional demo content.</p>
+      <div class="footer-base">
+        <p data-fdm-ui>© 2026 Linden Clinic. Fictional demo content.</p>
         <details class="credits">
-          <summary>Credits &amp; notes</summary>
-          <p>Typefaces: Newsreader and DM Sans, linked here as an example. No remote imagery is used. This page is a demonstration, not a live service.</p>
+          <summary data-fdm-ui>Credits &amp; notes</summary>
+          <p>Typefaces: Newsreader, DM Sans and IBM Plex Mono, linked here as an example. No remote imagery is used. This page is a demonstration, not a live service.</p>
         </details>
       </div>
     </div>

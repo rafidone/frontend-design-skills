@@ -1,4 +1,4 @@
-/* Base: reset, reading defaults and accessibility. */
+/* Base: reset, reading defaults and keyboard access. */
 *,
 *::before,
 *::after {
@@ -115,7 +115,7 @@ b {
 
 ::selection {
   background: var(--clay);
-  color: var(--white);
+  color: var(--paper);
 }
 
 :focus-visible {
@@ -131,7 +131,7 @@ b {
   display: none !important;
 }
 
-/* First tab stop. */
+/* The only element off-screen before it receives focus. */
 .skip-link {
   position: fixed;
   top: var(--space-3);
@@ -163,24 +163,4 @@ b {
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
-}
-
-/* Reduced motion renders the finished state. */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-
-  [data-enter] {
-    opacity: 1 !important;
-    transform: none !important;
-  }
 }

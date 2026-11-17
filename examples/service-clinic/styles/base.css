@@ -1,4 +1,4 @@
-/* Base — reset, reading defaults, focus, and the two document utilities. */
+/* Base — reset, reading defaults and the two document utilities. */
 *,
 *::before,
 *::after {
@@ -69,7 +69,6 @@ ul,
 ol,
 dl,
 dd,
-blockquote,
 figure {
   margin: 0;
 }
@@ -162,6 +161,3 @@ b {
   white-space: nowrap !important;
   border: 0 !important;
 }
-
-/* data-fdm-ui carries no presentation of its own; components style their
-   own small labels so no stray text inherits a decorative size. */
