@@ -1,4 +1,4 @@
-/* Motion: one entrance, two small state changes, nothing that follows the scrollbar. */
+/* Motion: one short entrance and quiet state changes. Nothing follows scroll. */
 @keyframes fdm-enter {
   from {
     opacity: 0;
@@ -21,55 +21,29 @@
   }
 
   .button:hover {
-    transform: translateY(-2px);
+    background-color: var(--clay-deep);
   }
 
   .button:active {
-    transform: translateY(0) scale(0.98);
-    transition-duration: var(--dur-fast);
+    transform: scale(0.99);
   }
 
-  [data-lift] {
-    transition:
-      transform var(--dur-base) var(--ease-out),
-      box-shadow var(--dur-base) var(--ease-out),
-      border-color var(--dur-base) var(--ease-out);
+  .link-arrow .arrow,
+  .button .arrow {
+    transition: transform var(--dur-base) var(--ease-out);
   }
 
-  [data-lift]:hover {
-    transform: translateY(-2px);
-    border-color: var(--line-strong);
-    box-shadow: var(--shadow-lift);
-  }
-
-  [data-lift]:focus-within {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lift);
-  }
-
-  .media-zoom {
-    overflow: hidden;
-  }
-
-  .media-zoom > img,
-  .media-zoom > svg,
-  .media-zoom > .zoom-target {
-    transition: transform 700ms var(--ease-out);
-  }
-
-  @media (hover: hover) {
-    .media-zoom:hover > img,
-    .media-zoom:hover > svg,
-    .media-zoom:hover > .zoom-target {
-      transform: scale(1.03);
-    }
+  .link-arrow:hover .arrow,
+  .button:hover .arrow {
+    transform: translateX(3px);
   }
 }
 
-/* Parent-level stagger: children inherit a short, readable delay. */
-@media (prefers-reduced-motion: no-preference) {
-  [data-enter-group] > [data-enter]:nth-child(2) { --enter-delay: 80ms; }
-  [data-enter-group] > [data-enter]:nth-child(3) { --enter-delay: 160ms; }
-  [data-enter-group] > [data-enter]:nth-child(4) { --enter-delay: 240ms; }
-  [data-enter-group] > [data-enter]:nth-child(5) { --enter-delay: 320ms; }
+/* The finished state is always the reduced-motion state. */
+@media (prefers-reduced-motion: reduce) {
+  html.fdm-motion [data-enter],
+  [data-enter] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

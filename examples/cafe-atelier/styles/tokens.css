@@ -1,116 +1,84 @@
-/* Design tokens — one source of truth for spacing, type, color and motion. */
+/* Atelier Nine — design tokens.
+   Warm paper and clay, two typefaces, hairline rules, one accent.
+   Every other stylesheet reads from this one source. */
 :root {
   color-scheme: light;
 
   /* Type families */
-  --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Cormorant Garamond", Garamond, Georgia, serif;
-  --font-mono: "SFMono-Regular", ui-monospace, SFMono-Regular, monospace;
+  --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
 
   /* Type scale */
   --text-2xs: 0.6875rem;
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
-  --text-md: clamp(1.0625rem, 0.98rem + 0.25vw, 1.1875rem);
-  --text-lg: clamp(1.25rem, 1.12rem + 0.45vw, 1.5rem);
-  --text-xl: clamp(1.5rem, 1.25rem + 0.9vw, 2rem);
-  --text-2xl: clamp(1.8rem, 1.2rem + 1vw, 2.363rem);
-  --text-3xl: clamp(2.25rem, 1.4rem + 3vw, 3.500rem);
-  --text-display: clamp(3.25rem, 1.35rem + 6vw, 5.875rem);
-  --leading-tight: 0.98;
-  --leading-snug: 1.18;
-  --leading-body: 1.6;
-  --tracking-tight: -0.02em;
-  --tracking-caps: 0.14em;
+  --text-lg: 1.35rem;
+  --text-lede: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem);
+  --text-h3: clamp(1.5rem, 1.3rem + 0.7vw, 2rem);
+  --text-h2: clamp(2.75rem, 1.9rem + 3vw, 4.5rem);
+  --text-h1: clamp(4rem, 2rem + 7vw, 8.25rem);
+
+  --leading-display: 0.9;
+  --leading-snug: 1.14;
+  --leading-body: 1.62;
+  --tracking-tight: -0.035em;
+  --tracking-caps: 0.18em;
 
   /* Spacing scale */
-  --space-1: 0.25rem;   /* 4 */
-  --space-2: 0.5rem;    /* 8 */
-  --space-3: 0.75rem;   /* 12 */
-  --space-4: 1rem;      /* 16 */
-  --space-5: 1.5rem;    /* 24 */
-  --space-6: 2rem;      /* 32 */
-  --space-7: 3rem;      /* 48 */
-  --space-8: 4rem;      /* 64 */
-  --space-9: 6rem;      /* 96 */
-  --space-10: 8rem;     /* 128 */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
 
   /* Surfaces and ink */
-  --paper: #fbf5f0;
-  --surface: #f1e4d9;
-  --surface-2: #e5d8ce;
-  --surface-3: #d9cdc2;
-  --ink: #2b211c;
-  --ink-soft: #59504b;
-  --muted: #6d5a4f;
-  --line: #dad3ce;
-  --line-strong: #b8b1ac;
-  --brand: #a34024;
-  --brand-strong: #7f321c;
-  --brand-soft: #efdcd3;
-  --accent: #a34024;
-  --accent-strong: #82331d;
-  --accent-soft: #edd8cf;
-  --warning: #8a5a12;
-  --danger: #a12f22;
-  --danger-soft: #f6ddd8;
-  --success: #266044;
-  --focus: #a34024;
+  --paper: #f7efe3;
+  --paper-warm: #f1e5d6;
+  --surface: #efdfcd;
+  --surface-deep: #e5d0b9;
+  --ink: #2c1f18;
+  --ink-soft: #514035;
+  --muted: #6d5949;
+  --line: #d8c6b2;
+  --line-strong: #b69a82;
+
+  --clay: #a4472a;
+  --clay-deep: #7d3320;
+  --clay-wash: #f2ded1;
+
+  --night: #2b1d16;
+  --night-soft: #38261d;
+  --cream: #fbf3e7;
+  --cream-soft: #dcc4b0;
+
+  --danger: #9c3222;
+  --danger-soft: #f6e1db;
+  --success: #35634b;
+  --focus: #a4472a;
   --white: #ffffff;
-  --black: #2b211c;
 
   /* Lines, corners and depth */
   --border: 1px solid var(--line);
   --border-strong: 1px solid var(--line-strong);
   --radius-xs: 2px;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --radius-pill: 999px;
-  --shadow-soft: 0 1px 0 rgb(25 33 27 / 0.04);
-  --shadow-lift: 0 14px 34px -22px rgb(25 33 27 / 0.38);
+  --radius-sm: 3px;
 
   /* Layout */
   --container: 1280px;
-  --gutter: clamp(1rem, 4.5vw, 3rem);
+  --gutter: clamp(1.25rem, 5vw, 4rem);
   --header-h: 4.75rem;
-  --grid-gap: var(--space-5);
-  --section-h: clamp(3.5rem, 7.5vw, 7rem);
-  --section-h-tall: clamp(5rem, 11vw, 8rem);
+  --grid-gap: clamp(1.5rem, 4vw, 4rem);
+  --section-pad: clamp(2rem, 4vw, 4rem);
 
   /* Motion */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-  --dur-fast: 120ms;
-  --dur-base: 220ms;
-  --dur-slow: 760ms;
-  --enter-distance: 18px;
-}
-
-.theme-dark {
-  color-scheme: dark;
-  --paper: #101511;
-  --surface: #171d18;
-  --surface-2: #202821;
-  --surface-3: #2d372e;
-  --ink: #f2efe5;
-  --ink-soft: #d1d6cc;
-  --muted: #a5afa4;
-  --line: #303b31;
-  --line-strong: #536153;
-  --brand: #a8d3b8;
-  --brand-strong: #c9e6d3;
-  --brand-soft: #223b2c;
-  --accent: #ff7a5c;
-  --accent-strong: #ffa088;
-  --accent-soft: #47281f;
-  --warning: #e8c077;
-  --danger: #ff9b8d;
-  --danger-soft: #42241f;
-  --success: #9ad5b1;
-  --focus: #8fbaff;
-  --shadow-soft: 0 1px 0 rgb(0 0 0 / 0.2);
-  --shadow-lift: 0 18px 36px -24px rgb(0 0 0 / 0.75);
+  --dur-fast: 140ms;
+  --dur-base: 260ms;
+  --dur-slow: 620ms;
+  --enter-distance: 20px;
 }

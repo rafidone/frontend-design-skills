@@ -1,116 +1,99 @@
-/* Design tokens — one source of truth for spacing, type, color and motion. */
+/* Northline — design tokens. One quiet source of truth: ink, rules, spacing,
+   type steps and a single cold signal accent. No remote type, no gradients. */
+
+@font-face {
+  font-family: "Schibsted Grotesk";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: block;
+  src: url("../assets/fonts/schibsted-grotesk-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: block;
+  src: url("../assets/fonts/source-sans-3-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../assets/fonts/ibm-plex-mono-latin.woff2") format("woff2");
+}
+
 :root {
   color-scheme: dark;
 
-  /* Type families */
+  /* Three families, each with one job. */
   --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
-  /* Type scale */
+  /* A deliberately short scale: body, lede, subhead, section, display. */
   --text-2xs: 0.6875rem;
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
-  --text-md: clamp(1.0625rem, 0.98rem + 0.25vw, 1.1875rem);
-  --text-lg: clamp(1.25rem, 1.12rem + 0.45vw, 1.5rem);
-  --text-xl: clamp(1.5rem, 1.25rem + 0.9vw, 2rem);
-  --text-2xl: clamp(1.8rem, 1.2rem + 1vw, 2.109rem);
-  --text-3xl: clamp(2.25rem, 1.4rem + 3vw, 2.875rem);
-  --text-display: clamp(3.25rem, 1.35rem + 5vw, 4.625rem);
-  --leading-tight: 1.0;
+  --step-lede: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+  --step-subhead: clamp(1.375rem, 1.25rem + 0.5vw, 1.625rem);
+  --step-section: clamp(2.125rem, 1.4rem + 2.5vw, 3.375rem);
+  --step-display: clamp(2.9rem, 1.4rem + 6.4vw, 6.5rem);
+
+  --leading-tight: 0.94;
   --leading-snug: 1.18;
   --leading-body: 1.6;
-  --tracking-tight: -0.035em;
+  --tracking-tight: -0.045em;
   --tracking-caps: 0.14em;
 
-  /* Spacing scale */
-  --space-1: 0.25rem;   /* 4 */
-  --space-2: 0.5rem;    /* 8 */
-  --space-3: 0.75rem;   /* 12 */
-  --space-4: 1rem;      /* 16 */
-  --space-5: 1.5rem;    /* 24 */
-  --space-6: 2rem;      /* 32 */
-  --space-7: 3rem;      /* 48 */
-  --space-8: 4rem;      /* 64 */
-  --space-9: 6rem;      /* 96 */
-  --space-10: 8rem;     /* 128 */
+  /* Spacing. */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
 
-  /* Surfaces and ink */
-  --paper: #0e1621;
-  --surface: #172232;
-  --surface-2: #242e3e;
-  --surface-3: #313b4a;
-  --ink: #edf2f7;
-  --ink-soft: #bcc2c8;
-  --muted: #9dabb9;
-  --line: #323943;
-  --line-strong: #555c65;
-  --brand: #7fb3ff;
-  --brand-strong: #99c2ff;
-  --brand-soft: #1e2c40;
-  --accent: #7fb3ff;
-  --accent-strong: #96c1ff;
-  --accent-soft: #202f45;
-  --warning: #8a5a12;
-  --danger: #a12f22;
-  --danger-soft: #f6ddd8;
-  --success: #266044;
-  --focus: #7fb3ff;
-  --white: #071120;
-  --black: #edf2f7;
+  /* Deep near-black navy ground and cool ink. */
+  --bg: #070b12;
+  --bg-raised: #0a1018;
+  --surface: #0e1520;
+  --glass: rgb(255 255 255 / 0.028);
+  --glass-strong: rgb(255 255 255 / 0.055);
+  --ink: #f2f5f8;
+  --ink-soft: #c3ccd6;
+  --muted: #93a0af;
 
-  /* Lines, corners and depth */
-  --border: 1px solid var(--line);
-  --border-strong: 1px solid var(--line-strong);
-  --radius-xs: 2px;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --radius-pill: 999px;
-  --shadow-soft: 0 1px 0 rgb(25 33 27 / 0.04);
-  --shadow-lift: 0 14px 34px -22px rgb(25 33 27 / 0.38);
+  /* Hairlines, not borders. */
+  --line: rgb(255 255 255 / 0.11);
+  --line-strong: rgb(255 255 255 / 0.22);
+  --rule: 1px solid var(--line);
+  --rule-strong: 1px solid var(--line-strong);
 
-  /* Layout */
+  /* One accent: a cold signal mint. Everything else is neutral. */
+  --accent: #7fe3d4;
+  --accent-ink: #04120f;
+  --accent-soft: rgb(127 227 212 / 0.12);
+  --focus: #7fe3d4;
+
+  --radius: 2px;
+
+  /* Layout. */
   --container: 1280px;
-  --gutter: clamp(1rem, 4.5vw, 3rem);
-  --header-h: 4.75rem;
-  --grid-gap: var(--space-5);
-  --section-h: clamp(3.5rem, 7.5vw, 7rem);
-  --section-h-tall: clamp(5rem, 11vw, 8rem);
+  --gutter: clamp(1rem, 4vw, 3rem);
+  --header-h: 4.5rem;
+  --section-pad: clamp(3rem, 5.5vw, 5.5rem);
 
-  /* Motion */
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-  --dur-fast: 120ms;
-  --dur-base: 220ms;
-  --dur-slow: 760ms;
-  --enter-distance: 18px;
-}
-
-.theme-dark {
-  color-scheme: dark;
-  --paper: #101511;
-  --surface: #171d18;
-  --surface-2: #202821;
-  --surface-3: #2d372e;
-  --ink: #f2efe5;
-  --ink-soft: #d1d6cc;
-  --muted: #a5afa4;
-  --line: #303b31;
-  --line-strong: #536153;
-  --brand: #a8d3b8;
-  --brand-strong: #c9e6d3;
-  --brand-soft: #223b2c;
-  --accent: #ff7a5c;
-  --accent-strong: #ffa088;
-  --accent-soft: #47281f;
-  --warning: #e8c077;
-  --danger: #ff9b8d;
-  --danger-soft: #42241f;
-  --success: #9ad5b1;
-  --focus: #8fbaff;
-  --shadow-soft: 0 1px 0 rgb(0 0 0 / 0.2);
-  --shadow-lift: 0 18px 36px -24px rgb(0 0 0 / 0.75);
+  /* Motion. */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 140ms;
+  --dur: 220ms;
+  --dur-slow: 620ms;
+  --enter-distance: 14px;
 }

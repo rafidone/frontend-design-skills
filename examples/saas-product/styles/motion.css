@@ -1,75 +1,31 @@
-/* Motion: one entrance, two small state changes, nothing that follows the scrollbar. */
+/* Motion: restrained, mechanical, zero spectacle. */
 @keyframes fdm-enter {
-  from {
-    opacity: 0;
-    transform: translateY(var(--enter-distance));
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translate3d(0, 18px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  html.fdm-motion [data-enter] {
-    opacity: 0;
-  }
+[data-enter] { opacity: 1; }
 
-  html.fdm-motion [data-enter].is-entering {
-    animation: fdm-enter var(--dur-slow) var(--ease-out) both;
-    animation-delay: var(--enter-delay, 0ms);
-  }
-
-  .button:hover {
-    transform: translateY(-2px);
-  }
-
-  .button:active {
-    transform: translateY(0) scale(0.98);
-    transition-duration: var(--dur-fast);
-  }
-
-  [data-lift] {
-    transition:
-      transform var(--dur-base) var(--ease-out),
-      box-shadow var(--dur-base) var(--ease-out),
-      border-color var(--dur-base) var(--ease-out);
-  }
-
-  [data-lift]:hover {
-    transform: translateY(-2px);
-    border-color: var(--line-strong);
-    box-shadow: var(--shadow-lift);
-  }
-
-  [data-lift]:focus-within {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lift);
-  }
-
-  .media-zoom {
-    overflow: hidden;
-  }
-
-  .media-zoom > img,
-  .media-zoom > svg,
-  .media-zoom > .zoom-target {
-    transition: transform 700ms var(--ease-out);
-  }
-
-  @media (hover: hover) {
-    .media-zoom:hover > img,
-    .media-zoom:hover > svg,
-    .media-zoom:hover > .zoom-target {
-      transform: scale(1.03);
-    }
-  }
+html.fdm-motion [data-enter] {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
 }
 
-/* Parent-level stagger: children inherit a short, readable delay. */
-@media (prefers-reduced-motion: no-preference) {
-  [data-enter-group] > [data-enter]:nth-child(2) { --enter-delay: 80ms; }
-  [data-enter-group] > [data-enter]:nth-child(3) { --enter-delay: 160ms; }
-  [data-enter-group] > [data-enter]:nth-child(4) { --enter-delay: 240ms; }
-  [data-enter-group] > [data-enter]:nth-child(5) { --enter-delay: 320ms; }
+html.fdm-motion [data-enter].is-entering {
+  animation: fdm-enter 620ms cubic-bezier(.22, 1, .36, 1) both;
+}
+
+html.fdm-motion [data-enter="2"].is-entering { animation-delay: 80ms; }
+html.fdm-motion [data-enter="3"].is-entering { animation-delay: 160ms; }
+html.fdm-motion [data-enter="4"].is-entering { animation-delay: 240ms; }
+
+[data-lift] {
+  transition: transform 260ms cubic-bezier(.22, 1, .36, 1), border-color 260ms ease, background-color 260ms ease;
+}
+
+[data-lift]:hover { transform: translate3d(0, -3px, 0); border-color: rgb(127 227 212 / .5); }
+[data-lift]:active { transform: translate3d(0, 0, 0); }
+
+@media (max-width: 820px) {
+  html.fdm-motion [data-enter].is-entering { animation-duration: 460ms; }
 }

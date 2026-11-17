@@ -1,116 +1,75 @@
-/* Design tokens — one source of truth for spacing, type, color and motion. */
+/* Ironwood design tokens: forest black, lantern amber, one display voice. */
 :root {
   color-scheme: dark;
 
-  /* Type families */
   --font-sans: "Archivo", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Anton", Impact, 'Arial Narrow', sans-serif;
+  --font-display: "Anton", Impact, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
-  /* Type scale */
-  --text-2xs: 0.6875rem;
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
-  --text-md: clamp(1.0625rem, 0.98rem + 0.25vw, 1.1875rem);
-  --text-lg: clamp(1.25rem, 1.12rem + 0.45vw, 1.5rem);
-  --text-xl: clamp(1.5rem, 1.25rem + 0.9vw, 2rem);
-  --text-2xl: clamp(1.8rem, 1.2rem + 1vw, 2.531rem);
-  --text-3xl: clamp(2.25rem, 1.4rem + 4vw, 4.000rem);
-  --text-display: clamp(3.25rem, 1.35rem + 7vw, 7.000rem);
-  --leading-tight: 0.9;
-  --leading-snug: 1.18;
-  --leading-body: 1.6;
-  --tracking-tight: -0.01em;
+  --text-md: 1.0625rem;
+  --text-lg: 1.25rem;
+
+  /* Three heading sizes, reused everywhere. */
+  --fs-h1: clamp(3.5rem, 9.2vw, 8.75rem);
+  --fs-h2: clamp(2.25rem, 4.4vw, 4.25rem);
+  --fs-h3: clamp(1.25rem, 1.8vw, 1.75rem);
+
+  --leading-display: 0.88;
+  --leading-tight: 1.02;
+  --leading-body: 1.62;
+  --tracking-display: -0.02em;
   --tracking-caps: 0.14em;
 
-  /* Spacing scale */
-  --space-1: 0.25rem;   /* 4 */
-  --space-2: 0.5rem;    /* 8 */
-  --space-3: 0.75rem;   /* 12 */
-  --space-4: 1rem;      /* 16 */
-  --space-5: 1.5rem;    /* 24 */
-  --space-6: 2rem;      /* 32 */
-  --space-7: 3rem;      /* 48 */
-  --space-8: 4rem;      /* 64 */
-  --space-9: 6rem;      /* 96 */
-  --space-10: 8rem;     /* 128 */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
 
-  /* Surfaces and ink */
-  --paper: #0f1712;
-  --surface: #182219;
-  --surface-2: #252f26;
-  --surface-3: #323b33;
-  --ink: #edf3ee;
-  --ink-soft: #bcc3be;
-  --muted: #98a89b;
-  --line: #333a35;
-  --line-strong: #565d58;
-  --brand: #70c08a;
-  --brand-strong: #8dcda1;
-  --brand-soft: #1d2f23;
-  --accent: #70c08a;
-  --accent-strong: #8acb9f;
-  --accent-soft: #1f3225;
-  --warning: #8a5a12;
-  --danger: #a12f22;
-  --danger-soft: #f6ddd8;
-  --success: #266044;
-  --focus: #70c08a;
-  --white: #0c1a11;
-  --black: #edf3ee;
+  --bg: #070c09;
+  --bg-deep: #040705;
+  --surface: #101a13;
+  --surface-2: #17231a;
+  --surface-3: #223026;
 
-  /* Lines, corners and depth */
+  --ink: #f3efe3;
+  --ink-soft: #cdd6c9;
+  --muted: #acbaac;
+  --line: #2d3a30;
+  --line-strong: #536354;
+
+  --accent: #e6b65c;
+  --accent-strong: #f2cc83;
+  --accent-ink: #0a100b;
+  --accent-soft: #241d0f;
+
+  --danger: #ff9a80;
+  --danger-soft: #2a1512;
+  --success: #8fd6a1;
+  --focus: #e6b65c;
+
   --border: 1px solid var(--line);
   --border-strong: 1px solid var(--line-strong);
   --radius-xs: 2px;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --radius-pill: 999px;
-  --shadow-soft: 0 1px 0 rgb(25 33 27 / 0.04);
-  --shadow-lift: 0 14px 34px -22px rgb(25 33 27 / 0.38);
+  --radius-sm: 3px;
+  --radius-md: 5px;
+  --shadow-lift: 0 24px 60px -34px rgb(0 0 0 / 0.9);
 
-  /* Layout */
-  --container: 1280px;
-  --gutter: clamp(1rem, 4.5vw, 3rem);
-  --header-h: 4.75rem;
-  --grid-gap: var(--space-5);
-  --section-h: clamp(3.5rem, 7.5vw, 7rem);
-  --section-h-tall: clamp(5rem, 11vw, 8rem);
+  --container: 1320px;
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --header-h: 4.5rem;
 
-  /* Motion */
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
   --dur-fast: 120ms;
   --dur-base: 220ms;
-  --dur-slow: 760ms;
+  --dur-slow: 720ms;
   --enter-distance: 18px;
-}
-
-.theme-dark {
-  color-scheme: dark;
-  --paper: #101511;
-  --surface: #171d18;
-  --surface-2: #202821;
-  --surface-3: #2d372e;
-  --ink: #f2efe5;
-  --ink-soft: #d1d6cc;
-  --muted: #a5afa4;
-  --line: #303b31;
-  --line-strong: #536153;
-  --brand: #a8d3b8;
-  --brand-strong: #c9e6d3;
-  --brand-soft: #223b2c;
-  --accent: #ff7a5c;
-  --accent-strong: #ffa088;
-  --accent-soft: #47281f;
-  --warning: #e8c077;
-  --danger: #ff9b8d;
-  --danger-soft: #42241f;
-  --success: #9ad5b1;
-  --focus: #8fbaff;
-  --shadow-soft: 0 1px 0 rgb(0 0 0 / 0.2);
-  --shadow-lift: 0 18px 36px -24px rgb(0 0 0 / 0.75);
 }

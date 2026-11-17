@@ -1,4 +1,4 @@
-/* Base: reset, reading defaults and accessibility. */
+/* Base — reset, reading defaults, focus and the reduced-motion contract. */
 *,
 *::before,
 *::after {
@@ -60,8 +60,8 @@ button {
 
 a {
   color: inherit;
-  text-decoration-thickness: 0.08em;
-  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
 }
 
 a:hover {
@@ -72,13 +72,14 @@ p,
 ul,
 ol,
 dl,
+dd,
 blockquote,
 figure {
   margin: 0;
 }
 
-ul[role="list"],
-ol[role="list"] {
+ul,
+ol {
   padding: 0;
   list-style: none;
 }
@@ -88,7 +89,7 @@ h2,
 h3,
 h4 {
   font-family: var(--font-display);
-  font-weight: 500;
+  font-weight: 400;
   line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
   text-wrap: balance;
@@ -109,7 +110,7 @@ h3 {
 h4 {
   font-family: var(--font-sans);
   font-size: var(--text-base);
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.01em;
   line-height: var(--leading-snug);
 }
@@ -120,11 +121,7 @@ p {
 
 strong,
 b {
-  font-weight: 600;
-}
-
-small {
-  font-size: var(--text-sm);
+  font-weight: 500;
 }
 
 hr {
@@ -134,13 +131,12 @@ hr {
 
 ::selection {
   background: var(--accent);
-  color: var(--white);
+  color: var(--accent-ink);
 }
 
 :focus-visible {
-  outline: 3px solid var(--focus);
+  outline: 2px solid var(--focus);
   outline-offset: 3px;
-  border-radius: var(--radius-xs);
 }
 
 :focus:not(:focus-visible) {
@@ -151,20 +147,22 @@ hr {
   display: none !important;
 }
 
-/* Skip link: first tab stop, visible on focus. */
+/* First tab stop. It is a real, tappable bar when focused. */
 .skip-link {
   position: fixed;
   top: var(--space-3);
   left: var(--space-3);
   z-index: 1000;
+  display: inline-flex;
+  min-height: 44px;
   padding: var(--space-3) var(--space-4);
-  border-radius: var(--radius-sm);
+  align-items: center;
   background: var(--ink);
   color: var(--paper);
-  font-size: var(--text-sm);
-  font-weight: 600;
+  font-size: var(--text-base);
+  font-weight: 500;
   text-decoration: none;
-  transform: translateY(-180%);
+  transform: translateY(-200%);
 }
 
 .skip-link:focus-visible {
@@ -183,23 +181,5 @@ hr {
   border: 0 !important;
 }
 
-/* Reduced motion is the default for anyone who asks for it. */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-
-  [data-enter] {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
+/* Tiny decorative text is always marked data-fdm-ui and styled per component.
+   The marker itself carries no presentation so it never restyles its children. */

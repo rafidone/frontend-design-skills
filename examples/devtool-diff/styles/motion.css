@@ -1,4 +1,4 @@
-/* Motion: one entrance, two small state changes, nothing that follows the scrollbar. */
+/* Motion: one short entrance and quiet state changes. No loops, no scrolling tricks. */
 @keyframes fdm-enter {
   from {
     opacity: 0;
@@ -16,57 +16,32 @@
   }
 
   html.fdm-motion [data-enter].is-entering {
-    animation: fdm-enter var(--dur-slow) var(--ease-out) both;
+    animation: fdm-enter var(--dur-enter) var(--ease-out) both;
     animation-delay: var(--enter-delay, 0ms);
   }
 
-  .button:hover {
-    transform: translateY(-2px);
-  }
-
-  .button:active {
-    transform: translateY(0) scale(0.98);
+  .button:active,
+  .copy-button:active {
+    transform: translateY(1px);
     transition-duration: var(--dur-fast);
   }
 
-  [data-lift] {
+  .brand__mark,
+  .review-tab,
+  .brief-step__artifact span {
     transition:
-      transform var(--dur-base) var(--ease-out),
-      box-shadow var(--dur-base) var(--ease-out),
-      border-color var(--dur-base) var(--ease-out);
+      border-color var(--dur-base) var(--ease-out),
+      color var(--dur-base) var(--ease-out);
   }
 
-  [data-lift]:hover {
-    transform: translateY(-2px);
-    border-color: var(--line-strong);
-    box-shadow: var(--shadow-lift);
-  }
-
-  [data-lift]:focus-within {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lift);
-  }
-
-  .media-zoom {
-    overflow: hidden;
-  }
-
-  .media-zoom > img,
-  .media-zoom > svg,
-  .media-zoom > .zoom-target {
-    transition: transform 700ms var(--ease-out);
-  }
-
-  @media (hover: hover) {
-    .media-zoom:hover > img,
-    .media-zoom:hover > svg,
-    .media-zoom:hover > .zoom-target {
-      transform: scale(1.03);
-    }
+  .link-arrow:hover .arrow,
+  .button:hover .arrow {
+    transform: translateX(3px);
+    transition: transform var(--dur-base) var(--ease-out);
   }
 }
 
-/* Parent-level stagger: children inherit a short, readable delay. */
+/* Parent-level stagger; children inherit a short, readable delay. */
 @media (prefers-reduced-motion: no-preference) {
   [data-enter-group] > [data-enter]:nth-child(2) { --enter-delay: 80ms; }
   [data-enter-group] > [data-enter]:nth-child(3) { --enter-delay: 160ms; }

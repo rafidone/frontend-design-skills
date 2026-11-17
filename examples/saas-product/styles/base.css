@@ -1,4 +1,5 @@
-/* Base: reset, reading defaults and accessibility. */
+/* Base — reset, reading defaults and accessibility. */
+
 *,
 *::before,
 *::after {
@@ -18,7 +19,7 @@ html {
 body {
   min-width: 320px;
   min-height: 100vh;
-  background: var(--paper);
+  background: var(--bg);
   color: var(--ink);
   font-family: var(--font-sans);
   font-size: var(--text-base);
@@ -85,8 +86,7 @@ ol[role="list"] {
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
   font-family: var(--font-display);
   font-weight: 500;
   line-height: var(--leading-tight);
@@ -95,23 +95,17 @@ h4 {
 }
 
 h1 {
-  font-size: var(--text-display);
+  font-size: var(--step-display);
 }
 
 h2 {
-  font-size: var(--text-3xl);
+  font-size: var(--step-section);
 }
 
 h3 {
-  font-size: var(--text-xl);
-}
-
-h4 {
-  font-family: var(--font-sans);
-  font-size: var(--text-base);
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-size: var(--step-subhead);
   line-height: var(--leading-snug);
+  letter-spacing: -0.025em;
 }
 
 p {
@@ -127,20 +121,15 @@ small {
   font-size: var(--text-sm);
 }
 
-hr {
-  border: 0;
-  border-top: var(--border);
-}
-
 ::selection {
   background: var(--accent);
-  color: var(--white);
+  color: var(--accent-ink);
 }
 
 :focus-visible {
-  outline: 3px solid var(--focus);
+  outline: 2px solid var(--focus);
   outline-offset: 3px;
-  border-radius: var(--radius-xs);
+  border-radius: var(--radius);
 }
 
 :focus:not(:focus-visible) {
@@ -151,16 +140,17 @@ hr {
   display: none !important;
 }
 
-/* Skip link: first tab stop, visible on focus. */
+/* Skip link — the first tab stop, visible only when focused. */
 .skip-link {
   position: fixed;
   top: var(--space-3);
   left: var(--space-3);
   z-index: 1000;
   padding: var(--space-3) var(--space-4);
-  border-radius: var(--radius-sm);
+  border: var(--rule-strong);
+  border-radius: var(--radius);
   background: var(--ink);
-  color: var(--paper);
+  color: var(--bg);
   font-size: var(--text-sm);
   font-weight: 600;
   text-decoration: none;
@@ -183,7 +173,7 @@ hr {
   border: 0 !important;
 }
 
-/* Reduced motion is the default for anyone who asks for it. */
+/* Anyone who asks for less motion gets the finished state immediately. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -192,13 +182,17 @@ hr {
   *,
   *::before,
   *::after {
+    animation: none !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    transition-property: none !important;
     scroll-behavior: auto !important;
   }
 
-  [data-enter] {
+  [data-enter],
+  [data-reveal],
+  [data-fdm-enter] {
     opacity: 1 !important;
     transform: none !important;
   }

@@ -1,4 +1,4 @@
-/* Layout: containers, columns, page rhythm and the full-height hero. */
+/* Layout: one gutter, full-height hero, measured sections and single-column collapse. */
 html,
 body {
   max-width: 100%;
@@ -10,286 +10,215 @@ body {
 }
 
 .wrap {
+  position: relative;
   width: min(calc(100% - (2 * var(--gutter))), var(--container));
   margin-inline: auto;
 }
 
-.wrap--narrow {
-  width: min(calc(100% - (2 * var(--gutter))), 860px);
-  margin-inline: auto;
+main > section,
+.site-footer {
+  position: relative;
+  overflow: clip;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: var(--grid-gap);
-}
-
-.col-1  { grid-column: span 1; }
-.col-2  { grid-column: span 2; }
-.col-3  { grid-column: span 3; }
-.col-4  { grid-column: span 4; }
-.col-5  { grid-column: span 5; }
-.col-6  { grid-column: span 6; }
-.col-7  { grid-column: span 7; }
-.col-8  { grid-column: span 8; }
-.col-9  { grid-column: span 9; }
-.col-10 { grid-column: span 10; }
-.col-11 { grid-column: span 11; }
-.col-12 { grid-column: span 12; }
-
-.stack {
-  display: flex;
-  flex-direction: column;
-  gap: var(--stack-gap, var(--space-4));
-}
-
-.cluster {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--cluster-gap, var(--space-3));
-}
-
-.split {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: clamp(2rem, 6vw, 5rem);
-  align-items: center;
-}
-
-.split--wide-left {
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
-}
-
-.split--wide-right {
-  grid-template-columns: minmax(0, 0.65fr) minmax(0, 1.35fr);
-}
-
-.split--top,
-.split--start {
-  align-items: start;
-}
-
-.figure-reset {
-  margin: 0;
-}
-
-.mt-3 { margin-block-start: var(--space-3); }
-.mt-4 { margin-block-start: var(--space-4); }
-.mt-5 { margin-block-start: var(--space-5); }
-.mt-6 { margin-block-start: var(--space-6); }
-.mt-7 { margin-block-start: var(--space-7); }
-
-/* The hero begins directly under the transparent site header and fills the viewport. */
 .hero {
   position: relative;
   display: flex;
   min-height: 100svh;
   flex-direction: column;
-  justify-content: center;
-  padding-block: calc(var(--header-h) + var(--space-7)) var(--space-7);
   isolation: isolate;
 }
 
-.hero__body {
-  flex: 1;
-  display: grid;
+.ironwood-hero__inner {
+  display: flex;
+  min-height: 100svh;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-block: calc(var(--header-h) + clamp(1.5rem, 3vw, 2.75rem)) clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.ironwood-hero__top {
+  display: flex;
   align-items: center;
-  padding-block: var(--space-5);
+  justify-content: space-between;
+  gap: var(--space-4);
 }
 
-.hero__copy {
-  position: relative;
-  z-index: 1;
-}
-
-.hero__aside {
-  position: relative;
-  min-width: 0;
-}
-
-/* Section rhythm is one custom height, applied equally top and bottom. */
-.section {
-  --h: var(--section-h);
-  padding-block: var(--h);
-}
-
-.section--tall {
-  --h: var(--section-h-tall);
-}
-
-/* data-budget="1|2" declares the measured screen budget. The minimum keeps a
-   content section from collapsing into an in-between height; content may grow
-   past it, but never past 1.16H without becoming a deliberate 2H section. */
-.section[data-budget="1"],
-.section[data-budget="2"] {
+.ironwood-hero__bottom {
   display: grid;
-  align-content: center;
+  grid-template-columns: minmax(0, 1.45fr) minmax(19rem, 0.55fr);
+  gap: var(--gutter);
+  align-items: end;
+}
+
+.ironwood-hero__copy {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-5);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-5);
+}
+
+.hero-base {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-5);
+  padding-block-start: var(--space-3);
+  border-block-start: 1px solid var(--line-strong);
+}
+
+.section {
+  padding-block: clamp(2.5rem, 5vw, 4rem);
 }
 
 .section[data-budget="1"] {
-  min-height: calc(100svh - var(--header-h));
+  display: grid;
+  min-height: 100svh;
+  align-content: center;
 }
 
-.section[data-budget="2"] {
-  min-height: calc(200svh - var(--header-h));
+.world-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+  gap: var(--gutter);
+  align-items: center;
 }
 
-.section--tight {
-  --h: var(--space-8);
+.world-copy {
+  display: grid;
+  gap: var(--space-5);
 }
 
-.section--compact {
-  --h: var(--space-5);
-}
-
-.section--flush-top {
-  padding-block-start: 0;
-}
-
-.section--flush-bottom {
-  padding-block-end: 0;
-}
-
-.section--ruled {
+.world-facts {
+  display: grid;
   border-block-start: var(--border);
 }
 
-.section-head {
+.world-facts div {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(18rem, 0.6fr);
-  gap: var(--space-6);
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: var(--space-3);
+  align-items: baseline;
+  padding-block: 0.8rem;
+  border-block-end: var(--border);
+}
+
+.systems-head {
+  display: grid;
+  max-width: 58rem;
+  gap: var(--space-4);
+}
+
+.systems-ledger {
+  display: grid;
+  margin-block-start: var(--space-6);
+  border-block-start: var(--border-strong);
+}
+
+.system-row {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr) 12rem;
+  gap: var(--gutter);
+  align-items: center;
+  padding-block: var(--space-4);
+  border-block-end: var(--border);
+}
+
+.editions-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: var(--gutter);
   align-items: end;
-  margin-block-end: var(--space-7);
+  margin-block-end: var(--space-6);
 }
 
-.section-head > * {
-  min-width: 0;
+.edition-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: var(--gutter);
+  align-items: stretch;
 }
 
-.section-head__aside {
-  justify-self: end;
-  max-width: 34ch;
+.edition-side {
+  display: grid;
+  align-content: space-between;
+  gap: var(--gutter);
 }
 
-.section-head__aside--start {
-  justify-self: start;
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: var(--gutter);
+  align-items: start;
 }
 
-.flow > * + * {
-  margin-block-start: var(--flow-space, var(--space-4));
+.contact-lead {
+  display: grid;
+  gap: var(--space-5);
 }
 
-.rule {
-  width: 100%;
-  border: 0;
-  border-top: var(--border);
+.contact-facts {
+  display: grid;
+  gap: var(--space-4);
 }
 
-.media {
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--radius-lg);
-  background: var(--surface-2);
+.field-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gutter);
 }
 
-.media--portrait { aspect-ratio: 4 / 5; }
-.media--square { aspect-ratio: 1; }
-.media--landscape { aspect-ratio: 16 / 10; }
-.media--wide { aspect-ratio: 21 / 9; }
-
-.media > svg,
-.media > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, 0.6fr));
+  gap: var(--gutter);
 }
 
-@media (max-width: 960px) {
-  .section-head {
+@media (max-width: 900px) {
+  .ironwood-hero__bottom {
     grid-template-columns: 1fr;
     align-items: start;
   }
 
-  .section-head__aside {
-    justify-self: start;
-  }
-
-  .col-1,
-  .col-2,
-  .col-3,
-  .col-4,
-  .col-5 {
-    grid-column: span 6;
-  }
-
-  .col-7,
-  .col-8,
-  .col-9,
-  .col-10,
-  .col-11 {
-    grid-column: span 12;
+  .season-hud {
+    max-width: 44rem;
   }
 }
 
 @media (max-width: 820px) {
-  .split,
-  .split--wide-left,
-  .split--wide-right {
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .ironwood-hero__bottom,
+  .world-grid,
+  .world-facts div,
+  .system-row,
+  .editions-head,
+  .edition-stage,
+  .edition-side,
+  .contact-layout,
+  .field-row,
+  .footer-grid,
+  .season-hud__list {
     grid-template-columns: 1fr;
   }
 
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .col-1,
-  .col-2,
-  .col-3,
-  .col-4,
-  .col-5,
-  .col-6,
-  .col-7,
-  .col-8,
-  .col-9,
-  .col-10,
-  .col-11,
-  .col-12 {
-    grid-column: auto;
-  }
-
-  .hero {
-    min-height: 100svh;
-    padding-block-end: var(--space-6);
-  }
-
-  .hero__body {
-    align-items: start;
+  .hero-base {
+    justify-content: flex-start;
   }
 }
 
-@media (max-width: 640px) {
-  .grid {
-    gap: var(--space-4);
-  }
-
-  .col-1,
-  .col-2,
-  .col-3,
-  .col-4,
-  .col-5,
-  .col-6 {
-    grid-column: span 12;
-  }
-
-  .section-head {
-    margin-block-end: var(--space-6);
-  }
-
-  /* The week board is supporting detail. On a phone the copy and its action
-     keep the hero inside 1H; the board returns at wider sizes. */
-  .hero__aside .week {
+@media (max-width: 600px) {
+  .hero-base span:last-child {
     display: none;
   }
 }

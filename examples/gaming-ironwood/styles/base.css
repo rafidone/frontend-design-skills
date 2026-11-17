@@ -18,7 +18,7 @@ html {
 body {
   min-width: 320px;
   min-height: 100vh;
-  background: var(--paper);
+  background: var(--bg);
   color: var(--ink);
   font-family: var(--font-sans);
   font-size: var(--text-base);
@@ -61,11 +61,11 @@ button {
 a {
   color: inherit;
   text-decoration-thickness: 0.08em;
-  text-underline-offset: 0.18em;
+  text-underline-offset: 0.2em;
 }
 
 a:hover {
-  text-decoration-color: var(--accent);
+  color: var(--accent-strong);
 }
 
 p,
@@ -85,36 +85,37 @@ ol[role="list"] {
 
 h1,
 h2,
-h3,
-h4 {
-  font-family: var(--font-display);
-  font-weight: 500;
-  line-height: var(--leading-tight);
-  letter-spacing: var(--tracking-tight);
+h3 {
   text-wrap: balance;
 }
 
+h1,
+h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-display);
+  text-transform: uppercase;
+}
+
 h1 {
-  font-size: var(--text-display);
+  font-size: var(--fs-h1);
 }
 
 h2 {
-  font-size: var(--text-3xl);
+  font-size: var(--fs-h2);
 }
 
 h3 {
-  font-size: var(--text-xl);
-}
-
-h4 {
   font-family: var(--font-sans);
-  font-size: var(--text-base);
+  font-size: var(--fs-h3);
   font-weight: 600;
-  letter-spacing: -0.01em;
-  line-height: var(--leading-snug);
+  letter-spacing: -0.015em;
+  line-height: var(--leading-tight);
 }
 
 p {
+  max-width: 62ch;
   text-wrap: pretty;
 }
 
@@ -124,17 +125,12 @@ b {
 }
 
 small {
-  font-size: var(--text-sm);
-}
-
-hr {
-  border: 0;
-  border-top: var(--border);
+  font-size: var(--text-base);
 }
 
 ::selection {
   background: var(--accent);
-  color: var(--white);
+  color: var(--accent-ink);
 }
 
 :focus-visible {
@@ -151,23 +147,30 @@ hr {
   display: none !important;
 }
 
-/* Skip link: first tab stop, visible on focus. */
 .skip-link {
   position: fixed;
   top: var(--space-3);
   left: var(--space-3);
   z-index: 1000;
-  padding: var(--space-3) var(--space-4);
-  border-radius: var(--radius-sm);
+  display: inline-flex;
+  min-height: 44px;
+  padding: var(--space-2) var(--space-4);
+  align-items: center;
+  border: var(--border-strong);
   background: var(--ink);
-  color: var(--paper);
-  font-size: var(--text-sm);
+  color: var(--bg);
+  font-size: var(--text-base);
   font-weight: 600;
   text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
   transform: translateY(-180%);
 }
 
 .skip-link:focus-visible {
+  color: var(--bg);
+  opacity: 1;
+  pointer-events: auto;
   transform: translateY(0);
 }
 
@@ -183,7 +186,6 @@ hr {
   border: 0 !important;
 }
 
-/* Reduced motion is the default for anyone who asks for it. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -192,13 +194,15 @@ hr {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    animation: none !important;
+    transition: none !important;
     scroll-behavior: auto !important;
   }
 
-  [data-enter] {
+  [data-enter],
+  [data-reveal],
+  [data-fdm-enter] {
+    visibility: visible !important;
     opacity: 1 !important;
     transform: none !important;
   }

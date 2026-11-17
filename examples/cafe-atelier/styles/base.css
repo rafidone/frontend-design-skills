@@ -65,7 +65,7 @@ a {
 }
 
 a:hover {
-  text-decoration-color: var(--accent);
+  text-decoration-color: var(--clay);
 }
 
 p,
@@ -77,40 +77,27 @@ figure {
   margin: 0;
 }
 
-ul[role="list"],
-ol[role="list"] {
-  padding: 0;
-  list-style: none;
-}
-
 h1,
 h2,
 h3,
 h4 {
   font-family: var(--font-display);
-  font-weight: 500;
-  line-height: var(--leading-tight);
+  font-weight: 400;
+  line-height: var(--leading-display);
   letter-spacing: var(--tracking-tight);
   text-wrap: balance;
 }
 
 h1 {
-  font-size: var(--text-display);
+  font-size: var(--text-h1);
 }
 
 h2 {
-  font-size: var(--text-3xl);
+  font-size: var(--text-h2);
 }
 
 h3 {
-  font-size: var(--text-xl);
-}
-
-h4 {
-  font-family: var(--font-sans);
-  font-size: var(--text-base);
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-size: var(--text-h3);
   line-height: var(--leading-snug);
 }
 
@@ -123,24 +110,14 @@ b {
   font-weight: 600;
 }
 
-small {
-  font-size: var(--text-sm);
-}
-
-hr {
-  border: 0;
-  border-top: var(--border);
-}
-
 ::selection {
-  background: var(--accent);
+  background: var(--clay);
   color: var(--white);
 }
 
 :focus-visible {
-  outline: 3px solid var(--focus);
+  outline: 2px solid var(--focus);
   outline-offset: 3px;
-  border-radius: var(--radius-xs);
 }
 
 :focus:not(:focus-visible) {
@@ -157,14 +134,17 @@ hr {
   top: var(--space-3);
   left: var(--space-3);
   z-index: 1000;
-  padding: var(--space-3) var(--space-4);
-  border-radius: var(--radius-sm);
+  display: inline-flex;
+  min-height: 44px;
+  padding: var(--space-2) var(--space-4);
+  align-items: center;
+  border-radius: var(--radius-xs);
   background: var(--ink);
-  color: var(--paper);
+  color: var(--cream);
   font-size: var(--text-sm);
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
-  transform: translateY(-180%);
+  transform: translateY(-200%);
 }
 
 .skip-link:focus-visible {

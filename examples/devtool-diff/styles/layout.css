@@ -1,4 +1,4 @@
-/* Layout: containers, columns, page rhythm and the full-height hero. */
+/* Layout: one container, a full-screen hero, and single-screen content sections. */
 html,
 body {
   max-width: 100%;
@@ -14,282 +14,145 @@ body {
   margin-inline: auto;
 }
 
-.wrap--narrow {
-  width: min(calc(100% - (2 * var(--gutter))), 860px);
-  margin-inline: auto;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: var(--grid-gap);
-}
-
-.col-1  { grid-column: span 1; }
-.col-2  { grid-column: span 2; }
-.col-3  { grid-column: span 3; }
-.col-4  { grid-column: span 4; }
-.col-5  { grid-column: span 5; }
-.col-6  { grid-column: span 6; }
-.col-7  { grid-column: span 7; }
-.col-8  { grid-column: span 8; }
-.col-9  { grid-column: span 9; }
-.col-10 { grid-column: span 10; }
-.col-11 { grid-column: span 11; }
-.col-12 { grid-column: span 12; }
-
-.stack {
-  display: flex;
-  flex-direction: column;
-  gap: var(--stack-gap, var(--space-4));
-}
-
-.cluster {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--cluster-gap, var(--space-3));
-}
-
-.split {
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: clamp(2rem, 6vw, 5rem);
-  align-items: center;
-}
-
-.split--wide-left {
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
-}
-
-.split--wide-right {
-  grid-template-columns: minmax(0, 0.65fr) minmax(0, 1.35fr);
-}
-
-.split--top,
-.split--start {
-  align-items: start;
-}
-
-.figure-reset {
-  margin: 0;
-}
-
-.mt-3 { margin-block-start: var(--space-3); }
-.mt-4 { margin-block-start: var(--space-4); }
-.mt-5 { margin-block-start: var(--space-5); }
-.mt-6 { margin-block-start: var(--space-6); }
-.mt-7 { margin-block-start: var(--space-7); }
-
-/* The hero begins directly under the transparent site header and fills the viewport. */
+/* ---------- Hero ---------- */
 .hero {
   position: relative;
   display: flex;
   min-height: 100svh;
   flex-direction: column;
   justify-content: center;
-  padding-block: calc(var(--header-h) + var(--space-7)) var(--space-7);
+  padding-block: calc(var(--header-h) + var(--space-7)) var(--space-6);
   isolation: isolate;
 }
 
-.hero__body {
-  flex: 1;
+.kestrel-hero__inner {
   display: grid;
-  align-items: center;
-  padding-block: var(--space-5);
-}
-
-.hero__copy {
+  gap: var(--space-6);
   position: relative;
   z-index: 1;
 }
 
-.hero__aside {
-  position: relative;
+.kestrel-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: var(--grid-gap);
+  align-items: center;
   min-width: 0;
 }
 
-/* Section rhythm is one custom height, applied equally top and bottom. */
-.section {
-  --h: var(--section-h);
-  padding-block: var(--h);
-}
-
-.section--tall {
-  --h: var(--section-h-tall);
-}
-
-/* data-budget="1|2" declares the measured screen budget. The minimum keeps a
-   content section from collapsing into an in-between height; content may grow
-   past it, but never past 1.16H without becoming a deliberate 2H section. */
-.section[data-budget="1"],
-.section[data-budget="2"] {
+.kestrel-hero__copy {
+  position: relative;
   display: grid;
+  min-width: 0;
+  align-content: center;
+  gap: var(--space-5);
+}
+
+/* ---------- Content sections ---------- */
+.section {
+  --h: var(--section-pad);
+  padding-block: var(--h);
+  border-block-start: var(--hairline);
+}
+
+.section[data-budget] {
+  display: grid;
+  align-content: center;
+  min-height: 92svh;
+}
+
+.kestrel-section-head {
+  display: grid;
+  max-width: 60rem;
+  gap: var(--space-4);
+}
+
+.kestrel-proof-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: var(--grid-gap);
+  align-items: center;
+}
+
+.kestrel-proof-copy {
+  display: grid;
+  min-width: 0;
+  gap: var(--space-5);
   align-content: center;
 }
 
-.section[data-budget="1"] {
-  min-height: calc(100svh - var(--header-h));
-}
-
-.section[data-budget="2"] {
-  min-height: calc(200svh - var(--header-h));
-}
-
-.section--tight {
-  --h: var(--space-8);
-}
-
-.section--compact {
-  --h: var(--space-5);
-}
-
-.section--flush-top {
-  padding-block-start: 0;
-}
-
-.section--flush-bottom {
-  padding-block-end: 0;
-}
-
-.section--ruled {
-  border-block-start: var(--border);
-}
-
-.section-head {
+.pricing-head {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(18rem, 0.6fr);
-  gap: var(--space-6);
+  margin-block-end: var(--space-6);
+  grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.9fr);
+  gap: var(--grid-gap);
   align-items: end;
-  margin-block-end: var(--space-7);
 }
 
-.section-head > * {
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+
+.contact-lead,
+.contact-form {
+  display: grid;
   min-width: 0;
+  gap: var(--space-5);
+  align-content: start;
 }
 
-.section-head__aside {
-  justify-self: end;
-  max-width: 34ch;
+.field-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
 }
 
-.section-head__aside--start {
-  justify-self: start;
-}
-
-.flow > * + * {
-  margin-block-start: var(--flow-space, var(--space-4));
-}
-
-.rule {
-  width: 100%;
-  border: 0;
-  border-top: var(--border);
-}
-
-.media {
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--radius-lg);
-  background: var(--surface-2);
-}
-
-.media--portrait { aspect-ratio: 4 / 5; }
-.media--square { aspect-ratio: 1; }
-.media--landscape { aspect-ratio: 16 / 10; }
-.media--wide { aspect-ratio: 21 / 9; }
-
-.media > svg,
-.media > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-@media (max-width: 960px) {
-  .section-head {
+/* ---------- Responsive: one column, one gutter, no halves ---------- */
+@media (max-width: 980px) {
+  .kestrel-hero__grid,
+  .kestrel-proof-grid,
+  .pricing-head,
+  .contact-layout {
     grid-template-columns: 1fr;
-    align-items: start;
   }
 
-  .section-head__aside {
-    justify-self: start;
-  }
-
-  .col-1,
-  .col-2,
-  .col-3,
-  .col-4,
-  .col-5 {
-    grid-column: span 6;
-  }
-
-  .col-7,
-  .col-8,
-  .col-9,
-  .col-10,
-  .col-11 {
-    grid-column: span 12;
+  .kestrel-hero__copy,
+  .kestrel-proof-copy,
+  .kestrel-section-head {
+    max-width: 46rem;
   }
 }
 
 @media (max-width: 820px) {
-  .split,
-  .split--wide-left,
-  .split--wide-right {
-    grid-template-columns: 1fr;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .col-1,
-  .col-2,
-  .col-3,
-  .col-4,
-  .col-5,
-  .col-6,
-  .col-7,
-  .col-8,
-  .col-9,
-  .col-10,
-  .col-11,
-  .col-12 {
-    grid-column: auto;
-  }
-
   .hero {
     min-height: 100svh;
-    padding-block-end: var(--space-6);
+    padding-block: calc(var(--header-h) + var(--space-5)) var(--space-5);
   }
 
-  .hero__body {
+  .section[data-budget] {
+    min-height: 0;
+  }
+
+  .kestrel-hero__grid,
+  .kestrel-hero__inner,
+  .kestrel-proof-grid,
+  .pricing-head,
+  .contact-layout,
+  .field-row,
+  .review-window__body,
+  .licence-row,
+  .brief-step {
+    grid-template-columns: 1fr;
+  }
+
+  .kestrel-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .licence-row {
     align-items: start;
-  }
-}
-
-@media (max-width: 640px) {
-  .grid {
-    gap: var(--space-4);
-  }
-
-  .col-1,
-  .col-2,
-  .col-3,
-  .col-4,
-  .col-5,
-  .col-6 {
-    grid-column: span 12;
-  }
-
-  .section-head {
-    margin-block-end: var(--space-6);
-  }
-
-  /* The week board is supporting detail. On a phone the copy and its action
-     keep the hero inside 1H; the board returns at wider sizes. */
-  .hero__aside .week {
-    display: none;
   }
 }

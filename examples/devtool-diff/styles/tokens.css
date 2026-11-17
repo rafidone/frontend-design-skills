@@ -1,116 +1,78 @@
-/* Design tokens — one source of truth for spacing, type, color and motion. */
+/* Coal and signal — one palette, one scale, one corner radius. */
 :root {
   color-scheme: dark;
 
-  /* Type families */
+  /* Families fixed by the art direction. */
   --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
 
-  /* Type scale */
-  --text-2xs: 0.6875rem;
+  /* Type scale: three heading sizes, one body size, one metadata size. */
+  --text-ui: 0.6875rem;
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
-  --text-md: clamp(1.0625rem, 0.98rem + 0.25vw, 1.1875rem);
-  --text-lg: clamp(1.25rem, 1.12rem + 0.45vw, 1.5rem);
-  --text-xl: clamp(1.5rem, 1.25rem + 0.9vw, 2rem);
-  --text-2xl: clamp(1.8rem, 1.2rem + 1vw, 2.363rem);
-  --text-3xl: clamp(2.25rem, 1.4rem + 3vw, 3.125rem);
-  --text-display: clamp(3.25rem, 1.35rem + 5vw, 5.000rem);
-  --leading-tight: 0.96;
-  --leading-snug: 1.18;
+  --text-lead: 1.0625rem;
+  --text-h3: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --text-h2: clamp(2rem, 1.35rem + 2.1vw, 3rem);
+  --text-h1: clamp(2.75rem, 1.45rem + 4.35vw, 4.75rem);
+  --leading-tight: 0.94;
+  --leading-head: 1.04;
   --leading-body: 1.6;
   --tracking-tight: -0.045em;
-  --tracking-caps: 0.14em;
+  --tracking-head: -0.032em;
+  --tracking-ui: 0.12em;
 
-  /* Spacing scale */
-  --space-1: 0.25rem;   /* 4 */
-  --space-2: 0.5rem;    /* 8 */
-  --space-3: 0.75rem;   /* 12 */
-  --space-4: 1rem;      /* 16 */
-  --space-5: 1.5rem;    /* 24 */
-  --space-6: 2rem;      /* 32 */
-  --space-7: 3rem;      /* 48 */
-  --space-8: 4rem;      /* 64 */
-  --space-9: 6rem;      /* 96 */
-  --space-10: 8rem;     /* 128 */
+  /* Spacing: a strict 4px rhythm. */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
 
-  /* Surfaces and ink */
+  /* Surfaces. Ink and muted clear 4.5:1 on every coal surface. */
+  --bg: #0b0f14;
   --paper: #0d1117;
-  --surface: #161c24;
-  --surface-2: #232931;
-  --surface-3: #30363d;
-  --ink: #eef2f6;
-  --ink-soft: #bdc1c5;
-  --muted: #9aa7b4;
-  --line: #31353b;
-  --line-strong: #55595e;
-  --brand: #4da3ff;
-  --brand-strong: #71b5ff;
-  --brand-soft: #162537;
+  --surface: #131a22;
+  --surface-2: #1a232d;
+  --surface-3: #24303c;
+  --ink: #eef3f7;
+  --ink-soft: #c5d0da;
+  --muted: #9fb0bf;
+  --line: #2a3440;
+  --line-strong: #415061;
   --accent: #4da3ff;
-  --accent-strong: #6db4ff;
-  --accent-soft: #17283c;
-  --warning: #8a5a12;
-  --danger: #a12f22;
-  --danger-soft: #f6ddd8;
-  --success: #266044;
+  --accent-ink: #08111c;
+  --accent-soft: #12243a;
+  --signal-add: #7fd3a3;
+  --signal-del: #f08d78;
+  --signal-risk: #e6a15c;
   --focus: #4da3ff;
-  --white: #08111c;
-  --black: #eef2f6;
 
-  /* Lines, corners and depth */
-  --border: 1px solid var(--line);
-  --border-strong: 1px solid var(--line-strong);
-  --radius-xs: 2px;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --radius-pill: 999px;
-  --shadow-soft: 0 1px 0 rgb(25 33 27 / 0.04);
-  --shadow-lift: 0 14px 34px -22px rgb(25 33 27 / 0.38);
+  /* Hairlines and depth: flat, sharp, tactile. */
+  --hairline: 1px solid var(--line);
+  --hairline-strong: 1px solid var(--line-strong);
+  --radius: 2px;
+  --inset-top: inset 0 1px 0 rgb(255 255 255 / 0.055);
+  --inset-deep: inset 0 0 0 1px rgb(255 255 255 / 0.025);
+  --shadow-panel: 0 18px 44px -30px rgb(0 0 0 / 0.9);
+  --shadow-float: 0 24px 54px -26px rgb(0 0 0 / 0.95);
 
-  /* Layout */
+  /* Frame. */
   --container: 1280px;
   --gutter: clamp(1rem, 4.5vw, 3rem);
   --header-h: 4.75rem;
-  --grid-gap: var(--space-5);
-  --section-h: clamp(3.5rem, 7.5vw, 7rem);
-  --section-h-tall: clamp(5rem, 11vw, 8rem);
+  --section-pad: clamp(3.5rem, 7.5vw, 7rem);
+  --grid-gap: clamp(1.5rem, 3.5vw, 3rem);
 
-  /* Motion */
+  /* Motion: one entrance, no loops. */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --dur-fast: 120ms;
-  --dur-base: 220ms;
-  --dur-slow: 760ms;
-  --enter-distance: 18px;
-}
-
-.theme-dark {
-  color-scheme: dark;
-  --paper: #101511;
-  --surface: #171d18;
-  --surface-2: #202821;
-  --surface-3: #2d372e;
-  --ink: #f2efe5;
-  --ink-soft: #d1d6cc;
-  --muted: #a5afa4;
-  --line: #303b31;
-  --line-strong: #536153;
-  --brand: #a8d3b8;
-  --brand-strong: #c9e6d3;
-  --brand-soft: #223b2c;
-  --accent: #ff7a5c;
-  --accent-strong: #ffa088;
-  --accent-soft: #47281f;
-  --warning: #e8c077;
-  --danger: #ff9b8d;
-  --danger-soft: #42241f;
-  --success: #9ad5b1;
-  --focus: #8fbaff;
-  --shadow-soft: 0 1px 0 rgb(0 0 0 / 0.2);
-  --shadow-lift: 0 18px 36px -24px rgb(0 0 0 / 0.75);
+  --dur-base: 200ms;
+  --dur-enter: 560ms;
+  --enter-distance: 14px;
 }

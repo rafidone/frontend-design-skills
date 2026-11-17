@@ -27,7 +27,7 @@
       <nav class="site-nav" aria-label="Primary" data-fdm-nav>
         <a class="brand" href="#top" aria-label="Kestrel home">
           <span class="brand__mark" aria-hidden="true">K</span>
-          <span>Kestrel<span class="brand__dot">.</span></span>
+          <span class="brand__word">Kestrel<span class="brand__dot">.</span></span>
         </a>
 
         <button
@@ -42,10 +42,11 @@
         </button>
 
         <ul class="nav-menu" id="primary-menu" data-fdm-nav-menu>
-          <li><a class="nav-link" href="#method">Why Kestrel</a></li>
-          <li><a class="nav-link" href="#proof">Workflow</a></li>
-          <li><a class="nav-link" href="#pricing">Pricing</a></li>
-          <li><a class="nav-link" href="#contact">Docs</a></li>
+          <li><a class="nav-link" href="#top">Overview</a></li>
+          <li><a class="nav-link" href="#method">Method</a></li>
+          <li><a class="nav-link" href="#proof">Proof</a></li>
+          <li><a class="nav-link" href="#pricing">Licence</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
 
         <a class="button button--primary nav-cta" href="#contact">Install Kestrel <span class="arrow" aria-hidden="true">→</span></a>
@@ -55,20 +56,19 @@
 
   <main id="main" tabindex="-1">
     <section class="hero kestrel-hero" id="top" data-budget="1" aria-labelledby="hero-title">
-      <div class="kestrel-hero__marks" data-fdm-ui aria-hidden="true"><i></i><i></i><i></i><i></i></div>
       <div class="wrap kestrel-hero__inner">
         <div class="kestrel-hero__grid">
           <div class="kestrel-hero__copy" data-enter>
-            <span class="kestrel-hero__docket" data-fdm-ui>Local index · PR 482</span>
-            <p class="eyebrow">Local-first review · macOS, Linux, Windows</p>
-            <h1 class="hero-title kestrel-title" id="hero-title">Read the change,<br><span>not the diff.</span></h1>
+            <p class="docket" data-fdm-ui>Local index · PR 482</p>
+            <p class="eyebrow" data-fdm-ui data-index="01">Editor-native review</p>
+            <h1 class="hero-title" id="hero-title">Read the change,<br><span>not the diff.</span></h1>
             <p class="lede">Kestrel turns a pull request into a short review brief: what changed, what it touches and which test proves it. The index stays on your machine.</p>
             <div class="hero-actions">
               <a class="button button--primary" href="#contact">Install with Homebrew <span class="arrow" aria-hidden="true">→</span></a>
               <a class="link-arrow" href="#method">Walk through a review <span class="arrow" aria-hidden="true">↓</span></a>
             </div>
             <div class="install-line" data-fdm-ui>
-              <span class="install-line__prompt">$</span>
+              <span class="install-line__prompt" aria-hidden="true">$</span>
               <code>brew install --cask kestrel</code>
               <button class="copy-button" type="button" data-fdm-copy="brew install --cask kestrel" aria-label="Copy install command">Copy</button>
             </div>
@@ -76,11 +76,13 @@
 
           <div class="review-window" role="group" aria-labelledby="review-title" data-enter data-fdm-ui>
             <div class="review-window__bar">
-              <div class="review-window__repo">
-                <span class="review-window__glyph" aria-hidden="true">⌥</span>
-                <p id="review-title">kestrel / parser · PR #482</p>
+              <p class="review-window__title" id="review-title">kestrel / parser · PR #482</p>
+              <div class="review-window__tabs">
+                <span class="review-tab review-tab--active">guard.ts</span>
+                <span class="review-tab">flags.ts</span>
+                <span class="review-tab review-tab--add">+</span>
               </div>
-              <div class="review-window__status"><span class="status-dot" aria-hidden="true"></span> 2 files · 1 test</div>
+              <span class="review-window__state">2 files · 1 test</span>
             </div>
 
             <div class="review-window__body">
@@ -137,12 +139,21 @@
 
             <div class="review-window__foot">
               <span>indexed locally · 0 bytes uploaded</span>
-              <span><span class="review-window__key">⌘</span><span class="review-window__key">↵</span> accept group</span>
+              <span class="review-window__keys"><span class="review-window__key">⌘</span><span class="review-window__key">↵</span> accept group</span>
+            </div>
+
+            <div class="command-palette" role="group" aria-label="Command palette preview">
+              <div class="command-palette__input"><span aria-hidden="true">›</span> Type a command or file <span class="command-palette__key">⌘K</span></div>
+              <ul class="command-palette__list">
+                <li><span>Open review brief</span><span>⌘1</span></li>
+                <li><span>Jump to risk: public API</span><span>⌘2</span></li>
+                <li><span>Show test proof</span><span>⌘3</span></li>
+              </ul>
             </div>
           </div>
         </div>
 
-        <dl class="kestrel-meta">
+        <dl class="kestrel-meta" data-fdm-ui>
           <div><dt>Runs</dt><dd>Local by default</dd></div>
           <div><dt>Setup</dt><dd>One command</dd></div>
           <div><dt>Languages</dt><dd>TS, Py, Go, Rust</dd></div>
@@ -154,39 +165,39 @@
     <section class="section kestrel-method" id="method" data-budget="1" data-fdm-section aria-labelledby="method-title">
       <div class="wrap">
         <div class="kestrel-section-head">
-          <p class="eyebrow">01 — The brief</p>
+          <p class="eyebrow" data-fdm-ui data-index="02">The brief</p>
           <h2 id="method-title">A review brief, not another diff viewer.</h2>
           <p class="lede">Kestrel reads the shape of a change before you read the lines. It groups files by intent, flags the risky edges and links each group to the test that covers it.</p>
         </div>
 
         <ol class="brief-steps" data-fdm-ui>
           <li class="brief-step">
-            <span class="brief-step__num">01</span>
+            <span class="brief-step__num"></span>
             <div class="brief-step__copy">
               <h3>Groups that mean something.</h3>
               <p>Files are clustered by the change they make, not the folder they live in. The parser guard and its test sit together.</p>
             </div>
-            <div class="brief-step__artifact">
+            <div class="brief-step__artifact" data-fdm-ui>
               <span>guard.ts</span><span>guard.test.ts</span><span class="is-link">↳ test</span>
             </div>
           </li>
           <li class="brief-step">
-            <span class="brief-step__num">02</span>
+            <span class="brief-step__num"></span>
             <div class="brief-step__copy">
               <h3>The edges come first.</h3>
               <p>Migrations, public API changes and missing tests surface above formatting noise. Risk is a position in the brief, not a badge you have to hunt for.</p>
             </div>
-            <div class="brief-step__artifact">
+            <div class="brief-step__artifact" data-fdm-ui>
               <span class="is-risk">public API</span><span>1 caller</span><span class="is-muted">whitespace hidden</span>
             </div>
           </li>
           <li class="brief-step">
-            <span class="brief-step__num">03</span>
+            <span class="brief-step__num"></span>
             <div class="brief-step__copy">
               <h3>A test for the claim.</h3>
               <p>Each group points at the test that proves it, or says plainly that no test exists yet. A gap is reported as a gap.</p>
             </div>
-            <div class="brief-step__artifact">
+            <div class="brief-step__artifact" data-fdm-ui>
               <span class="is-test">14 assertions</span><span>0.4s</span><span class="is-link">open test →</span>
             </div>
           </li>
@@ -195,33 +206,31 @@
     </section>
 
     <section class="section kestrel-proof" id="proof" data-budget="1" data-fdm-section aria-labelledby="proof-title">
-      <div class="wrap">
-        <div class="kestrel-proof-grid">
-          <div class="kestrel-proof-copy">
-            <p class="eyebrow">02 — Quarter in review</p>
-            <h2 id="proof-title">Smaller reviews. Fewer rollbacks.</h2>
-            <p class="lede">Measured across four engineering teams running Kestrel on real pull requests. No code left a laptop to produce these numbers.</p>
-            <figure class="kestrel-quote">
-              <blockquote>“The first tool that made me want to read the whole pull request.”</blockquote>
-              <figcaption><strong>Priya Raman</strong> — Staff Engineer, Relay</figcaption>
-            </figure>
-          </div>
+      <div class="wrap kestrel-proof-grid">
+        <div class="kestrel-proof-copy">
+          <p class="eyebrow" data-fdm-ui data-index="03">Quarter in review</p>
+          <h2 id="proof-title">Smaller reviews. Fewer rollbacks.</h2>
+          <p class="lede">Measured across four engineering teams running Kestrel on real pull requests. No code left a laptop to produce these numbers.</p>
+          <figure class="kestrel-quote">
+            <blockquote>“The first tool that made me want to read the whole pull request.”</blockquote>
+            <figcaption data-fdm-ui><strong>Priya Raman</strong> — Staff Engineer, Relay</figcaption>
+          </figure>
+        </div>
 
-          <div class="term-card" data-fdm-ui>
-            <div class="term-card__bar"><span>kestrel --report quarter</span><span>zsh</span></div>
-            <div class="term-card__body">
-              <p class="term-line"><span>›</span> median review time <b>−41%</b></p>
-              <p class="term-line"><span>›</span> changes mapped to a test <b>3.2×</b></p>
-              <p class="term-line"><span>›</span> source lines uploaded <b>0</b></p>
-              <div class="term-plot" aria-hidden="true">
-                <svg viewBox="0 0 420 90" role="img" aria-label="Review time falling across twelve weeks" preserveAspectRatio="none">
-                  <path d="M0 70 L42 64 L84 68 L126 48 L168 52 L210 34 L252 40 L294 24 L336 28 L378 14 L420 10" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"></path>
-                  <path d="M0 70 L42 64 L84 68 L126 48 L168 52 L210 34 L252 40 L294 24 L336 28 L378 14 L420 10 L420 90 L0 90 Z" fill="currentColor" opacity="0.08"></path>
-                </svg>
-              </div>
-              <p class="term-axis"><span>week 1</span><span>week 12</span></p>
-              <p class="term-note">Review time, relative to each team's own baseline.</p>
+        <div class="term-card" data-fdm-ui>
+          <div class="term-card__bar"><span>kestrel --report quarter</span><span>zsh</span></div>
+          <div class="term-card__body">
+            <p class="term-line"><span>›</span> median review time <b>−41%</b></p>
+            <p class="term-line"><span>›</span> changes mapped to a test <b>3.2×</b></p>
+            <p class="term-line"><span>›</span> source lines uploaded <b>0</b></p>
+            <div class="term-plot" aria-hidden="true">
+              <svg viewBox="0 0 420 90" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0 70 L42 64 L84 68 L126 48 L168 52 L210 34 L252 40 L294 24 L336 28 L378 14 L420 10" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+                <path d="M0 70 L42 64 L84 68 L126 48 L168 52 L210 34 L252 40 L294 24 L336 28 L378 14 L420 10 L420 90 L0 90 Z" fill="currentColor" opacity="0.08"></path>
+              </svg>
             </div>
+            <p class="term-axis"><span>week 1</span><span>week 12</span></p>
+            <p class="term-note">Review time, relative to each team's own baseline.</p>
           </div>
         </div>
       </div>
@@ -231,7 +240,7 @@
       <div class="wrap">
         <div class="pricing-head">
           <div>
-            <p class="eyebrow">03 — Licence</p>
+            <p class="eyebrow" data-fdm-ui data-index="04">Licence</p>
             <h2 id="pricing-title">Free for small teams.</h2>
           </div>
           <p class="lede">Install it, use it on real reviews and pay only when the team grows. No seat minimum, no annual contract. Prices in USD.</p>
@@ -239,24 +248,24 @@
 
         <ol class="licence-list" data-fdm-ui>
           <li class="licence-row">
-            <span class="licence-row__num">01</span>
+            <span class="licence-row__num"></span>
             <div class="licence-row__name"><h3>Solo</h3><p>One developer, or an open source maintainer.</p></div>
             <p class="licence-row__price">$0</p>
-            <p class="licence-row__desc">Unlimited local reviews · GitHub and GitLab · test mapping</p>
+            <p class="licence-row__desc" data-fdm-ui>Unlimited local reviews · GitHub and GitLab · test mapping</p>
             <a class="link-arrow" href="#contact">Install Kestrel <span class="arrow" aria-hidden="true">→</span></a>
           </li>
           <li class="licence-row licence-row--featured">
-            <span class="licence-row__num">02</span>
-            <div class="licence-row__name"><h3>Team <span class="licence-row__flag">Most chosen</span></h3><p>Shared review memory for a team.</p></div>
+            <span class="licence-row__num"></span>
+            <div class="licence-row__name"><h3>Team <span class="licence-row__flag" data-fdm-ui>Most chosen</span></h3><p>Shared review memory for a team.</p></div>
             <p class="licence-row__price">$12 <small>/ seat</small></p>
-            <p class="licence-row__desc">Review history · risk rules · org install</p>
+            <p class="licence-row__desc" data-fdm-ui>Review history · risk rules · org install</p>
             <a class="button button--primary button--small" href="#contact">Start a trial <span class="arrow" aria-hidden="true">→</span></a>
           </li>
           <li class="licence-row">
-            <span class="licence-row__num">03</span>
+            <span class="licence-row__num"></span>
             <div class="licence-row__name"><h3>Org</h3><p>Platform teams and monorepos.</p></div>
             <p class="licence-row__price">$24 <small>/ seat</small></p>
-            <p class="licence-row__desc">Monorepo indexing · policy packs · priority support</p>
+            <p class="licence-row__desc" data-fdm-ui>Monorepo indexing · policy packs · priority support</p>
             <a class="link-arrow" href="#contact">Talk to us <span class="arrow" aria-hidden="true">→</span></a>
           </li>
         </ol>
@@ -266,7 +275,7 @@
     <section class="section kestrel-contact" id="contact" data-budget="1" data-fdm-section aria-labelledby="contact-title">
       <div class="wrap contact-layout">
         <div class="contact-lead">
-          <p class="eyebrow">04 — Try it</p>
+          <p class="eyebrow" data-fdm-ui data-index="05">Try it</p>
           <h2 id="contact-title">Send us the review that hurt.</h2>
           <p class="lede">Install Kestrel, run it on one real pull request and tell us where the brief got it wrong. We read every note.</p>
           <div class="install-steps" data-fdm-ui>
@@ -276,19 +285,19 @@
           </div>
           <div class="contact-facts">
             <div class="contact-detail">
-              <span class="contact-detail__label">Email</span>
+              <span class="contact-detail__label" data-fdm-ui>Email</span>
               <a href="mailto:hello@kestrel.example">hello@kestrel.example</a>
-              <small class="muted">For new work and speaking.</small>
+              <small class="muted" data-fdm-ui>For new work and speaking.</small>
             </div>
             <div class="contact-detail">
-              <span class="contact-detail__label">Support hours</span>
+              <span class="contact-detail__label" data-fdm-ui>Support hours</span>
               <span>Monday–Friday, 09:00–17:00 GMT</span>
-              <span class="hours-status" data-fdm-hours data-open-hour="9" data-close-hour="17" data-days="1,2,3,4,5" data-time-zone="Europe/London"><span data-fdm-hours-status>Checking local time…</span></span>
+              <span class="hours-status" data-fdm-hours data-fdm-ui data-open-hour="9" data-close-hour="17" data-days="1,2,3,4,5" data-time-zone="Europe/London"><span data-fdm-hours-status>Checking local time…</span></span>
             </div>
             <div class="contact-detail">
-              <span class="contact-detail__label">Based in</span>
+              <span class="contact-detail__label" data-fdm-ui>Based in</span>
               <span>Bristol, United Kingdom</span>
-              <small class="muted">Remote-first, with maintainers across Europe.</small>
+              <small class="muted" data-fdm-ui>Remote-first, with maintainers across Europe.</small>
             </div>
           </div>
         </div>
@@ -307,12 +316,12 @@
               <div class="field">
                 <label class="field__label" for="name">Name</label>
                 <input class="input" id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
-                <p class="field-error" id="name-error" data-fdm-error-for="name" hidden></p>
+                <p class="field-error" id="name-error" data-fdm-error-for="name" data-fdm-ui hidden></p>
               </div>
               <div class="field">
                 <label class="field__label" for="email">Email</label>
                 <input class="input" id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
-                <p class="field-error" id="email-error" data-fdm-error-for="email" hidden></p>
+                <p class="field-error" id="email-error" data-fdm-error-for="email" data-fdm-ui hidden></p>
               </div>
             </div>
             <div class="field">
@@ -322,8 +331,8 @@
             <div class="field">
               <label class="field__label" for="message">A little context</label>
               <textarea class="textarea" id="message" name="message" rows="4" required data-minlength="20" aria-describedby="message-hint message-error"></textarea>
-              <p class="field__hint" id="message-hint">A sentence about the change, the language and where the review lost its shape.</p>
-              <p class="field-error" id="message-error" data-fdm-error-for="message" hidden></p>
+              <p class="field__hint" id="message-hint" data-fdm-ui>A sentence about the change, the language and where the review lost its shape.</p>
+              <p class="field-error" id="message-error" data-fdm-error-for="message" data-fdm-ui hidden></p>
             </div>
             <div class="form-actions">
               <button class="button button--primary" type="submit">Prepare the email <span class="arrow" aria-hidden="true">→</span></button>
@@ -332,7 +341,7 @@
             <p class="form-status" role="status" aria-live="polite" data-fdm-form-status>No data leaves your browser in this demo.</p>
           </form>
 
-          <div class="contact-faq" style="margin-top: var(--space-6)">
+          <div class="contact-faq">
             <details>
               <summary>Does Kestrel send my code anywhere? <span class="faq__icon" aria-hidden="true"></span></summary>
               <p class="faq__body">No. The parser and the index run locally. Network access is only used for update checks, and can be disabled.</p>
@@ -354,7 +363,7 @@
         <div class="footer-brand">
           <a class="brand" href="#top" aria-label="Kestrel home">
             <span class="brand__mark" aria-hidden="true">K</span>
-            <span>Kestrel<span class="brand__dot">.</span></span>
+            <span class="brand__word">Kestrel<span class="brand__dot">.</span></span>
           </a>
           <p>Local-first review tooling for people who read the diff.</p>
           <p><a href="mailto:hello@kestrel.example">hello@kestrel.example</a></p>
