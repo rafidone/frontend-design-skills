@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/editorial.css">
   <link rel="stylesheet" href="styles/motion.css">
   <script src="scripts/motion.js" defer></script>
   <script src="scripts/system.js" defer></script>
@@ -53,309 +54,292 @@
   </header>
 
   <main id="main" tabindex="-1">
-    <section class="hero" id="top" data-budget="1" aria-labelledby="hero-title">
-      <div class="wrap">
-        <div class="hero__body grid">
-          <div class="hero__copy col-7" data-enter>
-            <p class="eyebrow">Local-first code review · macOS &amp; Linux</p>
-            <h1 class="hero-title" id="hero-title">Read the change, not the <em>noise</em>.</h1>
-            <p class="lede mt-5">
-              Kestrel turns a pull request into a short review brief: what changed, what it touches and which test proves it. Runs on your machine and keeps your code there.
-            </p>
+    <section class="hero kestrel-hero" id="top" data-budget="1" aria-labelledby="hero-title">
+      <div class="wrap kestrel-hero__inner">
+        <div class="kestrel-hero__grid">
+          <div class="kestrel-hero__copy" data-enter>
+            <p class="eyebrow">Local-first review · macOS, Linux, Windows</p>
+            <h1 class="hero-title kestrel-title" id="hero-title">Read the change,<br><span>not the diff.</span></h1>
+            <p class="lede">Kestrel turns a pull request into a short review brief: what changed, what it touches and which test proves it. The index stays on your machine.</p>
             <div class="hero-actions">
               <a class="button button--primary" href="#contact">Install with Homebrew <span class="arrow" aria-hidden="true">→</span></a>
-              <a class="link-arrow" href="#method">Read the workflow <span class="arrow" aria-hidden="true">↓</span></a>
+              <a class="link-arrow" href="#method">Walk through a review <span class="arrow" aria-hidden="true">↓</span></a>
             </div>
-            <dl class="hero-meta" data-enter>
-              <div>
-                <dt>Runs</dt>
-                <dd>Local by default</dd>
-              </div>
-              <div>
-                <dt>Setup</dt>
-                <dd>One command</dd>
-              </div>
-              <div>
-                <dt>License</dt>
-                <dd>Free under 10 devs</dd>
-              </div>
-            </dl>
+            <div class="install-line" data-fdm-ui>
+              <span class="install-line__prompt">$</span>
+              <code>brew install --cask kestrel</code>
+              <button class="copy-button" type="button" data-fdm-copy="brew install --cask kestrel" aria-label="Copy install command">Copy</button>
+            </div>
           </div>
 
-          <div class="hero__aside col-5" data-enter>
-            <div class="hero-note">
-              <p class="mono">Release note 0.9</p>
-              <p>Every diff has a reason. Every review has a next step.</p>
+          <div class="review-window" role="group" aria-labelledby="review-title" data-enter data-fdm-ui>
+            <div class="review-window__bar">
+              <div class="review-window__repo">
+                <span class="review-window__glyph" aria-hidden="true">⌥</span>
+                <p id="review-title">kestrel / parser · PR #482</p>
+              </div>
+              <div class="review-window__status"><span class="status-dot" aria-hidden="true"></span> 2 files · 1 test</div>
             </div>
 
-            <div class="week" role="group" aria-labelledby="week-title">
-              <div class="week__head">
-                <p class="week__title" id="week-title">Review queue — 4 open</p>
-                <span class="badge">2 ready</span>
+            <div class="review-window__body">
+              <aside class="review-brief">
+                <div class="review-brief__head">
+                  <p>Review brief</p>
+                  <span>01 / 03</span>
+                </div>
+                <div class="brief-group">
+                  <span class="brief-group__index">01</span>
+                  <div>
+                    <p class="brief-group__name">Parser guard</p>
+                    <p class="brief-group__meta">intent · validation</p>
+                  </div>
+                </div>
+                <div class="brief-group brief-group--risk">
+                  <span class="brief-group__index">!</span>
+                  <div>
+                    <p class="brief-group__name">Public API touched</p>
+                    <p class="brief-group__meta">risk · 1 caller</p>
+                  </div>
+                </div>
+                <div class="brief-group brief-group--test">
+                  <span class="brief-group__index">✓</span>
+                  <div>
+                    <p class="brief-group__name">parser_guard.test.ts</p>
+                    <p class="brief-group__meta">proof · 14 assertions</p>
+                  </div>
+                </div>
+                <div class="brief-verdict">
+                  <p>Next step</p>
+                  <span>Check the caller in <code>cli/flags.ts</code>.</span>
+                </div>
+              </aside>
+
+              <div class="diff-view">
+                <div class="diff-view__file">
+                  <span>src/parser/guard.ts</span>
+                  <span class="diff-view__stat"><b>+18</b> <i>−4</i></span>
+                </div>
+                <div class="diff-lines">
+                  <div class="diff-line"><span class="diff-line__no">42</span><span class="diff-line__code"><span class="tok-comment">// Reject malformed fences before parsing</span></span></div>
+                  <div class="diff-line diff-line--remove"><span class="diff-line__no">43</span><span class="diff-line__code">- if (line.startsWith("```")) {</span></div>
+                  <div class="diff-line diff-line--add"><span class="diff-line__no">43</span><span class="diff-line__code">+ if (isFence(line) &amp;&amp; !hasLanguage(line)) {</span></div>
+                  <div class="diff-line diff-line--add"><span class="diff-line__no">44</span><span class="diff-line__code">+   return reject(<span class="tok-string">"fence.missing-language"</span>);</span></div>
+                  <div class="diff-line"><span class="diff-line__no">45</span><span class="diff-line__code">  }</span></div>
+                  <div class="diff-line diff-line--add"><span class="diff-line__no">46</span><span class="diff-line__code">+ const guard = <span class="tok-keyword">new</span> Guard(<span class="tok-string">"parser"</span>);</span></div>
+                  <div class="diff-line"><span class="diff-line__no">47</span><span class="diff-line__code">  <span class="tok-keyword">return</span> guard.run(tokens);</span></div>
+                  <div class="diff-line diff-line--hunk"><span class="diff-line__no">··</span><span class="diff-line__code">@@ src/cli/flags.ts · 1 caller @@</span></div>
+                  <div class="diff-line diff-line--add"><span class="diff-line__no">18</span><span class="diff-line__code">+ guard.watch(<span class="tok-string">"--strict"</span>);</span></div>
+                </div>
               </div>
-              <div class="week__rows">
-                <div class="week__row">
-                  <span class="week__day">Mon 04</span>
-                  <div class="week__bar week__bar--short">Parser guard <span class="week__time">10:00</span></div>
-                </div>
-                <div class="week__row">
-                  <span class="week__day">Tue 05</span>
-                  <div class="week__bar">CLI flags <span class="week__time">11:30</span></div>
-                </div>
-                <div class="week__row">
-                  <span class="week__day">Wed 06</span>
-                  <div class="week__bar week__bar--accent">Migration <span class="week__time">All day</span></div>
-                </div>
-                <div class="week__row">
-                  <span class="week__day">Thu 07</span>
-                  <div class="week__bar week__bar--short week__bar--quiet">API contract <span class="week__time">15:00</span></div>
-                </div>
-                <div class="week__row">
-                  <span class="week__day">Fri 08</span>
-                  <div class="week__bar week__bar--short">Release notes <span class="week__time">16:00</span></div>
-                </div>
-              </div>
-              <div class="week__foot">
-                <div class="week__team">
-                  <span class="avatar">AL</span>
-                  <span class="avatar avatar--accent">SK</span>
-                  <span class="avatar">MR</span>
-                </div>
-                <p class="hero-caption">4 reviews · 18 minutes</p>
-              </div>
+            </div>
+
+            <div class="review-window__foot">
+              <span>indexed locally · 0 bytes uploaded</span>
+              <span><span class="review-window__key">⌘</span><span class="review-window__key">↵</span> accept group</span>
             </div>
           </div>
         </div>
+
+        <dl class="kestrel-meta">
+          <div><dt>Runs</dt><dd>Local by default</dd></div>
+          <div><dt>Setup</dt><dd>One command</dd></div>
+          <div><dt>Languages</dt><dd>TS, Py, Go, Rust</dd></div>
+          <div><dt>License</dt><dd>Free under 10 devs</dd></div>
+        </dl>
       </div>
     </section>
 
-    <section class="section section--ruled" id="method" data-budget="1" data-fdm-section aria-labelledby="method-title">
+    <section class="section kestrel-method" id="method" data-budget="1" data-fdm-section aria-labelledby="method-title">
       <div class="wrap">
-        <h2 id="method-title">A review brief, not another diff viewer.</h2>
-        <div class="section-head">
+        <div class="kestrel-section-head">
+          <p class="eyebrow">01 — The brief</p>
+          <h2 id="method-title">A review brief, not another diff viewer.</h2>
           <p class="lede">Kestrel reads the shape of a change before you read the lines. It groups files by intent, flags the risky edges and links each group to the test that covers it.</p>
-          <a class="link-arrow section-head__aside" href="#contact">Walk through one review <span class="arrow" aria-hidden="true">→</span></a>
         </div>
 
-        <div class="grid">
-          <div class="col-4">
-            <article class="card" data-lift>
-              <div class="card__top">
-                <span class="badge badge--quiet">01 · Intent</span>
-                <span class="card__number" aria-hidden="true">A</span>
-              </div>
-              <h3 class="card__title">Groups that mean something.</h3>
-              <p class="card__body">Files are clustered by the change they make, not the folder they live in. The parser guard and its test sit together.</p>
-            </article>
+        <ol class="brief-steps" data-fdm-ui>
+          <li class="brief-step">
+            <span class="brief-step__num">01</span>
+            <div class="brief-step__copy">
+              <h3>Groups that mean something.</h3>
+              <p>Files are clustered by the change they make, not the folder they live in. The parser guard and its test sit together.</p>
+            </div>
+            <div class="brief-step__artifact">
+              <span>guard.ts</span><span>guard.test.ts</span><span class="is-link">↳ test</span>
+            </div>
+          </li>
+          <li class="brief-step">
+            <span class="brief-step__num">02</span>
+            <div class="brief-step__copy">
+              <h3>The edges come first.</h3>
+              <p>Migrations, public API changes and missing tests surface above formatting noise. Risk is a position in the brief, not a badge you have to hunt for.</p>
+            </div>
+            <div class="brief-step__artifact">
+              <span class="is-risk">public API</span><span>1 caller</span><span class="is-muted">whitespace hidden</span>
+            </div>
+          </li>
+          <li class="brief-step">
+            <span class="brief-step__num">03</span>
+            <div class="brief-step__copy">
+              <h3>A test for the claim.</h3>
+              <p>Each group points at the test that proves it, or says plainly that no test exists yet. A gap is reported as a gap.</p>
+            </div>
+            <div class="brief-step__artifact">
+              <span class="is-test">14 assertions</span><span>0.4s</span><span class="is-link">open test →</span>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section kestrel-proof" id="proof" data-budget="1" data-fdm-section aria-labelledby="proof-title">
+      <div class="wrap">
+        <div class="kestrel-proof-grid">
+          <div class="kestrel-proof-copy">
+            <p class="eyebrow">02 — Quarter in review</p>
+            <h2 id="proof-title">Smaller reviews. Fewer rollbacks.</h2>
+            <p class="lede">Measured across four engineering teams running Kestrel on real pull requests. No code left a laptop to produce these numbers.</p>
+            <figure class="kestrel-quote">
+              <blockquote>“The first tool that made me want to read the whole pull request.”</blockquote>
+              <figcaption><strong>Priya Raman</strong> — Staff Engineer, Relay</figcaption>
+            </figure>
           </div>
-          <div class="col-4">
-            <article class="card" data-lift>
-              <div class="card__top">
-                <span class="badge badge--quiet">02 · Risk</span>
-                <span class="card__number" aria-hidden="true">B</span>
+
+          <div class="term-card" data-fdm-ui>
+            <div class="term-card__bar"><span>kestrel --report quarter</span><span>zsh</span></div>
+            <div class="term-card__body">
+              <p class="term-line"><span>›</span> median review time <b>−41%</b></p>
+              <p class="term-line"><span>›</span> changes mapped to a test <b>3.2×</b></p>
+              <p class="term-line"><span>›</span> source lines uploaded <b>0</b></p>
+              <div class="term-plot" aria-hidden="true">
+                <svg viewBox="0 0 420 90" role="img" aria-label="Review time falling across twelve weeks" preserveAspectRatio="none">
+                  <path d="M0 70 L42 64 L84 68 L126 48 L168 52 L210 34 L252 40 L294 24 L336 28 L378 14 L420 10" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"></path>
+                  <path d="M0 70 L42 64 L84 68 L126 48 L168 52 L210 34 L252 40 L294 24 L336 28 L378 14 L420 10 L420 90 L0 90 Z" fill="currentColor" opacity="0.08"></path>
+                </svg>
               </div>
-              <h3 class="card__title">The edges come first.</h3>
-              <p class="card__body">Kestrel surfaces migrations, public API changes and missing tests before the formatting noise.</p>
-            </article>
-          </div>
-          <div class="col-4">
-            <article class="card card--accent" data-lift>
-              <div class="card__top">
-                <span class="badge badge--quiet">03 · Proof</span>
-                <span class="card__number" aria-hidden="true">C</span>
-              </div>
-              <h3 class="card__title">A test for the claim.</h3>
-              <p class="card__body">Each group points at the test that proves it, or says plainly that no test exists yet.</p>
-            </article>
+              <p class="term-axis"><span>week 1</span><span>week 12</span></p>
+              <p class="term-note">Review time, relative to each team's own baseline.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section--ruled" id="proof" data-budget="1" data-fdm-section aria-labelledby="proof-title">
+    <section class="section kestrel-pricing" id="pricing" data-budget="1" data-fdm-section aria-labelledby="pricing-title">
       <div class="wrap">
-        <h2 id="proof-title">Smaller reviews. Fewer rollbacks.</h2>
-        <p class="lede mt-4">Run inside four engineering teams for one quarter, with no code sent to a server.</p>
-
-        <div class="proof-wrap">
-          <figure class="quote">
-            <blockquote>“The first tool that made me want to read the whole pull request.”</blockquote>
-            <figcaption><strong>Priya Raman</strong> · Staff Engineer, Relay</figcaption>
-          </figure>
-
-          <div class="proof-notes">
-            <p class="eyebrow">What changed</p>
-            <ul class="list list--checks">
-              <li>Review time fell without lowering the bar.</li>
-              <li>Risky migrations are flagged before merge.</li>
-              <li>Every claim links to a test or an explicit gap.</li>
-            </ul>
-            <ul class="logo-row mt-5">
-              <li>Relay</li>
-              <li>Copperline</li>
-              <li>Mono</li>
-              <li>Orbit</li>
-            </ul>
+        <div class="pricing-head">
+          <div>
+            <p class="eyebrow">03 — Licence</p>
+            <h2 id="pricing-title">Free for small teams.</h2>
           </div>
+          <p class="lede">Install it, use it on real reviews and pay only when the team grows. No seat minimum, no annual contract. Prices in USD.</p>
         </div>
 
-        <div class="stat-grid mt-7">
-          <div class="stat">
-            <span class="stat__value">41%</span>
-            <span class="stat__label">shorter median review time</span>
-          </div>
-          <div class="stat">
-            <span class="stat__value">3.2×</span>
-            <span class="stat__label">more changes linked to a test</span>
-          </div>
-          <div class="stat">
-            <span class="stat__value">0</span>
-            <span class="stat__label">lines of code leave the machine</span>
-          </div>
-        </div>
+        <ol class="licence-list" data-fdm-ui>
+          <li class="licence-row">
+            <span class="licence-row__num">01</span>
+            <div class="licence-row__name"><h3>Solo</h3><p>One developer, or an open source maintainer.</p></div>
+            <p class="licence-row__price">$0</p>
+            <p class="licence-row__desc">Unlimited local reviews · GitHub and GitLab · test mapping</p>
+            <a class="link-arrow" href="#contact">Install Kestrel <span class="arrow" aria-hidden="true">→</span></a>
+          </li>
+          <li class="licence-row licence-row--featured">
+            <span class="licence-row__num">02</span>
+            <div class="licence-row__name"><h3>Team <span class="licence-row__flag">Most chosen</span></h3><p>Shared review memory for a team.</p></div>
+            <p class="licence-row__price">$12 <small>/ seat</small></p>
+            <p class="licence-row__desc">Review history · risk rules · org install</p>
+            <a class="button button--primary button--small" href="#contact">Start a trial <span class="arrow" aria-hidden="true">→</span></a>
+          </li>
+          <li class="licence-row">
+            <span class="licence-row__num">03</span>
+            <div class="licence-row__name"><h3>Org</h3><p>Platform teams and monorepos.</p></div>
+            <p class="licence-row__price">$24 <small>/ seat</small></p>
+            <p class="licence-row__desc">Monorepo indexing · policy packs · priority support</p>
+            <a class="link-arrow" href="#contact">Talk to us <span class="arrow" aria-hidden="true">→</span></a>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <section class="section section--ruled" id="pricing" data-budget="1" data-fdm-section aria-labelledby="pricing-title">
-      <div class="wrap">
-        <h2 id="pricing-title">Free for small teams.</h2>
-        <div class="section-head">
-          <p class="lede">Install it, use it on real reviews and pay only when the team grows. No seat minimum, no annual contract.</p>
-          <p class="hero-caption section-head__aside">Prices in USD · local install</p>
-        </div>
-
-        <div class="price-grid">
-          <article class="price-card">
-            <div class="price-card__head">
-              <span class="price-card__label">Solo</span>
-              <span class="badge badge--quiet">Free</span>
-            </div>
-            <p class="price-card__price">$0</p>
-            <p class="price-card__note">For one developer and open source.</p>
-            <ul class="list list--checks">
-              <li>Unlimited local reviews</li><li>GitHub and GitLab</li><li>Test mapping</li>
-            </ul>
-            <a class="button button--secondary" href="#contact">Install Kestrel</a>
-          </article>
-
-          <article class="price-card price-card--featured">
-            <div class="price-card__head">
-              <span class="price-card__label">Team</span>
-              <span class="badge badge--accent">Most chosen</span>
-            </div>
-            <p class="price-card__price">$12 <small>/ seat / month</small></p>
-            <p class="price-card__note">Shared review memory for a team.</p>
-            <ul class="list list--checks">
-              <li>Review history</li><li>Risk rules</li><li>Org install</li>
-            </ul>
-            <a class="button button--primary" href="#contact">Start a trial</a>
-          </article>
-
-          <article class="price-card">
-            <div class="price-card__head">
-              <span class="price-card__label">Org</span>
-              <span class="badge badge--quiet">Annual</span>
-            </div>
-            <p class="price-card__price">$24 <small>/ seat / month</small></p>
-            <p class="price-card__note">For platform teams and monorepos.</p>
-            <ul class="list list--checks">
-              <li>Monorepo indexing</li><li>Policy packs</li><li>Priority support</li>
-            </ul>
-            <a class="button button--secondary" href="#contact">Talk to us</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--ruled section--compact" id="contact" data-budget="1" data-fdm-section aria-labelledby="contact-title">
-      <div class="wrap">
-        <h2 id="contact-title">Send us the review that hurt.</h2>
-        <p class="lede mt-4">Install Kestrel, run it on one real pull request and tell us where the brief got it wrong. We read every note.</p>
-
-        <div class="contact-grid">
-          <div class="panel">
-            <form
-              class="form"
-              action="mailto:hello@kestrel.example"
-              method="post"
-              enctype="text/plain"
-              novalidate
-              data-fdm-form
-              data-fdm-email="hello@kestrel.example"
-            >
-              <div class="field-row">
-                <div class="field">
-                  <label class="field__label" for="name">Name</label>
-                  <input class="input" id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
-                  <p class="field-error" id="name-error" data-fdm-error-for="name" hidden></p>
-                </div>
-                <div class="field">
-                  <label class="field__label" for="email">Email</label>
-                  <input class="input" id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
-                  <p class="field-error" id="email-error" data-fdm-error-for="email" hidden></p>
-                </div>
-              </div>
-
-              <div class="field">
-                <label class="field__label" for="project">What are you making? <span class="field__hint">Optional</span></label>
-                <input class="input" id="project" name="project" type="text" placeholder="A pull request, a repo, a rule">
-              </div>
-
-              <div class="field">
-                <label class="field__label" for="message">A little context</label>
-                <textarea class="textarea" id="message" name="message" rows="4" required data-minlength="20" aria-describedby="message-hint message-error"></textarea>
-                <p class="field__hint" id="message-hint">A sentence about the change, the language and where the review lost its shape.</p>
-                <p class="field-error" id="message-error" data-fdm-error-for="message" hidden></p>
-              </div>
-
-              <div class="form-actions">
-                <button class="button button--primary" type="submit">Prepare the email <span class="arrow" aria-hidden="true">→</span></button>
-                <p class="form-note">Demo only · no data is sent or stored.</p>
-              </div>
-
-              <p class="form-status" role="status" aria-live="polite" data-fdm-form-status>No data leaves your browser in this demo.</p>
-            </form>
+    <section class="section kestrel-contact" id="contact" data-budget="1" data-fdm-section aria-labelledby="contact-title">
+      <div class="wrap contact-layout">
+        <div class="contact-lead">
+          <p class="eyebrow">04 — Try it</p>
+          <h2 id="contact-title">Send us the review that hurt.</h2>
+          <p class="lede">Install Kestrel, run it on one real pull request and tell us where the brief got it wrong. We read every note.</p>
+          <div class="install-steps" data-fdm-ui>
+            <p><span>01</span><code>brew install --cask kestrel</code></p>
+            <p><span>02</span><code>kestrel review --pr 482</code></p>
+            <p><span>03</span><code>kestrel brief --open</code></p>
           </div>
-
-          <aside class="contact-side" aria-labelledby="contact-side-title">
-            <h3 class="visually-hidden" id="contact-side-title">Other ways to reach Kestrel</h3>
-
+          <div class="contact-facts">
             <div class="contact-detail">
               <span class="contact-detail__label">Email</span>
               <a href="mailto:hello@kestrel.example">hello@kestrel.example</a>
               <small class="muted">For new work and speaking.</small>
             </div>
-
             <div class="contact-detail">
               <span class="contact-detail__label">Support hours</span>
               <span>Monday–Friday, 09:00–17:00 GMT</span>
-              <span
-                class="hours-status"
-                data-fdm-hours
-                data-open-hour="9"
-                data-close-hour="17"
-                data-days="1,2,3,4,5"
-                data-time-zone="Europe/London"
-              ><span data-fdm-hours-status>Checking local time…</span></span>
+              <span class="hours-status" data-fdm-hours data-open-hour="9" data-close-hour="17" data-days="1,2,3,4,5" data-time-zone="Europe/London"><span data-fdm-hours-status>Checking local time…</span></span>
             </div>
-
             <div class="contact-detail">
               <span class="contact-detail__label">Based in</span>
               <span>Bristol, United Kingdom</span>
               <small class="muted">Remote-first, with maintainers across Europe.</small>
             </div>
+          </div>
+        </div>
 
-            <div class="faq contact-faq">
-              <details>
-                <summary>Does Kestrel send my code anywhere? <span class="faq__icon" aria-hidden="true"></span></summary>
-                <p class="faq__body">No. The parser and the index run locally. Network access is only used for update checks, and can be disabled.</p>
-              </details>
-              <details>
-                <summary>Which languages are supported? <span class="faq__icon" aria-hidden="true"></span></summary>
-                <p class="faq__body">TypeScript, JavaScript, Python, Go and Rust today. A language without a parser still gets a file-and-test brief.</p>
-              </details>
+        <div class="contact-form">
+          <form
+            class="form"
+            action="mailto:hello@kestrel.example"
+            method="post"
+            enctype="text/plain"
+            novalidate
+            data-fdm-form
+            data-fdm-email="hello@kestrel.example"
+          >
+            <div class="field-row">
+              <div class="field">
+                <label class="field__label" for="name">Name</label>
+                <input class="input" id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+                <p class="field-error" id="name-error" data-fdm-error-for="name" hidden></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="email">Email</label>
+                <input class="input" id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+                <p class="field-error" id="email-error" data-fdm-error-for="email" hidden></p>
+              </div>
             </div>
-          </aside>
+            <div class="field">
+              <label class="field__label" for="project">What are you making? <span class="field__hint">Optional</span></label>
+              <input class="input" id="project" name="project" type="text" placeholder="A pull request, a repo, a rule">
+            </div>
+            <div class="field">
+              <label class="field__label" for="message">A little context</label>
+              <textarea class="textarea" id="message" name="message" rows="4" required data-minlength="20" aria-describedby="message-hint message-error"></textarea>
+              <p class="field__hint" id="message-hint">A sentence about the change, the language and where the review lost its shape.</p>
+              <p class="field-error" id="message-error" data-fdm-error-for="message" hidden></p>
+            </div>
+            <div class="form-actions">
+              <button class="button button--primary" type="submit">Prepare the email <span class="arrow" aria-hidden="true">→</span></button>
+              <p class="form-note">Demo only · no data is sent or stored.</p>
+            </div>
+            <p class="form-status" role="status" aria-live="polite" data-fdm-form-status>No data leaves your browser in this demo.</p>
+          </form>
+
+          <div class="contact-faq" style="margin-top: var(--space-6)">
+            <details>
+              <summary>Does Kestrel send my code anywhere? <span class="faq__icon" aria-hidden="true"></span></summary>
+              <p class="faq__body">No. The parser and the index run locally. Network access is only used for update checks, and can be disabled.</p>
+            </details>
+            <details>
+              <summary>Which languages are supported? <span class="faq__icon" aria-hidden="true"></span></summary>
+              <p class="faq__body">TypeScript, JavaScript, Python, Go and Rust today. A language without a parser still gets a file-and-test brief.</p>
+            </details>
+          </div>
         </div>
       </div>
     </section>

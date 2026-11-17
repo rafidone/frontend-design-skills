@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/editorial.css">
   <link rel="stylesheet" href="styles/motion.css">
   <script src="scripts/motion.js" defer></script>
   <script src="scripts/system.js" defer></script>
@@ -53,313 +54,269 @@
   </header>
 
   <main id="main" tabindex="-1">
-    <section class="hero hero--media hero--photo" id="top" data-budget="1" aria-labelledby="hero-title">
-            <figure class="hero-photo">
+    <section class="hero hero--media hero--photo lattice-hero" id="top" data-budget="1" aria-labelledby="hero-title">
+      <figure class="hero-photo">
         <img src="assets/photos/hardware-circuit.webp" srcset="assets/photos/hardware-circuit-480w.webp 480w, assets/photos/hardware-circuit-720w.webp 720w, assets/photos/hardware-circuit.webp 1023w" sizes="100vw" width="1023" height="682" alt="A close view of a circuit board with copper traces and a processor." data-source="library" data-subject="Macro detail of copper circuit traces and a processor." loading="eager">
       </figure>
 
-      <div class="wrap">
-        <div class="hero__body grid">
-          <div class="hero__copy col-7" data-enter>
-            <p class="eyebrow">Mechanical keyboard · Designed in Copenhagen</p>
-            <h1 class="hero-title" id="hero-title">A keyboard for the <em>long draft</em>.</h1>
-            <p class="lede mt-5">
-              Lattice pairs a low-profile aluminium body with hot-swap switches and a quiet, repairable plate. Built to be typed on for a decade, not a season.
-            </p>
+      <div class="wrap lattice-hero__inner">
+        <div class="lattice-hero__rail" data-fdm-ui>
+          <p>Technical file <span>04</span></p>
+          <p>Revision C · Copenhagen</p>
+        </div>
+
+        <div class="lattice-hero__grid">
+          <div class="lattice-hero__copy" data-enter>
+            <p class="eyebrow">Low-profile mechanical keyboard</p>
+            <h1 class="hero-title lattice-title" id="hero-title">Built to outlast<br><em>the draft.</em></h1>
+            <p class="lede">A machined aluminium body, a plate you can open and switches you can change without a soldering iron. Lattice is made to be kept.</p>
             <div class="hero-actions">
               <a class="button button--primary" href="#contact">Reserve the next batch <span class="arrow" aria-hidden="true">→</span></a>
-              <a class="link-arrow" href="#method">Read the specs <span class="arrow" aria-hidden="true">↓</span></a>
-            </div>
-            <dl class="hero-meta" data-enter>
-              <div>
-                <dt>Layout</dt>
-                <dd>75% ISO &amp; ANSI</dd>
-              </div>
-              <div>
-                <dt>Switch</dt>
-                <dd>Hot-swap low profile</dd>
-              </div>
-              <div>
-                <dt>Warranty</dt>
-                <dd>10-year repair</dd>
-              </div>
-            </dl>
-          </div>
-
-          <div class="hero__aside col-5" data-enter>
-            <div class="hero-note">
-              <p class="mono">Batch note 04</p>
-              <p>Weight where it matters. Give where it does not.</p>
-            </div>
-
-            <div class="week" role="group" aria-labelledby="week-title">
-              <div class="week__head">
-                <p class="week__title" id="week-title">Batch 04 — Assembly</p>
-                <span class="badge">On schedule</span>
-              </div>
-              <div class="week__rows">
-                <div class="week__row">
-                  <span class="week__day">Mon 04</span>
-                  <div class="week__bar week__bar--short">Case machining <span class="week__time">10:00</span></div>
-                </div>
-                <div class="week__row">
-                  <span class="week__day">Tue 05</span>
-                  <div class="week__bar">Plate anodising <span class="week__time">11:30</span></div>
-                </div>
-                <div class="week__row">
-                  <span class="week__day">Wed 06</span>
-                  <div class="week__bar week__bar--accent">Switch QC <span class="week__time">All day</span></div>
-                </div>
-                <div class="week__row">
-                  <span class="week__day">Thu 07</span>
-                  <div class="week__bar week__bar--short week__bar--quiet">Final build <span class="week__time">15:00</span></div>
-                </div>
-                <div class="week__row">
-                  <span class="week__day">Fri 08</span>
-                  <div class="week__bar week__bar--short">Ships 12 Dec <span class="week__time">16:00</span></div>
-                </div>
-              </div>
-              <div class="week__foot">
-                <div class="week__team">
-                  <span class="avatar">KL</span>
-                  <span class="avatar avatar--accent">NH</span>
-                  <span class="avatar">TS</span>
-                </div>
-                <p class="hero-caption">Batch 04 · 600 units</p>
-              </div>
+              <a class="link-arrow" href="#method">Read the build notes <span class="arrow" aria-hidden="true">↓</span></a>
             </div>
           </div>
+
+          <aside class="anatomy-card" role="group" aria-labelledby="anatomy-title" data-enter data-fdm-ui>
+            <div class="anatomy-card__head">
+              <p id="anatomy-title">Component index</p>
+              <span>03 parts</span>
+            </div>
+            <ol>
+              <li>
+                <span class="anatomy-card__index">01</span>
+                <div><b>6063 aluminium</b><small>one-piece top case</small></div>
+              </li>
+              <li>
+                <span class="anatomy-card__index">02</span>
+                <div><b>Hot-swap plate</b><small>quiet, tactile or linear</small></div>
+              </li>
+              <li>
+                <span class="anatomy-card__index">03</span>
+                <div><b>Service controller</b><small>reachable in four screws</small></div>
+              </li>
+            </ol>
+            <p class="anatomy-card__foot">No glue. No proprietary tools.</p>
+          </aside>
         </div>
+
+        <dl class="lattice-spec-rail" data-fdm-ui>
+          <div><dt>Layout</dt><dd>75% ISO &amp; ANSI</dd></div>
+          <div><dt>Case</dt><dd>1.4 kg machined</dd></div>
+          <div><dt>Travel</dt><dd>2.8 mm low-profile</dd></div>
+          <div><dt>Promise</dt><dd>10-year repair</dd></div>
+        </dl>
       </div>
     </section>
 
-    <section class="section section--ruled" id="method" data-budget="1" data-fdm-section aria-labelledby="method-title">
-      <div class="wrap">
-        <h2 id="method-title">Every part chosen to be kept.</h2>
-        <div class="section-head">
-          <p class="lede">Most keyboards are replaced when one part fails. Lattice is designed around the opposite idea: a body you keep, a plate you can open and switches you can change without a soldering iron.</p>
-          <a class="link-arrow section-head__aside" href="#contact">See the repair guide <span class="arrow" aria-hidden="true">→</span></a>
+    <section class="section lattice-method" id="method" data-budget="1" data-fdm-section aria-labelledby="method-title">
+      <div class="wrap lattice-method__grid">
+        <div class="lattice-method__copy">
+          <p class="eyebrow">01 — Construction</p>
+          <h2 id="method-title">Nothing here is bonded for life.</h2>
+          <p class="lede">Most keyboards are replaced when one part fails. Lattice starts from the opposite premise: keep the body, open the plate and change the parts that wear.</p>
+          <a class="link-arrow" href="#contact">See the repair guide <span class="arrow" aria-hidden="true">→</span></a>
         </div>
 
-        <div class="grid">
-          <div class="col-4">
-            <article class="card" data-lift>
-              <div class="card__top">
-                <span class="badge badge--quiet">01 · Body</span>
-                <span class="card__number" aria-hidden="true">A</span>
-              </div>
-              <h3 class="card__title">One block of aluminium.</h3>
-              <p class="card__body">A single machined case with no seam on the typing surface. Heavy enough to stay put, simple enough to open.</p>
-            </article>
+        <div class="teardown" role="group" aria-labelledby="teardown-title" data-fdm-ui>
+          <div class="teardown__head">
+            <div>
+              <p>Exploded assembly</p>
+              <p id="teardown-title">Lattice 75 · sheet 01</p>
+            </div>
+            <span>Scale 1:1</span>
           </div>
-          <div class="col-4">
-            <article class="card" data-lift>
-              <div class="card__top">
-                <span class="badge badge--quiet">02 · Switches</span>
-                <span class="card__number" aria-hidden="true">B</span>
-              </div>
-              <h3 class="card__title">Hot-swap, low profile.</h3>
-              <p class="card__body">Change the feel without discarding the board. The plate supports quiet, tactile and linear switches from three makers.</p>
-            </article>
-          </div>
-          <div class="col-4">
-            <article class="card card--accent" data-lift>
-              <div class="card__top">
-                <span class="badge badge--quiet">03 · Repair</span>
-                <span class="card__number" aria-hidden="true">C</span>
-              </div>
-              <h3 class="card__title">Ten years of parts.</h3>
-              <p class="card__body">Plates, feet, cables and controllers stay in stock. Send it back or fix it at the kitchen table.</p>
-            </article>
-          </div>
+          <ol class="teardown__layers">
+            <li><span class="teardown__tag">A</span><b>Keycaps</b><small>Double-shot PBT</small><i>01</i></li>
+            <li><span class="teardown__tag">B</span><b>Switches</b><small>Five-pin, hot-swap</small><i>02</i></li>
+            <li><span class="teardown__tag">C</span><b>Plate &amp; gasket</b><small>0.8 mm flex</small><i>03</i></li>
+            <li><span class="teardown__tag">D</span><b>Controller</b><small>USB-C, replaceable</small><i>04</i></li>
+            <li><span class="teardown__tag">E</span><b>Case</b><small>6063 aluminium</small><i>05</i></li>
+          </ol>
+          <p class="teardown__foot">Opening time: 90 seconds with one hex key.</p>
         </div>
+      </div>
+
+      <div class="wrap engineering-notes">
+        <article>
+          <span>01 / Mass</span>
+          <h3>Weight where it matters.</h3>
+          <p>The case carries the mass so the board stays put. The internals stay light enough to lift out by hand.</p>
+        </article>
+        <article>
+          <span>02 / Feel</span>
+          <h3>Flex, tuned by feel.</h3>
+          <p>A 0.8 mm plate and a narrow gasket give a little give at the edges and a firm centre.</p>
+        </article>
+        <article>
+          <span>03 / Access</span>
+          <h3>The back comes off.</h3>
+          <p>Four screws expose the controller, cable and plate. A failed switch is a two-minute repair.</p>
+        </article>
       </div>
     </section>
 
-    <section class="section section--ruled" id="proof" data-budget="1" data-fdm-section aria-labelledby="proof-title">
-      <div class="wrap">
-        <h2 id="proof-title">Typed, measured, repaired.</h2>
-        <p class="lede mt-4">Batch 03 has been in daily use for fourteen months across writers, engineers and studios.</p>
-
-        <div class="proof-wrap">
-          <figure class="quote">
+    <section class="section lattice-proof" id="proof" data-budget="1" data-fdm-section aria-labelledby="proof-title">
+      <div class="wrap lattice-proof__grid">
+        <div class="lattice-proof__copy">
+          <p class="eyebrow">02 — Bench notes</p>
+          <h2 id="proof-title">Measured on the bench, not in a launch deck.</h2>
+          <p class="lede">Batch 03 has been in daily use for fourteen months across writers, engineers and studios. We kept the failures in the report.</p>
+          <figure class="lattice-quote">
             <blockquote>“The first keyboard I have not wanted to replace in a year.”</blockquote>
-            <figcaption><strong>Jonas Berg</strong> · Writer, Copenhagen</figcaption>
+            <figcaption><strong>Jonas Berg</strong> — Writer, Copenhagen</figcaption>
           </figure>
-
-          <div class="proof-notes">
-            <p class="eyebrow">What changed</p>
-            <ul class="list list--checks">
-              <li>A 0.8 mm plate flex tuned for long sessions.</li>
-              <li>Every unit tested for key rollover and chatter.</li>
-              <li>92% of batch 03 still in daily use.</li>
-            </ul>
-            <ul class="logo-row mt-5">
-              <li>Studio Form</li>
-              <li>Northline</li>
-              <li>Kite</li>
-              <li>Field Office</li>
-            </ul>
-          </div>
         </div>
 
-        <div class="stat-grid mt-7">
-          <div class="stat">
-            <span class="stat__value">0.8 mm</span>
-            <span class="stat__label">plate flex, tuned by hand</span>
+        <div class="bench-report" role="group" aria-labelledby="bench-title" data-fdm-ui>
+          <div class="bench-report__bar">
+            <span id="bench-title">QA / batch 03</span>
+            <span>14 months</span>
           </div>
-          <div class="stat">
-            <span class="stat__value">10 years</span>
-            <span class="stat__label">parts and repair promise</span>
-          </div>
-          <div class="stat">
-            <span class="stat__value">92%</span>
-            <span class="stat__label">of batch 03 in daily use</span>
+          <div class="bench-report__body">
+            <div class="bench-report__summary">
+              <div><b>0.8</b><span>mm plate flex</span></div>
+              <div><b>92%</b><span>still in daily use</span></div>
+              <div><b>0</b><span>glued joints</span></div>
+            </div>
+            <dl class="bench-rows">
+              <div><dt>Switch chatter</dt><dd>Clear after 2M presses</dd></div>
+              <div><dt>Rollover</dt><dd>14 keys, no ghosting</dd></div>
+              <div><dt>Drop test</dt><dd>76 cm, 6 faces</dd></div>
+              <div><dt>Returns</dt><dd>3 boards, all repaired</dd></div>
+            </dl>
+            <div class="bench-trace">
+              <svg viewBox="0 0 480 64" role="img" aria-label="Switch force stays even across two million presses">
+                <path d="M0 42 C24 42 30 20 48 20 S68 42 88 42 S108 20 128 20 S148 42 168 42 S188 20 208 20 S228 42 248 42 S268 20 288 20 S308 42 328 42 S348 20 368 20 S388 42 408 42 S428 20 448 20 S468 42 480 42" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke"></path>
+              </svg>
+              <p>Switch force, 2M presses</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section--ruled" id="pricing" data-budget="1" data-fdm-section aria-labelledby="pricing-title">
+    <section class="section lattice-editions" id="pricing" data-budget="1" data-fdm-section aria-labelledby="pricing-title">
       <div class="wrap">
-        <h2 id="pricing-title">Reserve the next batch.</h2>
-        <div class="section-head">
-          <p class="lede">Small batches, built to order. The deposit holds your place; the balance is charged when the batch enters assembly.</p>
-          <p class="hero-caption section-head__aside">Prices in EUR · VAT included</p>
+        <div class="editions-head">
+          <div>
+            <p class="eyebrow">03 — Configuration sheet</p>
+            <h2 id="pricing-title">Reserve the next batch.</h2>
+          </div>
+          <p class="lede">Small batches, built to order. The deposit holds your place; the balance is charged when the batch enters assembly. Prices in EUR, VAT included.</p>
         </div>
 
-        <div class="price-grid">
-          <article class="price-card">
-            <div class="price-card__head">
-              <span class="price-card__label">Lattice 75</span>
-              <span class="badge badge--quiet">Batch 04</span>
-            </div>
-            <p class="price-card__price">€249</p>
-            <p class="price-card__note">The board, one switch set and a cable.</p>
-            <ul class="list list--checks">
-              <li>Aluminium case</li><li>Hot-swap plate</li><li>USB-C cable</li>
-            </ul>
-            <a class="button button--secondary" href="#contact">Reserve a board</a>
-          </article>
+        <div class="configuration">
+          <aside class="order-note" data-fdm-ui>
+            <p class="order-note__label">How an order works</p>
+            <ol>
+              <li><span>01</span> Choose a configuration.</li>
+              <li><span>02</span> Pay a €40 deposit.</li>
+              <li><span>03</span> Confirm layout before machining.</li>
+            </ol>
+            <p class="order-note__foot">Batch 04 ships in December. 600 units.</p>
+          </aside>
 
-          <article class="price-card price-card--featured">
-            <div class="price-card__head">
-              <span class="price-card__label">Lattice Pro</span>
-              <span class="badge badge--accent">Most chosen</span>
-            </div>
-            <p class="price-card__price">€329</p>
-            <p class="price-card__note">The board with a quieter plate and tuned stabilisers.</p>
-            <ul class="list list--checks">
-              <li>Everything in 75</li><li>Quiet plate</li><li>Tuned stabilisers</li>
-            </ul>
-            <a class="button button--primary" href="#contact">Reserve Pro</a>
-          </article>
-
-          <article class="price-card">
-            <div class="price-card__head">
-              <span class="price-card__label">Lattice Raw</span>
-              <span class="badge badge--quiet">Limited</span>
-            </div>
-            <p class="price-card__price">€389</p>
-            <p class="price-card__note">Unfinished aluminium for a board you finish yourself.</p>
-            <ul class="list list--checks">
-              <li>Raw machined case</li><li>Bare plate</li><li>Assembly guide</li>
-            </ul>
-            <a class="button button--secondary" href="#contact">Join the batch</a>
-          </article>
+          <ol class="config-list" data-fdm-ui>
+            <li class="config-row">
+              <span class="config-row__num">01</span>
+              <div class="config-row__name"><h3>Lattice 75</h3><p>The board, one switch set and a cable.</p></div>
+              <div class="config-row__specs"><span>Aluminium case</span><span>Hot-swap plate</span><span>USB-C cable</span></div>
+              <p class="config-row__price">€249</p>
+              <a class="link-arrow" href="#contact">Reserve <span class="arrow" aria-hidden="true">→</span></a>
+            </li>
+            <li class="config-row config-row--featured">
+              <span class="config-row__num">02</span>
+              <div class="config-row__name"><h3>Lattice Pro <span>Most chosen</span></h3><p>A quieter plate and tuned stabilisers.</p></div>
+              <div class="config-row__specs"><span>Everything in 75</span><span>Quiet plate</span><span>Tuned stabs</span></div>
+              <p class="config-row__price">€329</p>
+              <a class="button button--primary" href="#contact">Reserve Pro <span class="arrow" aria-hidden="true">→</span></a>
+            </li>
+            <li class="config-row">
+              <span class="config-row__num">03</span>
+              <div class="config-row__name"><h3>Lattice Raw</h3><p>Unfinished aluminium for a board you finish yourself.</p></div>
+              <div class="config-row__specs"><span>Raw case</span><span>Bare plate</span><span>Assembly guide</span></div>
+              <p class="config-row__price">€389</p>
+              <a class="link-arrow" href="#contact">Join the batch <span class="arrow" aria-hidden="true">→</span></a>
+            </li>
+          </ol>
         </div>
       </div>
     </section>
 
-    <section class="section section--ruled section--compact" id="contact" data-budget="1" data-fdm-section aria-labelledby="contact-title">
-      <div class="wrap">
-        <h2 id="contact-title">Ask about the next batch.</h2>
-        <p class="lede mt-4">Tell us the layout, the switch feel and the desk it is going on. We reply within two working days.</p>
-
-        <div class="contact-grid">
-          <div class="panel">
-            <form
-              class="form"
-              action="mailto:hello@lattice.example"
-              method="post"
-              enctype="text/plain"
-              novalidate
-              data-fdm-form
-              data-fdm-email="hello@lattice.example"
-            >
-              <div class="field-row">
-                <div class="field">
-                  <label class="field__label" for="name">Name</label>
-                  <input class="input" id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
-                  <p class="field-error" id="name-error" data-fdm-error-for="name" hidden></p>
-                </div>
-                <div class="field">
-                  <label class="field__label" for="email">Email</label>
-                  <input class="input" id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
-                  <p class="field-error" id="email-error" data-fdm-error-for="email" hidden></p>
-                </div>
-              </div>
-
-              <div class="field">
-                <label class="field__label" for="project">What are you making? <span class="field__hint">Optional</span></label>
-                <input class="input" id="project" name="project" type="text" placeholder="A layout, a switch, a repair">
-              </div>
-
-              <div class="field">
-                <label class="field__label" for="message">A little context</label>
-                <textarea class="textarea" id="message" name="message" rows="4" required data-minlength="20" aria-describedby="message-hint message-error"></textarea>
-                <p class="field__hint" id="message-hint">A sentence about the desk, the draft and what you type on now.</p>
-                <p class="field-error" id="message-error" data-fdm-error-for="message" hidden></p>
-              </div>
-
-              <div class="form-actions">
-                <button class="button button--primary" type="submit">Prepare the email <span class="arrow" aria-hidden="true">→</span></button>
-                <p class="form-note">Demo only · no data is sent or stored.</p>
-              </div>
-
-              <p class="form-status" role="status" aria-live="polite" data-fdm-form-status>No data leaves your browser in this demo.</p>
-            </form>
-          </div>
-
-          <aside class="contact-side" aria-labelledby="contact-side-title">
-            <h3 class="visually-hidden" id="contact-side-title">Other ways to reach Lattice</h3>
-
+    <section class="section lattice-contact" id="contact" data-budget="1" data-fdm-section aria-labelledby="contact-title">
+      <div class="wrap contact-layout">
+        <div class="contact-lead">
+          <p class="eyebrow">04 — Order desk</p>
+          <h2 id="contact-title">Ask about the next batch.</h2>
+          <p class="lede">Tell us the layout, the switch feel and the desk it is going on. We reply within two working days.</p>
+          <div class="contact-facts">
             <div class="contact-detail">
               <span class="contact-detail__label">Email</span>
               <a href="mailto:hello@lattice.example">hello@lattice.example</a>
-              <small class="muted">For new work and speaking.</small>
+              <small class="muted">For orders, repairs and press.</small>
             </div>
-
             <div class="contact-detail">
               <span class="contact-detail__label">Support hours</span>
               <span>Monday–Friday, 09:00–17:00 CET</span>
-              <span
-                class="hours-status"
-                data-fdm-hours
-                data-open-hour="9"
-                data-close-hour="17"
-                data-days="1,2,3,4,5"
-                data-time-zone="Europe/Copenhagen"
-              ><span data-fdm-hours-status>Checking local time…</span></span>
+              <span class="hours-status" data-fdm-hours data-open-hour="9" data-close-hour="17" data-days="1,2,3,4,5" data-time-zone="Europe/Copenhagen"><span data-fdm-hours-status>Checking local time…</span></span>
             </div>
-
             <div class="contact-detail">
-              <span class="contact-detail__label">Based in</span>
-              <span>Copenhagen, Denmark</span>
-              <small class="muted">Assembled in small batches in Denmark and Portugal.</small>
+              <span class="contact-detail__label">Assembled in</span>
+              <span>Copenhagen &amp; Porto</span>
+              <small class="muted">Small batches, tested by hand.</small>
             </div>
+          </div>
+        </div>
 
-            <div class="faq contact-faq">
-              <details>
-                <summary>Can I change the switches later? <span class="faq__icon" aria-hidden="true"></span></summary>
-                <p class="faq__body">Yes. The plate is hot-swap, and the case opens with four screws. The repair guide covers switch, plate and controller replacement.</p>
-              </details>
-              <details>
-                <summary>What does the ten-year promise cover? <span class="faq__icon" aria-hidden="true"></span></summary>
-                <p class="faq__body">Parts and labour for anything that fails in normal use. Wear items such as keycaps and cables are sold at cost after the first two years.</p>
-              </details>
+        <div class="contact-form">
+          <form
+            class="form"
+            action="mailto:hello@lattice.example"
+            method="post"
+            enctype="text/plain"
+            novalidate
+            data-fdm-form
+            data-fdm-email="hello@lattice.example"
+          >
+            <div class="field-row">
+              <div class="field">
+                <label class="field__label" for="name">Name</label>
+                <input class="input" id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+                <p class="field-error" id="name-error" data-fdm-error-for="name" hidden></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="email">Email</label>
+                <input class="input" id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+                <p class="field-error" id="email-error" data-fdm-error-for="email" hidden></p>
+              </div>
             </div>
-          </aside>
+            <div class="field">
+              <label class="field__label" for="project">What are you making? <span class="field__hint">Optional</span></label>
+              <input class="input" id="project" name="project" type="text" placeholder="A layout, a switch, a repair">
+            </div>
+            <div class="field">
+              <label class="field__label" for="message">A little context</label>
+              <textarea class="textarea" id="message" name="message" rows="4" required data-minlength="20" aria-describedby="message-hint message-error"></textarea>
+              <p class="field__hint" id="message-hint">A sentence about the desk, the draft and what you type on now.</p>
+              <p class="field-error" id="message-error" data-fdm-error-for="message" hidden></p>
+            </div>
+            <div class="form-actions">
+              <button class="button button--primary" type="submit">Prepare the email <span class="arrow" aria-hidden="true">→</span></button>
+              <p class="form-note">Demo only · no data is sent or stored.</p>
+            </div>
+            <p class="form-status" role="status" aria-live="polite" data-fdm-form-status>No data leaves your browser in this demo.</p>
+          </form>
+
+          <div class="contact-faq" style="margin-top: var(--space-6)">
+            <details>
+              <summary>Can I change the switches later? <span class="faq__icon" aria-hidden="true"></span></summary>
+              <p class="faq__body">Yes. The plate is hot-swap and the case opens with four screws. The repair guide covers switch, plate and controller replacement.</p>
+            </details>
+            <details>
+              <summary>What does the ten-year promise cover? <span class="faq__icon" aria-hidden="true"></span></summary>
+              <p class="faq__body">Parts and labour for anything that fails in normal use. Wear items such as keycaps and cables are sold at cost after the first two years.</p>
+            </details>
+          </div>
         </div>
       </div>
     </section>

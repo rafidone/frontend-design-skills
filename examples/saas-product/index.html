@@ -6,13 +6,14 @@
   <meta name="description" content="Northline is a release planning workspace for product teams: one plan, one owner per bet and a clear view of what ships next.">
   <title>Northline — Release planning that survives the week</title>
   <script>document.documentElement.classList.add("has-js");</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600&amp;family=Source+Sans+3:wght@400;500&amp;family=IBM+Plex+Mono:wght@400&amp;display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/source-sans-3-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibm-plex-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles/tokens.css">
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/editorial.css">
   <link rel="stylesheet" href="styles/motion.css">
   <script src="scripts/motion.js" defer></script>
   <script src="scripts/system.js" defer></script>
@@ -53,309 +54,298 @@
   </header>
 
   <main id="main" tabindex="-1">
-    <section class="hero" id="top" data-budget="1" aria-labelledby="hero-title">
-      <div class="wrap">
-        <div class="hero__body grid">
-          <div class="hero__copy col-7" data-enter>
-            <p class="eyebrow">Release planning · Built for product teams</p>
-            <h1 class="hero-title" id="hero-title">Ship the plan, not the <em>status meeting</em>.</h1>
-            <p class="lede mt-5">
-              Northline turns scattered bets, dependencies and owners into one release plan the whole team can read. No spreadsheet archaeology, no Friday surprise.
-            </p>
-            <div class="hero-actions">
-              <a class="button button--primary" href="#contact">Book a 20-minute walkthrough <span class="arrow" aria-hidden="true">→</span></a>
-              <a class="link-arrow" href="#method">See the plan view <span class="arrow" aria-hidden="true">↓</span></a>
+    <section class="hero north-hero" id="top" data-budget="1" aria-labelledby="hero-title">
+      <div class="wrap north-hero__inner">
+        <div class="north-hero__top">
+          <p class="eyebrow">Release planning · Antwerp / remote</p>
+
+          <div class="north-hero__head">
+            <h1 class="hero-title north-title" id="hero-title">Ship the plan,<br><span>not the status meeting.</span></h1>
+
+            <div class="north-hero__aside" data-enter>
+              <p class="lede">Northline turns scattered bets, dependencies and owners into one release plan the whole team can read. No spreadsheet archaeology, no Friday surprise.</p>
+              <div class="hero-actions">
+                <a class="button button--primary" href="#contact">Book a 20-minute walkthrough <span class="arrow" aria-hidden="true">→</span></a>
+                <a class="link-arrow" href="#method">See the plan view <span class="arrow" aria-hidden="true">↓</span></a>
+              </div>
+              <dl class="north-meta">
+                <div><dt>Teams</dt><dd>8–80 makers</dd></div>
+                <div><dt>Setup</dt><dd>One afternoon</dd></div>
+                <div><dt>Cadence</dt><dd>Biweekly</dd></div>
+              </dl>
             </div>
-            <dl class="hero-meta" data-enter>
-              <div>
-                <dt>Product</dt>
-                <dd>Release planning</dd>
-              </div>
-              <div>
-                <dt>Team</dt>
-                <dd>8–80 makers</dd>
-              </div>
-              <div>
-                <dt>Setup</dt>
-                <dd>One afternoon</dd>
-              </div>
-            </dl>
+          </div>
+        </div>
+
+        <div class="release-ui" role="group" aria-labelledby="release-title" data-enter data-fdm-ui>
+          <div class="release-ui__bar">
+            <div class="release-ui__identity">
+              <span class="status-dot" aria-hidden="true"></span>
+              <p id="release-title">Release 24.4 — Northline</p>
+            </div>
+            <p class="release-ui__state">On track <span>·</span> 5 working days</p>
+            <div class="release-ui__team" aria-label="Assigned to three squads">
+              <span class="avatar">AL</span>
+              <span class="avatar avatar--accent">MS</span>
+              <span class="avatar">JP</span>
+              <span class="release-ui__count">+9</span>
+            </div>
           </div>
 
-          <div class="hero__aside col-5" data-enter>
-            <div class="hero-note">
-              <p class="mono">Note 18 — One plan, one owner</p>
-              <p>Every bet has a name, a date and a reason.</p>
+          <div class="release-ui__body">
+            <div class="release-ui__timeline">
+              <div class="release-ui__days">
+                <span>Mon 04</span><span>Tue 05</span><span>Wed 06</span><span>Thu 07</span><span>Fri 08</span>
+              </div>
+
+              <div class="release-track">
+                <span class="release-track__label">Discovery</span>
+                <div class="release-track__lane">
+                  <span class="release-bar" style="grid-column: 1 / span 2">Scope locked <b>10:00</b></span>
+                </div>
+              </div>
+
+              <div class="release-track">
+                <span class="release-track__label">Build</span>
+                <div class="release-track__lane">
+                  <span class="release-bar release-bar--accent" style="grid-column: 2 / span 3">API contract + migration <b>All day</b></span>
+                </div>
+              </div>
+
+              <div class="release-track">
+                <span class="release-track__label">Quality</span>
+                <div class="release-track__lane">
+                  <span class="release-bar release-bar--quiet" style="grid-column: 4 / span 2">Regression pass <b>15:00</b></span>
+                </div>
+              </div>
+
+              <div class="release-track">
+                <span class="release-track__label">Ship</span>
+                <div class="release-track__lane">
+                  <span class="release-bar release-bar--ship" style="grid-column: 5 / span 1">16:00</span>
+                </div>
+              </div>
             </div>
 
-            <div class="week" role="group" aria-labelledby="week-title">
-              <div class="week__head">
-                <p class="week__title" id="week-title">Release 24.4 — Northline</p>
-                <span class="badge">On track</span>
+            <aside class="release-log" aria-labelledby="release-log-title">
+              <div class="release-log__head">
+                <p id="release-log-title">Decision log</p>
+                <span class="mono">03</span>
               </div>
-              <div class="week__rows">
-                <div class="week__row">
-                  <span class="week__day">Mon 04</span>
-                  <div class="week__bar week__bar--short">Scope locked <span class="week__time">10:00</span></div>
-                </div>
-                <div class="week__row">
-                  <span class="week__day">Tue 05</span>
-                  <div class="week__bar">Dependency review <span class="week__time">11:30</span></div>
-                </div>
-                <div class="week__row">
-                  <span class="week__day">Wed 06</span>
-                  <div class="week__bar week__bar--accent">Build window <span class="week__time">All day</span></div>
-                </div>
-                <div class="week__row">
-                  <span class="week__day">Thu 07</span>
-                  <div class="week__bar week__bar--short week__bar--quiet">QA pass <span class="week__time">15:00</span></div>
-                </div>
-                <div class="week__row">
-                  <span class="week__day">Fri 08</span>
-                  <div class="week__bar week__bar--short">Ship 16:00 <span class="week__time">16:00</span></div>
-                </div>
-              </div>
-              <div class="week__foot">
-                <div class="week__team">
-                  <span class="avatar">AL</span>
-                  <span class="avatar avatar--accent">MS</span>
-                  <span class="avatar">JP</span>
-                </div>
-                <p class="hero-caption">3 squads · 24 makers</p>
-              </div>
-            </div>
+              <ol>
+                <li><span class="release-log__date">04.02</span><span>Scope frozen at two bets.</span><span class="release-log__by">AL</span></li>
+                <li><span class="release-log__date">05.02</span><span>Atlas dependency accepted.</span><span class="release-log__by">MS</span></li>
+                <li><span class="release-log__date">07.02</span><span>Ship window holds at 16:00.</span><span class="release-log__by">JP</span></li>
+              </ol>
+            </aside>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section--ruled" id="method" data-budget="1" data-fdm-section aria-labelledby="method-title">
-      <div class="wrap">
-        <h2 id="method-title">A plan people can actually use.</h2>
-        <div class="section-head">
-          <p class="lede">Northline replaces the rolling status doc with a living release view. Priorities, owners and dependencies stay in one place, and the next decision is never buried.</p>
-          <a class="link-arrow section-head__aside" href="#contact">See how a release runs <span class="arrow" aria-hidden="true">→</span></a>
+    <section class="section north-method" id="method" data-budget="1" data-fdm-section aria-labelledby="method-title">
+      <div class="wrap north-split">
+        <div class="north-split__lead">
+          <p class="eyebrow">01 — Operating system</p>
+          <h2 id="method-title">A plan people can actually use.</h2>
+          <p class="lede">Northline replaces the rolling status doc with a living release view. Priorities, owners and dependencies stay in one place, so the next decision is never buried.</p>
+          <a class="link-arrow" href="#contact">See how a release runs <span class="arrow" aria-hidden="true">→</span></a>
         </div>
 
-        <div class="grid">
-          <div class="col-4">
-            <article class="card" data-lift>
-              <div class="card__top">
-                <span class="badge badge--quiet">01 · Plan</span>
-                <span class="card__number" aria-hidden="true">A</span>
-              </div>
-              <h3 class="card__title">One view of the release.</h3>
-              <p class="card__body">Bets, owners and dates share a single board. Anyone can answer what ships next without opening a thread.</p>
-            </article>
-          </div>
-          <div class="col-4">
-            <article class="card" data-lift>
-              <div class="card__top">
-                <span class="badge badge--quiet">02 · Dependencies</span>
-                <span class="card__number" aria-hidden="true">B</span>
-              </div>
-              <h3 class="card__title">See the handoffs early.</h3>
-              <p class="card__body">Cross-team dependencies appear before they block. The plan shows the owner, the wait and the date it matters.</p>
-            </article>
-          </div>
-          <div class="col-4">
-            <article class="card card--accent" data-lift>
-              <div class="card__top">
-                <span class="badge badge--quiet">03 · Decisions</span>
-                <span class="card__number" aria-hidden="true">C</span>
-              </div>
-              <h3 class="card__title">Close the loop in public.</h3>
-              <p class="card__body">Every scope change leaves a decision and a named owner. The next review starts from what is already settled.</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--ruled" id="proof" data-budget="1" data-fdm-section aria-labelledby="proof-title">
-      <div class="wrap">
-        <h2 id="proof-title">Fewer status meetings. More shipped work.</h2>
-        <p class="lede mt-4">Measured across six product teams running their first two releases in Northline.</p>
-
-        <div class="proof-wrap">
-          <figure class="quote">
-            <blockquote>“We stopped reconciling five versions of the roadmap. The plan became the meeting.”</blockquote>
-            <figcaption><strong>Maya Chen</strong> · VP Product, Halcyon</figcaption>
-          </figure>
-
-          <div class="proof-notes">
-            <p class="eyebrow">What changed</p>
-            <ul class="list list--checks">
-              <li>One release board replaced the weekly status doc.</li>
-              <li>Dependencies are visible a sprint earlier.</li>
-              <li>Every scope change has a name and a date.</li>
-            </ul>
-            <ul class="logo-row mt-5">
-              <li>Halcyon</li>
-              <li>Bramble</li>
-              <li>Northstar</li>
-              <li>Pylon</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="stat-grid mt-7">
-          <div class="stat">
-            <span class="stat__value">38%</span>
-            <span class="stat__label">fewer status meetings per release</span>
-          </div>
-          <div class="stat">
-            <span class="stat__value">2.1×</span>
-            <span class="stat__label">faster dependency review</span>
-          </div>
-          <div class="stat">
-            <span class="stat__value">94%</span>
-            <span class="stat__label">of makers can name the next ship date</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--ruled" id="pricing" data-budget="1" data-fdm-section aria-labelledby="pricing-title">
-      <div class="wrap">
-        <h2 id="pricing-title">Start with one release.</h2>
-        <div class="section-head">
-          <p class="lede">No annual lock-in. Pick the shape that matches your team, then change it when the release cadence changes.</p>
-          <p class="hero-caption section-head__aside">Prices in EUR · per workspace</p>
-        </div>
-
-        <div class="price-grid">
-          <article class="price-card">
-            <div class="price-card__head">
-              <span class="price-card__label">Starter</span>
-              <span class="badge badge--quiet">Free</span>
+        <ol class="method-list" data-fdm-ui>
+          <li class="method-row" data-lift>
+            <span class="method-row__num">01</span>
+            <div class="method-row__copy">
+              <h3>One view of the release.</h3>
+              <p>Bets, owners and dates share a single board. Anyone can answer what ships next without opening a thread.</p>
             </div>
-            <p class="price-card__price">€0</p>
-            <p class="price-card__note">One release, one squad.</p>
-            <ul class="list list--checks">
-              <li>One release board</li><li>Dependency view</li><li>Slack digest</li>
+            <div class="method-row__ui">
+              <span class="mini-chip">24.4</span>
+              <span class="mini-line"><i style="width: 72%"></i></span>
+              <span class="mini-meta">on track</span>
+            </div>
+          </li>
+
+          <li class="method-row" data-lift>
+            <span class="method-row__num">02</span>
+            <div class="method-row__copy">
+              <h3>See the handoffs early.</h3>
+              <p>Cross-team dependencies appear before they block. The plan shows the owner, the wait and the date it matters.</p>
+            </div>
+            <div class="method-row__ui">
+              <span class="mini-chip">Atlas</span>
+              <span class="mini-arrow">→</span>
+              <span class="mini-chip mini-chip--accent">Northline</span>
+            </div>
+          </li>
+
+          <li class="method-row" data-lift>
+            <span class="method-row__num">03</span>
+            <div class="method-row__copy">
+              <h3>Close the loop in public.</h3>
+              <p>Every scope change leaves a decision and a named owner. The next review starts from what is already settled.</p>
+            </div>
+            <div class="method-row__ui">
+              <span class="mini-log"><b>07.02</b> Ship window holds <em>JP</em></span>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section north-proof" id="proof" data-budget="1" data-fdm-section aria-labelledby="proof-title">
+      <div class="wrap">
+        <div class="proof-layout">
+          <div class="proof-main">
+            <p class="eyebrow">02 — Evidence</p>
+            <h2 id="proof-title">Fewer status meetings. More shipped work.</h2>
+            <figure class="proof-quote">
+              <blockquote>“We stopped reconciling five versions of the roadmap. <span>The plan became the meeting.</span>”</blockquote>
+              <figcaption><strong>Maya Chen</strong> — VP Product, Halcyon</figcaption>
+            </figure>
+            <ul class="proof-logos" aria-label="Teams using Northline">
+              <li>Halcyon</li><li>Bramble</li><li>Northstar</li><li>Pylon</li>
             </ul>
-            <a class="button button--secondary" href="#contact">Create a workspace</a>
+          </div>
+
+          <dl class="proof-stats">
+            <div class="proof-stat">
+              <dt>fewer status meetings per release</dt>
+              <dd>38<span>%</span></dd>
+              <div class="proof-stat__rule"><i style="width: 38%"></i></div>
+            </div>
+            <div class="proof-stat">
+              <dt>faster dependency review</dt>
+              <dd>2.1<span>×</span></dd>
+              <div class="proof-stat__rule"><i style="width: 64%"></i></div>
+            </div>
+            <div class="proof-stat">
+              <dt>of makers can name the next ship date</dt>
+              <dd>94<span>%</span></dd>
+              <div class="proof-stat__rule"><i style="width: 94%"></i></div>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section north-pricing" id="pricing" data-budget="1" data-fdm-section aria-labelledby="pricing-title">
+      <div class="wrap">
+        <div class="pricing-head">
+          <div>
+            <p class="eyebrow">03 — Plans</p>
+            <h2 id="pricing-title">Start with one release.</h2>
+          </div>
+          <p class="lede">No annual lock-in. Pick the shape that matches the team, then change it when the release cadence changes. Prices in EUR, per workspace.</p>
+        </div>
+
+        <div class="plan-table" role="list">
+          <article class="plan-row" role="listitem">
+            <div class="plan-row__name"><span class="plan-row__index">01</span><h3>Starter</h3></div>
+            <p class="plan-row__note">One release, one squad. Enough to run a first cycle end to end.</p>
+            <p class="plan-row__price">€0 <small>forever</small></p>
+            <ul class="plan-row__list"><li>One release board</li><li>Dependency view</li><li>Slack digest</li></ul>
+            <a class="link-arrow" href="#contact">Create a workspace <span class="arrow" aria-hidden="true">→</span></a>
           </article>
 
-          <article class="price-card price-card--featured">
-            <div class="price-card__head">
-              <span class="price-card__label">Team</span>
-              <span class="badge badge--accent">Most chosen</span>
-            </div>
-            <p class="price-card__price">€24 <small>/ seat / month</small></p>
-            <p class="price-card__note">For teams shipping every month.</p>
-            <ul class="list list--checks">
-              <li>Unlimited releases</li><li>Decision log</li><li>Release history</li>
-            </ul>
-            <a class="button button--primary" href="#contact">Start a trial</a>
+          <article class="plan-row plan-row--featured" role="listitem">
+            <div class="plan-row__name"><span class="plan-row__index">02</span><h3>Team <span class="plan-row__flag">Most chosen</span></h3></div>
+            <p class="plan-row__note">For teams shipping every month, with a decision log and release history.</p>
+            <p class="plan-row__price">€24 <small>/ seat / month</small></p>
+            <ul class="plan-row__list"><li>Unlimited releases</li><li>Decision log</li><li>Release history</li></ul>
+            <a class="button button--primary button--small" href="#contact">Start a trial <span class="arrow" aria-hidden="true">→</span></a>
           </article>
 
-          <article class="price-card">
-            <div class="price-card__head">
-              <span class="price-card__label">Scale</span>
-              <span class="badge badge--quiet">Annual</span>
-            </div>
-            <p class="price-card__price">€48 <small>/ seat / month</small></p>
-            <p class="price-card__note">For a portfolio of squads.</p>
-            <ul class="list list--checks">
-              <li>Portfolio view</li><li>Custom fields</li><li>Priority support</li>
-            </ul>
-            <a class="button button--secondary" href="#contact">Talk to sales</a>
+          <article class="plan-row" role="listitem">
+            <div class="plan-row__name"><span class="plan-row__index">03</span><h3>Scale</h3></div>
+            <p class="plan-row__note">For a portfolio of squads that needs one view across every release.</p>
+            <p class="plan-row__price">€48 <small>/ seat / month</small></p>
+            <ul class="plan-row__list"><li>Portfolio view</li><li>Custom fields</li><li>Priority support</li></ul>
+            <a class="link-arrow" href="#contact">Talk to sales <span class="arrow" aria-hidden="true">→</span></a>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section--ruled section--compact" id="contact" data-budget="1" data-fdm-section aria-labelledby="contact-title">
-      <div class="wrap">
-        <h2 id="contact-title">Bring us your next release.</h2>
-        <p class="lede mt-4">Tell us what ships next and where the plan breaks down. We reply within one working day with a straight answer.</p>
+    <section class="section north-contact" id="contact" data-budget="1" data-fdm-section aria-labelledby="contact-title">
+      <div class="wrap contact-layout">
+        <div class="contact-lead">
+          <p class="eyebrow">04 — Next release</p>
+          <h2 id="contact-title">Bring us your next release.</h2>
+          <p class="lede">Tell us what ships next and where the plan breaks down. We reply within one working day with a straight answer.</p>
 
-        <div class="contact-grid">
-          <div class="panel">
-            <form
-              class="form"
-              action="mailto:hello@northline.example"
-              method="post"
-              enctype="text/plain"
-              novalidate
-              data-fdm-form
-              data-fdm-email="hello@northline.example"
-            >
-              <div class="field-row">
-                <div class="field">
-                  <label class="field__label" for="name">Name</label>
-                  <input class="input" id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
-                  <p class="field-error" id="name-error" data-fdm-error-for="name" hidden></p>
-                </div>
-                <div class="field">
-                  <label class="field__label" for="email">Email</label>
-                  <input class="input" id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
-                  <p class="field-error" id="email-error" data-fdm-error-for="email" hidden></p>
-                </div>
-              </div>
-
-              <div class="field">
-                <label class="field__label" for="project">What are you making? <span class="field__hint">Optional</span></label>
-                <input class="input" id="project" name="project" type="text" placeholder="A release, a quarter, a replan">
-              </div>
-
-              <div class="field">
-                <label class="field__label" for="message">A little context</label>
-                <textarea class="textarea" id="message" name="message" rows="4" required data-minlength="20" aria-describedby="message-hint message-error"></textarea>
-                <p class="field__hint" id="message-hint">A sentence about the team, the date and what keeps slipping.</p>
-                <p class="field-error" id="message-error" data-fdm-error-for="message" hidden></p>
-              </div>
-
-              <div class="form-actions">
-                <button class="button button--primary" type="submit">Prepare the email <span class="arrow" aria-hidden="true">→</span></button>
-                <p class="form-note">Demo only · no data is sent or stored.</p>
-              </div>
-
-              <p class="form-status" role="status" aria-live="polite" data-fdm-form-status>No data leaves your browser in this demo.</p>
-            </form>
-          </div>
-
-          <aside class="contact-side" aria-labelledby="contact-side-title">
-            <h3 class="visually-hidden" id="contact-side-title">Other ways to reach Northline</h3>
-
+          <div class="contact-facts">
             <div class="contact-detail">
               <span class="contact-detail__label">Email</span>
               <a href="mailto:hello@northline.example">hello@northline.example</a>
               <small class="muted">For new work and speaking.</small>
             </div>
-
             <div class="contact-detail">
               <span class="contact-detail__label">Support hours</span>
               <span>Monday–Friday, 08:00–18:00 CET</span>
-              <span
-                class="hours-status"
-                data-fdm-hours
-                data-open-hour="8"
-                data-close-hour="18"
-                data-days="1,2,3,4,5"
-                data-time-zone="Europe/Brussels"
-              ><span data-fdm-hours-status>Checking local time…</span></span>
+              <span class="hours-status" data-fdm-hours data-open-hour="8" data-close-hour="18" data-days="1,2,3,4,5" data-time-zone="Europe/Brussels"><span data-fdm-hours-status>Checking local time…</span></span>
             </div>
-
             <div class="contact-detail">
               <span class="contact-detail__label">Based in</span>
               <span>Antwerp, Belgium</span>
               <small class="muted">Working with product teams across Europe.</small>
             </div>
+          </div>
+        </div>
 
-            <div class="faq contact-faq">
-              <details>
-                <summary>Can we import our current roadmap? <span class="faq__icon" aria-hidden="true"></span></summary>
-                <p class="faq__body">Yes. Bring a CSV or a link to your current plan. The first import is read-only, so the team can compare before anything moves.</p>
-              </details>
-              <details>
-                <summary>Does Northline replace Jira? <span class="faq__icon" aria-hidden="true"></span></summary>
-                <p class="faq__body">No. It sits above the issue tracker: one release view, one decision log, links to the work where it already lives.</p>
-              </details>
+        <div class="contact-form">
+          <form
+            class="form"
+            action="mailto:hello@northline.example"
+            method="post"
+            enctype="text/plain"
+            novalidate
+            data-fdm-form
+            data-fdm-email="hello@northline.example"
+          >
+            <div class="field-row">
+              <div class="field">
+                <label class="field__label" for="name">Name</label>
+                <input class="input" id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+                <p class="field-error" id="name-error" data-fdm-error-for="name" hidden></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="email">Email</label>
+                <input class="input" id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+                <p class="field-error" id="email-error" data-fdm-error-for="email" hidden></p>
+              </div>
             </div>
-          </aside>
+
+            <div class="field">
+              <label class="field__label" for="project">What are you making? <span class="field__hint">Optional</span></label>
+              <input class="input" id="project" name="project" type="text" placeholder="A release, a quarter, a replan">
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="message">A little context</label>
+              <textarea class="textarea" id="message" name="message" rows="4" required data-minlength="20" aria-describedby="message-hint message-error"></textarea>
+              <p class="field__hint" id="message-hint">A sentence about the team, the date and what keeps slipping.</p>
+              <p class="field-error" id="message-error" data-fdm-error-for="message" hidden></p>
+            </div>
+
+            <div class="form-actions">
+              <button class="button button--primary" type="submit">Prepare the email <span class="arrow" aria-hidden="true">→</span></button>
+              <p class="form-note">Demo only · no data is sent or stored.</p>
+            </div>
+
+            <p class="form-status" role="status" aria-live="polite" data-fdm-form-status>No data leaves your browser in this demo.</p>
+          </form>
+
+          <div class="contact-faq" style="margin-top: var(--space-6)">
+            <details>
+              <summary>Can we import our current roadmap? <span class="faq__icon" aria-hidden="true"></span></summary>
+              <p class="faq__body">Yes. Bring a CSV or a link to your current plan. The first import is read-only, so the team can compare before anything moves.</p>
+            </details>
+            <details>
+              <summary>Does Northline replace Jira? <span class="faq__icon" aria-hidden="true"></span></summary>
+              <p class="faq__body">No. It sits above the issue tracker: one release view, one decision log, links to the work where it already lives.</p>
+            </details>
+          </div>
         </div>
       </div>
     </section>

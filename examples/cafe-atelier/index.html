@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/layout.css">
   <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/editorial.css">
   <link rel="stylesheet" href="styles/motion.css">
   <script src="scripts/motion.js" defer></script>
   <script src="scripts/system.js" defer></script>
@@ -53,313 +54,254 @@
   </header>
 
   <main id="main" tabindex="-1">
-    <section class="hero hero--media hero--photo" id="top" data-budget="1" aria-labelledby="hero-title">
-            <figure class="hero-photo">
+    <section class="hero hero--media hero--photo atelier-hero" id="top" data-budget="1" aria-labelledby="hero-title">
+      <figure class="hero-photo">
         <img src="assets/photos/cafe-atelier.webp" srcset="assets/photos/cafe-atelier-480w.webp 480w, assets/photos/cafe-atelier-720w.webp 720w, assets/photos/cafe-atelier.webp 960w" sizes="100vw" width="960" height="720" alt="A quiet cafe table with a cup, a notebook and warm wood seating." data-source="library" data-subject="Cafe table with a coffee cup and notebook in soft daylight." loading="eager">
       </figure>
 
-      <div class="wrap">
-        <div class="hero__body grid">
-          <div class="hero__copy col-7" data-enter>
-            <p class="eyebrow">Cafe &amp; bakery · Rua da Boavista, Lisbon</p>
-            <h1 class="hero-title" id="hero-title">Coffee, bread and a <em>table by the window</em>.</h1>
-            <p class="lede mt-5">
-              Atelier Nine is a small cafe and bakery in Lisbon. We bake before dawn, pull coffee all morning and keep the back table for whoever needs an hour.
-            </p>
+      <div class="wrap atelier-hero__inner">
+        <div class="atelier-hero__rail" data-fdm-ui>
+          <p>Rua da Boavista 84 · Lisbon</p>
+          <p>Est. 2019 · Two ovens</p>
+        </div>
+
+        <div class="atelier-hero__grid">
+          <div class="atelier-hero__copy" data-enter>
+            <p class="eyebrow">Cafe, bakery and a window seat</p>
+            <h1 class="hero-title atelier-title" id="hero-title">Stay for<br><em>the second cup.</em></h1>
+            <p class="lede">We bake before dawn, pull coffee all morning and keep one table for whoever needs an hour without being moved along.</p>
             <div class="hero-actions">
-              <a class="button button--primary" href="#contact">Book a table <span class="arrow" aria-hidden="true">→</span></a>
-              <a class="link-arrow" href="#method">See the menu <span class="arrow" aria-hidden="true">↓</span></a>
+              <a class="button button--primary" href="#contact">Reserve the back table <span class="arrow" aria-hidden="true">→</span></a>
+              <a class="link-arrow" href="#method">Read today's menu <span class="arrow" aria-hidden="true">↓</span></a>
             </div>
-            <dl class="hero-meta" data-enter>
-              <div>
-                <dt>Open</dt>
-                <dd>Tuesday–Sunday</dd>
-              </div>
-              <div>
-                <dt>Kitchen</dt>
-                <dd>07:00–16:00</dd>
-              </div>
-              <div>
-                <dt>Seats</dt>
-                <dd>24 inside, 8 outside</dd>
-              </div>
-            </dl>
           </div>
 
-          <div class="hero__aside col-5" data-enter>
-            <div class="hero-note">
-              <p class="mono">Today at the counter</p>
-              <p>Coffee, bread and a table by the window.</p>
+          <aside class="counter-card" role="group" aria-labelledby="counter-title" data-enter data-fdm-ui>
+            <div class="counter-card__head">
+              <p id="counter-title">At the counter</p>
+              <span>Today</span>
             </div>
+            <ol>
+              <li><span>07:00</span><b>First espresso</b></li>
+              <li><span>07:30</span><b>Country loaf, warm</b></li>
+              <li><span>09:00</span><b>Pastéis from the oven</b></li>
+              <li><span>14:00</span><b>Last bake of the day</b></li>
+            </ol>
+            <p class="counter-card__foot">When the bread is gone, we close the case.</p>
+          </aside>
+        </div>
 
-            <div class="week" role="group" aria-labelledby="week-title">
-              <div class="week__head">
-                <p class="week__title" id="week-title">This week — Bakery</p>
-                <span class="badge">Baking now</span>
-              </div>
-              <div class="week__rows">
-                <div class="week__row">
-                  <span class="week__day">Mon 04</span>
-                  <div class="week__bar week__bar--short">Country loaf <span class="week__time">10:00</span></div>
-                </div>
-                <div class="week__row">
-                  <span class="week__day">Tue 05</span>
-                  <div class="week__bar">Pastel de nata <span class="week__time">11:30</span></div>
-                </div>
-                <div class="week__row">
-                  <span class="week__day">Wed 06</span>
-                  <div class="week__bar week__bar--accent">Coffee service <span class="week__time">All day</span></div>
-                </div>
-                <div class="week__row">
-                  <span class="week__day">Thu 07</span>
-                  <div class="week__bar week__bar--short week__bar--quiet">Bread sold out <span class="week__time">15:00</span></div>
-                </div>
-                <div class="week__row">
-                  <span class="week__day">Fri 08</span>
-                  <div class="week__bar week__bar--short">Close <span class="week__time">16:00</span></div>
-                </div>
-              </div>
-              <div class="week__foot">
-                <div class="week__team">
-                  <span class="avatar">AN</span>
-                  <span class="avatar avatar--accent">BL</span>
-                  <span class="avatar">CR</span>
-                </div>
-                <p class="hero-caption">24 seats · 6 bakers</p>
-              </div>
+        <dl class="atelier-hero__rail atelier-hero__rail--foot" data-fdm-ui>
+          <div><dt>Kitchen</dt><dd>07:00—16:00</dd></div>
+          <div><dt>Seats</dt><dd>24 inside, 8 outside</dd></div>
+          <div><dt>Days</dt><dd>Tuesday—Sunday</dd></div>
+          <div><dt>Coffee</dt><dd>Lisbon roasted</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section atelier-menu" id="method" data-budget="1" data-fdm-section aria-labelledby="method-title">
+      <div class="wrap menu-layout">
+        <div class="menu-intro">
+          <p class="eyebrow">01 — The menu</p>
+          <h2 id="method-title">A short menu, made properly.</h2>
+          <p class="lede">Three things matter here: the coffee, the bread and the room. We keep the list small so each one gets the attention it needs.</p>
+          <a class="link-arrow" href="#contact">Book a table <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="menu-sheet" role="group" aria-labelledby="menu-sheet-title" data-fdm-ui>
+          <div class="menu-sheet__head">
+            <div>
+              <p>Atelier Nine</p>
+              <p id="menu-sheet-title">Menu · Week 34</p>
             </div>
+            <span>Summer</span>
+          </div>
+
+          <div class="menu-sheet__columns">
+            <div class="menu-group">
+              <h3>Coffee</h3>
+              <ol>
+                <li><span>Espresso</span><i></i><b>2.20</b></li>
+                <li><span>Flat white</span><i></i><b>3.40</b></li>
+                <li><span>Filter of the day</span><i></i><b>3.20</b></li>
+                <li><span>Cortado</span><i></i><b>2.80</b></li>
+              </ol>
+            </div>
+            <div class="menu-group">
+              <h3>From the bakery</h3>
+              <ol>
+                <li><span>Country loaf</span><i></i><b>5.50</b></li>
+                <li><span>Rye &amp; caraway</span><i></i><b>6.00</b></li>
+                <li><span>Pastel de nata</span><i></i><b>2.40</b></li>
+                <li><span>Almond tart</span><i></i><b>4.20</b></li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="menu-sheet__foot">
+            <p>Oat milk, no syrups, no size ladder.</p>
+            <p>Ask at the counter for what is still warm.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section--ruled" id="method" data-budget="1" data-fdm-section aria-labelledby="method-title">
-      <div class="wrap">
-        <h2 id="method-title">A small menu, made properly.</h2>
-        <div class="section-head">
-          <p class="lede">Three things matter here: the coffee, the bread and the room. We keep the menu short so each one gets the attention it needs, and we stop when the bread runs out.</p>
-          <a class="link-arrow section-head__aside" href="#contact">Read the menu <span class="arrow" aria-hidden="true">→</span></a>
-        </div>
-
-        <div class="grid">
-          <div class="col-4">
-            <article class="card" data-lift>
-              <div class="card__top">
-                <span class="badge badge--quiet">01 · Coffee</span>
-                <span class="card__number" aria-hidden="true">A</span>
-              </div>
-              <h3 class="card__title">A short, seasonal list.</h3>
-              <p class="card__body">One espresso blend and one filter, both roasted in Lisbon. Oat and whole milk, no syrups, no size ladder.</p>
-            </article>
-          </div>
-          <div class="col-4">
-            <article class="card" data-lift>
-              <div class="card__top">
-                <span class="badge badge--quiet">02 · Bread</span>
-                <span class="card__number" aria-hidden="true">B</span>
-              </div>
-              <h3 class="card__title">Baked before dawn.</h3>
-              <p class="card__body">Country loaves, rye and pastries from a slow levain. The first bake lands at seven; the last is usually gone by two.</p>
-            </article>
-          </div>
-          <div class="col-4">
-            <article class="card card--accent" data-lift>
-              <div class="card__top">
-                <span class="badge badge--quiet">03 · Room</span>
-                <span class="card__number" aria-hidden="true">C</span>
-              </div>
-              <h3 class="card__title">A table for an hour.</h3>
-              <p class="card__body">Twenty-four seats, one shared table and a window bench. No laptops after noon on weekends, so the room stays a room.</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--ruled" id="proof" data-budget="1" data-fdm-section aria-labelledby="proof-title">
-      <div class="wrap">
-        <h2 id="proof-title">A neighbourhood place, not a concept.</h2>
-        <p class="lede mt-4">Open since 2019, on the same corner, with the same two ovens and a very short menu.</p>
-
-        <div class="proof-wrap">
-          <figure class="quote">
+    <section class="section atelier-story" id="proof" data-budget="1" data-fdm-section aria-labelledby="proof-title">
+      <div class="wrap story-layout">
+        <div class="story-copy">
+          <p class="eyebrow">02 — The room</p>
+          <h2 id="proof-title">A neighbourhood place, not a concept.</h2>
+          <p class="lede">Open since 2019, on the same corner, with the same two ovens. The back table stays unreserved until someone asks for an hour.</p>
+          <figure class="atelier-quote">
             <blockquote>“I come for the bread and stay for the quiet. There is nowhere else I can read for an hour without being moved along.”</blockquote>
-            <figcaption><strong>Marta Silva</strong> · Regular, Príncipe Real</figcaption>
+            <figcaption><strong>Marta Silva</strong> — Regular, Príncipe Real</figcaption>
           </figure>
-
-          <div class="proof-notes">
-            <p class="eyebrow">What changed</p>
-            <ul class="list list--checks">
-              <li>Bread is baked on site every morning.</li>
-              <li>The menu changes with the market, not the calendar.</li>
-              <li>The back table is kept for anyone who asks.</li>
-            </ul>
-            <ul class="logo-row mt-5">
-              <li>Atelier Nine</li>
-              <li>Padaria do Bairro</li>
-              <li>Mercado</li>
-              <li>Rua 84</li>
-            </ul>
-          </div>
         </div>
 
-        <div class="stat-grid mt-7">
-          <div class="stat">
-            <span class="stat__value">06:00</span>
-            <span class="stat__label">the first loaves go in</span>
+        <div class="room-plan" role="group" aria-labelledby="room-title" data-fdm-ui>
+          <div class="room-plan__head">
+            <div>
+              <p>Floor plan</p>
+              <p id="room-title">Ground floor · 24 seats</p>
+            </div>
+            <span>Scale 1:50</span>
           </div>
-          <div class="stat">
-            <span class="stat__value">24</span>
-            <span class="stat__label">seats, one shared table</span>
+          <div class="room-plan__canvas">
+            <svg viewBox="0 0 520 300" role="img" aria-label="Floor plan of the cafe showing the counter, window bench, shared table and small tables.">
+              <rect x="18" y="18" width="484" height="264" class="wall"></rect>
+              <path d="M18 74 H150" class="window"></path>
+              <path d="M18 250 H170" class="window"></path>
+              <rect x="196" y="36" width="128" height="34" class="counter"></rect>
+              <rect x="36" y="96" width="96" height="26" class="bench"></rect>
+              <circle cx="264" cy="152" r="30" class="table"></circle>
+              <circle cx="398" cy="126" r="20" class="table"></circle>
+              <circle cx="398" cy="216" r="20" class="table"></circle>
+              <circle cx="140" cy="206" r="20" class="table"></circle>
+            </svg>
+            <span class="plan-label plan-label--window">Window bench</span>
+            <span class="plan-label plan-label--counter">Counter</span>
+            <span class="plan-label plan-label--shared">Shared table</span>
           </div>
-          <div class="stat">
-            <span class="stat__value">7</span>
-            <span class="stat__label">years on the same corner</span>
+          <div class="room-plan__foot">
+            <span><i class="plan-key plan-key--window"></i> Window</span>
+            <span><i class="plan-key plan-key--table"></i> Table</span>
+            <span>Back table kept for an hour</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section--ruled" id="pricing" data-budget="1" data-fdm-section aria-labelledby="pricing-title">
+    <section class="section atelier-hours" id="pricing" data-budget="1" data-fdm-section aria-labelledby="pricing-title">
       <div class="wrap">
-        <h2 id="pricing-title">Take something home.</h2>
-        <div class="section-head">
-          <p class="lede">Bread is sold until it runs out. Tables are held for two hours; the back table can be booked for a slow morning.</p>
-          <p class="hero-caption section-head__aside">Prices in EUR · eat in or take away</p>
+        <div class="hours-head">
+          <div>
+            <p class="eyebrow">03 — Hours &amp; table</p>
+            <h2 id="pricing-title">Come by when the bread is warm.</h2>
+          </div>
+          <p class="lede">Tables are held for two hours. The back table can be booked for a slow morning; everything else is walk-in. Prices in EUR.</p>
         </div>
 
-        <div class="price-grid">
-          <article class="price-card">
-            <div class="price-card__head">
-              <span class="price-card__label">Counter</span>
-              <span class="badge badge--quiet">Daily</span>
-            </div>
-            <p class="price-card__price">€4.50</p>
-            <p class="price-card__note">A loaf and a coffee to go.</p>
-            <ul class="list list--checks">
-              <li>Country loaf</li><li>Single espresso</li><li>Paper bag</li>
-            </ul>
-            <a class="button button--secondary" href="#contact">See the menu</a>
-          </article>
+        <div class="hours-layout">
+          <div class="hours-sheet" data-fdm-ui>
+            <div class="hours-sheet__head"><span>Week</span><span>Kitchen</span><span>Counter</span></div>
+            <ol>
+              <li><b>Monday</b><span>Closed</span><span>Baking only</span></li>
+              <li><b>Tuesday—Friday</b><span>07:00—16:00</span><span>Until 16:00</span></li>
+              <li class="is-today"><b>Saturday</b><span>07:00—16:00</span><span>Until 16:00</span></li>
+              <li><b>Sunday</b><span>08:00—15:00</span><span>Until 15:00</span></li>
+            </ol>
+          </div>
 
-          <article class="price-card price-card--featured">
-            <div class="price-card__head">
-              <span class="price-card__label">Breakfast</span>
-              <span class="badge badge--accent">Most chosen</span>
+          <aside class="visit-feature" data-fdm-ui>
+            <div class="visit-feature__head">
+              <span>01 / The back table</span>
+              <span>Two hours</span>
             </div>
-            <p class="price-card__price">€12</p>
-            <p class="price-card__note">Bread, eggs and coffee at a table.</p>
-            <ul class="list list--checks">
-              <li>Bread and preserves</li><li>Two eggs</li><li>Coffee or tea</li>
-            </ul>
-            <a class="button button--primary" href="#contact">Book a table</a>
-          </article>
-
-          <article class="price-card">
-            <div class="price-card__head">
-              <span class="price-card__label">Bread club</span>
-              <span class="badge badge--quiet">Weekly</span>
-            </div>
-            <p class="price-card__price">€18 <small>/ month</small></p>
-            <p class="price-card__note">A loaf reserved every Saturday.</p>
-            <ul class="list list--checks">
-              <li>Weekly loaf</li><li>First pick of pastry</li><li>Member notes</li>
-            </ul>
-            <a class="button button--secondary" href="#contact">Join the club</a>
-          </article>
+            <h3>A morning with nowhere to be.</h3>
+            <p class="visit-feature__price">€12 <small>per person</small></p>
+            <p>Bread and preserves, two eggs, coffee or tea. Held at the window, away from the door.</p>
+            <ul><li>Six seats</li><li>Book by Friday</li><li>Walk-in otherwise</li></ul>
+            <a class="button button--primary" href="#contact">Reserve the table <span class="arrow" aria-hidden="true">→</span></a>
+          </aside>
         </div>
       </div>
     </section>
 
-    <section class="section section--ruled section--compact" id="contact" data-budget="1" data-fdm-section aria-labelledby="contact-title">
-      <div class="wrap">
-        <h2 id="contact-title">Reserve the back table.</h2>
-        <p class="lede mt-4">A short note is enough. Tell us the day, the number of people and whether you need the window or the quiet corner.</p>
-
-        <div class="contact-grid">
-          <div class="panel">
-            <form
-              class="form"
-              action="mailto:hello@atelier-nine.example"
-              method="post"
-              enctype="text/plain"
-              novalidate
-              data-fdm-form
-              data-fdm-email="hello@atelier-nine.example"
-            >
-              <div class="field-row">
-                <div class="field">
-                  <label class="field__label" for="name">Name</label>
-                  <input class="input" id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
-                  <p class="field-error" id="name-error" data-fdm-error-for="name" hidden></p>
-                </div>
-                <div class="field">
-                  <label class="field__label" for="email">Email</label>
-                  <input class="input" id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
-                  <p class="field-error" id="email-error" data-fdm-error-for="email" hidden></p>
-                </div>
-              </div>
-
-              <div class="field">
-                <label class="field__label" for="project">What are you making? <span class="field__hint">Optional</span></label>
-                <input class="input" id="project" name="project" type="text" placeholder="A table, a birthday, a quiet morning">
-              </div>
-
-              <div class="field">
-                <label class="field__label" for="message">A little context</label>
-                <textarea class="textarea" id="message" name="message" rows="4" required data-minlength="20" aria-describedby="message-hint message-error"></textarea>
-                <p class="field__hint" id="message-hint">A sentence about the day, the number of people and what you need.</p>
-                <p class="field-error" id="message-error" data-fdm-error-for="message" hidden></p>
-              </div>
-
-              <div class="form-actions">
-                <button class="button button--primary" type="submit">Prepare the email <span class="arrow" aria-hidden="true">→</span></button>
-                <p class="form-note">Demo only · no data is sent or stored.</p>
-              </div>
-
-              <p class="form-status" role="status" aria-live="polite" data-fdm-form-status>No data leaves your browser in this demo.</p>
-            </form>
-          </div>
-
-          <aside class="contact-side" aria-labelledby="contact-side-title">
-            <h3 class="visually-hidden" id="contact-side-title">Other ways to reach Atelier Nine</h3>
-
+    <section class="section atelier-contact" id="contact" data-budget="1" data-fdm-section aria-labelledby="contact-title">
+      <div class="wrap contact-layout">
+        <div class="contact-lead">
+          <p class="eyebrow">04 — Visit</p>
+          <h2 id="contact-title">Reserve the back table.</h2>
+          <p class="lede">A short note is enough. Tell us the day, the number of people and whether you need the window or the quiet corner.</p>
+          <div class="contact-facts">
             <div class="contact-detail">
               <span class="contact-detail__label">Email</span>
               <a href="mailto:hello@atelier-nine.example">hello@atelier-nine.example</a>
-              <small class="muted">For new work and speaking.</small>
+              <small class="muted">For tables, bakery notes and press.</small>
             </div>
-
             <div class="contact-detail">
               <span class="contact-detail__label">Opening hours</span>
-              <span>Tuesday–Sunday, 07:00–16:00 WET</span>
-              <span
-                class="hours-status"
-                data-fdm-hours
-                data-open-hour="7"
-                data-close-hour="16"
-                data-days="1,2,3,4,5"
-                data-time-zone="Europe/Lisbon"
-              ><span data-fdm-hours-status>Checking local time…</span></span>
+              <span>Tuesday—Sunday, 07:00—16:00 WET</span>
+              <span class="hours-status" data-fdm-hours data-open-hour="7" data-close-hour="16" data-days="1,2,3,4,5" data-time-zone="Europe/Lisbon"><span data-fdm-hours-status>Checking local time…</span></span>
             </div>
-
             <div class="contact-detail">
-              <span class="contact-detail__label">Based in</span>
+              <span class="contact-detail__label">Find us</span>
               <span>Rua da Boavista 84, Lisbon</span>
               <small class="muted">Five minutes from Príncipe Real, with a bus stop at the corner.</small>
             </div>
+          </div>
+        </div>
 
-            <div class="faq contact-faq">
-              <details>
-                <summary>Do you take reservations? <span class="faq__icon" aria-hidden="true"></span></summary>
-                <p class="faq__body">Yes, for tables of four or more. The back table can be booked for two hours; everything else is walk-in.</p>
-              </details>
-              <details>
-                <summary>Is there a vegan option? <span class="faq__icon" aria-hidden="true"></span></summary>
-                <p class="faq__body">The menu always has one vegan bake and oat milk for coffee. Ask at the counter and we will tell you what is in the case.</p>
-              </details>
+        <div class="contact-form">
+          <form
+            class="form"
+            action="mailto:hello@atelier-nine.example"
+            method="post"
+            enctype="text/plain"
+            novalidate
+            data-fdm-form
+            data-fdm-email="hello@atelier-nine.example"
+          >
+            <div class="field-row">
+              <div class="field">
+                <label class="field__label" for="name">Name</label>
+                <input class="input" id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+                <p class="field-error" id="name-error" data-fdm-error-for="name" hidden></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="email">Email</label>
+                <input class="input" id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+                <p class="field-error" id="email-error" data-fdm-error-for="email" hidden></p>
+              </div>
             </div>
-          </aside>
+            <div class="field">
+              <label class="field__label" for="project">What are you making? <span class="field__hint">Optional</span></label>
+              <input class="input" id="project" name="project" type="text" placeholder="A table, a birthday, a quiet morning">
+            </div>
+            <div class="field">
+              <label class="field__label" for="message">A little context</label>
+              <textarea class="textarea" id="message" name="message" rows="4" required data-minlength="20" aria-describedby="message-hint message-error"></textarea>
+              <p class="field__hint" id="message-hint">A sentence about the day, the number of people and what you need.</p>
+              <p class="field-error" id="message-error" data-fdm-error-for="message" hidden></p>
+            </div>
+            <div class="form-actions">
+              <button class="button button--primary" type="submit">Prepare the email <span class="arrow" aria-hidden="true">→</span></button>
+              <p class="form-note">Demo only · no data is sent or stored.</p>
+            </div>
+            <p class="form-status" role="status" aria-live="polite" data-fdm-form-status>No data leaves your browser in this demo.</p>
+          </form>
+
+          <div class="contact-faq" style="margin-top: var(--space-6)">
+            <details>
+              <summary>Do you take reservations? <span class="faq__icon" aria-hidden="true"></span></summary>
+              <p class="faq__body">Yes, for tables of four or more. The back table can be booked for two hours; everything else is walk-in.</p>
+            </details>
+            <details>
+              <summary>Is there a vegan option? <span class="faq__icon" aria-hidden="true"></span></summary>
+              <p class="faq__body">The menu always has one vegan bake and oat milk for coffee. Ask at the counter and we will tell you what is in the case.</p>
+            </details>
+          </div>
         </div>
       </div>
     </section>

@@ -166,3 +166,21 @@
     el.setAttribute("data-state", isOpen ? "open" : "closed");
   });
 })();
+
+/* Copy the install command from the hero artifact. */
+(function () {
+  document.querySelectorAll("[data-fdm-copy]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      var value = button.getAttribute("data-fdm-copy") || "";
+      var done = function () {
+        button.textContent = "Copied";
+        window.setTimeout(function () { button.textContent = "Copy"; }, 1400);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(value).then(done).catch(function () { done(); });
+      } else {
+        done();
+      }
+    });
+  });
+})();
