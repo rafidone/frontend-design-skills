@@ -241,8 +241,10 @@ node skills/frontend-design-skills/scripts/report.mjs \
 ## Six reference builds
 
 Each example is a standalone static build with its own direction lock, local assets,
-and gate report. Every preview below is a freshly captured 1440×900 first screen
-from the live build.
+and gate report. The typography is tuned per build — enlarged display ceilings,
+tighter leading and tracking, square edges, and wide hairline-framed gutters — so
+each first screen reads as a distinct editorial system rather than a template.
+Every preview below is a freshly captured 1440×900 first screen from the live build.
 
 <table>
   <tbody>
@@ -303,7 +305,7 @@ from the live build.
       <td valign="top">
         <a href="examples/service-clinic/"><strong>service-clinic</strong></a><br />
         <em>Professional service · newsreader-dm / ibm-plex-mono</em><br /><br />
-        A practice's official register: a 1px letterhead rule replaces the dark band, and a 6/empty/5 hero sets a 96–112px Newsreader headline on paper beside a hard-framed photograph with a mono caption. Ruled appointment schedule, practice index and fee schedule follow. No dark masthead, no cards.
+        A practice's official register: a 1px letterhead rule replaces the dark band, and a 6/empty/5 hero sets a fluid 80–124px Newsreader headline on paper beside a hard-framed photograph with a mono caption. Ruled appointment schedule, practice index and fee schedule follow. No dark masthead, no cards.
       </td>
     </tr>
   </tbody>

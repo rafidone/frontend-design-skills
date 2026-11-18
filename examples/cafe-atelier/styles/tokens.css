@@ -18,16 +18,16 @@
   --text-body: 17px;
   --text-small: 16px;
   --text-micro: 11px;
-  --text-h1: clamp(88px, 7.1vw, 112px);
-  --text-h2: clamp(40px, 3.35vw, 48px);
+  --text-h1: clamp(88px, 8vw, 124px);
+  --text-h2: clamp(40px, 3.6vw, 52px);
   --text-feature: 22px;
 
   --leading-body: 1.68;
-  --leading-h1: 0.94;
-  --leading-h2: 1.02;
-  --tracking-h1: -0.035em;
-  --tracking-h2: -0.02em;
-  --tracking-micro: 0.14em;
+  --leading-h1: 0.9;
+  --leading-h2: 0.98;
+  --tracking-h1: -0.045em;
+  --tracking-h2: -0.028em;
+  --tracking-micro: 0.15em;
 
   --measure: 62ch;
 
@@ -43,7 +43,7 @@
 
   /* Structure */
   --container: 1320px;
-  --gutter: clamp(1.25rem, 4.5vw, 4.5rem);
+  --gutter: clamp(1.25rem, 5vw, 5rem);
   --header-h: 72px;
   --section-pad: clamp(3.25rem, 5vw, 4.75rem);
   --column-gap: clamp(1.5rem, 3.2vw, 3.5rem);

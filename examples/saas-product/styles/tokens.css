@@ -15,15 +15,15 @@
   --text-base: 1.0625rem;
   --step-lede: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
   --step-h3: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
-  --step-h2: clamp(1.75rem, 1.4rem + 1.1vw, 2rem);
-  --step-h1: clamp(3rem, 2rem + 3.2vw, 4.75rem);
+  --step-h2: clamp(1.75rem, 1.4rem + 1.3vw, 2.25rem);
+  --step-h1: clamp(3rem, 2rem + 3.7vw, 5.5rem);
 
-  --leading-display: 0.98;
-  --leading-heading: 1.06;
+  --leading-display: 0.92;
+  --leading-heading: 1.04;
   --leading-body: 1.6;
-  --tracking-display: -0.045em;
-  --tracking-heading: -0.025em;
-  --tracking-mono: 0.1em;
+  --tracking-display: -0.055em;
+  --tracking-heading: -0.03em;
+  --tracking-mono: 0.12em;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -52,12 +52,12 @@
   --accent: #fafafa;
   --focus: #ffffff;
 
-  --radius: 2px;
+  --radius: 0;
 
   --container: 1440px;
-  --gutter: clamp(1.125rem, 3.2vw, 3rem);
+  --gutter: clamp(1.125rem, 3.6vw, 3.75rem);
   --header-h: 3.5rem;
-  --section-pad: clamp(2.75rem, 5vw, 5rem);
+  --section-pad: clamp(2.75rem, 5.5vw, 5.5rem);
 
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   --dur-fast: 100ms;
