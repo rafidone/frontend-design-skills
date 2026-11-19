@@ -7,6 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { assign, loadLibraries } from './assign.mjs';
+import { creditsPage } from './assets.mjs';
 import { readJson, writeJson, ensureDir, escapeHtml } from './lib/json.mjs';
 import { parseColor, hueSaturation, contrastRatio } from './lib/color.mjs';
 
@@ -251,7 +252,12 @@ function copySharedAssets(target, options = {}) {
         note: 'Local copies of the library photographs selected for this build. Verify with assets.mjs verify.',
         assets: [{ ...picked, path: `assets/photos/${picked.path}` }]
       };
-      writeJson(path.join(publicRoot, 'assets/photos/manifest.json'), siteManifest);
+      const siteManifestPath = path.join(publicRoot, 'assets/photos/manifest.json');
+      writeJson(siteManifestPath, siteManifest);
+      fs.writeFileSync(
+        path.join(publicRoot, 'credits.html'),
+        `${creditsPage(siteManifestPath, { site: options.name || 'this site' })}\n`
+      );
     }
   }
 }
@@ -284,7 +290,7 @@ ${commands.build}
 
 ## Verify
 
-Serve the built output over HTTP, then run the gate from the skill directory:
+Serve the built output over HTTP, then run the gate from this project directory:
 
 \`\`\`bash
 node /path/to/frontend-design-skills/scripts/verify.mjs . --full --kind ${niche}
@@ -296,8 +302,8 @@ Screenshots, \`report.json\`, \`report.html\` and \`report.md\` are written unde
 ## Assets
 
 Icons, mock data and diagrams are local under \`assets/\`. Photographs keep their
-source, licence and checksum in \`assets/photos/manifest.json\`. Run the asset check
-from the skill directory:
+source, licence and checksum in \`assets/photos/manifest.json\`, with a matching
+\`credits.html\`. Run the asset check from this project directory:
 
 \`\`\`bash
 node /path/to/frontend-design-skills/scripts/assets.mjs verify --manifest assets/photos/manifest.json
@@ -974,7 +980,7 @@ export function scaffold(options = {}) {
     typePairData: pair
   });
   fs.writeFileSync(path.join(target, 'README.md'), readmeFor({ stack, name, niche, direction: resolved, commands }));
-  fs.writeFileSync(path.join(target, '.gitignore'), 'node_modules/\ndist/\nout/\n.next/\n.frontend-design-skills/*\n!.frontend-design-skills/art-direction.json\n');
+  fs.writeFileSync(path.join(target, '.gitignore'), 'node_modules/\ndist/\nout/\n.next/\n.frontend-design-skills/*\n!.frontend-design-skills/art-direction.json\n!.frontend-design-skills/waivers.json\n!.frontend-design-skills/runs/\n');
 
   return { target, stack, niche, palette: palette.id, typePair: pair.id, name, direction: resolved, commands };
 }

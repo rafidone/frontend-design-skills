@@ -5,20 +5,25 @@ and a local photograph, then run through the full browser gate. They are
 demonstrations of the operating loop, not client work. All names, prices, proof
 points and quotes are fictional.
 
-| Example | Niche | Direction | Hero | Demonstrates |
+| Example | Niche | Shipped typography | Hero | Demonstrates |
 | --- | --- | --- | --- | --- |
-| [`saas-product`](saas-product/) | Software | `navy-signal` / `schibsted-source` | split | Product-led planning page with proof metrics, plan comparison and a two-column contact block. |
-| [`devtool-diff`](devtool-diff/) | Developer tool | `coal-signal` / `bricolage-plex` | split | Dense review-tool page with a diff fragment, install-first CTA and local-first copy. |
-| [`gaming-ironwood`](gaming-ironwood/) | Gaming | `deep-forest` / `anton-archivo` | film / media | Cinematic key art, low copy, edition cards and a field-notes signup. |
-| [`hardware-macro`](hardware-macro/) | Hardware | `ice-copper` / `archivo-plex` | photo / media | Macro product photograph, specification rail and a reserve flow. |
-| [`cafe-atelier`](cafe-atelier/) | Hospitality | `terracotta-clay` / `cormorant-karla` | photo / media | Warm editorial type, menu, opening hours and table booking. |
-| [`service-clinic`](service-clinic/) | Professional service | `light-sage` / `newsreader-dm` | split | Calm care pathway, practitioner proof and an appointment form. |
+| [`saas-product`](saas-product/) | Software | Geist / Geist Mono | control surface | A 3/6/3 release room: workspace rail, live issue board and inspector, with tabular proof and a comparison table. |
+| [`devtool-diff`](devtool-diff/) | Developer tool | Geist / IBM Plex Mono | review surface | A continuous patch review: file tree, unified diff, review threads, status bar and a method-side command palette. |
+| [`gaming-ironwood`](gaming-ironwood/) | Gaming | Anton / Archivo / IBM Plex Mono | clipped media | Projected key art inside an angular frame, cropped display type, a press stamp and a vertical season index. |
+| [`hardware-macro`](hardware-macro/) | Hardware | Archivo / IBM Plex Mono | monograph | A 4/8 product sheet, hard-cropped macro photograph, ruled specification strip and numbered leader lines. |
+| [`cafe-atelier`](cafe-atelier/) | Hospitality | Playfair Display / Karla | editorial media | A 2/6/4 house monograph with a metadata rail, drop cap, landscape band and a two-page menu booklet. |
+| [`service-clinic`](service-clinic/) | Professional service | Newsreader / DM Sans / IBM Plex Mono | letterhead | A register with a 1px letterhead rule, 6/empty/5 hero, ruled schedule, practice index and fee schedule. |
 
-The `Hero` column shows the requested archetype, followed by the rendered layout
-when the two differ. `film`, `photo` and `collage` archetypes render as
-`layout: media`: a full-bleed local photograph, a measured scrim and copy that
-keeps its own contrast tokens. Split archetypes keep the two-column starter
-composition.
+The `Hero` column names the shipped composition. These six builds were hand
+art-directed after scaffolding: the typography above is authoritative. Each
+`.frontend-design-skills/art-direction.json` preserves its **original scaffold
+assignment** as provenance; it intentionally does not describe the final
+hand-tuned direction.
+
+Two builds deliberately retain display faces that the default house rules
+discourage for new work: Anton in `gaming-ironwood` and Playfair Display in
+`cafe-atelier`. These are documented art-directed exceptions that pass the
+finish gates, not defaults to copy into a new project.
 
 ## Run an example
 
@@ -41,7 +46,7 @@ node skills/frontend-design-skills/scripts/verify.mjs examples/cafe-atelier --fu
 - `index.html`, `credits.html` and a local `assets/` tree.
 - `styles/` with the shared tokens and components, plus example-only additions.
 - `scripts/` with progressive enhancement, motion and form behaviour.
-- `.frontend-design-skills/art-direction.json`, the locked direction.
+- `.frontend-design-skills/art-direction.json`, the original scaffold assignment.
 - `README.md` with the exact direction, run command and gate command.
 
 `assets/photos/manifest.json` records dimensions, checksums, author, licence and

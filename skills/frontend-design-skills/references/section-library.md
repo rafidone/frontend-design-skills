@@ -2,7 +2,7 @@
 
 Reusable section recipes with budgets, column spans, content limits, and failure
 modes. Compose from this library; do not invent a new structure for every
-heading. All recipes use the container and grid in `20-layout-rhythm.md`.
+heading. All recipes use the container and grid in `../rules/20-layout-rhythm.md`.
 
 ## Budget key
 

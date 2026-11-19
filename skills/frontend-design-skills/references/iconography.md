@@ -8,7 +8,7 @@ drawing, accessibility, and audit.
 
 | Family | Style | License | Best for |
 |--------|-------|---------|----------|
-| Lucide | Outline, 24px, 2px stroke | ISC | Product UI, general marketing |
+| Lucide | Outline, 24px, 1.5px stroke | ISC | Product UI, general marketing |
 | Phosphor | Outline/filled/duotone, multiple weights | MIT | Apps needing weight variants |
 | Heroicons | Outline/solid, 24px and 20px | MIT | Tailwind and React projects |
 | Material Symbols | Variable weight/fill/grade | Apache 2.0 | Dense product interfaces |
@@ -22,7 +22,7 @@ a second family.
 ## 2. Grid and geometry
 
 - Canvas: 24×24. Live area: 20×20. Padding: 2px on each side.
-- Stroke: 2px at 24px, 1.75px at 20px, 1.5px at 16px. Optical adjustments are
+- Stroke: 1.5px at 24px and 20px, 1.25px at 16px. Optical adjustments are
   allowed; random weights are not.
 - Caps: round or butt, one choice per family. Joins: round or miter, one choice.
 - Corners: match the family. Do not mix 1px and 3px radii inside one icon.
@@ -33,10 +33,10 @@ a second family.
 
 | Size | Use | Stroke |
 |------|-----|--------|
-| 16 | Inline with 14–16px metadata, dense tables | 1.5 |
-| 20 | Buttons, nav items, form affordances | 1.75 |
-| 24 | Default UI and feature lists | 2 |
-| 32 | Section markers, empty states | 2–2.5 |
+| 16 | Inline with 14–16px metadata, dense tables | 1.25 |
+| 20 | Buttons, nav items, form affordances | 1.5 |
+| 24 | Default UI and feature lists | 1.5 |
+| 32 | Section markers, empty states | 1.5 |
 | 48+ | Illustration or hero, custom drawing | Recalculate |
 
 Never scale a 16px icon to 48px; the stroke becomes too thin. Use the size variant

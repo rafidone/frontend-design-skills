@@ -11,7 +11,7 @@ No page ships until the gate says `GATE: PASS`.
 [![Browser Gate](https://img.shields.io/badge/Browser_Gate-PASS-16a34a?style=for-the-badge)](#the-finish-gate)
 [![Node](https://img.shields.io/badge/Node-%E2%89%A522-339933?style=for-the-badge&logo=node.js&logoColor=white)](package.json)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Production--ready-0ea5e9?style=for-the-badge)](#)
+[![Status](https://img.shields.io/badge/Status-Production--ready-0ea5e9?style=for-the-badge)](#the-finish-gate)
 [![Agents](https://img.shields.io/badge/Agents-75%2B-6b7280?style=for-the-badge)](#compatibility)
 [![GitHub stars](https://img.shields.io/github/stars/rafidone/frontend-design-skills?style=for-the-badge&logo=github&labelColor=000000)](https://github.com/rafidone/frontend-design-skills)
 
@@ -124,7 +124,7 @@ npm run doctor
 | `SKILL.md` | The nine-step run loop, hard stops, output contract, and commands. |
 | `rules/00–90` | Ten rule documents from house rules to the verification checklist. |
 | `references/` | Nine decision references: niche matrix, copy, assets, gates, frameworks, troubleshooting. |
-| `assets/` | 24 palettes, 24 type pairings, 10 heroes, 7 sections, 14 UI fragments, 4 diagrams, 66 icons, 7 photographs, 6 mock-data sets. |
+| `assets/` | 24 palettes, 24 type pairings, 10 heroes, 7 sections, 14 UI fragments, 4 diagrams, 66 icons, 6 photographs, 6 mock-data sets. |
 | `scripts/` | Assignment, scaffolding, asset checks, serving, browser inspection, eight audit modules, capture, verification, and reporting. |
 | `examples/` | Six complete, gate-verified reference builds. |
 | `tests/` | Unit tests for the pure machinery plus a real-browser end-to-end run. |
@@ -340,7 +340,7 @@ shipped photographic key art, and clinic may show responsive asset/prose notices
 | UI fragments | 14 | Analytics, billing, calendar, chat, command palette, diff, invoice, kanban, map, media, notifications, search, settings, table. |
 | Diagram patterns | 4 | Architecture, tool hub, pipeline, sequence. |
 | Icons | 66 | 50 UI icons and 16 brand icons, all local SVG with a manifest. |
-| Photographs | 7 | Local WebP with dimensions, SHA-256, author, licence, and source. |
+| Photographs | 6 | Local WebP with dimensions, SHA-256, author, licence, and source. |
 | Mock-data sets | 6 | Cities, companies, metrics, people, products, schedule. |
 | Rule documents | 10 | The design and engineering standard, in load order. |
 | References | 9 | Compact decision tables for the whole run. |

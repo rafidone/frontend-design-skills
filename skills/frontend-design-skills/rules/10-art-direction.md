@@ -49,10 +49,12 @@ forbidden:          <three things this project must not do>
 The `forbidden` line is required. It prevents drift toward the previous project or
 toward a default template.
 
-## 3. The eight-row niche matrix
+## 3. The eight-row niche matrix (nine assignable niches)
 
 Each row is a complete starting system, not a menu. Adjust within the row; do not
-mix rows unless the direction lock documents why.
+mix rows unless the direction lock documents why. The `SaaS / devtool` row maps
+to the two implemented niches `software` and `devtool`; the other rows map
+one-to-one, for nine assignable niches in `scripts/lib/rules.mjs` (`NICHE`).
 
 | Niche | Detection signals | Composition | Palette posture | Type posture | Image language | Motion ceiling | Proof element |
 |-------|-------------------|-------------|-----------------|--------------|----------------|----------------|---------------|
@@ -125,37 +127,28 @@ Motion is assigned by niche and capability, never by enthusiasm.
 
 ## 6. Deterministic assignment
 
-The run must be reproducible. Do not pick a palette because it "feels right" in
-the moment. Use this order:
+The run must be reproducible. `scripts/assign.mjs` is the implementation of
+record; do not pick a palette because it "feels right" in the moment.
 
-1. **Niche index.** Assign `n = 0..7` from the matrix order above.
-2. **Capability score `c`.** Sum: real product capture `+2`, commissioned photo
-   `+1`, working demo `+2`, technical diagram source `+1`, licensed display face
-   `+1`. Cap at 6.
-3. **Motion tier.** Start at the row ceiling. Reduce one tier if `c < 2`, or if
-   the build has no reduced-motion fallback. Never exceed the ceiling.
-4. **Palette variant.** Compute `h = stableHash(projectSlug)`. Choose approved
-   palette `h mod P` where `P` is the number of palettes approved for the row.
-5. **Type pairing.** Choose pairing `(h div P) mod T` from pairings approved for
-   the row's type posture. A pairing is eligible only if its licenses are
-   confirmed.
-6. **Composition.** Use the row default unless the content inventory has no
-   suitable asset; then use the row's documented fallback.
+1. **Niche.** Choose one of the nine assignable niche IDs. Each matrix row maps
+   to one or two of these IDs.
+2. **Eligible pools.** From `assets/palettes/palettes.json`, keep palettes that
+   pass the contrast floor and avoid violet, then keep those tagged for the
+   niche or untagged generalists. Apply the same two filters to
+   `assets/typography/type-pairs.json`. Sort both pools by niche affinity score.
+3. **Selection.** `pick()` hashes `seed|salt` with SHA-256, takes the first 12
+   hex digits, and uses that value modulo the pool size. Separate salts
+   (`palette:<niche>`, `type:<niche>`, `hero:<niche>`, `composition:<niche>`) keep
+   the axes independent. The same seed and niche always produce the same result.
+4. **History.** With `--history`, palettes, pairings and heroes recently used
+   for the same niche are excluded before selection; `--record` appends the
+   result. This rotates directions across repeated runs.
+5. **Locked values.** Motion tier, density, photo direction and effects come
+   from the niche config; hero and composition come from niche-specific pools.
 
-```js
-function stableHash(input) {
-  let h = 2166136261;
-  for (let i = 0; i < input.length; i += 1) {
-    h ^= input.charCodeAt(i);
-    h = Math.imul(h, 16777619);
-  }
-  return h >>> 0;
-}
-```
-
-Record `n`, `c`, `h`, the chosen palette ID, and the pairing ID in the direction
-lock. Re-running with the same slug and inventory must produce the same result.
-Model preference, current trends, and "make it pop" are not inputs.
+The direction lock records the chosen IDs, seed and timestamp. Re-running with
+the same seed, niche and history must produce the same result. Model preference,
+current trends, and "make it pop" are not inputs.
 
 ## 7. Avoid generic AI layout tells
 

@@ -172,7 +172,7 @@ Rules:
   "Billing overview showing a paid invoice and an expiring card."
 - If the fragment is decorative, `alt=""`; if informative, describe the takeaway.
 - If the fragment is live HTML, it must meet every rule in
-  `70-accessibility-performance.md`; otherwise render it as an image.
+  `../rules/70-accessibility-performance.md`; otherwise render it as an image.
 - Do not put focusable controls in a decorative mock. Users will tab into a dead
   interface.
 - Provide a text summary of the key data near the frame.

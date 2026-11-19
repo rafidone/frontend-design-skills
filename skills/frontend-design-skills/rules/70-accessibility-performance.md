@@ -211,8 +211,8 @@ npx lighthouse http://localhost:4173 --preset=desktop --only-categories=performa
 
 npx lighthouse http://localhost:4173 --form-factor=mobile --throttling-method=simulate --only-categories=performance,accessibility --output=json --output-path=/tmp/opencode/lh-mobile.json
 
-# Axe via Playwright (project-local dependency)
-npx playwright test tests/a11y.spec.ts
+# Browser-driven accessibility and runtime checks (no dependencies)
+npm run test:e2e
 
 # Keyboard smoke test: tab through the page and record every stop
 ```

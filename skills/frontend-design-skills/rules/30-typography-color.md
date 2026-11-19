@@ -95,6 +95,15 @@ fallback inside a stack only when the licensed face fails to load.
 | Cormorant Garamond | Fragile at UI sizes and low contrast |
 | Comic Sans / Papyrus | Not production faces |
 
+The automated TYP-05 check enforces the generic subset in
+`scripts/lib/rules.mjs` (`BANNED_FONTS`); the table above is stricter guidance.
+Anton, Playfair Display and Cormorant Garamond are banned as **default**
+choices: they ship in `assets/typography/type-pairs.json` only as niche-scoped
+display exceptions with explicit `avoid` guidance, and each use must be
+justified in the direction record. The shipped reference builds document two
+such exceptions in `examples/README.md`. Never move them into body or UI text
+roles.
+
 Also banned: a display face used for body copy, a text face stretched into a
 display role with fake tracking, and more than one accent script face.
 

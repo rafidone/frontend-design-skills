@@ -4,6 +4,15 @@ The gate is a state machine that aggregates rule results into a delivery decisio
 It is not a checklist that can be waved through. This reference defines states,
 transitions, rounds, evidence, waivers, and the persisted record.
 
+> **Implementation note.** `scripts/verify.mjs` is the authoritative gate. It has
+> six terminal states — `PASS`, `DONE`, `FAIL`, `OPEN`, `SETUP` and `ERROR` — and
+> prints `GATE: <state> [n]` as its final line. The conceptual states below map to
+> those tool states: `UNVERIFIED` and `IN_PROGRESS` have no terminal line,
+> `BLOCKED` maps to `SETUP` or `ERROR`, `FAILED` to `FAIL`, `PASSED` to `PASS`,
+> and `PASSED_WITH_WAIVERS` to `PASS` with an accepted waiver list. Reports,
+> screenshots and measurements live in `.frontend-design-skills/runs/<timestamp>/`
+> inside the project, never under `/tmp`.
+
 ## 1. States
 
 | State | Meaning | Can deliver? |
@@ -88,7 +97,7 @@ A check result requires evidence appropriate to its type:
   "id": "PERF-01",
   "result": "PASS",
   "observed": "LCP 1.9s on mobile",
-  "evidence": ["/tmp/opencode/fdm-shop/lh-mobile.json"],
+  "evidence": [".frontend-design-skills/runs/20261119-120000/lh-mobile.json"],
   "at": "2026-11-10T09:42:00Z",
   "by": "run"
 }
@@ -146,14 +155,14 @@ Rules:
 ```json
 {
   "slug": "shop",
-  "state": "PASSED_WITH_WAIVERS",
+  "state": "PASS",
   "round": 3,
   "mode": "full",
   "build": "sha256:abc123",
   "viewports": ["1440x900", "820x1180", "768x1024", "390x844", "320x568"],
   "results": [],
   "waivers": [],
-  "report": "/tmp/opencode/fdm-shop/REPORT.md",
+  "report": ".frontend-design-skills/runs/20261119-120000/report.md",
   "updated": "2026-11-10T10:12:00Z"
 }
 ```
@@ -165,9 +174,9 @@ mark the current round.
 
 | Input | Required for full | Source |
 |-------|-------------------|--------|
-| Direction lock | Yes | `10-art-direction.md` |
-| Content inventory | Yes | `60-copy-content.md` |
-| Asset manifest | Yes | `40-assets-brand.md` |
+| Direction lock | Yes | `../rules/10-art-direction.md` |
+| Content inventory | Yes | `../rules/60-copy-content.md` |
+| Asset manifest | Yes | `../rules/40-assets-brand.md` |
 | Built output | Yes | Build command |
 | Served URL | Yes | Static server |
 | Viewport screenshots | Yes | Browser checks |
@@ -200,5 +209,5 @@ Missing inputs produce `OPEN`, not a pass.
 - [ ] Waivers ≤5, approved, unexpired, with risk and mitigation.
 - [ ] Report written in the required format.
 - [ ] Artifacts present and paths valid.
-- [ ] State is `PASSED` or `PASSED_WITH_WAIVERS`.
+- [ ] Final line is `GATE: PASS` or `GATE: DONE`, with waivers listed separately.
 - [ ] Re-run triggered by any change after the round.

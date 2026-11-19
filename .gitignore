@@ -15,3 +15,10 @@ playwright-report/
 !.env.example
 skills-lock.json
 .agents/
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

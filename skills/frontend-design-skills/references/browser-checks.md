@@ -175,7 +175,7 @@ Record the tab stops as a list. A screenshot of a focus ring is useful evidence.
 - Confirm fonts are subset and swapped.
 - Confirm below-fold images are lazy.
 - Confirm no third-party script blocks first paint.
-- Confirm the page weight is within budget in `70-accessibility-performance.md`.
+- Confirm the page weight is within budget in `../rules/70-accessibility-performance.md`.
 
 ## 11. Accessibility checks
 
@@ -195,8 +195,8 @@ Record the tab stops as a list. A screenshot of a focus ring is useful evidence.
 ## 12. Screenshot and artifact layout
 
 ```text
-/tmp/opencode/fdm-<slug>/
-  REPORT.md
+.frontend-design-skills/runs/<timestamp>/
+  report.md
   static.txt
   browser.json
   console.txt
@@ -224,7 +224,8 @@ Record the tab stops as a list. A screenshot of a focus ring is useful evidence.
 | Quick | One desktop viewport, console, overflow, H1, primary action | Iteration only; never delivery |
 | Full | All viewports, full a11y, performance, motion, content, gate | Required before delivery |
 
-Quick mode may not produce `PASSED`. It may only produce `IN_PROGRESS` or `FAILED`.
+Quick mode may not produce `GATE: PASS`. It reports `GATE: FAIL n` or
+`GATE: OPEN n` and is for iteration only.
 
 ## 14. False positives
 - A vertical scrollbar changes `clientWidth`; compare against `clientWidth`, not
@@ -247,4 +248,4 @@ Quick mode may not produce `PASSED`. It may only produce `IN_PROGRESS` or `FAILE
 | MOT-01 | Reduced motion | No motion beyond 4px, no loops |
 | PERF-01 | Weight | Page within budget |
 | SYS-04 | Runtime | Zero console or script errors |
-| GATE-06 | Evidence | Screenshots and logs saved |
+| GATE-02 | Evidence | Screenshots and logs saved |

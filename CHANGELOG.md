@@ -3,6 +3,53 @@
 All notable changes to `frontend-design-skills` are recorded here. The format
 follows Keep a Changelog and the project uses semantic versioning.
 
+## [Unreleased]
+
+### Added
+
+- Remote and project-level installation verified through both `install.sh` and
+  the Skills CLI (`npx skills add`), with standalone doctor checks on the
+  installed copy.
+
+### Changed
+
+- Rebuilt all six reference builds as distinct art-directed systems: a release
+  control surface, patch review room, projected-title gaming frame, product
+  monograph, house monograph and practice register.
+- Refined typographic scale and editorial rhythm across the builds: enlarged
+  display ceilings, tighter leading and tracking, square edges and wider
+  hairline-framed gutters while keeping the 320px layout gate intact.
+- Recaptured all six 1440x900 previews and refreshed the README showcase.
+- Upgraded CI actions to Node 24 based majors to remove runner deprecation
+  warnings.
+- Corrected the documented photograph count, stale direction labels, release
+  and editor-hygiene guidance, and removed trailing whitespace from generated
+  diagram templates.
+- Rewrote the art-direction rule to describe the shipped SHA-256 assignment
+  algorithm and nine assignable niches, and mapped the conceptual gate states to
+  the six terminal states emitted by `verify.mjs`.
+- Aligned asset-class, icon-stroke and banned-font guidance with the shipped
+  manifests, SVGs and type-pair library; documented Anton, Playfair Display and
+  Cormorant Garamond as niche-scoped display exceptions.
+
+### Fixed
+
+- Documentation now matches the shipped example fonts and counts, and the
+  release guide no longer claims a version field that the skill front matter
+  does not carry.
+- Removed false and unused photo provenance from the `saas-product` and
+  `devtool-diff` examples (photo, manifest and credit rows); their credits pages
+  now state that no external photography is used.
+- Scaffolded projects now generate `credits.html` when a library photograph is
+  copied, keep gate reports in version control and use correct project-relative
+  run instructions.
+- Removed stale scaffold direction claims from all six per-example READMEs and
+  V5 markers from two token files; dropped an ineffective inline `defer`.
+- Corrected cross-directory rule references, a duplicate GATE-02 ID, nonexistent
+  Playwright commands and `/tmp` report paths that did not match the generated
+  artifacts.
+- Removed six unreferenced legacy font files.
+
 ## [1.0.0] - 2026-11-12
 
 ### Added

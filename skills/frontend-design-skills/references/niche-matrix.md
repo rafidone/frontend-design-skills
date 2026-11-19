@@ -1,6 +1,6 @@
 # Niche Matrix Reference
 
-Use this after the niche is classified in `10-art-direction.md`. Each row is an
+Use this after the niche is classified in `../rules/10-art-direction.md`. Each row is an
 operational system: first viewport, page shape, palette, type, proof, motion, and
 the mistakes that break the row.
 

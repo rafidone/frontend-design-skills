@@ -193,8 +193,8 @@ forces them to imagine the thing being sold, and imagination defaults to distrus
 - A dashboard mock built from gray rectangles and unlabeled sparklines.
 
 **Pass condition.**
-- Every visual is classified in the asset manifest as `product-ui`, `photo`,
-  `diagram`, `brand`, or `data`, with a source or a build reference.
+- Every visual is classified in the asset manifest with one of the classes in
+  `40-assets-brand.md`, with a source or a build reference.
 - At least one visual in the first two viewports shows the actual product,
   service, or outcome.
 
@@ -270,7 +270,7 @@ trace that another person can audit.
   limitations".
 
 **Pass condition.**
-- `references/gate.md` reaches `PASSED` or `PASSED_WITH_WAIVERS`.
+- `scripts/verify.mjs` reports `GATE: PASS` (or `GATE: DONE` when closing the run).
 - The final report lists commands, viewports, screenshots, rule results, waivers,
   and residual risks.
 

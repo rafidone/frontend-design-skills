@@ -14,7 +14,10 @@ const DEFAULT_MANIFEST = path.join(skillRoot, 'assets/photos/manifest.json');
 const ICON_MANIFEST = path.join(skillRoot, 'assets/icons/manifest.json');
 
 const REQUIRED = ['id', 'class', 'path', 'source', 'author', 'license', 'added', 'credit_required'];
-const CLASSES = new Set(['photo', 'illustration', 'diagram', 'icon', 'font', 'logo', 'texture', 'video']);
+const CLASSES = new Set([
+  'product-ui', 'photo', 'diagram', 'brand', 'data', 'texture', 'icon', 'placeholder',
+  'illustration', 'font', 'logo', 'video'
+]);
 const BAD_PATH = /(^|\/)[^a-z0-9._/-]|[\sA-Z]/;
 
 function parseArgs(argv) {

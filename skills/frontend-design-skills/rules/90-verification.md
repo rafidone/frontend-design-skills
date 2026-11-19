@@ -11,7 +11,8 @@ built page was observed at the target viewports and the result was recorded.
 - The asset manifest is complete (`40-assets-brand.md`).
 - The production build runs locally.
 - Browser automation or a manual browser is available.
-- A report directory exists: `/tmp/opencode/fdm-<slug>/`.
+- The gate writes `report.json`, `report.html`, `report.md` and screenshots to
+  `.frontend-design-skills/runs/<timestamp>/` under the project.
 
 If a precondition is missing, stop and fix it. Do not begin the audit with
 placeholders that cannot be distinguished from final content.
@@ -150,9 +151,9 @@ requests, and screenshot paths.
 ### 3.6 Accessibility
 
 ```bash
-npx playwright test tests/a11y.spec.ts
-# or
-npx axe http://localhost:4173 --exit
+npm run test:e2e
+# or run the full gate against a served build
+node skills/frontend-design-skills/scripts/verify.mjs <target> --full --kind <niche>
 ```
 
 Manual steps, recorded as notes:
@@ -263,8 +264,9 @@ Rules:
 
 ## 8. Final report
 
-Write the report to `/tmp/opencode/fdm-<slug>/REPORT.md` and include the same
-summary in the handoff.
+`scripts/verify.mjs` writes `report.json`, `report.html`, `report.md` and the
+screenshots to `.frontend-design-skills/runs/<timestamp>/` under the project.
+Include the same summary in the handoff; do not keep a second copy under `/tmp`.
 
 ```markdown
 # Frontend Verification Report
@@ -273,15 +275,15 @@ project: <slug>
 date: <ISO date>
 build: <commit or artifact hash>
 url: <served URL>
-viewports: 1440×900, 820×1180, 768×1024, 390×844, 320×568
+viewports: 1440×900, 1280×800, 1024×768, 820×1180, 768×1024, 390×844, 320×568
 
 ## Result
-PASSED | PASSED_WITH_WAIVERS | FAILED
+GATE: PASS | FAIL n | OPEN n | SETUP | ERROR | DONE
 
 ## Gate
 | Phase | Result | Evidence |
 |-------|--------|----------|
-| Static audit | PASS | /tmp/opencode/fdm-<slug>/static.txt |
+| Static audit | PASS | .frontend-design-skills/runs/<timestamp>/static.txt |
 | Build | PASS | npm run build output |
 | Browser | PASS | screenshots/ |
 | Accessibility | PASS | axe.json, keyboard notes |
@@ -329,7 +331,7 @@ Do not re-run only the failing check when the fix could affect shared primitives
 
 ## 10. Exit criteria
 The run may stop only when:
-- `PASSED` or `PASSED_WITH_WAIVERS`.
+- `GATE: PASS` or `GATE: DONE`.
 - No `OPEN` items.
 - No blocker.
 - At most five waivers, all approved and unexpired.
@@ -340,7 +342,7 @@ The run may stop only when:
 ## 11. GATE checks
 | ID | Check | Pass condition |
 |----|-------|----------------|
-| GATE-01 | Gate run | State reaches PASSED or PASSED_WITH_WAIVERS |
+| GATE-01 | Gate run | Final line is `GATE: PASS` or `GATE: DONE` |
 | GATE-02 | Evidence | Every PASS has a path or measurement |
 | GATE-03 | No open items | OPEN count is zero |
 | GATE-04 | Waivers | ≤5, approved, unexpired, no blockers |

@@ -14,9 +14,9 @@ Use semantic versioning for the repository:
 - **PATCH** - false-positive fixes, copy edits, dependency-free helper fixes and
   documentation corrections that do not change the contract.
 
-The skill itself carries the same version in `SKILL.md` frontmatter metadata when
-a release changes agent behaviour. `CHANGELOG.md` is the release record; every
-entry says what changed and what a user must do.
+`CHANGELOG.md` is the release record; every entry says what changed and what a
+user must do. Version numbers live in `package.json` and
+`.claude-plugin/plugin.json`; keep those two in sync when releasing.
 
 ## Supported environment
 
@@ -186,7 +186,7 @@ Also verify the public install surface before announcing the release:
 npx skills add rafidone/frontend-design-skills --list
 
 # The plugin marketplace manifest must validate.
-claude plugin validate ./frontend-design-skills
+claude plugin validate .
 ```
 
 The repository must expose `skills/frontend-design-skills/SKILL.md` and keep

@@ -16,6 +16,10 @@ asset cannot be classified and traced, it does not ship.
 | `texture` | A material or surface used as background atmosphere | Source, license, tileability |
 | `icon` | A glyph from one icon family or a custom set | Family name, license, grid, stroke |
 | `placeholder` | A labeled stand-in that must be replaced | Owner, target asset, gate status |
+| `illustration` | A drawn or rendered image that is not a photograph | Author, source URL, license |
+| `font` | A self-hosted typeface file | Family, license, source, subset |
+| `logo` | A mark shipped as a file rather than inline markup | Owner, license, clear-space rule |
+| `video` | Moving image or animation asset | Author, source URL, license, duration |
 
 Decorative gradients, blobs, and particle fields are `texture` at most. They may
 not be classified as product evidence.
